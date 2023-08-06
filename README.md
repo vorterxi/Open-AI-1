@@ -19,7 +19,7 @@
  
 ---
 
-<p align="center"><img src="https://profile-counter.glitch.me/{Mehar-Zubair}/count.svg" alt="Mehar-Zubair :: Visitor's Count" /></p>
+<p align="center"><img src="https://profile-counter.glitch.me/{Mehar-Zubi}/count.svg" alt="Mehar-Zubair :: Visitor's Count" /></p>
 
   <p align="center"> Introducing ᴏᴘᴇɴ ᴀⁱ,ᴏᴘᴇɴ ᴀⁱ is designed to bring a whole new level of excitement to your boring WhatsApp use. </p>
 
