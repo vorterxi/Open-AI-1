@@ -34,7 +34,7 @@
 ```
 mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=majority
 ```
-3.  ***Click [FORK](https://github.com/Mehar-Zubair/Secktor-MD/fork)***
+3.  ***Click [FORK](https://github.com/Mehar-Zubi/Open-AI/fork)***
 ## Heroku Deployment Method
 4.  ***Deploy on [Heroku](https://sampandey00011-af12d376b8d4.herokuapp.com/heroku)***
 
