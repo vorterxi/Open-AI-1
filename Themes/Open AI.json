@@ -1,0 +1,56 @@
+{
+    "__JSON__": true,
+    "AUTHOR": "𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕",
+    "Theme": "ᴏᴘᴇɴ ᴀⁱ ♕",
+    "LANGCODE": "en",
+    "STRINGS": {
+        "updater": {
+            "UPDATE": "*Your bot is already on latest version*",
+            "NEW_UPDATE": "*There is a new update available for the bot!*\n\n*Changes:*\n",
+            "UPDATED_LOCAL": "*Successfully Updated!*"
+        },
+        "global": {
+            "botName": " 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 •𝙺𝙸𝙽𝙶• ♕",
+            "body": "𝑊ℎ𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡",
+            "greet2" : "Dude",
+            "pic1": "https://i.imgur.com/t6VBCJL_d.webp?maxwidth=640&shape=thumb&fidelity=medium",
+            "pic2": "https://i.ibb.co/q5JJZm6/logo1.png",
+            "pic3": "https://i.ibb.co/TYsNK9T/20230730-202654.png",
+            "pic4": "https://i.ibb.co/rMp5NS3/logo2.png",
+            "pic5": "https://i.ibb.co/TYsNK9T/20230730-202654.png",
+            "pic6": "https://i.imgur.com/t6VBCJL_d.webp?maxwidth=640&shape=thumb&fidelity=medium",
+            "pic7": "https://i.imgur.com/t6VBCJL_d.webp?maxwidth=640&shape=thumb&fidelity=medium",
+             "greet" : "Dear",
+           "dotbody" : "Hii Dude, I'm right here",
+            "promote": "Admin Role Privileged",
+            "pmallow": "*Hii,This is ᴏᴘᴇɴ ᴀⁱ ♕*\n*An assistant of My Owner.*\nMy Owner is busy right now.\nKindly Leave your Message.\n\n_I will inform him about your message asap......_",
+            "pmblock": "❌ Blocked*\n\n You have been blocked for spamming.\n\n _ 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 ᴏᴘᴇɴ ᴀⁱ ♕_",
+            "pmwarn": "✋Hii* \nPlease don't spam else I'll block you for spamming. _You have ${checkPermit.times} warning(s)._\n\n * 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲* ᴏᴘᴇɴ ᴀⁱ ♕",
+            "permited": "Hii ${tname}*\n\nNow You are permitted by my owner to pm now.\n\n *𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲* ᴏᴘᴇɴ ᴀⁱ ♕", 
+            "revoked" : "*Hii ${tname}*\n\nYour pm permit permission has been prevoked now.\n\n _ 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 •ᴏᴘᴇɴ ᴀɪ• ♕_",
+            "demote": "Admin Role Taken back",
+            "antlink": "Link Detected.\n*Good Bye Idiot*",
+            "session": "\n*This is your session.sam.json,keep it safe and store it properly*\n_Now Upload This json file in Your Forked Repo_\n Connect your repo to Heroku and *Deploy Branch* and Bot will run for Always\n\n*𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 𝒁𝒆𝒓𝒐 𝑻𝒘𝒐*",
+            "mention": " Please atleast mention any user",
+            "title": "ᴏᴘᴇɴ ᴀⁱ ♕",
+            "footer": "ᴏᴘᴇɴ ᴀⁱ ♕",
+            "by": "Made by: *CitelVoid*",
+            "chat_desc": "Options Avilable* : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete",
+            "success": "Done ✓",
+            "dot": "Hii Bro, Just a Sec.\nWait,did you mean *-help?*",
+            "couple_male": "*I'm pretty sure I can't live without being helped!*",
+            "couple_female": "*I'm pretty sure I can't live without being helped!*",
+            "admin": "ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ғᴏʀ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs!",
+            "botAdmin": "ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀᴅᴍɪɴ ʀᴏʟᴇ.❗",
+            "owner": "ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ғᴏʀ ᴍʏ ᴏᴡɴᴇʀ 👑",
+            "group": "ᴛʜɪs ғᴇᴀᴛᴜʀᴇ ɪs ᴏɴʟʏ ғᴏʀ ɢʀᴏᴜᴘs❗",
+            "private": "ᴛʜɪs ғᴇᴀᴛᴜʀᴇ ɪs ᴏɴʟʏ ғᴏʀ ᴍʏ ᴏᴡɴᴇʀ 👑",
+            "bot": "ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ғᴏʀ ᴍʏ ᴏᴡɴᴇʀ 👑",
+            "wait": "ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ʀᴇᴏ̨ᴜᴇsᴛ"
+        },
+        "error": {
+            "text": "*Got an Error*"
+        }
+    }
+  }
+  
