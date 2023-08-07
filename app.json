@@ -100,6 +100,12 @@
     "description": "Weather it is on heroku or not",
      "value": "true",
      "required": false 
+  },
+  "REMOVE_BG_KEY": {
+    "description": "Put removebg api key here",
+    "value": "Paste key here",
+    "required": false
+  }
   }
 },
 "formation": {
