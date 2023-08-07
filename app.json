@@ -106,7 +106,6 @@
     "value": "Paste key here",
     "required": false
   }
-  }
 },
 "formation": {
 		"worker": {
