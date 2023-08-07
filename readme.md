@@ -7,9 +7,9 @@
 
 
 1. This Bot is Under Development and will be public soon.
-3. *Developer,Author,Owner*     𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕
+3. *Developer,Author,Owner*               𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕
 
-
+- Star ⭐ repo if you like ᴏᴘᴇɴ ᴀⁱ.
 
 ## License
 
