@@ -19,7 +19,7 @@
  
 ---
 
-<p align="center"><img src="https://profile-counter.glitch.me/{Mehar-Zubi}/count.svg" alt="Mehar-Zubair :: Visitor's Count" /></p>
+<p align="center"><img src="https://profile-counter.glitch.me/{Mehar-Zubi}/count.svg" alt="Mehar-Zubi :: Visitor's Count" /></p>
 
   <p align="center"> Introducing ᴏᴘᴇɴ ᴀⁱ,ᴏᴘᴇɴ ᴀⁱ is designed to bring a whole new level of excitement to your boring WhatsApp use. </p>
 
@@ -37,7 +37,7 @@ mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=major
 4.  ***Click [FORK](https://github.com/Mehar-Zubi/Open-AI/fork)***
 ## Heroku Deployment Method
 
-5.  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Mehar-Zubi/Open-AI)
+5. ***Deployation Unavailable***
 
 6. More info about [ᴏᴘᴇɴ ᴀⁱ]().
 
@@ -47,4 +47,4 @@ mongodb+srv://openai:openai@openai.0eizmrh.mongodb.net/?retryWrites=true&w=major
 
 ## License
 
-The ᴏᴘᴇɴ ᴀⁱ is made available under the [GPL-3 license](https://github.com/Mehar-Zubair/Secktor-Md/blob/main/LICENCE). 
+The ᴏᴘᴇɴ ᴀⁱ is made available under the [GPL-3 license](https://github.com/Mehar-Zubi/Open-AI/blob/main/LICENCE). 
