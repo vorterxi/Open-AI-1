@@ -8,7 +8,7 @@
 
 
 1. This Bot is Under Development and will be public soon.
-3. *Developer,Author,Owner*   ***Maher Zubair***
+3. *Developer,Author,Owner*  : ***Maher Zubair***
 
 - Star ⭐ repo if you like ᴏᴘᴇɴ ᴀⁱ.
 
