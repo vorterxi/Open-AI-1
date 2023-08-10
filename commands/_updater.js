@@ -37,4 +37,30 @@ cmd({
 
         }
     )
-  
+  //-------------------------------------------------------------
+if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY )
+{
+cmd({
+                 pattern: "un",
+                 desc: "Shows repo\'s refreshed commits.",
+                 category: "tools",
+                 filename: __filename
+             },
+        async(Void, citel, text,{ isCreator }) => {
+            if(!isCreator) return await citel.reply("Only Owner Can Use This Command")
+            let commits = await DB.syncgit()
+            if (commits.total === 0) return await citel.reply(`YOU HAVE LATEST VERSION INSTALLED!`)
+            let update = await DB.sync()
+            let buttonMessaged = 
+            {
+                 text:" *> Please Wait Updater Started...!*\n  *───────────────────────────*\n"+update +"\n  *───────────────────────────*",
+                 footer: 'UPDATER --- sᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo',
+                 headerType: 4,
+            };
+            await Void.sendMessage(citel.chat, buttonMessaged);
+            await require("simple-git")().reset("hard",["HEAD"])
+            await require("simple-git")().pull()
+            await citel.reply("*Successfully updated. Now You Have Latest Version Installed!*")
+            process.exit(0);
+     })
+}
