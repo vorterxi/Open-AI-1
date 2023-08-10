@@ -11,8 +11,28 @@
 
 
 const DB = require('../lib/scraper')
-const { execSync } = require('child_process')
 const { tlang, Config, prefix,cmd } = require('../lib')
+const simpleGit = require('simple-git');
+const git = simpleGit();
+const Heroku = require('heroku-client');
+//---------------------------------------------------------------------------
+
+ 
+
+
+async function updateHerokuApp() {
+    const heroku = new Heroku({ token: process.env.HEROKU_API_KEY });
+    await git.fetch();
+    const commits = await git.log(['main..origin/main']);
+    if (commits.total === 0) { return 'You already have the latest version installed.'; } 
+    else {
+      const app = await heroku.get(`/apps/${process.env.HEROKU_APP_NAME}`);
+      const gitUrl = app.git_url.replace('https://', `https://api:${process.env.HEROKU_API_KEY}@`);
+      try { await git.addRemote('heroku', gitUrl); } catch(e) { console.log('Heroku remote adding error');  }
+      await git.push('heroku', 'main');
+      return 'Bot updated. Restarting.';
+    }
+  }
     //---------------------------------------------------------------------------
 cmd({
             pattern: "update",
