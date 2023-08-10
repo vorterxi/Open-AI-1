@@ -23,7 +23,7 @@ cmd({
 },
 async(Void, citel, text) => {
 if (!text || !text.startsWith("insta2 ")) {
-    await citel.send("Please give me Insta Video Url.\nExample: .insta2 https://www.instagram.com/reel/Cmvj5aWJE56/?utm_source=ig_web_copy_link_*");
+    await citel.reply("Please give me Insta Video Url.\nExample: .insta2 https://www.instagram.com/reel/Cmvj5aWJE56/?utm_source=ig_web_copy_link_*");
 }
 
 try {
