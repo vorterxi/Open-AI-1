@@ -1,4 +1,4 @@
-const { Insta,cmd , Config , prefix } = require('../lib')
+const { Insta, cmd , Config , prefix } = require('../lib')
 cmd({
         pattern: "insta",
         desc: "download instagram post.",
@@ -22,18 +22,11 @@ cmd({
     use: '<add fb url.>'
 },
 async(Void, citel, text) => {
-if (!text || !text.startsWith("insta2 ")) {
-    await citel.reply("Please give me Insta Video Url.\nExample: .insta2 https://www.instagram.com/reel/Cmvj5aWJE56/?utm_source=ig_web_copy_link_*");
+if(!text) return citel.reply('Give Me Insta Post Link')
+let insta = await instagram(text)
+for (let i = 0; i < insta.length; i++) {
+const { instagram } = require('instagram-downloader')
+await Void.sendFileUrl(citel.chat, insta[i], Config.send + Config.caption, citel)
 }
+});
 
-try {
-    const { instagram } = require('instagram-downloader');
-    let insta = await instagram(text);
-
-    for (let i = 0; i < insta.length; i++) {
-        await Void.sendFileUrl(citel.chat, insta[i], Config.send + Config.caption, citel);
-    }
-} catch (error) {
-    console.log("Error while Fb Downloading:", error);
-    await citel.send("*_Error, Video Not Found_*");}
-})
