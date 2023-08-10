@@ -23,10 +23,10 @@ cmd({
 },
 async(Void, citel, text) => {
 if(!text) return citel.reply('Give Me Insta Post Link')
-let insta = await instagram(text)
-for (let i = 0; i < insta.length; i++) {
+let response = await Insta(text)
+for (let i=0;i<response.length;i++) {{
 const { instagram } = require('instagram-downloader')
-await Void.sendFileUrl(citel.chat, insta[i], Config.send + Config.caption, citel)
+await Void.sendFileUrl(citel.chat, response[i], `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ᴏᴘᴇɴ ᴀⁱ* ♕`, citel)
 }
 });
 
