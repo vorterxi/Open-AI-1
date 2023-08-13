@@ -5,7 +5,7 @@ cmd({
         category: "downloader",
         filename: __filename
     },
-    async(Void, citel,text,{isCreator}) => {
+    async(Void, citel,text,) => {
 if(!text) return citel.reply('Give Me Insta Post Link')
 let response = await Insta(text)
 for (let i=0;i<response.length;i++) {
