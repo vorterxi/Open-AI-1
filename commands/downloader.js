@@ -164,42 +164,11 @@ function _0x5247(){const _0x2e6d81=['2364avqUDU','name','ago','thumbnail','78319
         }
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "tiktok",
-	    alias :  ['tt','ttdl'],
-            desc: "Downloads Tiktok Videos Via Url.",
-            category: "downloader",
-            filename: __filename,
-            use: '<add tiktok url.>'
-        },
 
-        async(Void, citel, text) => {
-const _0x5b97d5=_0x5226;(function(_0x3518e2,_0x382035){const _0x5f5ae7=_0x5226,_0x2db17e=_0x3518e2();while(!![]){try{const _0x2153bf=-parseInt(_0x5f5ae7(0x100))/0x1+parseInt(_0x5f5ae7(0xfa))/0x2+-parseInt(_0x5f5ae7(0xfb))/0x3+-parseInt(_0x5f5ae7(0xfe))/0x4*(-parseInt(_0x5f5ae7(0x105))/0x5)+parseInt(_0x5f5ae7(0x106))/0x6+-parseInt(_0x5f5ae7(0xf8))/0x7*(-parseInt(_0x5f5ae7(0xff))/0x8)+parseInt(_0x5f5ae7(0xfc))/0x9*(-parseInt(_0x5f5ae7(0x103))/0xa);if(_0x2153bf===_0x382035)break;else _0x2db17e['push'](_0x2db17e['shift']());}catch(_0x57601f){_0x2db17e['push'](_0x2db17e['shift']());}}}(_0x296d,0xd8689));function _0x296d(){const _0x239e3e=['9xWgDbF','╰┈➤\x20𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳\x20𝙱𝚈\x20ᴏᴘᴇɴ\x20ᴀⁱ\x20♕','198452mSZyAi','80ULjoAP','725373JsHXPP','reply','chat','3942410kCoixo','Please\x20Give\x20me\x20Tiktok\x20Video\x20Link','85wQtOMX','673044WxuVUM','294427crhUYQ','split','1934786PwrYKI','1012725zemznk'];_0x296d=function(){return _0x239e3e;};return _0x296d();}if(!text)return await citel[_0x5b97d5(0x101)](_0x5b97d5(0x104));let txt=text?text[_0x5b97d5(0xf9)]('\x20')[0x0]:'';if(!/tiktok/['test'](txt))return await citel[_0x5b97d5(0x101)]('Please,\x20Give\x20me\x20Valid\x20Tiktok\x20Video\x20Link!');function _0x5226(_0x10cd0a,_0x4a29b8){const _0x296d46=_0x296d();return _0x5226=function(_0x522624,_0x3c921c){_0x522624=_0x522624-0xf8;let _0x2ededf=_0x296d46[_0x522624];return _0x2ededf;},_0x5226(_0x10cd0a,_0x4a29b8);}const {status,thumbnail,video,audio}=await tiktokdl(txt);if(status)return await Void['sendMessage'](citel[_0x5b97d5(0x102)],{'video':{'url':video},'caption':_0x5b97d5(0xfd)},{'quoted':citel});else return await citel[_0x5b97d5(0x101)]('Error\x20While\x20Downloading\x20Your\x20Video');
-
-
-})
     //---------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------
-cmd({
-            pattern: "gitclone",
-            desc: "Downloads apks  .",
-            category: "downloader",
-            filename: __filename,
-            use: '<add sticker url.>',
-        },
-        async(Void, citel, text) => {
-	if (!text) return await citel.send('*Provide Repo Url, Ex:- _.gitclone https://github.com/SuhailTechInfo/Secktor-bot_*') 
-    const regex = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
-    if (!regex.test(text) ) return await citel.send('*Uhh Please, Provide Valid Repositry Url*');
-    let [_, user, repo] = text.match(regex) || []
-    repo = repo.replace(/.git$/, '')
-    let url = `https://api.github.com/repos/${user}/${repo}/zipball`
-    let filename = (await fetch(url, { method: 'HEAD' })).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
-    //citel.send(`✳️ Wait, sending repository.. \n` + filename.toString() )
-	await Void.sendMessage(citel.chat , {document : { url : url }, fileName:  filename,mimetype: 'application/zip',  })
 
-	})
 
   //---------------------------------------------------------------------------
 
