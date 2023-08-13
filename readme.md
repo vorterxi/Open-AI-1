@@ -1,15 +1,21 @@
-print('<h1 align="center"> ᴏᴘᴇɴ ᴀⁱ-Md </h1>')
-print('<p align="center"><img src="https://profile-counter.glitch.me/{Mehar-Zubi}/count.svg" alt="Mehar-Zubi :: Visitor\'s Count" /></p>')
+print('''
+ᴏᴘᴇɴ ᴀⁱ-Md
+''')
+print('''
+Mehar-Zubi :: Visitor's Count
+''')
 print('')
-print('<p align="center"> Introducing ᴏᴘᴇɴ ᴀⁱ,ᴏᴘᴇɴ ᴀⁱ is designed to bring a whole new level of excitement to your boring WhatsApp use. </p>')
+print('''
+Introducing ᴏᴘᴇɴ ᴀⁱ,ᴏᴘᴇɴ ᴀⁱ is designed to bring a whole new level of excitement to your boring WhatsApp use.
+''')
 print('')
 print('## Deployment Unavailable')
 print('')
 print('1. This Bot is Under Development and will be public soon.')
-print('3. *Developer,Author,Owner*  : ***Maher Zubair***')
+print('3. Developer,Author,Owner : Maher Zubair')
 print('')
 print('- Star ⭐ repo if you like ᴏᴘᴇɴ ᴀⁱ.')
 print('')
 print('## License')
 print('')
-print('The ᴏᴘᴇɴ ᴀⁱ is made available under the [GPL-3 license](https://github.com/Mehar-Zubi/Open-AI/blob/main/LICENCE).')
+print('The ᴏᴘᴇɴ ᴀⁱ is made available under the GPL-3 license.')
