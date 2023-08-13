@@ -3,9 +3,9 @@
  Licensed under the  GPL-3.0 License;
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
- * @project_name : ᴏᴘᴇɴ ᴀⁱ� ♕
+ * @project_name : ᴏᴘᴇɴ ᴀⁱ ♕
  * @author : 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕ <https://github.com/Mehar-Zubair>
- * @description : ᴏᴘᴇɴ ᴀⁱ� ♕,A Multi-functional whatsapp bot.
+ * @description : ᴏᴘᴇɴ ᴀⁱ ♕,A Multi-functional whatsapp bot.
  * @version 1.0.3 
  **/
 
@@ -171,7 +171,7 @@ cmd({
                 let text = tiny(
                     "Fancy text generator\n\nExample: .fancy 56 Open AI \n\n"
                 );
-                listall("Open Ai V3").forEach((txt, num) => {
+                listall("Open Ai").forEach((txt, num) => {
                     text += `${(num += 1)} ${txt}\n`;
                 });
                 return await citel.reply(text);
@@ -188,7 +188,7 @@ cmd({
             desc: "Makes url tiny.",
             category: "converter",
             use: '<url>',
-            react: "✅",
+            react: "👑",
             filename: __filename
         },
         async(Void, citel, text) => {
@@ -231,7 +231,7 @@ filename: __filename,
             });
             const buffer = await sticker.toBuffer();
             return Void.sendMessage(citel.chat, {sticker: buffer}, {quoted: citel });
-        }else return citel.reply("*Uhh,Please reply to any image*");
+        }else return citel.reply("*Please reply to any image*");
 
     }
 )
