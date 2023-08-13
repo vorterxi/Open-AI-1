@@ -3,9 +3,9 @@
  Licensed under the  GPL-3.0 License;
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
- * @project_name : ᴏᴘᴇɴ ᴀⁱ� ♕
+ * @project_name : ᴏᴘᴇɴ ᴀⁱ ♕
  * @author : 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕ <https://github.com/Mehar-Zubair>
- * @description : ᴏᴘᴇɴ ᴀⁱ� ♕,A Multi-functional whatsapp bot.
+ * @description : ᴏᴘᴇɴ ᴀⁱ ♕,A Multi-functional whatsapp bot.
  * @version 1.0.3 
  **/
 
@@ -33,7 +33,7 @@ cmd({
 //---------------------------------------------------------------------------
 cmd({
         pattern: "remove",
-        alias :['uninstall'],
+        alias :['uninstall','rmv'],
         category: "owner",
         desc: "removes external plugins.",
         filename: __filename
@@ -42,7 +42,7 @@ cmd({
         if (!isCreator) return citel.reply(tlang().owner)
         if(text==='all') {
          await plugindb.collection.drop()
-         return citel.reply('Deleted all plugins from Secktor.')
+         return citel.reply('Deleted all plugins from ᴏᴘᴇɴ ᴀⁱ.')
         }
         let kill = await remove(text.split(" ")[0])
         delete require.cache[require.resolve(__dirname+"/" + text + ".js")];
