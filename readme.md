@@ -3,32 +3,10 @@
 
 <p align="center"> Introducing ᴏᴘᴇɴ ᴀⁱ,ᴏᴘᴇɴ ᴀⁱ is designed to bring a whole new level of excitement to your boring WhatsApp use. </p>
 
-# Deploy METHOD Available
- 
- <details close>
-<summary>Click here to Deploy Open-Ai</summary>
- 
-<br><br>   
- 
-<h4 align="center"> Deploy on Heroku
-</h4>
+## Deployment Methods
 
-</p>
-
-<p align="center" >
-    <a href="https://heroku.com/deploy?template=https://github.com/Mehar-Zubi/Open-AI">
-    <img src="https://www.herokucdn.com/deploy/button.png" width="160px" alt="Deploy on Heroku" >
-    </a>
-
-</p>
-
-<p align="center" >
-    <br>
-    __________________________
-    <br>
-</p>
-
-1. This Bot is Under Development and will be public soon.
+1. ***Deployation Unavailable***
+2. This Bot is Under Development and will be public soon.
 3. *Developer,Author,Owner*  : ***Maher Zubair***
 
 - Star ⭐ repo if you like ᴏᴘᴇɴ ᴀⁱ.
