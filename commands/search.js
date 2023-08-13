@@ -3,9 +3,9 @@
  Licensed under the  GPL-3.0 License;
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
- * @project_name : ᴏᴘᴇɴ ᴀⁱ� ♕
- * @author : 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕ <https://github.com/Mehar-Zubair>
- * @description : ᴏᴘᴇɴ ᴀⁱ� ♕,A Multi-functional whatsapp bot.
+ * @project_name : ᴏᴘᴇɴ ᴀⁱ ♕
+ * @author : 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕ <https://github.com/Mehar-Zubi>
+ * @description : ᴏᴘᴇɴ ᴀⁱ ♕,A Multi-functional whatsapp bot.
  * @version 1.0.3 
  **/
 
@@ -102,8 +102,7 @@ cmd({
             use: '<sign>\n:Example: horo libra',
             filename: __filename,
         },
-        async(Void, citel, text, {isCreator}) => {
-            if (!isCreator) return citel.reply(tlang().owner)
+        async(Void, citel, text, ) => {
             if (!text) return citel.reply("Provide me a sign!")
             try {
                 const URL = `https://aztro.sameerkumar.website/?sign=${text}&day=today`;
@@ -124,7 +123,7 @@ cmd({
                         textw += `*Lucky Color:* ${json.color}.\n`;
                         textw += `*Today Mood:* ${json.mood}.\n`;
                         textw += `*Overall:* ${json.description}.\n`;
-                        citel.reply(textw)
+                        citel.reply(text)
                     });
 
             } catch (e) {
@@ -141,9 +140,8 @@ cmd({
         use: '<text>',
         filename: __filename,
     },
-    async(Void, citel, text,{ isCreator }) => {
+    async(Void, citel, text,) => {
         if (!text) return citel.reply(`give me a text\n*Example : .google Who is KING.*`);
-        if (!isCreator) return citel.reply(tlang().owner)
         let google = require('google-it');
         google({ 'query': text}).then(res => {
             let msg= `Google Search From : ${text} \n\n`;
@@ -165,8 +163,7 @@ cmd({
             use: '<text>',
             filename: __filename,
         },
-        async(Void, citel, text,{ isCreator }) => {
-            if (!isCreator) return citel.reply(tlang().owner)
+        async(Void, citel, text, ) => { 
             if (!text) return citel.reply("Give me a text to search image")
             if (!text) return reply("Hey please tell me for which pic you're looking");
             let name1 = text.split("|")[0]
@@ -181,7 +178,7 @@ cmd({
                         image: {
                             url: images,
                         },
-                        caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ᴏᴘᴇɴ ᴀⁱ* ♕\n*${name1}*`,
+                        caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ᴏᴘᴇɴ ᴀⁱ*`,
                         headerType: 4,
                     };
                     Void.sendMessage(citel.chat, buttonMessage, {
@@ -200,8 +197,8 @@ cmd({
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
-            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: citel })
-            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ᴏᴘᴇɴ ᴀⁱ*` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ᴏᴘᴇɴ ᴀⁱ*` }, { quoted: citel })
         }
     )
     //---------------------------------------------------------------------------
