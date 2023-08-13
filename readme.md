@@ -4,7 +4,7 @@
 <p align="center"> Introducing ᴏᴘᴇɴ ᴀⁱ,ᴏᴘᴇɴ ᴀⁱ is designed to bring a whole new level of excitement to your boring WhatsApp use. </p>
 
 
-## Deployation Unavailable
+## Deployment Unavailable
 
 
 1. This Bot is Under Development and will be public soon.
