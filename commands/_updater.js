@@ -36,6 +36,7 @@ async function updateHerokuApp() {
     //---------------------------------------------------------------------------
 cmd({
             pattern: "update",
+            alias: ["ud"],
             desc: "Shows repo\'s refreshed commits.",
             category: "misc",
             filename: __filename
@@ -63,6 +64,7 @@ if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY )
         
      cmd({
                  pattern: "updatnow",
+                 alias: ["unow"],
                  desc: "Shows repo\'s refreshed commits.",
                  category: "tools",
                  filename: __filename
