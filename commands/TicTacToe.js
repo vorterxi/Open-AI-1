@@ -19,7 +19,7 @@ cmd(
     filename: __filename,
     category: "game",
   },
-  async (Void,citel,text,{isCreator}) => {
+  async (Void,citel,text,) => {
         if (!citel.isGroup) return citel.reply(tlang().group);
         const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
         const participants = citel.isGroup ? await groupMetadata.participants : "";
@@ -34,7 +34,7 @@ cmd(
         )
       ) {
         delete this.game
-        return citel.reply(`_Successfully Deleted running TicTacToe game._`);
+        return citel.reply(`Successfully Deleted running TicTacToe game.`);
         } else {
               return citel.reply(`No TicTacToe game🎮 is running.`)
                     
@@ -61,7 +61,7 @@ cmd(
             [room.game.playerX, room.game.playerO].includes(citel.sender)
         )
       )
-        return citel.reply("_A game is already going on_");
+        return citel.reply("A game is already going on");
       let room = Object.values(this.game).find(
         (room) =>
           room.state === "WAITING" && (text ? room.name === text : true)
@@ -106,7 +106,7 @@ ${arr.slice(6).join("  ")}
           state: "WAITING",
         };
         if (text) room.name = text;
-        citel.reply("_Waiting for player,use .ttt to join this game._ ");
+        citel.reply("Waiting for player,use .ttt to join this game. ");
         this.game[room.id] = room;
       }
     }
@@ -259,4 +259,3 @@ cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text,{isCreator}) 
         await Void.sendMessage(citel.chat,{text: caption,mentions: [citel.sender,shiper]},{quoted:citel})
    }
 )
-// IDEA of Shipcent from => https://github.com/iamherok/WhatsApp-Botto-Ruka/blob/master/handler/message.js#L842
