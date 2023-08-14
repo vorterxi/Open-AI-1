@@ -47,7 +47,7 @@ cmd(
                   } catch { console.log('heroku remote adding error'); }	
                   await git.push('heroku', 'main');	
       
-                  return '*ʙᴏᴛ ᴜᴘᴅᴀᴛᴇᴅ...*\n_Restarting._'	
+                  return '*ʙᴏᴛ ᴜᴘᴅᴀᴛᴇᴅ...*\nRestarting.'	
       
       
               }	
@@ -66,7 +66,7 @@ cmd(
 
        }
        let check = await get_deployments()
-       if(check==='true') return citel.reply('_Please wait..._\n_Currently 2 instances are running in Koyeb,wait to stop one of them._')
+       if(check==='true') return citel.reply('Please wait...\nCurrently 2 instances are running in Koyeb,wait to stop one of them.')
        let data = await redeploy();
        return citel.reply(data)
   })
@@ -92,7 +92,7 @@ cmd(
   if(text.split(' ')[0]===vr) return citel.reply('Your var.\n'+vr+': '+h[vr])	
   }
        }
-       if(!text) return citel.reply('Please provide key.\n_Eg: .getvar PORT_')
+       if(!text) return citel.reply('Please provide key.\nEg: .getvar PORT')
        let data = await getvar(text);
        return citel.reply(data)
   })
@@ -132,7 +132,7 @@ cmd(
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
-       if(!text.split(':')[1]) return citel.reply('*Wrong Format.*\nPlease provide key and value.\n_Eg: .setvar THEME:SECKTOR_')
+       if(!text.split(':')[1]) return citel.reply('*Wrong Format.*\nPlease provide key and value.\nEg: .setvar THEME:MZ')
        if (Config.heroku=true){
         const Heroku = require("heroku-client");
         const heroku = new Heroku({
@@ -144,10 +144,10 @@ cmd(
                   [text.split(':')[0]]: text.split(':')[1],
           },
         });
-        await citel.reply(`🟩var ${text.split(':')[0]} : ${text.split(':')[1]} has been set Successfuly.`);
+        await citel.reply(`var ${text.split(':')[0]} : ${text.split(':')[1]} has been set Successfuly.`);
        }
        let check = await get_deployments()
-       if(check==='true') return citel.reply('_Please wait..._\n_Currently 2 instances are running in Koyeb,wait to stop one of them._')
+       if(check==='true') return citel.reply('Please wait...\nCurrently 2 instances are running in Koyeb,wait to stop one of them.')
        let data = await change_env(text)
        return citel.reply(data)
   })
@@ -164,7 +164,7 @@ cmd(
        if(!isCreator) return citel.reply(tlang().owner);
        if(!text) return citel.reply('Please provide key.\n_Eg: .delvar PORT_')
        let check = await get_deployments()
-       if(check==='true') return citel.reply('_Please wait..._\n_Currently 2 instances are running in Koyeb,wait to stop one of them._')
+       if(check==='true') return citel.reply('Please wait...\nCurrently 2 instances are running in Koyeb,wait to stop one of them.')
        let data = await delvar(text)
        return citel.reply(data)
   })
