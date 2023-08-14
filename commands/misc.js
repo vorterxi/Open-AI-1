@@ -41,6 +41,7 @@ async(Void, citel, text,{ isCreator }) => {
  //---------------------------------------------------------------------------
 cmd({
     pattern: "setgoodbye",
+    alias: ["sbye"],
     desc: "sets goodbye message in specific group.",
     category: "misc",
 },
