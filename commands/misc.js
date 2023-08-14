@@ -127,7 +127,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename,
          },
          async(Void, citel, text) => {
-             if (!citel.quoted) return citel.reply(`*Mention any Image or video Sir.*`);
+             if (!citel.quoted) return citel.reply(`*Mention any Image or video *`);
              let mime = citel.quoted.mtype
              var pack;
              var author;
@@ -164,7 +164,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          },
          async(Void, citel, text) => {
              const upt = runtime(process.uptime())
-             return citel.reply(`Uptime of ${tlang().title}: ${upt}`)
+             return citel.reply(`Uptime of ${tlang().title} is: ${upt}`)
          }
      )
      //---------------------------------------------------------------------------
@@ -183,7 +183,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
      //---------------------------------------------------------------------------
  cmd({
              pattern: "pick",
-             desc: "Pics random user from Group",
+             desc: "Picks random user from Group",
              category: "misc",
              filename: __filename,
          },
@@ -222,15 +222,16 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
      //---------------------------------------------------------------------------
  cmd({
              pattern: "fliptext",
+             alias: ["ftext"],
              desc: "Flips given text.",
              category: "misc",
              use: '<query>',
              filename: __filename,
          },
          async(Void, citel, text) => {
-             if (!text) return citel.reply(`Example : ${prefix}fliptext Back in black`)
+             if (!text) return citel.reply(`ᴇxᴀᴍᴘʟᴇ : ${prefix}ғʟɪᴘ ᴛᴇxᴛ ɪ ᴀᴍ sɪɢᴍᴀ ᴹᴰ`)
              flipe = text.split('').reverse().join('')
-             citel.reply(`\`\`\`「  Text Flipper Tool  」\`\`\`\n*IGiven text :*\n${text}\n*Fliped text :*\n${flipe}`)
+             citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n\`\`\`   •ᴛᴇxᴛ ғʟɪᴘᴘᴇʀ ᴛᴏᴏʟ•   \`\`\`\n┃✗ *•ɢɪᴠᴇɴ ᴛᴇxᴛ•*\n${text}\n┃✗ *•ғʟɪᴘᴇᴅ ᴛᴇxᴛ•*\n${flipe}\n┗━━━━━━━━━━⦿`)
  
          }
      )
