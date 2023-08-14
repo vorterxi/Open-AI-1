@@ -37,7 +37,7 @@ const {GDriveDI} = require("../lib/scraper.js");
 const fs = require("fs-extra");
 const cheerio = require("cheerio")
 if (!text) return citel.sendMessage(citel.chat,{text:'Uhh Please, Give me  Google Drive Url'}) 
-if (!(text && text.match(/drive\.google/i))) citel.sendMessage(citel.chat,{text:'Uhh Please, Give me Valid Google Drive Url'})
+if (!(text && text.match(/drive\.google/i))) citel.sendMessage(citel.chat,{text:'Please, Give me Valid Google Drive Url'})
 let id =(text.match(/\/?id=(.+)/i) || text.match(/\/d\/(.*?)\//))[1]
 if (!id) return citel.sendMessage(citel.chat,{text:'ID Not Found'});
 try {
@@ -67,57 +67,7 @@ cmd({
         },
 
         async(Void, citel, text) => {
-        if(!text )return citel.reply("*Give me App Name*");
-
-	const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}`; };
-	let randomName = getRandom(".apk");
-	const filePath = `./${randomName}`;     // fs.createWriteStream(`./${randomName}`)
-        const {  search , download } = require('aptoide-scraper')
-	let searc = await search(text);          //console.log(searc);
-	let data={};
-	if(searc.length){ data = await download(searc[0].id); }
-	else return citel.send("*APP not Found, Try Other Name*");
-	
-	
-	const apkSize = parseInt(data.size);
-	if(apkSize > 150) return citel.send(`❌ File size bigger than 200mb.`);
-       const url = data.dllink;
-	 let  inf  ="┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •App Name• " +data.name;
-         inf +="\n┃✗ •App Size• "    +data.size;
-	 inf +="\n┃✗ •Version• ꜱɪɢᴍᴀ";	
-	 inf +="\n┃✗ •Owner•  ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ";
-	 inf +="\n┗━━━━━━━━━━⦿"
-         
-
-axios.get(url, { responseType: 'stream' })
-  .then(response => {
-    const writer = fs.createWriteStream(filePath);
-    response.data.pipe(writer);
-
-    return new Promise((resolve, reject) => {
-      writer.on('finish', resolve);
-      writer.on('error', reject);
-    });
-  }).then(() => {
-	
-	let buttonMessage = {
-                        document: fs.readFileSync(filePath),
-                        mimetype: 'application/vnd.android.package-archive',
-                        fileName: data.name+`.apk`,
-                        caption : inf
-                        
-                    }
-                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
-
-    console.log('File downloaded successfully');
-
-  
-    fs.unlink(filePath, (err) => {
-      if (err) { console.error('Error deleting file:', err); } else { console.log('File deleted successfully'); } });
-  }) .catch(error => {
-	fs.unlink(filePath)
-    return citel.send('*Apk not Found, Sorry*')//:', error.message);
-  });
+       const _0x2902d0=_0x1e17;(function(_0x583762,_0x3fc28b){const _0x3a6e91=_0x1e17,_0x5eabbc=_0x583762();while(!![]){try{const _0x29ccbf=-parseInt(_0x3a6e91(0x151))/0x1+-parseInt(_0x3a6e91(0x140))/0x2+-parseInt(_0x3a6e91(0x133))/0x3+parseInt(_0x3a6e91(0x136))/0x4*(parseInt(_0x3a6e91(0x14a))/0x5)+parseInt(_0x3a6e91(0x15b))/0x6*(parseInt(_0x3a6e91(0x158))/0x7)+parseInt(_0x3a6e91(0x149))/0x8*(-parseInt(_0x3a6e91(0x156))/0x9)+-parseInt(_0x3a6e91(0x15c))/0xa*(-parseInt(_0x3a6e91(0x147))/0xb);if(_0x29ccbf===_0x3fc28b)break;else _0x5eabbc['push'](_0x5eabbc['shift']());}catch(_0xf82cc1){_0x5eabbc['push'](_0x5eabbc['shift']());}}}(_0xb814,0xa9937));if(!text)return citel[_0x2902d0(0x159)](_0x2902d0(0x150));const getRandom=_0x4ce72a=>{const _0x1ac6af=_0x2902d0;return''+Math['floor'](Math[_0x1ac6af(0x134)]()*0x2710)+_0x4ce72a;};let randomName=getRandom(_0x2902d0(0x14d));function _0x1e17(_0xf8711d,_0xa9a7a0){const _0xb814da=_0xb814();return _0x1e17=function(_0x1e17ed,_0x3dabec){_0x1e17ed=_0x1e17ed-0x133;let _0x47e731=_0xb814da[_0x1e17ed];return _0x47e731;},_0x1e17(_0xf8711d,_0xa9a7a0);}const filePath='./'+randomName,{search,download}=require(_0x2902d0(0x13a));let searc=await search(text),data={};function _0xb814(){const _0x2e3287=['1947762TGXKbV','random','Error\x20deleting\x20file:','6148xEAMna','*APP\x20not\x20Found,\x20Try\x20Other\x20Name*','\x0a┃✗\x20•Version•\x20ꜱɪɢᴍᴀ','then','aptoide-scraper','createWriteStream','size','*Apk\x20not\x20Found,\x20Sorry*','application/vnd.android.package-archive','name','1297056JqyQib','get','\x0a┗━━━━━━━━━━⦿','finish','stream','\x0a┃✗\x20•App\x20Size•\x20','dllink','4323ZUZgJw','File\x20deleted\x20successfully','1886264lnscWJ','4345aUVNmm','File\x20downloaded\x20successfully','pipe','.apk','chat','send','*Give\x20me\x20App\x20Name*','1298640CkVEuW','readFileSync','log','data','unlink','27ZeOXgl','error','7aMKhED','reply','❌\x20File\x20size\x20bigger\x20than\x20200mb.','4047084AIiUtV','50590cKxsxj'];_0xb814=function(){return _0x2e3287;};return _0xb814();}if(searc['length'])data=await download(searc[0x0]['id']);else return citel[_0x2902d0(0x14f)](_0x2902d0(0x137));const apkSize=parseInt(data[_0x2902d0(0x13c)]);if(apkSize>0x96)return citel[_0x2902d0(0x14f)](_0x2902d0(0x15a));const url=data[_0x2902d0(0x146)];let inf='┏━━⟪⟪\x20🅼♥︎❚❚♥︎🆉\x20⟫━⦿\x0a┃✗\x20•App\x20Name•\x20'+data[_0x2902d0(0x13f)];inf+=_0x2902d0(0x145)+data[_0x2902d0(0x13c)],inf+=_0x2902d0(0x138),inf+='\x0a┃✗\x20•Owner•\x20\x20ᴍᴀʜᴇʀ\x20ᴢᴜʙᴀɪʀ',inf+=_0x2902d0(0x142),axios[_0x2902d0(0x141)](url,{'responseType':_0x2902d0(0x144)})[_0x2902d0(0x139)](_0x116fd8=>{const _0x6f63d=_0x2902d0,_0x409b02=fs[_0x6f63d(0x13b)](filePath);return _0x116fd8[_0x6f63d(0x154)][_0x6f63d(0x14c)](_0x409b02),new Promise((_0x415c34,_0x45445f)=>{const _0x5b01cc=_0x6f63d;_0x409b02['on'](_0x5b01cc(0x143),_0x415c34),_0x409b02['on'](_0x5b01cc(0x157),_0x45445f);});})[_0x2902d0(0x139)](()=>{const _0x3dd1aa=_0x2902d0;let _0x395880={'document':fs[_0x3dd1aa(0x152)](filePath),'mimetype':_0x3dd1aa(0x13e),'fileName':data[_0x3dd1aa(0x13f)]+'.apk','caption':inf};Void['sendMessage'](citel[_0x3dd1aa(0x14e)],_0x395880,{'quoted':citel}),console[_0x3dd1aa(0x153)](_0x3dd1aa(0x14b)),fs[_0x3dd1aa(0x155)](filePath,_0x108726=>{const _0x1a747b=_0x3dd1aa;_0x108726?console[_0x1a747b(0x157)](_0x1a747b(0x135),_0x108726):console['log'](_0x1a747b(0x148));});})['catch'](_0x468ddc=>{const _0x3dbdd6=_0x2902d0;return fs[_0x3dbdd6(0x155)](filePath),citel['send'](_0x3dbdd6(0x13d));});
 	
 	
 	
