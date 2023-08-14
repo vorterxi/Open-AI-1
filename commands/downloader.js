@@ -82,8 +82,8 @@ cmd({
 	const apkSize = parseInt(data.size);
 	if(apkSize > 150) return citel.send(`❌ File size bigger than 200mb.`);
        const url = data.dllink;
-	 let  inf  ="┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •App Name• " •+data.name•;
-         inf +="\n┃✗ •App Size•" +•data.size•;
+	 let  inf  ="┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •App Name• " +data.name;
+         inf +="\n┃✗ •App Size•" +data.size;
 	 inf +="\n┃✗ •Owner• •ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ•";
 	 inf +="\n┗━━━━━━━━━━⦿" +Config.caption
          
