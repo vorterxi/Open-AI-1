@@ -21,6 +21,7 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
   //---------------------------------------------------------------------------
  cmd({
     pattern: "setwelcome",
+    alias: ["swel"],
     desc: "sets welcome message in specific group.",
     category: "misc",
 },
@@ -29,10 +30,10 @@ async(Void, citel, text,{ isCreator }) => {
           let Group = await sck.findOne({ id: citel.chat })
             if (!Group) {
                 await new sck({ id: citel.chat, welcome: text,events:'true' }).save()
-                return citel.reply('Welcome added added for this group.')
+                return citel.reply('ᴡᴇʟᴄᴏᴍᴇ ᴀᴅᴅᴇᴅ ғᴏʀ ᴛʜɪs ɢʀᴏᴜᴘ')
             } else {
                 await await sck.updateOne({ id: citel.chat }, { welcome:text ,events:'true'})
-                return citel.reply('Welcome updated successfully.')
+                return citel.reply('ᴡᴇʟᴄᴏᴍᴇ ᴜᴘᴅᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.')
                 
             }      
 }
@@ -48,10 +49,10 @@ async(Void, citel, text,{ isCreator }) => {
           let Group = await sck.findOne({ id: citel.chat })
             if (!Group) {
                 await new sck({ id: citel.chat, goodbye: text,events:'true' }).save()
-                return citel.reply('Goodbye added for this group.');
+                return citel.reply('ɢᴏᴏᴅʙʏᴇ ᴀᴅᴅᴇᴅ ғᴏʀ ᴛʜɪs ɢʀᴏᴜᴘ.');
             } else {
                 await await sck.updateOne({ id: citel.chat }, { goodbye:text,events:'true' })
-                return citel.reply('Goodbye updated successfully.');     
+                return citel.reply('ɢᴏᴏᴅʙʏᴇ ᴜᴘᴅᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.');     
             }      
 }
 )
@@ -64,7 +65,7 @@ async(Void, citel, text,{ isCreator }) => {
          },
          async(Void, citel, text) => {
 let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
- return citel.reply(a,{packname:'Secktor',author:'ATTP'},"sticker") 
+ return citel.reply(a,{packname:'sɪɢᴍᴀ ᴹᴰ',author:'ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ'},"sticker") 
          }
      )
  cmd({
@@ -75,7 +76,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
          },
          async(Void, citel, text) => {
 let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
- return citel.reply(a,{packname:'Secktor',author:'TTP'},"sticker") 
+ return citel.reply(a,{packname:'sɪɢᴍᴀ ᴹᴰ',author:'ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ'},"sticker") 
          }
      )
      //---------------------------------------------------------------------------
@@ -127,7 +128,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename,
          },
          async(Void, citel, text) => {
-             if (!citel.quoted) return citel.reply(`*Mention any Image or video *`);
+             if (!citel.quoted) return citel.reply(`*ᴍᴇɴᴛɪᴏɴ ᴀɴʏ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ*`);
              let mime = citel.quoted.mtype
              var pack;
              var author;
@@ -140,7 +141,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                  author = "♥️";
              }
                  let media = await citel.quoted.download();
-                 citel.reply("*Processing Your request*");
+                 citel.reply("*ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ*");
                 let sticker = new Sticker(media, {
                     pack: pack, // The pack name
                     author: author, // The author name
@@ -164,7 +165,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          },
          async(Void, citel, text) => {
              const upt = runtime(process.uptime())
-             return citel.reply(`Uptime of ${tlang().title} is: ${upt}`)
+             return citel.reply(`ᴜᴘᴛɪᴍᴇ ᴏғ ${tlang().title} ɪs: ${upt}`)
          }
      )
      //---------------------------------------------------------------------------
@@ -188,7 +189,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename,
          },
          async(Void, citel, match) => {
-             if (!match) return citel.reply("*Which type of User you want?*");
+             if (!match) return citel.reply("*ᴡʜɪᴄʜ ᴛʏᴘᴇ ᴏғ ᴜsᴇʀ ʏᴏᴜ ᴡᴀɴᴛ?*");
              const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat)
                  .catch((e) => {}) : "";
              const participants = citel.isGroup ? await groupMetadata.participants : "";
@@ -196,7 +197,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              let me = citel.sender;
              let pick = member[Math.floor(Math.random() * member.length)];
              Void.sendMessage(citel.chat, {
-                 text: `The most ${match} around us is *@${pick.split("@")[0]}*`,
+                 text: `ᴛʜᴇ ᴍᴏsᴛ ${match} ᴀʀᴏᴜɴᴅ ᴜs ɪs *@${pick.split("@")[0]}*`,
                  mentions: [pick],
              }, {
                  quoted: citel,
@@ -212,7 +213,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename,
          },
          async(Void, citel, text) => {
-             if (!text) return citel.reply('Please give me link.📦')
+             if (!text) return citel.reply('ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴍᴇ ʟɪɴᴋ.')
              axios.get(`https://api.npms.io/v2/search?q=${text}`).then(({ data }) => {
                  let txt = data.results.map(({ package: pkg }) => `*${pkg.name}* (v${pkg.version})\n_${pkg.links.npm}_\n_${pkg.description}_`).join('\n\n')
                  citel.reply(txt)
@@ -231,7 +232,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          async(Void, citel, text) => {
              if (!text) return citel.reply(`ᴇxᴀᴍᴘʟᴇ : ${prefix}ғʟɪᴘ ᴛᴇxᴛ ɪ ᴀᴍ sɪɢᴍᴀ ᴹᴰ`)
              flipe = text.split('').reverse().join('')
-             citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n\`\`\`   •ᴛᴇxᴛ ғʟɪᴘᴘᴇʀ ᴛᴏᴏʟ•   \`\`\`\n┃✗ *•ɢɪᴠᴇɴ ᴛᴇxᴛ•*\n${text}\n┃✗ *•ғʟɪᴘᴇᴅ ᴛᴇxᴛ•*\n${flipe}\n┗━━━━━━━━━━⦿`)
+             citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n\`\`\`   •ᴛᴇxᴛ ғʟɪᴘᴘᴇʀ ᴛᴏᴏʟ•   \`\`\`\n┃✗ *•ɢɪᴠᴇɴ ᴛᴇxᴛ•*\n┃✗ ${text}\n┃✗ *•ғʟɪᴘᴇᴅ ᴛᴇxᴛ•*\n┃✗ ${flipe}\n┗━━━━━━━━━━⦿`)
  
          }
      )
@@ -245,16 +246,16 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename,
          },
          async(Void, citel, text) => {
-             if (!text) return citel.reply(`Please give me link!`);
+             if (!text) return citel.reply(`ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴍᴇ ʟɪɴᴋ!`);
              Void.sendMessage(citel.chat, {
                  video: {
                      url: text.split(" ")[0],
                  },
-                 caption: "*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ᴏᴘᴇɴ ᴀⁱ* ♕",
+                 caption: "╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 sɪɢᴍᴀ ᴹᴰ",
                  contextInfo: {
                      externalAdReply: {
                          title: tlang().title,
-                         body: `${citel.pushName}`,
+                         body: `ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ`,
                          thumbnail: log0,
                          mediaType: 2,
                          mediaUrl: ``,
@@ -277,7 +278,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename,
          },
          async(Void, citel, text,{ isCreator }) => {
-             if (!text) return citel.reply(`Example : ${prefix}emix 😅,🤔`);
+             if (!text) return citel.reply(`ᴇxᴀᴍᴘʟᴇ : ${prefix}ᴇᴍɪx 😅,🤔`);
              let [emoji1, emoji2] = text.split `,`;
              let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1 )}_${encodeURIComponent(emoji2)}`);
              for (let res of anu.results) {
@@ -306,11 +307,11 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                       let chatbott= await chatbot.findOne({ id: 'chatbot' })
                      if (!chatbott) {
                          await new chatbot({ id: 'chatbot', worktype: "true" }).save()
-                         return citel.reply('Chatbot activated successfully.')
+                         return citel.reply('ᴄʜᴀᴛʙᴏᴛ ᴀᴄᴛɪᴠᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.')
                      } else {
-                         if (chatbott.worktype == "true") return citel.reply("Chatbot was already enabled.")
+                         if (chatbott.worktype == "true") return citel.reply("ᴄʜᴀᴛʙᴏᴛ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ.")
                          await chatbot.updateOne({ id: 'chatbot' }, { worktype: "true" })
-                         citel.reply('Enabled chatbot successfully.')
+                         citel.reply('ᴇɴᴀʙʟᴇᴅ ᴄʜᴀᴛʙᴏᴛ sᴜᴄᴄᴇssғᴜʟʟʏ.')
                          return
                      }      
                      }
@@ -320,11 +321,11 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                       let chatbott= await chatbot.findOne({ id: 'chatbot' })
                      if (!chatbott) {
                          await new chatbot({ id: 'chatbot', worktype: "false" }).save()
-                         return citel.reply('Chatbot deactivated successfully.')
+                         return citel.reply('ᴄʜᴀᴛʙᴏᴛ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.')
                      } else {
-                         if (chatbott.worktype == "false") return citel.reply("Chatbot was already disabled.")
+                         if (chatbott.worktype == "false") return citel.reply("ᴄʜᴀᴛʙᴏᴛ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴅɪsᴀʙʟᴇᴅ.")
                          await chatbot.updateOne({ id: 'chatbot' }, { worktype: "false" })
-                         citel.reply('Disabled chatbot successfully.')
+                         citel.reply('ᴄʜᴀᴛʙᴏᴛ ᴅɪsᴀʙʟᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ')
                          return
                      }
                      }
@@ -332,14 +333,14 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                  default:
                      {
                          let buttons = [{
-                                 buttonId: `${prefix}chatbot on`,
+                                 buttonId: `${prefix}ᴄʜᴀᴛʙᴏᴛ ᴏɴ`,
                                  buttonText: {
                                      displayText: "Turn On",
                                  },
                                  type: 1,
                              },
                              {
-                                 buttonId: `${prefix}chatbot off`,
+                                 buttonId: `${prefix}ᴄʜᴀᴛʙᴏᴛ ᴏғғ`,
                                  buttonText: {
                                      displayText: "Turn Off",
                                  },
@@ -348,7 +349,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                          ];
                          let chatbott= await chatbot.findOne({ id: 'chatbot' })
                          await Void.sendButtonText(citel.chat, buttons, `Chatbot Status: ${chatbott.worktype} `, 'Secktor-Md', citel);
-                        citel.reply(`Chatbot Status: ${chatbott.worktype} \n*Use:* ${prefix}chatbot on\n${prefix}chatbot off`)
+                        citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ᴄʜᴀᴛʙᴏᴛ sᴛᴀᴛᴜs• ${chatbott.worktype} \n┃✗ •ᴜsᴇ•\n┃✗ ${prefix}ᴄʜᴀᴛʙᴏᴛ ᴏɴ\n┃✗ ${prefix}ᴄʜᴀᴛʙᴏᴛ ᴏғғ\n┗━━━━━━━━━━⦿`)
                         }
              }
  
@@ -365,7 +366,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          },
          async(Void, citel, text,{ isCreator }) => {
              try {
-                 if (!text) return citel.reply(`Send text to be encoded.`);
+                 if (!text) return citel.reply(`sᴇɴᴅ ᴛᴇxᴛ ᴛᴏ ʙᴇ ᴇɴᴄᴏᴅᴇᴅ.`);
  
                  let textt = text || citel.quoted.text
                  let eb = await eBinary(textt);
@@ -385,7 +386,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          },
          async(Void, citel, text,{ isCreator }) => {
              try {
-                 if (!text) return citel.reply(`Send text to be decoded.`);
+                 if (!text) return citel.reply(`sᴇɴᴅ ᴛᴇxᴛ ᴛᴏ ʙᴇ ᴅᴇᴄᴏᴅᴇᴅ.`);
                  let eb = await dBinary(text);
                  citel.reply(eb);
              } catch (e) {
@@ -401,17 +402,17 @@ cmd({
 },
 async(Void, citel, text,{isCreator}) => {
   if (!citel.isGroup) return citel.reply(tlang().group);
-  if(!isCreator) return //citel.reply(tlang().owner)
+  if(!isCreator) return citel.reply(tlang().owner)
 switch (text.split(" ")[0]) {
  case 'on':{
          let checkgroup = await sck.findOne({ id: citel.chat })
          if (!checkgroup) {
              await new sck({ id: citel.chat, botenable: "true" }).save()
-             return citel.reply(`Successfully Enabled *${tlang().title}*`)
+             return citel.reply(`sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ *${tlang().title}*`)
          } else {
-             if (checkgroup.botenable == "true") return citel.reply("*Bot* was already enabled")
+             if (checkgroup.botenable == "true") return citel.reply("ʙᴏᴛ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ")
              await sck.updateOne({ id: citel.chat }, { botenable: "true" })
-             return citel.reply(`Successfully Enabled *${tlang().title}*`)
+             return citel.reply(`sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ *${tlang().title}*`)
          }
      }
   
@@ -422,11 +423,11 @@ case 'off':{
              if (!checkgroup) {
                  await new sck({ id: citel.chat, botenable: "false" })
                      .save()
-                 return citel.reply(`Successfully disabled *${tlang().title}*`)
+                 return citel.reply(`sᴜᴄᴄᴇssғᴜʟʟʏ ᴅɪsᴀʙʟᴇᴅ *${tlang().title}*`)
              } else {
-                 if (checkgroup.botenable == "false") return citel.reply("*Bot* was already disabled")
+                 if (checkgroup.botenable == "false") return citel.reply("ʙᴏᴛ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴅɪsᴀʙʟᴇᴅ")
                  await sck.updateOne({ id: citel.chat }, { botenable: "false" })
-                 return citel.reply(`Successfully disabled *${tlang().title}*`)
+                 return citel.reply(`sᴜᴄᴄᴇssғᴜʟʟʏ ᴅɪsᴀʙʟᴇᴅ *${tlang().title}*`)
              }
          }
 }
@@ -460,8 +461,9 @@ let buttons = [{
              category: "group",
              filename: __filename,
          },
-         async(Void, citel, text) => {
+         async(Void, citel, text,{isCreator}) => {
              if (!citel.isGroup) return citel.reply(tlang().group);
+             if(!isCreator) return citel.reply(tlang().owner)
              const groupAdmins = await getAdmin(Void, citel)
              const botNumber = await Void.decodeJid(Void.user.id)
              const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
@@ -469,14 +471,14 @@ let buttons = [{
              if (!isAdmins) return citel.reply(tlang().admin)
              if (!isBotAdmins) return citel.reply(tlang().botadmin)
              let buttons = [{
-                     buttonId: `${prefix}act antilink`,
+                     buttonId: `${prefix}ᴀᴄᴛ ᴀɴᴛɪʟɪɴᴋ`,
                      buttonText: {
                          displayText: "Turn On",
                      },
                      type: 1,
                  },
                  {
-                     buttonId: `${prefix}deact antilink`,
+                     buttonId: `${prefix}ᴅᴇᴀᴄᴛ ᴀɴᴛɪʟɪɴᴋ`,
                      buttonText: {
                          displayText: "Turn Off",
                      },
@@ -497,12 +499,12 @@ let buttons = [{
     async(Void, citel, text) => {
 let limit = 5;
 try {
-if (!text) return citel.reply("```Give me Url/link!```");
+if (!text) return citel.reply("ɢɪᴠᴇ ᴍᴇ ᴜʀʟ/ʟɪɴᴋ!");
 let urll = `https://s.vercel.app/api?url=${text.match(/\bhttps?:\/\/\S+/gi)[0]}&width=1280&height=720`
 let media  = await getBuffer(urll)
 return await Void.sendMessage(citel.chat ,{image : media } , {quoted:citel} )
-}
-catch (err) { return citel.reply("```Error While Fetching Snapshot```")}
+
+catch (err) { return citel.reply("ᴇʀʀᴏʀ ᴡʜɪʟᴇ ғᴇᴛᴄʜɪɴɢ sɴᴀᴘsʜᴏᴛ")}
     }
 )
 
