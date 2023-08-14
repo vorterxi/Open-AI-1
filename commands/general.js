@@ -189,7 +189,7 @@ cmd({
         filename: __filename,
     },
     async(Void, citel, {isCreator}) => {
-        let { data } = await axios.get('https://api.github.com/repos/Mehar-Zubi/Secktor-Md')
+        let { data } = await axios.get('https://api.github.com/repos/Mehar-Zubi/Open-AI')
         let cap = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ •Total• Stars ${data.stargazers_count} stars
 ┃✗ •Forks• ${data.forks_count} forks
