@@ -685,7 +685,7 @@ cmd({
                     .catch((err) => console.log(err));
             } else {
 
-                return citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •Group Mode•\n┃✗ ${prefix}group open to open\n┃✗${prefix}group close to close\n┗━━━━━━━━━━⦿`);
+                return citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •Group Mode•\n┃✗ ${prefix}group open to open\n┃✗ ${prefix}group close to close\n┗━━━━━━━━━━⦿`);
             }
         }
     )
