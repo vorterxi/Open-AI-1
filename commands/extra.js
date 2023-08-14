@@ -22,7 +22,7 @@ cmd({
     },
     async(Void, citel) => {
         if(!citel.quoted) return citel.reply('Please reply any text to get link.')
-        let data = await pastebin.createPaste(citel.quoted.text, "Secktor-Pastebin")
+        let data = await pastebin.createPaste(citel.quoted.text, "ᴏᴘᴇɴ ᴀⁱ-Pastebin")
         citel.reply(`Here is your link \n${data}\n╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ᴏᴘᴇɴ ᴀⁱ ♕`)
     }
 );
