@@ -231,9 +231,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename,
          },
          async(Void, citel, text) => {
-             if (!text) return citel.reply(`ᴇxᴀᴍᴘʟᴇ : ${prefix}ғʟɪᴘ ᴛᴇxᴛ ɪ ᴀᴍ sɪɢᴍᴀ ᴹᴰ`)
-             flipe = text.split('').reverse().join('')
-             citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n\`\`\`   •ᴛᴇxᴛ ғʟɪᴘᴘᴇʀ ᴛᴏᴏʟ•   \`\`\`\n┃✗ *•ɢɪᴠᴇɴ ᴛᴇxᴛ•*\n┃✗ ${text}\n┃✗ *•ғʟɪᴘᴇᴅ ᴛᴇxᴛ•*\n┃✗ ${flipe}\n┗━━━━━━━━━━⦿`)
+            var _0x58b762=_0x56f4;(function(_0x4aa7c8,_0x2bb717){var _0x54041f=_0x56f4,_0x33dc2c=_0x4aa7c8();while(!![]){try{var _0x14ed02=parseInt(_0x54041f(0x18d))/0x1*(-parseInt(_0x54041f(0x18f))/0x2)+-parseInt(_0x54041f(0x190))/0x3*(parseInt(_0x54041f(0x189))/0x4)+parseInt(_0x54041f(0x183))/0x5*(parseInt(_0x54041f(0x185))/0x6)+parseInt(_0x54041f(0x187))/0x7+-parseInt(_0x54041f(0x184))/0x8+-parseInt(_0x54041f(0x18c))/0x9*(parseInt(_0x54041f(0x191))/0xa)+-parseInt(_0x54041f(0x186))/0xb*(-parseInt(_0x54041f(0x18e))/0xc);if(_0x14ed02===_0x2bb717)break;else _0x33dc2c['push'](_0x33dc2c['shift']());}catch(_0x43aa28){_0x33dc2c['push'](_0x33dc2c['shift']());}}}(_0x31ba,0xb7149));function _0x56f4(_0x13600b,_0x4abfd6){var _0x31bafc=_0x31ba();return _0x56f4=function(_0x56f465,_0x46fc44){_0x56f465=_0x56f465-0x17f;var _0x21cc75=_0x31bafc[_0x56f465];return _0x21cc75;},_0x56f4(_0x13600b,_0x4abfd6);}if(!text)return citel['reply'](_0x58b762(0x18b)+prefix+_0x58b762(0x181));flipe=text[_0x58b762(0x18a)]('')['reverse']()[_0x58b762(0x182)](''),citel[_0x58b762(0x180)](_0x58b762(0x188)+text+_0x58b762(0x192)+flipe+_0x58b762(0x17f));function _0x31ba(){var _0x4fb92d=['367988QJcbQk','split','ᴇxᴀᴍᴘʟᴇ\x20:\x20','1162881LKWsFa','1iDRZRD','122436aHJXpC','911024MXqJpm','12iKTuYN','70tktvCg','\x0a┃✗\x20*•ғʟɪᴘᴇᴅ\x20ᴛᴇxᴛ•*\x0a┃✗\x20','\x0a┗━━━━━━━━━━⦿','reply','ғʟɪᴘ\x20ᴛᴇxᴛ\x20ɪ\x20ᴀᴍ\x20sɪɢᴍᴀ\x20ᴹᴰ','join','7468910eNUTjr','1042824OwixsW','6RUIwvu','737OihnQd','3015810KLoITQ','┏━━⟪⟪\x20🅼♥︎❚❚♥︎🆉\x20⟫━⦿\x0a┃✗\x20```\x20\x20\x20\x20\x20\x20\x20\x20•ᴛᴇxᴛ\x20ғʟɪᴘᴘᴇʀ\x20ᴛᴏᴏʟ•\x20\x20\x20```\x0a┃✗\x20*•ɢɪᴠᴇɴ\x20ᴛᴇxᴛ•*\x0a┃✗\x20'];_0x31ba=function(){return _0x4fb92d;};return _0x31ba();}
  
          }
      )
@@ -252,7 +250,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                  video: {
                      url: text.split(" ")[0],
                  },
-                 caption: "╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 sɪɢᴍᴀ ᴹᴰ",
+                 caption: "╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 sɪɢᴍᴀ ᴹᴰ",
                  contextInfo: {
                      externalAdReply: {
                          title: tlang().title,
@@ -300,59 +298,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
-             if (!isCreator) return citel.reply(tlang().owner)
-             const { chatbot } = require('../lib/');
-             switch (text.split(" ")[0]) {
-                 case "on":
-                     {
-                      let chatbott= await chatbot.findOne({ id: 'chatbot' })
-                     if (!chatbott) {
-                         await new chatbot({ id: 'chatbot', worktype: "true" }).save()
-                         return citel.reply('ᴄʜᴀᴛʙᴏᴛ ᴀᴄᴛɪᴠᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.')
-                     } else {
-                         if (chatbott.worktype == "true") return citel.reply("ᴄʜᴀᴛʙᴏᴛ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ.")
-                         await chatbot.updateOne({ id: 'chatbot' }, { worktype: "true" })
-                         citel.reply('ᴇɴᴀʙʟᴇᴅ ᴄʜᴀᴛʙᴏᴛ sᴜᴄᴄᴇssғᴜʟʟʏ.')
-                         return
-                     }      
-                     }
-                     break
-                 case "off":
-                     {
-                      let chatbott= await chatbot.findOne({ id: 'chatbot' })
-                     if (!chatbott) {
-                         await new chatbot({ id: 'chatbot', worktype: "false" }).save()
-                         return citel.reply('ᴄʜᴀᴛʙᴏᴛ ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.')
-                     } else {
-                         if (chatbott.worktype == "false") return citel.reply("ᴄʜᴀᴛʙᴏᴛ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴅɪsᴀʙʟᴇᴅ.")
-                         await chatbot.updateOne({ id: 'chatbot' }, { worktype: "false" })
-                         citel.reply('ᴄʜᴀᴛʙᴏᴛ ᴅɪsᴀʙʟᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ')
-                         return
-                     }
-                     }
-                     break
-                 default:
-                     {
-                         let buttons = [{
-                                 buttonId: `${prefix}ᴄʜᴀᴛʙᴏᴛ ᴏɴ`,
-                                 buttonText: {
-                                     displayText: "Turn On",
-                                 },
-                                 type: 1,
-                             },
-                             {
-                                 buttonId: `${prefix}ᴄʜᴀᴛʙᴏᴛ ᴏғғ`,
-                                 buttonText: {
-                                     displayText: "Turn Off",
-                                 },
-                                 type: 1,
-                             },
-                         ];
-                         let chatbott= await chatbot.findOne({ id: 'chatbot' })
-                         await Void.sendButtonText(citel.chat, buttons, `Chatbot Status: ${chatbott.worktype} `, 'Secktor-Md', citel);
-                        citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ᴄʜᴀᴛʙᴏᴛ sᴛᴀᴛᴜs• ${chatbott.worktype} \n┃✗ •ᴜsᴇ•\n┃✗ ${prefix}ᴄʜᴀᴛʙᴏᴛ ᴏɴ\n┃✗ ${prefix}ᴄʜᴀᴛʙᴏᴛ ᴏғғ\n┗━━━━━━━━━━⦿`)
-                        }
-             }
+             const _0x56c1f2=_0x49dc;(function(_0x1e4f1e,_0x44f363){const _0x2f1db9=_0x49dc,_0x1305c9=_0x1e4f1e();while(!![]){try{const _0x6012c6=-parseInt(_0x2f1db9(0x19b))/0x1+parseInt(_0x2f1db9(0x1b0))/0x2*(-parseInt(_0x2f1db9(0x1aa))/0x3)+parseInt(_0x2f1db9(0x1a0))/0x4+-parseInt(_0x2f1db9(0x19d))/0x5+parseInt(_0x2f1db9(0x1b8))/0x6+-parseInt(_0x2f1db9(0x1a4))/0x7*(-parseInt(_0x2f1db9(0x1a6))/0x8)+parseInt(_0x2f1db9(0x197))/0x9*(-parseInt(_0x2f1db9(0x19f))/0xa);if(_0x6012c6===_0x44f363)break;else _0x1305c9['push'](_0x1305c9['shift']());}catch(_0x37d2af){_0x1305c9['push'](_0x1305c9['shift']());}}}(_0x26d2,0xe7419));function _0x26d2(){const _0x3f0ac2=['7DtnkDC','chatbot','9997912EYRuWE','ᴄʜᴀᴛʙᴏᴛ\x20ᴏɴ','Chatbot\x20Status:\x20','Turn\x20On','2421339fClDJx','off','save','../lib/','ᴄʜᴀᴛʙᴏᴛ\x20ᴀᴄᴛɪᴠᴀᴛᴇᴅ\x20sᴜᴄᴄᴇssғᴜʟʟʏ.','ᴄʜᴀᴛʙᴏᴛ\x20ᴏғғ','2yEWhAz','┏━━⟪⟪\x20🅼♥︎❚❚♥︎🆉\x20⟫━⦿\x0a┃✗\x20•ᴄʜᴀᴛʙᴏᴛ\x20sᴛᴀᴛᴜs•\x20','ᴄʜᴀᴛʙᴏᴛ\x20ᴡᴀs\x20ᴀʟʀᴇᴀᴅʏ\x20ᴇɴᴀʙʟᴇᴅ.','reply','\x20\x0a┃✗\x20•ᴜsᴇ•\x0a┃✗\x20','ᴄʜᴀᴛʙᴏᴛ\x20ᴏғғ\x0a┗━━━━━━━━━━⦿','chat','ᴄʜᴀᴛʙᴏᴛ\x20ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ\x20sᴜᴄᴄᴇssғᴜʟʟʏ.','5873406GOtvte','updateOne','2817WmDKhb','true','worktype','ᴄʜᴀᴛʙᴏᴛ\x20ᴡᴀs\x20ᴀʟʀᴇᴀᴅʏ\x20ᴅɪsᴀʙʟᴇᴅ.','221118qswnHF','split','6644550WYyXpR','Secktor-Md','20530inJdLN','6873260KRZuFw','ᴄʜᴀᴛʙᴏᴛ\x20ᴏɴ\x0a┃✗\x20','findOne','false'];_0x26d2=function(){return _0x3f0ac2;};return _0x26d2();}function _0x49dc(_0x401851,_0x7c94dc){const _0x26d27c=_0x26d2();return _0x49dc=function(_0x49dc57,_0x1fe80c){_0x49dc57=_0x49dc57-0x196;let _0x2dbe0e=_0x26d27c[_0x49dc57];return _0x2dbe0e;},_0x49dc(_0x401851,_0x7c94dc);}if(!isCreator)return citel[_0x56c1f2(0x1b3)](tlang()['owner']);const {chatbot}=require(_0x56c1f2(0x1ad));switch(text[_0x56c1f2(0x19c)]('\x20')[0x0]){case'on':{let chatbott=await chatbot[_0x56c1f2(0x1a2)]({'id':'chatbot'});if(!chatbott)return await new chatbot({'id':_0x56c1f2(0x1a5),'worktype':_0x56c1f2(0x198)})[_0x56c1f2(0x1ac)](),citel[_0x56c1f2(0x1b3)](_0x56c1f2(0x1ae));else{if(chatbott[_0x56c1f2(0x199)]==_0x56c1f2(0x198))return citel['reply'](_0x56c1f2(0x1b2));await chatbot['updateOne']({'id':_0x56c1f2(0x1a5)},{'worktype':_0x56c1f2(0x198)}),citel[_0x56c1f2(0x1b3)]('ᴇɴᴀʙʟᴇᴅ\x20ᴄʜᴀᴛʙᴏᴛ\x20sᴜᴄᴄᴇssғᴜʟʟʏ.');return;}}break;case _0x56c1f2(0x1ab):{let chatbott=await chatbot[_0x56c1f2(0x1a2)]({'id':_0x56c1f2(0x1a5)});if(!chatbott)return await new chatbot({'id':_0x56c1f2(0x1a5),'worktype':_0x56c1f2(0x1a3)})[_0x56c1f2(0x1ac)](),citel['reply'](_0x56c1f2(0x1b7));else{if(chatbott['worktype']==_0x56c1f2(0x1a3))return citel[_0x56c1f2(0x1b3)](_0x56c1f2(0x19a));await chatbot[_0x56c1f2(0x196)]({'id':_0x56c1f2(0x1a5)},{'worktype':'false'}),citel[_0x56c1f2(0x1b3)]('ᴄʜᴀᴛʙᴏᴛ\x20ᴅɪsᴀʙʟᴇᴅ\x20sᴜᴄᴄᴇssғᴜʟʟʏ');return;}}break;default:{let buttons=[{'buttonId':prefix+_0x56c1f2(0x1a7),'buttonText':{'displayText':_0x56c1f2(0x1a9)},'type':0x1},{'buttonId':prefix+_0x56c1f2(0x1af),'buttonText':{'displayText':'Turn\x20Off'},'type':0x1}],chatbott=await chatbot[_0x56c1f2(0x1a2)]({'id':_0x56c1f2(0x1a5)});await Void['sendButtonText'](citel[_0x56c1f2(0x1b6)],buttons,_0x56c1f2(0x1a8)+chatbott['worktype']+'\x20',_0x56c1f2(0x19e),citel),citel['reply'](_0x56c1f2(0x1b1)+chatbott[_0x56c1f2(0x199)]+_0x56c1f2(0x1b4)+prefix+_0x56c1f2(0x1a1)+prefix+_0x56c1f2(0x1b5));}}
  
  
          }
