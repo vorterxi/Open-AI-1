@@ -189,7 +189,6 @@ cmd({
         filename: __filename,
     },
     async(Void, citel, {isCreator}) => {
-	if(!isCreator) return citel.reply(tlang().owner);
         let { data } = await axios.get('https://api.github.com/repos/Mehar-Zubi/Secktor-Md')
         let cap = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ •Total• Stars ${data.stargazers_count} stars
