@@ -18,39 +18,39 @@
  async(Void, citel, text,{ isCreator }) => {
      if (!isCreator) return citel.reply(tlang().owner)
      if(!citel.isGroup) return citel.reply(tlang().group)
-     if(!text.split(':')[1]) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
+     if(!text.split(':')[1]) return citel.reply(`ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴄᴏʀʀᴇᴄᴛ ғᴏʀᴍ.\nᴇɢ: sᴇᴛᴍᴜᴛᴇ ${prefix}22:00`)
      //if(!Number.isInteger(text.split(':')[0])) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`);
      //if(!Number.isInteger(text.split(':')[1])) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
            let Group = await sck.findOne({ id: citel.chat })
              if (!Group) {
                  await new sck({ id: citel.chat, mute: text }).save()
-                 return citel.reply('Mute added.')
+                 return citel.reply('ᴍᴜᴛᴇ ᴀᴅᴅᴇᴅ.')
              } else {
                  await await sck.updateOne({ id: citel.chat }, { mute:text })
-                 return citel.reply(`_Mute added for ${text} successfully._`)     
+                 return citel.reply(`ᴍᴜᴛᴇ ᴀᴅᴅᴇᴅ ғᴏʀ ${text} sᴜᴄᴄᴇssғᴜʟʟʏ.`)     
              }      
  }
  )
 
  //--------------------------------------------------------------------------------
  cmd({
-    pattern: "aunmute",
+    pattern: "unmute",
     desc: "sets unmute time in group.",
     category: "moderation",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
     if(!citel.isGroup) return citel.reply(tlang().group)
-    if(!text.split(':')[0]) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
+    if(!text.split(':')[0]) return citel.reply(`ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴄᴏʀʀᴇᴄᴛ ғᴏʀᴍ.\nᴇɢ: ᴜɴᴍᴜᴛᴇ ${prefix}22:00`)
    // if(!Number.isInteger(text.split(':')[0])) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`);
    // if(!Number.isInteger(text.split(':')[1])) return citel.reply(`Please provide correct form.\nEg: setmute ${prefix}22:00`)
           let Group = await sck.findOne({ id: citel.chat })
             if (!Group) {
                 await new sck({ id: citel.chat, unmute: text }).save()
-                return citel.reply('Mute added.')
+                return citel.reply('ᴜɴᴍᴜᴛᴇ ᴀᴅᴅᴇᴅ.')
             } else {
                 await await sck.updateOne({ id: citel.chat }, { unmute:text })
-                return citel.reply(`_Unmute updated for ${text} successfully._`)
+                return citel.reply(`ᴜɴᴍᴜᴛᴇ ᴀᴅᴅᴇᴅ ғᴏʀ ${text} sᴜᴄᴄᴇssғᴜʟʟʏ.`)
                 
             }      
 }
@@ -66,10 +66,10 @@ async(Void, citel, text,{ isCreator }) => {
     if(!citel.isGroup) return citel.reply(tlang().group)
           let Group = await sck.findOne({ id: citel.chat })
             if (!Group) {
-                return citel.reply('There\'s no unmute set in group.')
+                return citel.reply('ᴛʜᴇʀᴇ\'s ɴᴏ ᴜɴᴍᴜᴛᴇ sᴇᴛ ɪɴ ɢʀᴏᴜᴘ.')
             } else {
                 await await sck.updateOne({ id: citel.chat }, { unmute:'false' })
-                return citel.reply('Unmute deleted successfully.')
+                return citel.reply('ᴜɴᴍᴜᴛᴇ ᴅᴇʟᴇᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.')
                 
             }      
 }
@@ -85,10 +85,10 @@ async(Void, citel, text,{ isCreator }) => {
     if(!citel.isGroup) return citel.reply(tlang().group)
           let Group = await sck.findOne({ id: citel.chat })
             if (!Group) {
-                return citel.reply('There\'s no mute set in group.')
+                return citel.reply('ᴛʜᴇʀᴇ\'s ɴᴏ ᴍᴜᴛᴇ sᴇᴛ ɪɴ ɢʀᴏᴜᴘ.')
             } else {
                 await await sck.updateOne({ id: citel.chat }, { mute:'false' })
-                return citel.reply('Mute deleted successfully.')
+                return citel.reply('ᴍᴜᴛᴇ ᴅᴇʟᴇᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ.')
                 
             }      
 }
