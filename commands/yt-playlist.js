@@ -19,7 +19,7 @@ cmd({
                 return `${Math.floor(Math.random() * 10000)}${ext}`;
             };
             if (!text) {
-                citel.reply(`❌Please provide me a url`);
+                citel.reply(`ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ᴜʀʟ`);
                 return;
             }
 let urlYtt = text.split('=')[1]
@@ -27,7 +27,7 @@ console.log(urlYtt)
 var opts = { listId: urlYtt }
 yts( opts, async function ( err, playlist ) {
 	if ( err ) throw err
-  citel.reply('This Process will take a bit time.');
+  citel.reply('ᴛʜɪs ᴘʀᴏᴄᴇss ᴡɪʟʟ ᴛᴀᴋᴇ ᴀ ʙɪᴛ ᴛɪᴍᴇ.');
   for (let i=0;i<playlist.videos.length;i++){
     if(playlist.videos[i].videoId===undefined) continue
     let urlYt = playlist.videos[i].videoId
