@@ -10,7 +10,7 @@
  **/
 const DB = require('../lib/scraper')
 const axios = require('axios');
-const { tlang, Config, prefix,cmd } = require('../lib')
+const { tlang, prefix,cmd } = require('../lib')
 const Config = require('../config')
 const { redeploy , getvar , delvar , getallvar , change_env , get_deployments} = require('../lib/koyeb')
 const simpleGit = require('simple-git');
