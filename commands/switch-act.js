@@ -27,9 +27,9 @@ cmd({
         const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
         const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
         //-----------------------------------------
-        if (!citel.isGroup) return citel.reply("This command is only for group")
-        if (!text) return citel.reply(`❌ Please provide me term like like\n1-events\n2-antilink\n3-nsfw\n4-cardgame\n5-bot`)
-        if (!isAdmins) return citel.reply("❌ This command is only for admin")
+        if (!citel.isGroup) return citel.reply("ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ғᴏʀ ɢʀᴏᴜᴘ")
+        if (!text) return citel.reply(`ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴛᴇʀᴍ ʟɪᴋᴇ ʟɪᴋᴇ\n1-ᴇᴠᴇɴᴛs\n2-ᴀɴᴛɪʟɪɴᴋ\n3-ɴsғᴡ\n4-ᴄᴀʀᴅɢᴀᴍᴇ\n5-ʙᴏᴛ`)
+        if (!isAdmins) return citel.reply("ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ғᴏʀ ᴀᴅᴍɪɴ")
         switch (text.split(" ")[0]) {
             case 'antilink':
                 {
@@ -37,11 +37,11 @@ cmd({
                     if (!checkgroup) {
                         await new sck({ id: citel.chat, antilink: "true" })
                             .save()
-                        return citel.reply(' Antilink Enabled Successfully')
+                        return citel.reply('ᴀɴᴛɪʟɪɴᴋ ᴇɴᴀʙʟᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ')
                     } else {
-                        if (checkgroup.antilink == "true") return citel.reply("Antilink was alredy  enabled here.")
+                        if (checkgroup.antilink == "true") return citel.reply("ᴀɴᴛɪʟɪɴᴋ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ ʜᴇʀᴇ.")
                         await sck.updateOne({ id: citel.chat }, { antilink: "true" })
-                        citel.reply('Enabled antilink in current chat.')
+                        citel.reply('ᴇɴᴀʙʟᴇᴅ ᴀɴᴛɪʟɪɴᴋ ɪɴ ᴄᴜʀʀᴇɴᴛ ᴄʜᴀᴛ.')
                         return
                     }
                 }
@@ -53,11 +53,11 @@ cmd({
                     if (!checkgroup) {
                         await new sck({ id: citel.chat, economy: "true" })
                             .save()
-                        return citel.reply(' Economy Enabled Successfully')
+                        return citel.reply('ᴇᴄᴏɴᴏᴍʏ ᴇɴᴀʙʟᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ')
                     } else {
-                        if (checkgroup.economy == "true") return citel.reply("Economy was alredy enabled.")
+                        if (checkgroup.economy == "true") return citel.reply("ᴇᴄᴏɴᴏᴍʏ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ.")
                         await sck.updateOne({ id: citel.chat }, { economy: "true" })
-                        citel.reply('Economy enabled in current chat.')
+                        citel.reply('ᴇᴄᴏɴᴏᴍʏ ᴇɴᴀʙʟᴇᴅ ɪɴ ᴄᴜʀʀᴇɴᴛ ᴄʜᴀᴛ.')
                         return
                     }
                 }
@@ -68,11 +68,11 @@ cmd({
                     if (!checkgroup) {
                         await new sck({ id: citel.chat, events: "true" })
                             .save()
-                        return citel.reply("Successfully Enabled *Events*")
+                        return citel.reply("sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ *ᴇᴠᴇɴᴛs*")
                     } else {
-                        if (checkgroup.events == "true") return citel.reply("*Events* are already enabled")
+                        if (checkgroup.events == "true") return citel.reply("*ᴇᴠᴇɴᴛs* ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ")
                         await sck.updateOne({ id: citel.chat }, { events: "true" })
-                        return citel.reply("Successfully Enabled *Events*")
+                        return citel.reply("sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ *ᴇᴠᴇɴᴛs*")
                     }
                 }
                 break
@@ -82,11 +82,11 @@ cmd({
                     if (!checkgroup) {
                         await new sck({ id: citel.chat, cardgame: "active" })
                             .save()
-                        return citel.reply("Successfully Enabled *Card Game*")
+                        return citel.reply("sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ *ᴄᴀʀᴅ ɢᴀᴍᴇ*")
                     } else {
-                        if (checkgroup.cardgame == "active") return citel.reply("*Card Game* was already enabled")
+                        if (checkgroup.cardgame == "active") return citel.reply("*ᴄᴀʀᴅ ɢᴀᴍᴇ* ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ")
                         await sck.updateOne({ id: citel.chat }, { cardgame: "active" })
-                        return citel.reply("Successfully Enabled *Card Game.*")
+                        return citel.reply("sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ *ᴄᴀʀᴅ ɢᴀᴍᴇ.*")
                     }
                 }
                 break
@@ -96,18 +96,18 @@ cmd({
                     if (!checkgroup) {
                         await new sck({ id: citel.chat, nsfw: "true" })
                             .save()
-                        return citel.reply("Successfully Enabled *NSFW*")
+                        return citel.reply("sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ *ɴsғᴡ*")
                     } else {
-                        if (checkgroup.nsfw == "true") return citel.reply("*NSFW* is already enabled")
+                        if (checkgroup.nsfw == "true") return citel.reply("*ɴsғᴡ* ɪs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ")
                         await sck.updateOne({ id: citel.chat }, { nsfw: "true" })
-                        citel.reply("Successfully Enabled *NSFW*")
+                        citel.reply("sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ *ɴsғᴡ*")
                         return
                     }
                 }
                 break
             default:
                 {
-                    citel.reply("Please provide me term like.\n1-events\n2-antilink\n3-nsfw\n4-economy")
+                    citel.reply("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴛᴇʀᴍ ʟɪᴋᴇ ʟɪᴋᴇ\n1-ᴇᴠᴇɴᴛs\n2-ᴀɴᴛɪʟɪɴᴋ\n3-ɴsғᴡ\n4-ᴄᴀʀᴅɢᴀᴍᴇ\n5-ʙᴏᴛ")
                 }
         }
     }
