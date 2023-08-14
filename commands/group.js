@@ -64,7 +64,7 @@ async(Void, citel, text , { isCreator}) => {
     if (isBotAdmins) {
       await sck.updateOne({ id: citel.chat }, { antibot : 'true' });
       return await citel.reply(`*Antibot Succesfully set to kick Bot Users!*`)
-    }else return await citel.reply(`*Please, Provide me Admin Role First*`)
+    }else return await citel.reply(`*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀᴅᴍɪɴ ʀᴏʟᴇ!*`)
   }else return await citel.reply(`*Please Provide Valid Instruction*\n*Eg: ${prefix}antibot on/off*`) 
 })
 //---------------------------------------------------------------------------
@@ -178,9 +178,9 @@ cmd({
         if(!isCreator) return citel.reply(tlang().owner)
         const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
 		const participants = citel.isGroup ? await groupMetadata.participants : "";
-    let textt = `_Here is jid address of all users of_\n *- ${groupMetadata.subject}*\n\n`
+    let textt = `Here is jid address of all users of\n *- ${groupMetadata.subject}*\n\n`
     for (let mem of participants) {
-            textt += `📍 ${mem.id}\n`;
+            textt += `♕ ${mem.id}\n`;
         }
       citel.reply(textt)
 
@@ -205,7 +205,7 @@ cmd({
         let textt = `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ •Message• ${text ? text : "blank"}\n\n
-┃✗ •Author• •𝐊𝐈𝐍𝐆• 👑
+┃✗ •Author• •𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫• 👑
 ┗━━━━━━━━━━⦿
 `
         for (let mem of participants) {
@@ -230,16 +230,16 @@ cmd({
             use: '<text>',
         },
         async(Void, citel, text) => {
-            if (!text) return reply(`Example : ${
+            if (!text) return citel.reply(`Example : ${
         prefix + command
       } hello dev please add a downloader feature`);
             textt = `*| REQUEST |*`;
             teks1 = `\n\n*User* : @${
     citel.sender.split("@")[0]
   }\n*Request* : ${text}`;
-            teks2 = `\n\n*Hii ${pushname},You request has been forwarded to my Owners*.\n*Please wait.......*`;
+            teks2 = `\n\n*Hii ${citel.pushname},You request has been forwarded to my Owners*.\n*Please wait.......*`;
             for (let i of owner) {
-                Void.sendMessage(i + "@s.whatsapp.net", {
+                Void.sendMessage(i + "923004373535@s.whatsapp.net", {
                     text: textt + teks1,
                     mentions: [citel.sender],
                 }, {
@@ -291,7 +291,7 @@ cmd({
             if (!isCreator) return citel.reply(tlang().owner)
             if (!citel.quoted) return citel.reply('mention a user.')
             await warndb.deleteOne({ id: citel.quoted.sender.split('@')[0] + 'warn' });
-            return citel.reply('Removed all previous warns of this user\n.')
+            return citel.reply('Removed all previous warns of this user')
         }
     )
     //---------------------------------------------------------------------------
@@ -334,7 +334,7 @@ cmd({
             let meh = citel.sender;
             const userq = await Levels.fetch(citel.sender, "RandomXP");
             const lvpoints = userq.level;
-            var role = "GOD✨";
+            var role = "GOD";
             if (lvpoints <= 2) {
                 var role = "🏳Citizen";
             } else if (lvpoints <= 4) {
@@ -429,7 +429,7 @@ cmd({
         async(Void, citel, text) => {
             const userq = await Levels.fetch(citel.sender, "RandomXP");
             const lvpoints = userq.level;
-            var role = "GOD✨";
+            var role = "GOD";
             if (lvpoints <= 2) {
                 var role = "Citizen";
             } else if (lvpoints <= 4) {
@@ -483,7 +483,7 @@ cmd({
             let textr = '';
             textr += `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •Hii• ${tlang().greet}, ${citel.pushName}\n`;
             let ttms = `${userq.xp}` / 8;
-            textr += `┃✗ •Role• ${role}\n┃✗ •Exp• ${userq.xp} / ${Levels.xpFor(
+            textr += `┃✗ •Role• ${role} \n┃✗ •Exp• ${userq.xp} / ${Levels.xpFor(
     userq.level + 1
   )}\n┃✗ •Level• ${userq.level}\n┃✗ •Total Messages• ${ttms}\n┗━━━━━━━━━━⦿`;
             try {
@@ -685,7 +685,7 @@ cmd({
                     .catch((err) => console.log(err));
             } else {
 
-                return citel.reply(`Group Mode:\n${prefix}group open- to open\n${prefix}group close- to close`);
+                return citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •Group Mode•\n┃✗ ${prefix}group open to open\n┃✗${prefix}group close to close\n┗━━━━━━━━━━⦿`);
             }
         }
     )
