@@ -126,7 +126,7 @@ cmd({
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•Group Name• \n┃✗ •xxxx-Support•*\n┃✗ *•Group Link•* https://chat.whatsapp.com/xxxxxxxxxxx\n┗━━━━━━━━━━⦿`,
+            caption: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•Group Name• \n┃✗ •xxxx-Support•* \n┃✗ *•Group Link•* https://chat.whatsapp.com/xxxxxxxxxxx\n┗━━━━━━━━━━⦿`,
         });
 
     }
