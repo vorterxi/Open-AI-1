@@ -503,7 +503,7 @@ if (!text) return citel.reply("ɢɪᴠᴇ ᴍᴇ ᴜʀʟ/ʟɪɴᴋ!");
 let urll = `https://s.vercel.app/api?url=${text.match(/\bhttps?:\/\/\S+/gi)[0]}&width=1280&height=720`
 let media  = await getBuffer(urll)
 return await Void.sendMessage(citel.chat ,{image : media } , {quoted:citel} )
-
+}
 catch (err) { return citel.reply("ᴇʀʀᴏʀ ᴡʜɪʟᴇ ғᴇᴛᴄʜɪɴɢ sɴᴀᴘsʜᴏᴛ")}
     }
 )
