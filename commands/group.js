@@ -29,7 +29,7 @@ cmd({
                 citel.reply("Link Invalid, Please Send a valid whatsapp Group Link!");
             let result = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
             await Void.groupAcceptInvite(result)
-                .then((res) => citel.reply("Group 🟩Joined"))
+                .then((res) => citel.reply("Group Joined"))
                 .catch((err) => citel.reply("Error in Joining Group"));
 
         }
@@ -58,7 +58,7 @@ async(Void, citel, text , { isCreator}) => {
   else if (action.startsWith("off") || action.startsWith("deact") || action.startsWith("disable") ){
     if (checkinfo.antibot === 'false') return await citel.reply("*Antibot Already Disabled in Current Chat*") 
     await sck.updateOne({ id: citel.chat }, { antibot : 'false' });
-    return await citel.reply(`*_Antibot Succesfully Disable in group!_*`)
+    return await citel.reply(`*Antibot Succesfully Disable in group!*`)
   }else if (action.startsWith("on") || action.startsWith("act") || action.startsWith("enable") ){
     if (checkinfo.antibot === 'true') return await citel.reply("*Antibot Already Enabled in Current Chat*")
     if (isBotAdmins) {
@@ -126,7 +126,7 @@ cmd({
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC`,
+            caption: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•Group Name• \n┃✗ •xxxx-Support•*\n┃✗ *•Group Link•* https://chat.whatsapp.com/xxxxxxxxxxx\n┗━━━━━━━━━━⦿`,
         });
 
     }
