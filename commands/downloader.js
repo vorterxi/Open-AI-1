@@ -80,14 +80,11 @@ cmd({
 	
 	
 	const apkSize = parseInt(data.size);
-	if(apkSize > 200) return citel.send(`❌ File size bigger than 250mb.`);
+	if(apkSize > 150) return citel.send(`❌ File size bigger than 200mb.`);
        const url = data.dllink;
-	 let  inf  ="*App Name :* " +data.name;
-         inf +="\n*App id        :* " +data.package;
-         inf +="\n*Last Update       :* " +data.lastup;
-         inf +="\n*App Size     :* " +data.size;
-         inf +="\n*App Link     :* " +data.dllink;
-	 inf +="\n\n "+ Config.caption
+	 let  inf  ="┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •App Name• " +data.name;
+         inf +="\n┃✗ •App Size•      " +data.size;
+	 inf +="\n┗━━━━━━━━━━━⦿"+ Config.caption
          
 
 axios.get(url, { responseType: 'stream' })
