@@ -126,7 +126,7 @@ cmd({
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•Group Name•* \n┃✗ *•xxxx-Support•* \n┃✗ *•Group Link•* https://chat.whatsapp.com/xxxxxxxxxxx\n┗━━━━━━━━━━⦿`,
+            caption: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•Group Name•* \n┃✗ *•xxxx-Support•* \n┃✗ *•Group Link•* https://chat.whatsapp.com/xxxxxxxxxxx\n┃✗ *•Author•* 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫\n┗━━━━━━━━━━⦿`,
         });
 
     }
@@ -141,7 +141,7 @@ cmd({
             use: '<quote|reply|number>',
         },
         async(Void, citel, text,{ isCreator }) => {
-             if (!citel.isGroup) return citel.reply('This Command is only for group.')
+             if (!citel.isGroup) return citel.reply(tlang().group);
             const groupAdmins = await getAdmin(Void, citel)
             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
             if (!isAdmins) return citel.reply('This command is only for Admin.')
