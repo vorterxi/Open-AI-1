@@ -28,8 +28,72 @@ Secktor.cmd({
             filename: __filename
         },
         async(Void, citel, text) => {
-function _0x3727(){const _0x3ee425=['\x0a┃✗\x20•Plugins•\x20','11ByfdoN','\x0a┃✗\x20•Date•\x20','push','map','1396535rqrRBv','ownername','use','4790202uhkVcR','desc','category','../lib','204478vusPHn','Asia/karachi','\x0a┃✗\x20•Time•\x20','1197Cdrtcx','en-pk','\x0a┃✗\x20•Theme•\x20','└────────────◉\x0a','\x0a┃✗\x20•Users•\x20','7708630QSSHlv','592508ZvPnZC','toLocaleString','5GYWKVH','uptime','*•Type•*\x20','pattern','\x0a┃✗\x20•Uptime•\x20','alias','totalmem','sendMessage','┏━━⟪⟪\x20🅼♥︎❚❚♥︎🆉\x20⟫━━⦿\x0a┃✗\x20•Owner•\x20','```','20294844GaBSAJ','*❌No\x20Such\x20commands.*','•Usage•\x0a\x20```','\x0a┗━━━━━━━━━━━⦿\x0a\x0a\x0a','46808rqVbvv','reply','┌──『\x20*','┃✗\x20•Description•\x20','help\x20cmd\x20name\x20to\x20know\x20more\x20about\x20specific\x20command.\x0a*Eg:*\x20','9Hmvavq','chat','title','4dAGekK','split','dontAddCommandList','┃✗\x20•Alias•\x20'];_0x3727=function(){return _0x3ee425;};return _0x3727();}const _0x212ed2=_0x1bba;(function(_0x5622b6,_0x24e2fb){const _0x329a5e=_0x1bba,_0x4f3b3b=_0x5622b6();while(!![]){try{const _0x2d1dd2=parseInt(_0x329a5e(0x111))/0x1*(parseInt(_0x329a5e(0x121))/0x2)+parseInt(_0x329a5e(0x10e))/0x3*(-parseInt(_0x329a5e(0x12a))/0x4)+parseInt(_0x329a5e(0x12c))/0x5*(parseInt(_0x329a5e(0x11d))/0x6)+-parseInt(_0x329a5e(0x11a))/0x7+-parseInt(_0x329a5e(0x13a))/0x8*(-parseInt(_0x329a5e(0x124))/0x9)+parseInt(_0x329a5e(0x129))/0xa+parseInt(_0x329a5e(0x116))/0xb*(-parseInt(_0x329a5e(0x136))/0xc);if(_0x2d1dd2===_0x24e2fb)break;else _0x4f3b3b['push'](_0x4f3b3b['shift']());}catch(_0x3555f1){_0x4f3b3b['push'](_0x4f3b3b['shift']());}}}(_0x3727,0x66d7e));const {commands}=require(_0x212ed2(0x120));function _0x1bba(_0x4f6b60,_0x1b14b5){const _0x3727a1=_0x3727();return _0x1bba=function(_0x1bba21,_0x5310a9){_0x1bba21=_0x1bba21-0x10a;let _0x45b5b7=_0x3727a1[_0x1bba21];return _0x45b5b7;},_0x1bba(_0x4f6b60,_0x1b14b5);}if(text[_0x212ed2(0x112)]('\x20')[0x0]){let arr=[];const cmd=commands['find'](_0x475e32=>_0x475e32['pattern']===text[_0x212ed2(0x112)]('\x20')[0x0]['toLowerCase']());if(!cmd)return await citel[_0x212ed2(0x10a)](_0x212ed2(0x137));else arr['push']('┏━━⟪⟪\x20🅼♥︎❚❚♥︎🆉\x20⟫━⦿\x0a┃✗\x20•Command•\x20'+cmd[_0x212ed2(0x12f)]);if(cmd[_0x212ed2(0x11f)])arr[_0x212ed2(0x118)]('┃✗\x20•Category•\x20'+cmd[_0x212ed2(0x11f)]);if(cmd[_0x212ed2(0x131)])arr[_0x212ed2(0x118)](_0x212ed2(0x114)+cmd[_0x212ed2(0x131)]);if(cmd[_0x212ed2(0x11e)])arr[_0x212ed2(0x118)](_0x212ed2(0x10c)+cmd[_0x212ed2(0x11e)]+'\x0a┗━━━━━━━━━━⦿');if(cmd[_0x212ed2(0x11c)])arr[_0x212ed2(0x118)](_0x212ed2(0x138)+prefix+cmd[_0x212ed2(0x12f)]+'\x20'+cmd[_0x212ed2(0x11c)]+_0x212ed2(0x135));return await citel[_0x212ed2(0x10a)](arr['join']('\x0a'));}else{const cmds={};commands[_0x212ed2(0x119)](async(_0x40e9cc,_0xb49b17)=>{const _0x2857f7=_0x212ed2;if(_0x40e9cc[_0x2857f7(0x113)]===![]&&_0x40e9cc['pattern']!==undefined){if(!cmds[_0x40e9cc[_0x2857f7(0x11f)]])cmds[_0x40e9cc['category']]=[];cmds[_0x40e9cc[_0x2857f7(0x11f)]][_0x2857f7(0x118)](_0x40e9cc['pattern']);}});let [date,time]=new Date()[_0x212ed2(0x12b)](_0x212ed2(0x125),{'timeZone':_0x212ed2(0x122)})[_0x212ed2(0x112)](','),total=await sck1['countDocuments'](),str=_0x212ed2(0x134)+Config[_0x212ed2(0x11b)]+_0x212ed2(0x126)+tlang()[_0x212ed2(0x110)]+_0x212ed2(0x123)+time+_0x212ed2(0x117)+date+_0x212ed2(0x115)+commands['length']+'\x0a┃✗\x20•Mem•\x20'+formatp(os[_0x212ed2(0x132)]()-os['freemem']())+'/'+formatp(os[_0x212ed2(0x132)]())+_0x212ed2(0x130)+runtime(process[_0x212ed2(0x12d)]())+_0x212ed2(0x128)+total+_0x212ed2(0x139)+'';for(const category in cmds){str+=_0x212ed2(0x10b)+tiny(category)+'*\x20』──❖\x0a';if(text['toLowerCase']()==category['toLowerCase']()){str='╭─────❏\x20*'+tiny(category)+'*\x20❏\x0a';for(const plugins of cmds[category]){str+='│\x20'+fancytext(plugins,0x1)+'\x0a';}str+='└────────────◉\x0a';break;}else{for(const plugins of cmds[category]){str+='│\x20'+fancytext(plugins,0x1)+'\x0a';}str+=_0x212ed2(0x127);}}str+=_0x212ed2(0x12e)+prefix+_0x212ed2(0x10d)+prefix+'help\x20attp\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20|°؁🅼♥︎❚❚♥︎🆉؁°|\x20';let buttonMessaged={'image':{'url':await botpic()},'caption':str};return await Void[_0x212ed2(0x133)](citel[_0x212ed2(0x10f)],buttonMessaged);}})
+            const { commands } = require('../lib');
+            if (text.split(" ")[0]) {
+                let arr = [];
+                const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
+                if (!cmd) return await citel.reply("ɴᴏ sᴜᴄʜ ᴄᴏᴍᴍᴀɴᴅs.");
+                else arr.push(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.pattern}`);
+                if (cmd.category) arr.push(`┃✗ •ᴄᴀᴛᴇɢᴏʀʏ• ${cmd.category}`);
+                if (cmd.alias) arr.push(`┃✗ •ᴀʟɪᴀs• ${cmd.alias}`);
+                if (cmd.desc) arr.push(`┃✗ •ᴅᴇsᴄʀɪᴘᴛɪᴏɴ• ${cmd.desc}\n┗━━━━━━━━━━⦿`);
+                if (cmd.use) arr.push(`•ᴜsᴀɢᴇ•\n \`\`\`${prefix}${cmd.pattern} ${cmd.use}\`\`\``);
+                return await citel.reply(arr.join('\n'));
+            } else {
+                const cmds = {}
+                commands.map(async(command, index) => {
+                    if (command.dontAddCommandList === false && command.pattern !== undefined) {
+                        if (!cmds[command.category]) cmds[command.category] = []
+                        cmds[command.category].push(command.pattern)
+                    }
+                })
+               let [date, time] = new Date()
+               timestampe = speed();
+               latensie = speed() - timestampe;
+        .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
+        .split(",");
+                
+                let total = await sck1.countDocuments()
+                let str = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
+┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
+┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${tlang().title}
+┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
+┃✗ •ᴛɪᴍᴇ• ${time}
+┃✗ •ᴅᴀᴛᴇ• ${date}
+┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
+┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┃✗ •ᴜᴘᴛɪᴍᴇ• ${runtime(process.uptime())}
+┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs
+┃✗ •ᴘʟᴀᴛꜰᴏʀᴍ• ᴍᴀᴄ-ᴏs
+┃✗ •ᴜsᴇʀs• ${total}
+┃✗ •ᴀᴜᴛʜᴏʀ• 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕
+┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ
+┗━━━━━━━━━━━⦿
 
+
+` + ''
+                for (const category in cmds) 
+                {
+                   str += `┌──『 ${tiny(category)} 』──❖\n` ;
+                   if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ ${tiny(category)} ❏\n` ;      
+                        for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
+                        str += `└────────────◉\n`  ;
+                        break ;
+                   }
+                   else { for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
+                         str += `└────────────◉\n`  ; 
+                   }
+  
+                }
+                str+= `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇɢ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n          |°؁🅼♥︎❚❚♥︎🆉؁°| `
+                let buttonMessaged = {
+                    image: { url: await botpic() },
+                    caption: str
+                };
+                return await Void.sendMessage(citel.chat, buttonMessaged);
+            }
+        }
+    )
 
     //---------------------------------------------------------------------------
 Secktor.cmd({
