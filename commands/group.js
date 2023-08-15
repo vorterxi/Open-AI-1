@@ -212,7 +212,7 @@ async(Void, citel, text, {isCreator}) => {
     console.log(err);
   }
 
-}
+})
     //---------------------------------------------------------------------------
 cmd({
             pattern: "unblock",
@@ -222,8 +222,9 @@ cmd({
 
         },
         async(Void, citel, text,{ isCreator }) => {
-
-            if (!citel.quoted) return citel.reply("Please reply a user");
+	    if(!isCreator) return citel.reply(tlang().owner)
+    
+            if (!citel.quoted) return citel.reply("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴀ ᴜsᴇʀ");
             if (!isCreator) citel.reply(tlang().owner);
             let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
             await Void.updateBlockStatus(users, "unblock")
