@@ -23,7 +23,7 @@ cmd({
     async(Void, citel, text, { isCreator }) => {
         const { tlang } = require('../lib')
         if (!isCreator) return citel.reply(tlang().owner)
-        let allmodtext = `*All Installed Plugins are:-*\n\n`
+        let allmodtext = `*ᴀʟʟ ɪɴsᴛᴀʟʟᴇᴅ ᴘʟᴜɢɪɴs ᴀʀᴇ:-*\n\n`
         allmodtext += await plugins()
         return citel.reply(allmodtext)
 
@@ -42,7 +42,7 @@ cmd({
         if (!isCreator) return citel.reply(tlang().owner)
         if(text==='all') {
          await plugindb.collection.drop()
-         return citel.reply('Deleted all plugins from ᴏᴘᴇɴ ᴀⁱ.')
+         return citel.reply('ᴅᴇʟᴇᴛᴇᴅ ᴀʟʟ ᴘʟᴜɢɪɴs ғʀᴏᴍ sɪɢᴍᴀ ᴹᴰ.')
         }
         let kill = await remove(text.split(" ")[0])
         delete require.cache[require.resolve(__dirname+"/" + text + ".js")];
