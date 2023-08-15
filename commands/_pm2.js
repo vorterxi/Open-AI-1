@@ -22,7 +22,7 @@ cmd({
     async(Void, citel,text,{ isCreator }) => {
    if (!isCreator) return citel.reply(tlang().owner)
             const { exec } = require("child_process")
-            citel.reply('Restarting')
+            citel.reply('ʀᴇsᴛᴀʀᴛɪɴɢ...')
             await sleep(2000)
             exec('pm2 restart all')
     }
