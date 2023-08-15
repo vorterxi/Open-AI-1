@@ -298,8 +298,8 @@ cmd({
             if (!text) return citel.reply(`Example : ${
         prefix + command
       } ʜᴇʟʟᴏ ᴅᴇᴠ ᴘʟᴇᴀsᴇ ᴀᴅᴅ ᴀ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ғᴇᴀᴛᴜʀᴇ`);
-            textt = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n     *| ʀᴇǫᴜᴇsᴛ |*   `;
-            teks1 = `\n\n┃✗ •ᴜsᴇʀ• @${
+            textt = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n              *| ʀᴇǫᴜᴇsᴛ |* `;
+            teks1 = `\n┃✗ •ᴜsᴇʀ• @${
     citel.sender.split("@")[0]
   }\n┃✗ •ʀᴇǫᴜᴇsᴛ• ${text}\n┗━━━━━━━━━━⦿`;
             teks2 = `\n\n┃✗ •ʜɪ ${citel.pushname} ,ʏᴏᴜʀ•\n┃✗ •ʀᴇǫᴜᴇsᴛ ʜᴀs ʙᴇᴇɴ•\n┃✗ •ғᴏʀᴡᴀʀᴅᴇᴅ ᴛᴏ•\n┃✗ •ᴍʏ ᴏᴡɴᴇʀ•`;
@@ -329,7 +329,7 @@ cmd({
             use: '<reply to a viewonce message.>',
         },
         async(Void, citel, text) => {
-            if (!citel.quoted) return reply("Please reply to any message Image or Video!");
+            if (!citel.quoted) return reply("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ!");
             let mime = citel.quoted.mtype
             if (/viewOnce/.test(mime)) {
                 const mtype = Object.keys(quoted.message)[0];
@@ -340,7 +340,7 @@ cmd({
                 const prep = generateWAMessageFromContent(citel.chat, msgs, { quoted: citel });
                 await Void.relayMessage(citel.chat, prep.message, { messageId: prep.key.id });
             } else {
-                await citel.reply("please, reply to viewOnceMessage");
+                await citel.reply("ᴘʟᴇᴀsᴇ, ʀᴇᴘʟʏ ᴛᴏ ᴠɪᴇᴡ ᴏɴᴄᴇ ᴍᴇssᴀɢᴇ");
             }
         }
     )
@@ -354,9 +354,9 @@ cmd({
         },
         async(Void, citel, text,{isCreator}) => {
             if (!isCreator) return citel.reply(tlang().owner)
-            if (!citel.quoted) return citel.reply('mention a user.')
+            if (!citel.quoted) return citel.reply('ᴍᴇɴᴛɪᴏɴ ᴀ ᴜsᴇʀ.')
             await warndb.deleteOne({ id: citel.quoted.sender.split('@')[0] + 'warn' });
-            return citel.reply('Removed all previous warns of this user')
+            return citel.reply('ʀᴇᴍᴏᴠᴇᴅ ᴀʟʟ ᴘʀᴇᴠɪᴏᴜs ᴡᴀʀɴs ᴏғ ᴛʜɪs ᴜsᴇʀ')
         }
     )
     //---------------------------------------------------------------------------
@@ -372,7 +372,7 @@ cmd({
             let [poll, opt] = text.split(";");
             if (text.split(";") < 2)
                 return await citel.reply(
-                    `${prefix}poll question;option1,option2,option3.....`
+                    `${prefix}ᴘᴏʟʟ ǫᴜᴇsᴛɪᴏɴ;ᴏᴘᴛɪᴏɴ1,ᴏᴘᴛɪᴏɴ2,ᴏᴘᴛɪᴏɴ3.....`
                 );
             let options = [];
             for (let i of opt.split(',')) {
@@ -401,7 +401,7 @@ cmd({
             const lvpoints = userq.level;
             var role = "GOD";
             if (lvpoints <= 2) {
-                var role = "🏳Citizen";
+                var role = "Citizen";
             } else if (lvpoints <= 4) {
                 var role = "Baby Wizard";
             } else if (lvpoints <= 6) {
@@ -461,13 +461,14 @@ cmd({
             }
             const profile = `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿	    
-┃✗ •Profile Information• 
-┃✗ •Username• ${citel.pushName}
-┃✗ •Bio• ${bioo}
-┃✗ •Role• ${role}
-┃✗ •Level• ${userq.level}
-┃✗ •Total• Messages ${ttms}
-┃✗ •Powered By• ${tlang().title}
+┃✗ •ᴘʀᴏғɪʟᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ• 
+┃✗ •ᴜsᴇʀɴᴀᴍᴇ• ${citel.pushName}
+┃✗ •ʙɪᴏ• ${bioo}
+┃✗ •ʀᴏʟᴇ• ${role}
+┃✗ •ʟᴇᴠᴇʟ• ${userq.level}
+┃✗ •ᴛᴏᴛᴀʟ ᴍᴇssᴀɢᴇ• ${ttms}
+┃✗ •ᴀᴜᴛʜᴏʀ• ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ
+┃✗ •ᴘᴏᴡᴇʀᴇᴅ ʙʏ• sɪɢᴍᴀ ᴹᴰ
 ┗━━━━━━━━━━⦿
 `;
             let buttonMessage = {
@@ -485,6 +486,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
+/*
 cmd({
             pattern: "rank",
             desc: "Sends rank card of user.",
@@ -564,6 +566,7 @@ cmd({
                     });
         }
     )
+*/
     //---------------------------------------------------------------------------
 cmd({
             pattern: "leaderboard",
@@ -641,6 +644,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
+
 cmd({
             pattern: "promote",
             desc: "Provides admin role to replied/quoted user",
@@ -667,7 +671,8 @@ cmd({
 
             }
         }
-    )
+   )
+
     //---------------------------------------------------------------------------
 cmd({
             pattern: "kick",
@@ -692,11 +697,12 @@ cmd({
                 await Void.groupParticipantsUpdate(citel.chat, [users], "remove");
             } catch {
                 //		citel.reply(tlang().botAdmin);
-
+		
             }
         }
     )
     //---------------------------------------------------------------------------
+/*
 cmd({
             pattern: "memegen",
             desc: "Write text on quoted image.",
@@ -723,6 +729,7 @@ cmd({
 
         }
     )
+*/
     //---------------------------------------------------------------------------
 cmd({
             pattern: "group",
@@ -741,20 +748,21 @@ cmd({
             if (!isBotAdmins) return citel.reply(tlang().botAdmin);
             if (!isAdmins) return citel.reply(tlang().admin);
             if (text.split(" ")[0] === "close") {
-                await Void.groupSettingUpdate(citel.chat, "announcement")
+                await Void.groupSettingUpdate(citel.chat, "ᴀɴɴᴏᴜɴᴄᴇᴍᴇɴᴛ")
                     .then((res) => reply(`Group Chat Muted :)`))
                     .catch((err) => console.log(err));
             } else if (text.split(" ")[0] === "open") {
-                await Void.groupSettingUpdate(citel.chat, "not_announcement")
+                await Void.groupSettingUpdate(citel.chat, "ɴᴏᴛ_ᴀɴɴᴏᴜɴᴄᴇᴍᴇɴᴛ")
                     .then((res) => reply(`Group Chat Unmuted :)`))
                     .catch((err) => console.log(err));
             } else {
 
-                return citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •Group Mode•\n┃✗ ${prefix}group open to open\n┃✗ ${prefix}group close to close\n┗━━━━━━━━━━⦿`);
+                return citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ɢʀᴏᴜᴘ ᴍᴏᴅᴇ•\n┃✗ ${prefix}ɢʀᴏᴜᴘ ᴏᴘᴇɴ ᴛᴏ ᴏᴘᴇɴ\n┃✗ ${prefix}ɢʀᴏᴜᴘ ᴄʟᴏsᴇ ᴛᴏ ᴄʟᴏsᴇ\n┗━━━━━━━━━━⦿`);
             }
         }
     )
     //---------------------------------------------------------------------------
+/*
 cmd({
             pattern: "grouppic",
             desc: "Sets a profile pic in Group..",
@@ -768,7 +776,6 @@ cmd({
             const botNumber = await Void.decodeJid(Void.user.id)
             const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-
 
             let mime = citel.quoted.mtype
             if (!citel.isGroup) citel.reply(tlang().group);
@@ -786,6 +793,7 @@ cmd({
 
         }
     )
+*/
     //---------------------------------------------------------------------------
 cmd({
             pattern: "hidetag",
@@ -830,7 +838,7 @@ cmd({
             const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
 
-            if (!text) return citel.reply("Please provide me number.");
+            if (!text) return citel.reply("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ɴᴜᴍʙᴇʀ.");
             if (!isCreator) return citel.reply(tlang().owner)
             if (!isBotAdmins) return citel.reply(tlang().botAdmin);
             let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
@@ -852,8 +860,8 @@ cmd({
                 .slice(0)
                 .map((entry) => entry[1]);
             let anu = groups.map((v) => v.id);
-            let jackhuh = `All groups jid\n\n`
-            citel.reply(`Fetching jid from ${anu.length} Groups`)
+            let jackhuh = `ᴀʟʟ ɢʀᴏᴜᴘs ᴊɪᴅ\n\n`
+            citel.reply(`ғᴇᴛᴄʜɪɴɢ ᴊɪᴅ ғʀᴏᴍ ${anu.length} ɢʀᴏᴜᴘs`)
             for (let i of anu) {
                 let metadata = await Void.groupMetadata(i);
                 await sleep(500)
@@ -922,9 +930,9 @@ cmd({
                 const botNumber = await Void.decodeJid(Void.user.id)
                 const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
                 const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-                if (!isAdmins) return citel.reply('Only Admins are allowed to delete other persons message.')
-                if (!isBotAdmins) return citel.reply('I can\'t delete anyones message without getting Admin Role.')
-                if (!citel.quoted) return citel.reply(`Please reply to any message. ${tlang().greet}`);
+                if (!isAdmins) return citel.reply('ᴏɴʟʏ ᴀᴅᴍɪɴs ᴀʀᴇ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴏᴛʜᴇʀ ᴘᴇʀsᴏɴs ᴍᴇssᴀɢᴇ.')
+                if (!isBotAdmins) return citel.reply('ɪ ᴄᴀɴ\'ᴛ ᴅᴇʟᴇᴛᴇ ᴀɴʏᴏɴᴇs ᴍᴇssᴀɢᴇ ᴡɪᴛʜᴏᴜᴛ ɢᴇᴛᴛɪɴɢ ᴀᴅᴍɪɴ ʀᴏʟᴇ.')
+                if (!citel.quoted) return citel.reply(`ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ. ${tlang().greet}`);
                 let { chat, fromMe, id } = citel.quoted;
                 const key = {
                     remoteJid: citel.chat,
@@ -948,16 +956,16 @@ cmd({
         async(Void, citel, text, {isCreator}) => {
 	    if (!isCreator) return citel.reply(tlang().owner)
             if (!citel.isGroup) return citel.reply('ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ғᴏʀ ɢʀᴏᴜᴘs!')
-            if (!citel.quoted) return citel.reply('Mention a user ')
+            if (!citel.quoted) return citel.reply('ᴍᴇɴᴛɪᴏɴ ᴀ ᴜsᴇʀ ')
             teskd = `*All Warnings.*\n\n`
             let h = await warndb.find({ id: citel.quoted.sender.split('@')[0] + 'warn' })
             console.log(h)
-            teskd += `*There are total ${h.length}  warnings.*\n`
+            teskd += `*ᴛʜᴇʀᴇ ᴀʀᴇ ᴛᴏᴛᴀʟ ${h.length}  ᴡᴀʀɴɪɴɢs.*\n`
             for (let i = 0; i < h.length; i++) {
-                teskd += `*${i+1}*\n┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •In Group• ${h[i].group}\n`
-                teskd += `┃✗ •Time• ${h[i].date}\n`
-                teskd += `┃✗ •Warned by• ${h[i].warnedby}\n`
-                teskd += `┃✗ •Reason• Bad Behaviour\n┗━━━━━━━━━━⦿\n\n`
+                teskd += `*${i+1}*\n┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ɪɴ ɢʀᴏᴜᴘ• ${h[i].group}\n`
+                teskd += `┃✗ •ᴛɪᴍᴇ• ${h[i].date}\n`
+                teskd += `┃✗ •ᴡᴀʀɴᴇᴅ ʙʏ• ${h[i].warnedby}\n`
+                teskd += `┃✗ •ʀᴇᴀsᴏɴ• ʙᴀᴅ ʙᴇʜᴀᴠɪᴏᴜʀ\n┗━━━━━━━━━━⦿\n\n`
             }
             citel.reply(teskd)
         }
@@ -1043,53 +1051,53 @@ cmd({ on: "text" }, async(Void, citel) => {
         const lvpoints = sck1.level;
         var role = "GOD";
         if (lvpoints <= 2) {
-            var role = "🏳Citizen";
+            var role = "Citizen";
         } else if (lvpoints <= 4) {
-            var role = "👼Baby Wizard";
+            var role = "Baby Wizard";
         } else if (lvpoints <= 6) {
-            var role = "🧙‍♀️Wizard";
+            var role = "Wizard";
         } else if (lvpoints <= 8) {
-            var role = "🧙‍♂️Wizard Lord";
+            var role = "Wizard Lord";
         } else if (lvpoints <= 10) {
-            var role = "🧚🏻Baby Mage";
+            var role = "Baby Mage";
         } else if (lvpoints <= 12) {
-            var role = "🧜Mage";
+            var role = "Mage";
         } else if (lvpoints <= 14) {
-            var role = "🧜‍♂️Master of Mage";
+            var role = "Master of Mage";
         } else if (lvpoints <= 16) {
-            var role = "🌬Child of Nobel";
+            var role = "Child of Nobel";
         } else if (lvpoints <= 18) {
-            var role = "❄Nobel";
+            var role = "Nobel";
         } else if (lvpoints <= 20) {
-            var role = "⚡Speed of Elite";
+            var role = "Speed of Elite";
         } else if (lvpoints <= 22) {
-            var role = "🎭Elite";
+            var role = "Elite";
         } else if (lvpoints <= 24) {
-            var role = "🥇Ace I";
+            var role = "Ace I";
         } else if (lvpoints <= 26) {
-            var role = "🥈Ace II";
+            var role = "Ace II";
         } else if (lvpoints <= 28) {
-            var role = "🥉Ace Master";
+            var role = "Ace Master";
         } else if (lvpoints <= 30) {
             var role = "🎖Ace Dominator";
         } else if (lvpoints <= 32) {
-            var role = "🏅Ace Elite";
+            var role = "Ace Elite";
         } else if (lvpoints <= 34) {
-            var role = "🏆Ace Supreme";
+            var role = "Ace Supreme";
         } else if (lvpoints <= 36) {
-            var role = "💍Supreme I";
+            var role = "Supreme I";
         } else if (lvpoints <= 38) {
-            var role = "💎Supreme Ii";
+            var role = "Supreme Ii";
         } else if (lvpoints <= 40) {
-            var role = "🔮Supreme Master";
+            var role = "Supreme Master";
         } else if (lvpoints <= 42) {
-            var role = "🛡Legend III";
+            var role = "Legend III";
         } else if (lvpoints <= 44) {
-            var role = "🏹Legend II";
+            var role = "Legend II";
         } else if (lvpoints <= 46) {
-            var role = "⚔Legend";
+            var role = "Legend";
         } else if (lvpoints <= 55) {
-            var role = "🐉Immortal";
+            var role = "ᴋɪɴɢ 👑";
         } else {
             var role = "Kiddo";
         }
@@ -1099,15 +1107,15 @@ cmd({ on: "text" }, async(Void, citel) => {
                     url: await botpic(),
                 },
                 caption: `
-╔════◇
-║ *Wow,Someone just*
-║ *leveled Up huh⭐*
-║ *👤Name*: ${citel.pushName}
-║ *🎐Level*: ${sck1.level}🍭
-║ *🛑Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
-║ *📍Role*: *${role}*
-║ *Enjoy🥳*
-╚════════════╝
+┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
+┃✗ •ᴡᴏᴡ,sᴏᴍᴇᴏɴᴇ ᴊᴜsᴛ•
+┃✗ •ʟᴇᴠᴇʟᴇᴅ ᴜᴘ ʜᴜʜ•
+┃✗ •ɴᴀᴍᴇ• ${citel.pushName}
+┃✗ •ʟᴇᴠᴇʟ• ${sck1.level}🍭
+┃✗ •ᴇxᴘ• ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
+┃✗ •ʀᴏʟᴇ• *${role}*
+┃✗ •ᴀᴜᴛʜᴏʀ• ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ
+┗━━━━━━━━━━⦿
 `,
             }, {
                 quoted: citel,
