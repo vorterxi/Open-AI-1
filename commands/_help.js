@@ -58,7 +58,7 @@ Secktor.cmd({
 ┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
 ┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${tlang().title}
 ┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
-┃✗ •ᴍᴏᴅᴇ• ${Config.mode}
+┃✗ •ᴍᴏᴅᴇ• ${Config.WORKTYPE}
 ┃✗ •ᴛɪᴍᴇ• ${time}
 ┃✗ •ᴅᴀᴛᴇ• ${date}
 ┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
