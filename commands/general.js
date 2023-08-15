@@ -193,7 +193,7 @@ cmd({
         latensie = speed() - timestampe;
         let { data } = await axios.get('https://api.github.com/repos/Mehar-Zubi/Open-AI')
         let cap = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
-┃✗ •ᴛᴏᴛᴀʟ• sᴛᴀʀs ${data.stargazers_count} sᴛᴀʀs
+┃✗ •ᴛᴏᴛᴀʟ sᴛᴀʀs• ${data.stargazers_count} sᴛᴀʀs
 ┃✗ •ғᴏʀᴋs• ${data.forks_count} ғᴏʀᴋs
 ┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs 
 ┃✗ •ᴠᴇʀsɪᴏɴ• sɪɢᴍᴀ
@@ -210,7 +210,7 @@ https://github.com/Mehar-Zubi/Open-AI
             contextInfo: {
                 externalAdReply: {
                     title: "sɪɢᴍᴀ ᴹᴰ-ʀᴇᴘᴏ",
-                    body: "Easy to Use",
+                    body: "ᴛᴀᴘ ʜᴇʀᴇ ғᴏʀ ʀᴇᴘᴏ",
                     thumbnail: log0,
                     mediaType: 4,
                     mediaUrl: '',
@@ -255,8 +255,8 @@ cmd({
             headerType: 4,
             contextInfo: {
                 externalAdReply: {
-                    title: tlang().title,
-                    body: `Bot-Status`,
+                    title: `sɪɢᴍᴀ ᴹᴰ`,
+                    body: `ʙᴏᴛ-sᴛᴀᴛᴜs`,
                     thumbnail: log0,
                     mediaType: 2,
                     mediaUrl: ``,
