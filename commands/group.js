@@ -222,7 +222,7 @@ cmd({
 
         },
         async(Void, citel, text,{ isCreator }) => {
-	    if(!isCreator) return citel.reply(tlang().owner)
+	   
     
             if (!citel.quoted) return citel.reply("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴀ ᴜsᴇʀ");
             if (!isCreator) citel.reply(tlang().owner);
@@ -243,7 +243,7 @@ cmd({
         if(!isCreator) return citel.reply(tlang().owner)
         const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
 		const participants = citel.isGroup ? await groupMetadata.participants : "";
-    let textt = `Here is jid address of all users of\n *- ${groupMetadata.subject}*\n\n`
+    let textt = `ʜᴇʀᴇ ɪs ᴊɪᴅ ᴀᴅᴅʀᴇss ᴏғ ᴀʟʟ ᴜsᴇʀs ᴏғ\n *- ${groupMetadata.subject}*\n\n`
     for (let mem of participants) {
             textt += `♕ ${mem.id}\n`;
         }
@@ -269,8 +269,8 @@ cmd({
 
         let textt = `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
-┃✗ •Message• ${text ? text : "blank"}\n\n
-┃✗ •Author• •𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫• 👑
+┃✗ •ᴍᴇssᴀɢᴇ• ${text ? text : "blank"}\n\n
+┃✗ •ᴀᴜᴛʜᴏʀ• •𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫• 👑
 ┗━━━━━━━━━━⦿
 `
         for (let mem of participants) {
@@ -297,12 +297,12 @@ cmd({
         async(Void, citel, text) => {
             if (!text) return citel.reply(`Example : ${
         prefix + command
-      } hello dev please add a downloader feature`);
-            textt = `*| REQUEST |*`;
-            teks1 = `\n\n*User* : @${
+      } ʜᴇʟʟᴏ ᴅᴇᴠ ᴘʟᴇᴀsᴇ ᴀᴅᴅ ᴀ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ғᴇᴀᴛᴜʀᴇ`);
+            textt = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n     *| ʀᴇǫᴜᴇsᴛ |*   `;
+            teks1 = `\n\n┃✗ •ᴜsᴇʀ• @${
     citel.sender.split("@")[0]
-  }\n*Request* : ${text}`;
-            teks2 = `\n\n*Hii ${citel.pushname},You request has been forwarded to my Owners*.\n*Please wait.......*`;
+  }\n┃✗ •ʀᴇǫᴜᴇsᴛ• ${text}\n┗━━━━━━━━━━⦿`;
+            teks2 = `\n\n┃✗ •ʜɪ ${citel.pushname} ,ʏᴏᴜʀ•\n┃✗ •ʀᴇǫᴜᴇsᴛ ʜᴀs ʙᴇᴇɴ•\n┃✗ •ғᴏʀᴡᴀʀᴅᴇᴅ ᴛᴏ•\n┃✗ •ᴍʏ ᴏᴡɴᴇʀ•`;
             for (let i of owner) {
                 Void.sendMessage(i + "923004373535@s.whatsapp.net", {
                     text: textt + teks1,
