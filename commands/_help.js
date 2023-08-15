@@ -28,6 +28,8 @@ Secktor.cmd({
             filename: __filename
         },
         async(Void, citel, text) => {
+             timestampe = speed();
+             latensie = speed() - timestampe;
             const { commands } = require('../lib');
             if (text.split(" ")[0]) {
                 let arr = [];
@@ -48,11 +50,8 @@ Secktor.cmd({
                     }
                 })
                let [date, time] = new Date()
-               timestampe = speed();
-               latensie = speed() - timestampe;
         .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
         .split(",");
-                
                 let total = await sck1.countDocuments()
                 let str = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
 ┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
