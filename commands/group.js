@@ -133,20 +133,15 @@ cmd({
 )
 
 //---------------------------------------------------------------------------
-// Function to get group admins
-
-  // code to get admins
-
-
 cmd({
   pattern: "warn",
-  desc: "Warns user in Group.",
+  desc: "Warns user in Group.", 
   category: "group",
   filename: __filename,
-  use: '<quote|reply|number>', 
+  use: '<quote|reply|number>',
 },
 
-async function main(Void, citel, text, {isCreator}) {
+async(Void, citel, text, {isCreator}) => {
 
   if (!citel.isGroup) return citel.reply("This command is for groups");
 
@@ -178,32 +173,32 @@ async function main(Void, citel, text, {isCreator}) {
 
     Void.sendMessage(citel.chat, {
       text: `*----Warn----*\nUser: @${mentioned.participant}\nWith Reason: ${text}\nWarned by: ${citel.sender}`,
-      mentions: mentioned
+      mentions: [mentioned]
     }, {
       quoted: citel
     });
 
     let warns = await warndb.find({
-      id: citel.quoted.participant + "@s.whatsapp.net" 
+      id: citel.quoted.participant + "@s.whatsapp.net"
     });
 
     const maxWarns = require("../config");
 
-    if(warns.length > maxWarns.warncount) {
+    if(warns.length > maxWarns.warncount){
 
       let text = `Removing User because Warn limit exceeded\n\n*All Warnings.*\n`;
 
       let warns = await warndb.find({
-        id: citel.quoted.participant + "@s.whatsapp.net"
+        id: citel.quoted.participant + "@s.whatsapp.net"  
       });
 
       text += `There are total ${warns.length} warnings.\n`;
 
       for(let i = 0; i < warns.length; i++) {
         text += `\n*${i+1}. Date:-* ${warns[i].date}\n`;
-        text += `│ 🔰Time:- ${warns[i].time}\n`;
-        text += `│ ⚠️Warned by:- ${warns[i].warnedby}\n`; 
-        text += `│ 📍Reason: ${warns[i].reason}_\n`;
+        text += `│ *🔰Time:-* ${warns[i].time}\n`;
+        text += `│ *⚠️Warned by:-* ${warns[i].warnedby}\n`;
+        text += `│ _📍Reason:_ ${warns[i].reason}_\n`;
         text += `╰─────────────◆\n`;
       }
 
@@ -214,12 +209,10 @@ async function main(Void, citel, text, {isCreator}) {
     }
 
   } catch (err) {
-    console.error(err);
+    console.log(err);
   }
 
-}
-
-);
+})
     //---------------------------------------------------------------------------
 cmd({
             pattern: "unblock",
