@@ -57,16 +57,16 @@ cmd(
         const DB = require('../lib')
         let commits = await DB.syncgit()
         if (commits.total === 0)  {
-         citel.reply(`Hey ${citel.pushName}. You have latest version installed.`)
+         citel.reply(`ʜᴇʏ ${citel.pushName}. ʏᴏᴜ ʜᴀᴠᴇ ʟᴀᴛᴇsᴛ ᴠᴇʀsɪᴏɴ ɪɴsᴛᴀʟʟᴇᴅ.`)
           } else { 
-             citel.reply('Build Started...')
+             citel.reply('ʙᴜɪʟᴅ sᴛᴀʀᴛᴇᴅ...')
             let update = await DB.updatedb()
               citel.reply(update)
           }
 
        }
        let check = await get_deployments()
-       if(check==='true') return citel.reply('Please wait...\nCurrently 2 instances are running in Koyeb,wait to stop one of them.')
+       if(check==='true') return citel.reply('ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...\nᴄᴜʀʀᴇɴᴛʟʏ 2 ɪɴsᴛᴀɴᴄᴇs ᴀʀᴇ ʀᴜɴɴɪɴɢ ɪɴ ᴋᴏʏᴇʙ,ᴡᴀɪᴛ ᴛᴏ sᴛᴏᴘ ᴏɴᴇ ᴏғ ᴛʜᴇᴍ.')
        let data = await redeploy();
        return citel.reply(data)
   })
@@ -81,7 +81,7 @@ cmd(
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
        if (Config.heroku=true){
-        if (!text.split(' ')[0]) return citel.reply(`Please Give me var name, ${tlang().greet}`)
+        if (!text.split(' ')[0]) return citel.reply(`ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴍᴇ ᴠᴀʀ ɴᴀᴍᴇ, ${tlang().greet}`)
         const Heroku = require("heroku-client");
         const heroku = new Heroku({
           token: Config.HEROKU.API_KEY,
@@ -89,10 +89,10 @@ cmd(
         let baseURI = "/apps/" + Config.HEROKU.APP_NAME;
   let h = await heroku.get(baseURI+'/config-vars')
   for (vr in h) {
-  if(text.split(' ')[0]===vr) return citel.reply('Your var.\n'+vr+': '+h[vr])	
+  if(text.split(' ')[0]===vr) return citel.reply('ʏᴏᴜʀ ᴠᴀʀ.\n'+vr+': '+h[vr])	
   }
        }
-       if(!text) return citel.reply('Please provide key.\nEg: .getvar PORT')
+       if(!text) return citel.reply('ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴋᴇʏ.\nᴇɢ: .ɢᴇᴛᴠᴀʀ ᴡᴏʀᴋᴛʏᴘᴇ')
        let data = await getvar(text);
        return citel.reply(data)
   })
@@ -113,7 +113,7 @@ cmd(
 			});
 			let baseURI = "/apps/" + Config.HEROKU.APP_NAME;
 let h = await heroku.get(baseURI+'/config-vars')
-let str = '*All Your Heroku Vars*\n\n'
+let str = '*ᴀʟʟ ʏᴏᴜʀ ʜᴇʀᴏᴋᴜ ᴠᴀʀs*\n\n'
 for (vr in h) {
 str+= vr+':'+h[vr]+'\n'
 }
@@ -132,7 +132,7 @@ cmd(
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
-       if(!text.split(':')[1]) return citel.reply('*Wrong Format.*\nPlease provide key and value.\nEg: .setvar THEME:MZ')
+       if(!text.split(':')[1]) return citel.reply('*ᴡʀᴏɴɢ ғᴏʀᴍᴀᴛ.*\ɴᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴋᴇʏ ᴀɴᴅ ᴠᴀʟᴜᴇ.\nᴇɢ: .sᴇᴛᴠᴀʀ ᴛʜᴇᴍᴇ:ᴍᴢ')
        if (Config.heroku=true){
         const Heroku = require("heroku-client");
         const heroku = new Heroku({
@@ -144,10 +144,10 @@ cmd(
                   [text.split(':')[0]]: text.split(':')[1],
           },
         });
-        await citel.reply(`var ${text.split(':')[0]} : ${text.split(':')[1]} has been set Successfuly.`);
+        await citel.reply(`ᴠᴀʀ ${text.split(':')[0]} : ${text.split(':')[1]} ʜᴀs ʙᴇᴇɴ sᴇᴛ sᴜᴄᴄᴇssғᴜʟʟʏ.`);
        }
        let check = await get_deployments()
-       if(check==='true') return citel.reply('Please wait...\nCurrently 2 instances are running in Koyeb,wait to stop one of them.')
+       if(check==='true') return citel.reply('ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...\nᴄᴜʀʀᴇɴᴛʟʏ 2 ɪɴsᴛᴀɴᴄᴇs ᴀʀᴇ ʀᴜɴɴɪɴɢ ɪɴ ᴋᴏʏᴇʙ,ᴡᴀɪᴛ ᴛᴏ sᴛᴏᴘ ᴏɴᴇ ᴏғ ᴛʜᴇᴍ.')
        let data = await change_env(text)
        return citel.reply(data)
   })
@@ -162,9 +162,9 @@ cmd(
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
-       if(!text) return citel.reply('Please provide key.\n_Eg: .delvar PORT_')
+       if(!text) return citel.reply('ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴋᴇʏ\nᴇɢ: .ᴅᴇʟᴠᴀʀ ᴘᴏʀᴛ')
        let check = await get_deployments()
-       if(check==='true') return citel.reply('Please wait...\nCurrently 2 instances are running in Koyeb,wait to stop one of them.')
+       if(check==='true') return citel.reply('ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...\nᴄᴜʀʀᴇɴᴛʟʏ 2 ɪɴsᴛᴀɴᴄᴇs ᴀʀᴇ ʀᴜɴɴɪɴɢ ɪɴ ᴋᴏʏᴇʙ,ᴡᴀɪᴛ ᴛᴏ sᴛᴏᴘ ᴏɴᴇ ᴏғ ᴛʜᴇᴍ.')
        let data = await delvar(text)
        return citel.reply(data)
   })
