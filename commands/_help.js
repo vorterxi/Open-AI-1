@@ -28,8 +28,6 @@ Secktor.cmd({
             filename: __filename
         },
         async(Void, citel, text) => {
-             timestampe = speed();
-             latensie = speed() - timestampe;
             const { commands } = require('../lib');
             if (text.split(" ")[0]) {
                 let arr = [];
@@ -49,6 +47,8 @@ Secktor.cmd({
                         cmds[command.category].push(command.pattern)
                     }
                 })
+            timestampe = speed();
+            latensie = speed() - timestampe;
                let [date, time] = new Date()
         .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
         .split(",");
