@@ -134,7 +134,7 @@ cmd({
 
 //---------------------------------------------------------------------------
 // Function to get group admins
-const getAdmin = async (Void, citel) => {
+
   // code to get admins
 }
 
