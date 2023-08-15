@@ -28,7 +28,7 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
         const getRandom = (ext) => {
             return `${Math.floor(Math.random() * 10000)}${ext}`
         }
-        if (!citel.quoted) return citel.reply(`Reply to Any Sticker`)
+        if (!citel.quoted) return citel.reply(`ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ sᴛɪᴄᴋᴇʀ`)
         let mime = citel.quoted.mtype
 if (mime =="imageMessage" || mime =="stickerMessage")
 {
@@ -45,7 +45,7 @@ if (mime =="imageMessage" || mime =="stickerMessage")
          
         })
         
-} else return citel.reply ("```Reply To A Non Animated Sticker```")
+} else return citel.reply ("ʀᴇᴘʟʏ ᴛᴏ ᴀ ɴᴏɴ ᴀɴɪᴍᴀᴛᴇᴅ sᴛɪᴄᴋᴇʀ")
     }
 )
 //---------------------------------------------------------------------------
@@ -84,7 +84,7 @@ if(quot.message.videoMessage)
 catch(e) {  console.log("error" , e ) }     
 
        
-if(!citel.quoted) return citel.reply("```Please Reply A ViewOnce Message```")           
+if(!citel.quoted) return citel.reply("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴀ ᴠɪᴇᴡ-ᴏɴᴄᴇ ᴍᴇssᴀɢᴇ")           
 if(citel.quoted.mtype === "viewOnceMessage")
 { console.log("ViewOnce Entered") 
  if(citel.quoted.message.imageMessage )
@@ -101,7 +101,7 @@ else if(citel.quoted.message.videoMessage )
 }
 
 }
-else return citel.reply("```This is Not A ViewOnce Message```")
+else return citel.reply("ᴛʜɪs ɪs ɴᴏᴛ ᴀ ᴠɪᴇᴡ-ᴏɴᴄᴇ ᴍᴇssᴀɢᴇ")
 
 })    //---------------------------------------------------------------------------
 cmd({
@@ -113,7 +113,7 @@ cmd({
             filename: __filename
         },
         async(Void, citel, text) => {
-            if (!citel.quoted) return citel.reply("Please reply to any message");
+            if (!citel.quoted) return citel.reply("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ");
             let textt = citel.quoted.text;
             let pfp;
             try {
@@ -162,14 +162,14 @@ cmd({
             pattern: "fancy",
             desc: "Makes stylish/fancy given text",
             category: "converter",
-            use: '56 Secktor',
-            react: "✅",
+            use: '56 Sigma MALE',
+            react: "👑",
             filename: __filename
         },
         async(Void, citel, text) => {
             if (isNaN(text.split(" ")[0]) || !text) {
                 let text = tiny(
-                    "Fancy text generator\n\nExample: .fancy 56 Open AI \n\n"
+                    "ғᴀɴᴄʏ ᴛᴇxᴛ ɢᴇɴᴇʀᴀᴛᴏʀ\n\nᴇxᴀᴍᴘʟᴇ: .ғᴀɴᴄʏ 56 sɪɢᴍᴀ ᴍᴀʟᴇ \n\n"
                 );
                 listall("Open Ai").forEach((txt, num) => {
                     text += `${(num += 1)} ${txt}\n`;
@@ -192,11 +192,11 @@ cmd({
             filename: __filename
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply('Provide me a link to shorten it')
+            if (!text) return citel.reply('ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ʟɪɴᴋ ᴛᴏ sʜᴏʀᴛᴇɴ ɪᴛ')
             try {
                 link = text.split(" ")[0];
                 anu = await axios.get(`https://tinyurl.com/api-create.php?url=${link}`);
-                citel.reply(`*🛡️Your Shortened URL*\n\n${anu.data}`);
+                citel.reply(`*ʏᴏᴜʀ sʜᴏʀᴛᴇɴᴇᴅ ᴜʀʟ*\n\n${anu.data}`);
             } catch (e) {
                 console.log(e);
             }
@@ -213,7 +213,7 @@ filename: __filename,
         use: '<reply to any image/video.>'
     },
     async(Void, citel, text) => {
-        if (!citel.quoted) return citel.reply(`*Reply To any Image or video .*`);
+        if (!citel.quoted) return citel.reply(`*ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ.*`);
       //console.log("Quoted Data here : ",citel.quoted);
         let mime = citel.quoted.mtype
         pack = Config.packname
@@ -231,7 +231,7 @@ filename: __filename,
             });
             const buffer = await sticker.toBuffer();
             return Void.sendMessage(citel.chat, {sticker: buffer}, {quoted: citel });
-        }else return citel.reply("*Please reply to any image*");
+        }else return citel.reply("*ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ*");
 
     }
 )
@@ -245,7 +245,7 @@ filename: __filename,
         use: '<reply to any image/video.>'
     },
     async(Void, citel, text) => {
-        if (!citel.quoted) return citel.reply(`*Reply To any Image or video.*`);
+        if (!citel.quoted) return citel.reply(`*ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ.*`);
       //console.log("Quoted Data here : ",citel.quoted);
         let mime = citel.quoted.mtype
         pack = Config.packname
@@ -263,7 +263,7 @@ filename: __filename,
             });
             const buffer = await sticker.toBuffer();
             return Void.sendMessage(citel.chat, {sticker: buffer}, {quoted: citel });
-        }else return citel.reply("*Please reply to any image*");
+        }else return citel.reply("*ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ*");
 
     }
 )
@@ -277,7 +277,7 @@ filename: __filename,
         use: '<reply to any image/video.>'
     },
     async(Void, citel, text) => {
-        if (!citel.quoted) return citel.reply(`*Reply To any Image or video.*`);
+        if (!citel.quoted) return citel.reply(`*ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ.*`);
       //console.log("Quoted Data here : ",citel.quoted);
         let mime = citel.quoted.mtype
         pack = Config.packname
@@ -295,7 +295,7 @@ filename: __filename,
             });
             const buffer = await sticker.toBuffer();
             return Void.sendMessage(citel.chat, {sticker: buffer}, {quoted: citel });
-        }else return citel.reply("*Please reply to any image*");
+        }else return citel.reply("*ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ɪᴍᴀɢᴇ*");
 
     }
 )
@@ -308,7 +308,7 @@ cmd({
     filename: __filename
 },
 async(Void, citel, text) => {
-    if (!citel.quoted) return citel.reply(`_Reply to Any Video_`);
+    if (!citel.quoted) return citel.reply(`ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴠɪᴅᴇᴏ`);
     let mime = citel.quoted.mtype
 if (mime =="audioMessage" || mime =="videoMessage")
 {
@@ -325,6 +325,6 @@ else return console.log('File deleted successfully in TOAUDIO MP3 at : ' , media
 });
 
 }
-else return citel.reply ("```Please, Reply To A video```")
+else return citel.reply ("ᴘʟᴇᴀsᴇ, ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴠɪᴅᴇᴏ")
 }
 )
