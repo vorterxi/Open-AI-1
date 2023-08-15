@@ -133,13 +133,19 @@ cmd({
 )
 
 //---------------------------------------------------------------------------
+// Function to get group admins
+const getAdmin = async (Void, citel) => {
+  // code to get admins
+}
+
 cmd({
-            pattern: "warn",
-            desc: "Warns user in Group.",
-            category: "group",
-            filename: __filename,
-            use: '<quote|reply|number>',
-        },
+  pattern: "warn",
+  desc: "Warns user in Group.",
+  category: "group",
+  filename: __filename,
+  use: '<quote|reply|number>', 
+},
+
 async function main(Void, citel, text, {isCreator}) {
 
   if (!citel.isGroup) return citel.reply("This command is for groups");
@@ -151,9 +157,9 @@ async function main(Void, citel, text, {isCreator}) {
   if (!isAdmin) return citel.reply("This command is only for group admins!");
 
   if(!citel.quoted) return citel.reply("Please quote a user to warn");
-   
+
   const currentTime = moment().format("HH:mm:ss");
-   
+
   moment.tz.setDefault("Asia/Karachi");
 
   try {
@@ -162,57 +168,58 @@ async function main(Void, citel, text, {isCreator}) {
 
     await new warndb({
       id: citel.quoted.participant + "@s.whatsapp.net",
-      reason: text,  
+      reason: text,
       group: metadata.subject,
       warnedby: citel.sender,
-      date: currentTime   
+      date: currentTime
     }).save();
-    
+
     let mentioned = citel.quoted;
 
     Void.sendMessage(citel.chat, {
       text: `*----Warn----*\nUser: @${mentioned.participant}\nWith Reason: ${text}\nWarned by: ${citel.sender}`,
-      mentions: [mentioned]
+      mentions: mentioned
     }, {
       quoted: citel
     });
-    
+
     let warns = await warndb.find({
-      id: citel.quoted.participant + "@s.whatsapp.net"
+      id: citel.quoted.participant + "@s.whatsapp.net" 
     });
-    
+
     const maxWarns = require("../config");
 
-    if(warns.length >= maxWarns.warncount){
+    if(warns.length > maxWarns.warncount) {
 
       let text = `Removing User because Warn limit exceeded\n\n*All Warnings.*\n`;
-      
+
       let warns = await warndb.find({
-        id: citel.quoted.participant + "@s.whatsapp.net"   
+        id: citel.quoted.participant + "@s.whatsapp.net"
       });
-      
+
       text += `There are total ${warns.length} warnings.\n`;
-      
+
       for(let i = 0; i < warns.length; i++) {
         text += `\n*${i+1}. Date:-* ${warns[i].date}\n`;
-        text += `│  *🔰Time:-* ${warns[i].time}\n`; 
-        text += `│  *⚠️Warned by:-* ${warns[i].warnedby}\n`;
-        text += `│   _📍Reason:_ ${warns[i].reason}_\n`;   
+        text += `│ 🔰Time:- ${warns[i].time}\n`;
+        text += `│ ⚠️Warned by:- ${warns[i].warnedby}\n`; 
+        text += `│ 📍Reason: ${warns[i].reason}_\n`;
         text += `╰─────────────◆\n`;
       }
-      
+
       citel.reply(text);
-      
+
       await Void.groupParticipantsUpdate(citel.chat, [citel.quoted.participant], "remove");
-      
+
     }
 
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 
 }
-    )
+
+);
     //---------------------------------------------------------------------------
 cmd({
             pattern: "unblock",
