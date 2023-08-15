@@ -6,27 +6,12 @@ cmd({
         filename: __filename
     },
     async(Void, citel,text,) => {
-if(!text) return citel.reply('Give Me Insta Post Link')
+if(!text) return citel.reply('ɢɪᴠᴇ ᴍᴇ ɪɴsᴛᴀ ᴘᴏsᴛ ʟɪɴᴋ')
 let response = await Insta(text)
 for (let i=0;i<response.length;i++) {
-await Void.sendFileUrl(citel.chat, response[i], `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ᴏᴘᴇɴ ᴀⁱ* ♕`, citel)
+await Void.sendFileUrl(citel.chat, response[i], `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 sɪɢᴍᴀ ᴹᴰ`, citel)
 }
     });
 
-//----------------------------------------------------------------------------------
-cmd({
-    pattern: "insta2",
-    desc: "Downloads Instagram videos.",
-    category: "downloader",
-    filename: __filename,
-    use: '<add fb url.>'
-},
-async(Void, citel, text) => {
-if(!text) return citel.reply('Give Me Insta Post Link')
-let response = await Insta(text)
-for (let i=0;i<response.length;i++) {
-const { instagram } = require('instagram-downloader')
-await Void.sendFileUrl(citel.chat, response[i], `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ᴏᴘᴇɴ ᴀⁱ* ♕`, citel)
-}
-});
+
 
