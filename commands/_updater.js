@@ -24,13 +24,13 @@ async function updateHerokuApp() {
     const heroku = new Heroku({ token: process.env.HEROKU_API_KEY });
     await git.fetch();
     const commits = await git.log(['main..origin/main']);
-    if (commits.total === 0) { return 'You already have the latest version installed.'; } 
+    if (commits.total === 0) { return 'ʏᴏᴜ ᴀʟʀᴇᴀᴅʏ ʜᴀᴠᴇ ᴛʜᴇ ʟᴀᴛᴇsᴛ ᴠᴇʀsɪᴏɴ ɪɴsᴛᴀʟʟᴇᴅ.'; } 
     else {
       const app = await heroku.get(`/apps/${process.env.HEROKU_APP_NAME}`);
       const gitUrl = app.git_url.replace('https://', `https://api:${process.env.HEROKU_API_KEY}@`);
-      try { await git.addRemote('heroku', gitUrl); } catch(e) { console.log('Heroku remote adding error');  }
+      try { await git.addRemote('heroku', gitUrl); } catch(e) { console.log('ʜᴇʀᴏᴋᴜ ʀᴇᴍᴏᴛᴇ ᴀᴅᴅɪɴɢ ᴇʀʀᴏʀ');  }
       await git.push('heroku', 'main');
-      return 'Bot updated. Restarting.';
+      return 'ʙᴏᴛ ᴜᴘᴅᴀᴛᴇᴅ. ʀᴇsᴛᴀʀᴛɪɴɢ...';
     }
   }
     //---------------------------------------------------------------------------
@@ -42,10 +42,10 @@ cmd({
             filename: __filename
         },
         async(Void, citel, text,{ isCreator }) => {
-            if (!isCreator) return citel.reply('This command is only for my owner')
+            if (!isCreator) return citel.reply('ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ғᴏʀ ᴍʏ ᴏᴡɴᴇʀ')
             let commits = await DB.syncgit()
             if (commits.total === 0) {
-                citel.reply(`Hey ${citel.pushName}. You have latest version installed.`)
+                citel.reply(`ʜᴇʏ ${citel.pushName}. ʏᴏᴜ ʜᴀᴠᴇ ʟᴀᴛᴇsᴛ ᴠᴇʀsɪᴏɴ ɪɴsᴛᴀʟʟᴇᴅ.`)
             } else {
                 let update = await DB.sync()
                   let buttonMessaged = {
@@ -58,32 +58,3 @@ cmd({
 
         }
     )
-  //-------------------------------------------------------------
-if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY )
-{
-        
-     cmd({
-                 pattern: "updatnow",
-                 alias: ["unow"],
-                 desc: "Shows repo\'s refreshed commits.",
-                 category: "tools",
-                 filename: __filename
-             },
-        async(Void, citel, text,{ isCreator }) => {
-                if(!isCreator) return await citel.reply("Only Owner Can Use This Command")
-                let commits = await DB.syncgit()
-                if (commits.total === 0) return await citel.reply(`*YOU HAVE LATEST VERSION INSTALLED!*`)
-                let update = await DB.sync()
-                let buttonMessaged = 
-                {
-                     text:" *> Please Wait Updater Started...!*\n  *───────────────────────────*\n"+update +"\n  *───────────────────────────*",
-                     footer: 'UPDATER --- sᴜʜᴀɪʟ ᴛᴇᴄʜ ɪɴғᴏ \n www.youtube.com/c/SuhailTechInfo',
-                     headerType: 4,
-                };
-                await Void.sendMessage(citel.chat, buttonMessaged);
-                await require("simple-git")().reset("hard",["HEAD"])
-                await require("simple-git")().pull()
-                await citel.reply("*Successfully updated. Now You Have Latest Version Installed!*")
-                process.exit(0);
-       })
-}
