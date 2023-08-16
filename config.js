@@ -45,7 +45,7 @@ module.exports = {
 },
   REMOVE_BG_KEY: process.env.REMOVE_BG_KEY || "pzpgbAu63rKVpYxPHVUfptjE",
   VERSION: process.env.VERSION === undefined ? 'sɪɢᴍᴀ' : process.env.VERSION,
-  LANG: process.env.THEME|| 'Open AI',
+  LANG: process.env.THEME|| 'MZ',
   WORKTYPE: process.env.WORKTYPE === undefined ? 'private' : process.env.WORKTYPE
 };
 
