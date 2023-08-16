@@ -17,10 +17,10 @@ let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1 } = require
 const long = String.fromCharCode(8206)
 const readmore = long.repeat(4001)
 const speed = require('performance-now')
-const Zubair = require('../lib/commands')
+const sɪɢᴍᴀ_ᴍᴅ = require('../lib/commands')
 
     //---------------------------------------------------------------------------
-Zubair.cmd({
+sɪɢᴍᴀ_ᴍᴅ.cmd({
             pattern: "help",
             alias: ["menu"],
             desc: "Help list",
@@ -99,39 +99,39 @@ Zubair.cmd({
     )
 
     //---------------------------------------------------------------------------
-Zubair.cmd({
-            pattern: "list",
-            desc: "list menu",
-            category: "general"
-        },
-        async(Void, citel, text) => {
-            const { commands } = require('../lib');
-            let str = `
-╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
-            str += `
-┃ ⛥╭──────────────      
-┃ ⛥│ User: ${citel.pushName}
-┃ ⛥│ Theme: ${tlang().title}
-┃ ⛥│ Prefix: ${prefix}
-┃ ⛥│ Owner: ${Config.ownername}
-┃ ⛥│ Commands: ${commands.length}
-┃ ⛥│ Uptime: ${runtime(process.uptime())}
-┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃ ⛥│  
-┃ ⛥╰───────────
-╰━━━━━━━━━━━──⊷\n`
-for (let i = 0; i < commands.length; i++) 
-{
-     if(commands[i].pattern==undefined) continue
-     str +=       `╭ ${i+1} *${fancytext(commands[i].pattern,1)}*\n` 
-     if(commands[i].desc=undefined) commands[i].desc=""
-     str += `╰➛ ${fancytext(commands[i].desc,1)}\n`
-}
-            return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
-        }
-    )
+sɪɢᴍᴀ_ᴍᴅ.cmd({
+              pattern: "list",
+              desc: "list menu",
+              category: "general",
+              react: "🥀"
+           },
+          async(Void, citel) => {
+              const { commands } = require('../lib');
+              let str = `
+  ╭━━〘 *${Config.botname}* 〙────⊷     
+  ┃ ✭ Theme: ${tlang().title}
+  ┃ ✭ Prefix: ${prefix}
+  ┃ ✭ Owner: ${Config.ownername}
+  ┃ ✭ Commands: ${commands.length}
+  ┃ ✭ Uptime: ${runtime(process.uptime())}
+  ┃ ✭ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+  ╰━━━━━━━━━━━━━━⊷\n`
+  
+              for (let i = 0; i < commands.length; i++) 
+              {
+                   if(commands[i].pattern==undefined) continue
+                   str +=       `╭ ${i+1} *${fancytext(commands[i].pattern,1)}*\n`                // ${i+1} 
+                   str += `╰➛ ${fancytext(commands[i].desc,1)}\n`
+              }
+  
+              
+   
+   //str += `Maher Zubair`
+              return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str + Config.caption ,footer: tlang().footer, headerType: 4 })
+          }
+      )
     //---------------------------------------------------------------------------
-Zubair.cmd({
+sɪɢᴍᴀ_ᴍᴅ.cmd({
         pattern: "owner",
         alias:["mz"],
         desc: "To find owner number",
@@ -152,7 +152,7 @@ Zubair.cmd({
             contextInfo: {
                 externalAdReply: {
                     title: Config.ownername,
-                    body: 'Message me',
+                    body: 'ᴛᴀᴘ ʜᴇʀᴇ ᴛᴏ ᴍᴇssᴀɢᴇ ᴍᴇ',
                     renderLargerThumbnail: true,
                     thumbnailUrl: ``,
                     thumbnail: log0,
@@ -169,7 +169,7 @@ Zubair.cmd({
     }
 )
 
-Zubair.cmd({
+sɪɢᴍᴀ_ᴍᴅ.cmd({
     pattern: "file",
     desc: "to get extact name where that command is in repo.\nSo user can edit that.",
     category: "general",
