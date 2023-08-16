@@ -260,13 +260,13 @@ async(Void, citel, text,{ isCreator }) => {
             
       let checkinfo = await sck.findOne({ id : citel.chat })  || await new sck({ id: citel.chat}).save();
       if (text.toLowerCase().startsWith("on") || text.toLowerCase().startsWith("act") || text.toLowerCase().startsWith("enable") ) {
-        if (checkinfo.antidemote == 'true') return await citel.send("*Anti_Demote Already Enabled In Current Chat!*")
+        if (checkinfo.antidemote == 'true') return await citel.reply("*Anti_Demote Already Enabled In Current Chat!*")
         await sck.updateOne({ id: citel.chat }, { antidemote : 'true' });
-        return await citel.send("*Anti_Demote Enable Succesfully! _No One Demote Here Now_.*")
+        return await citel.reply("*Anti_Demote Enable Succesfully! _No One Demote Here Now_.*")
       }else if (text.toLowerCase().startsWith("off") || text.toLowerCase().startsWith("deact") || text.toLowerCase().startsWith("disable") ) {
-        if (checkinfo.antidemote == 'false') return await citel.send("*Anti_Demote Already Disabled In Current Chat!*")
+        if (checkinfo.antidemote == 'false') return await citel.reply("*Anti_Demote Already Disabled In Current Chat!*")
         await sck.updateOne({ id: citel.chat }, { antidemote : 'false' });
-        return await citel.send("*Anti_Demote Disable Succesfully!*")
+        return await citel.reply("*Anti_Demote Disable Succesfully!*")
       }
       else return await citel.reply(`*Uhh Dear, Please Toggle between "On" And "Off".* \n*_To Enable & Disable Stop Demoting Peoples!_*`)
 });
