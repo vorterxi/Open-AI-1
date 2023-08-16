@@ -85,7 +85,7 @@ cmd({
       }else if(jids.length == 1){
         group1 = citel.chat;
         group2 = jids[0].includes("@g.us") ? jids[0] : citel.chat
-      }else return await citel.send("Uhh Dear, Please Provide a Group Jid")
+      }else return await citel.reply("Uhh Dear, Please Provide a Group Jid")
       var g1 = await Void.groupMetadata(group1)
       var g2 = await Void.groupMetadata(group2)
       var common = g1.participants.filter(({ id: id1 }) => g2.participants.some(({ id: id2 }) => id2 === id1)) || [];
