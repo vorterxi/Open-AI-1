@@ -98,7 +98,7 @@ async(Void, citel, text, {isCreator}) => {
     plugin['url'] = url;
 
     await new plugindb(plugin).save();
-    citel.reply('ᴘʟᴜɢɪɴ' + l + ('ɪɴsᴛᴀʟʟᴇᴅ ɪɴ' + `sɪɢᴍᴀ ᴹᴰ` + ' ' ));
+    citel.reply('ᴘʟᴜɢɪɴ ' + l + (' ɪɴsᴛᴀʟʟᴇᴅ ɪɴ ' + `sɪɢᴍᴀ ᴹᴰ` + ' ' ));
 
   }
 
