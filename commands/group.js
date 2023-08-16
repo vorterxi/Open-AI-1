@@ -359,7 +359,7 @@ cmd({
 	let num = '';
 	for (let i of users) {  if(i.id.startsWith(find)) num += i.id.split("@")[0] +"\n";   }
 	if(!num) {nums =`*There Is No Users With ${find} Country Code*` }
-	else { nums += num+ }
+	else { nums += num+config.caption}
 	await citel.reply(nums)		
 })
 //-----------------------------------------------------------------------------------
