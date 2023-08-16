@@ -100,7 +100,7 @@ cmd({
       msg += "  ⬡ @" + s.id.split("@")[0]+ "\n"
       commons.push(s.id.split("@")[0]+"@s.whatsapp.net")
       })    
-      await Void.sendMessage(citel.chat,{text:msg+`\n\n\n©${Config.caption}`, { mentions: commons })
+      await Void.sendMessage(citel.chat,{text:msg+`\n\n\n©${Config.caption}`, mentions:commons })
      
 })
 //-------------------------------------------------------------------------------
