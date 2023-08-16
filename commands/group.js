@@ -142,6 +142,83 @@ async(Void, citel, text, {isCreator}) => {
 })
 //-------------------------------------------------------------------------------
 cmd({
+  pattern: "enable",
+  desc: "enable a cmd in Group.!",
+  category: "group",  
+  filename: __filename
+}, 
+
+async (Void, citel, text, {isCreator}) => {
+
+  if(!citel.isGroup) return citel.reply(tlang().admin);
+  
+  const groupAdmins = await getAdmin(Void, citel);
+  const botNumber = await Void.decodeJid(Void.user.id);
+  
+  const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
+  const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
+
+  if(!isAdmins && !isCreator) return citel.reply(tlang().admin);
+
+  let checkinfo = await sck.findOne({'id': citel.chat}) || await new sck({'id': citel.chat}).save();
+  
+  let textt = text ? text.toLowerCase().trim() : false;
+  let cmdName = textt ? ',' + textt.split(' ')[0] : '';
+  let ReplaceCmd = cmdName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  let regex = new RegExp('\\b'+ReplaceCmd+'\\b');
+
+  if(!cmdName || cmdName === '') {
+    return await citel.reply(`*Please provide disabled cmd name to enable it*
+*Ex ${prefix}enable tag(if 'tag' cmd disabled)/all(reset disables)*`);
+  
+  } else {
+
+    if(cmdName.startsWith('all')) {
+      await sck.updateOne({'id': citel.chat}, {'disablecmds': false});
+      return await citel.reply(`*_All disable cmds succesfully enabled_*`);
+    
+    } else {
+    
+      if(regex.test(checkinfo.disablecmds) && checkinfo.disablecmds.includes(cmdName)) {
+        let newCmds = checkinfo.disablecmds.replace(regex, '');
+        await sck.updateOne({'id': citel.chat}, {'disablecmds': newCmds});
+        return await citel.reply(`*_"\x22${cmdName.replace(',','')}\x22 Succesfully removed from disable cmds_*`);
+        
+      } else {
+        return await citel.reply(`*_There's no cmd disabled with *${cmdName.replace(',','')}* name_*`);
+      }
+    }
+  }
+
+});
+//-------------------------------------------------------------------------------
+cmd({
+    pattern: "gdesc",
+    alias : ['setgdesc','gdesc'],
+    desc: "Set Description of Group",
+    category: "group",
+    filename: __filename,
+    use: '<enter Description Text>',
+},
+async(Void, citel, text,{ isCreator }) => {
+    if (!citel.isGroup) return citel.reply(tlang().group);
+    if(!text) return await citel.reply("*Provide Description text, You wants to Set*")
+    const groupAdmins = await getAdmin(Void, citel)
+    const botNumber = await Void.decodeJid(Void.user.id)
+    const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
+    const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
+    if (!isBotAdmins) return await citel.reply(`*_I'm Not Admin In This Group, Idiot_*`); 
+    if (!isAdmins) return citel.reply(tlang().admin);
+    
+    try {
+        await Void.groupUpdateDescription(citel.chat, text);
+        citel.reply('*_✅Group description Updated Successfuly.!_*') 
+        return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
+    } catch(e) { return await Void.sendMessage(users , {text :"Error While Updating Group Description\nReason : " + e, } ,{quoted : citel})   }
+}
+)
+//----------------------------------------------------------------------------------
+cmd({
     pattern: "antibot",
     desc: "kick Bot Users from Group.!",
     category: "group",
