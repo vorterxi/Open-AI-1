@@ -138,7 +138,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
               {
                    if(commands[i].pattern==undefined) continue
                    str +=       `╭ ${i+1} *${fancytext(commands[i].pattern,1)}*\n`                // ${i+1} 
-                   str += `╰➛ ${fancytext(commands[i].desc,1)}`
+                   str += `╰➛ ${fancytext(commands[i].desc,1)}\n`
               }
   
               
