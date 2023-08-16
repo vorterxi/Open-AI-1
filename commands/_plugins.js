@@ -63,10 +63,9 @@ async(Void, citel, text, {isCreator}) => {
   if (!isCreator) return citel.reply(tlang().owner)
   
   if(!text){   
-    return await citel.reply("*_Uhh Please, Provide Me Plugin Name_*");  
+    return await citel.reply("*ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴍᴇ ᴘʟᴜɢɪɴ ɴᴀᴍᴇ*");  
   }
 
-  if(!isCreator) return citel.reply(tlang().owner);
   
   let trl = text ? text : citel.quoted && citel.quoted.text ? citel.quoted.text : citel.reply_message;
   
@@ -75,7 +74,7 @@ async(Void, citel, text, {isCreator}) => {
     try {
       var url = new URL(Url);
     } catch {
-      citel.reply('Invalid url_');
+      citel.reply('ɪɴᴠᴀʟɪᴅ ᴜʀʟ');
     }
     
     let fs = require('fs'), {data} = await axios.get(url.href);
@@ -89,7 +88,7 @@ async(Void, citel, text, {isCreator}) => {
     try {
       require(__dirname + '/' + l + '.js');
     } catch(err) {
-      return fs.unlinkSync(__dirname + '/' + l + '.js'), citel.reply('Invalid Plugin\n' + err + '```');
+      return fs.unlinkSync(__dirname + '/' + l + '.js'), citel.reply('ɪɴᴠᴀʟɪᴅ ᴘʟᴜɢɪɴ\n' + err + '```');
     }
 
     const {plugindb} = require('../lib');
@@ -99,7 +98,7 @@ async(Void, citel, text, {isCreator}) => {
     plugin['url'] = url;
 
     await new plugindb(plugin).save();
-    citel.reply('Installed ' + l + ('.js saved in ' + `__dirname` + ' ' ));
+    citel.reply('ᴘʟᴜɢɪɴ' + l + ('ɪɴsᴛᴀʟʟᴇᴅ ɪɴ' + `sɪɢᴍᴀ ᴹᴰ` + ' ' ));
 
   }
 
