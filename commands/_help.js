@@ -113,6 +113,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
               let [date, time] = new Date()
         .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
         .split(",");
+              let total = await sck1.countDocuments()
               let str = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
 ┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
 ┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${tlang().title}
