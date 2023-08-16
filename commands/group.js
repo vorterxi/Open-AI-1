@@ -35,8 +35,73 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
+cmd({
+        pattern: "invite",
+        desc: "get group link.",
+        category: "group",
+        filename: __filename,
+    },
+	 async(Void, citel, text,{ isCreator }) => {
+	    if (!citel.isGroup) return citel.reply(tlang().group);	
+var str1 = await Void.groupInviteCode(citel.chat)
+var str2 ="https://chat.whatsapp.com/"
+var mergedString = `${str2}${str1}`;
+return citel.reply("ɢʀᴏᴜᴘ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ɪs ʜᴇʀᴇ \n*"+mergedString+"*");
+	
+    }
+	)
+//----------------------------------------------------------------------------
+cmd({
+        pattern: "revoke",
+        desc: "get group link.",
+        category: "group",
+        filename: __filename,
+    },
+	 async(Void, citel, text,{ isCreator }) => {
+	    if (!citel.isGroup) return citel.reply(tlang().group);
 
+var code = await Void.groupRevokeInvite(citel.chat)
+return citel.reply("*ɢʀᴏᴜᴘ ʟɪɴᴋ ʀᴇᴠᴏᴋᴇᴅ sᴜᴄᴄᴇsғᴜʟʟʏ*");
+	
+    }
+	)
 //---------------------------------------------------------------------------
+cmd({
+        pattern: "common",
+        desc: "Get common participants in two groups",
+        category: "owner",
+        filename: __filename,
+
+    },
+    async(Void, citel, text,{ isCreator }) => {
+        if (!isCreator) citel.reply(tlang().owner);          
+      let jids = await parsedJid(text);
+      var group1, group2;
+      if(jids.length > 1){
+        group1 = jids[0].includes("@g.us") ? jids[0] : citel.chat
+        group2 = jids[1].includes("@g.us") ? jids[1] : citel.chat
+      }else if(jids.length == 1){
+        group1 = citel.chat;
+        group2 = jids[0].includes("@g.us") ? jids[0] : citel.chat
+      }else return await citel.send("Uhh Dear, Please Provide a Group Jid")
+      var g1 = await Void.groupMetadata(group1)
+      var g2 = await Void.groupMetadata(group2)
+      var common = g1.participants.filter(({ id: id1 }) => g2.participants.some(({ id: id2 }) => id2 === id1)) || [];
+      if (common.length == 0 ) return await citel.send("Theres no Common Users in Both Groups")           
+      var heading =`   List Of Common Participants` ;
+      var msg = ` ${heading}  
+❲❒❳ Group1: ${g1.subject}
+❲❒❳ Group2: ${g2.subject}
+❲❒❳ Common Counts: ${common.length}_Members\n\n\n`
+      var commons = [];
+      common.map(async s => {
+      msg += "  ⬡ @" + s.id.split("@")[0]+ "\n"
+      commons.push(s.id.split("@")[0]+"@s.whatsapp.net")
+      })    
+      await citel.send( msg+`\n\n\n©${Config.caption}`, { mentions: commons })
+     
+});
+//-------------------------------------------------------------------------------
 cmd({
     pattern: "antibot",
     desc: "kick Bot Users from Group.!",
