@@ -1,13 +1,13 @@
 {
-               "name": "Sigma-MD",
-               "version": "Sigma",
+               "name": "SIGMA-MD",
+               "version": "SIGMA",
                "description": "Multi device whatsapp bot by Maher Zubair",
                "main": "lib/client.js",
                "type": "commonjs",
                "license": "GPL-3.0",
    "scripts": {
-                "start": "pm2 start lib/client.js --deep-monitoring --attach --name Sigma-MD",
-                "stop": "pm2 stop Sigma-MD"
+                "start": "pm2 start lib/client.js --deep-monitoring --attach --name SIGMA-MD",
+                "stop": "pm2 stop SIGMA-MD"
                 },
                "author": "Maher Zubair",
               "dependencies": {
