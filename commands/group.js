@@ -69,39 +69,76 @@ return citel.reply("*ɢʀᴏᴜᴘ ʟɪɴᴋ ʀᴇᴠᴏᴋᴇᴅ sᴜᴄᴄᴇs
 	)
 //---------------------------------------------------------------------------
 cmd({
-        pattern: "common",
-        desc: "Get common participants in two groups",
-        category: "owner",
-        filename: __filename,
+  pattern: "disable",
+  desc: "disable cmds in Group.!",
+  category: "group",
+  filename: __filename
+},
+async(Void, citel, text, {isCreator}) => {
 
-    },
-    async(Void, citel, text,{ isCreator }) => {
-        if (!isCreator) citel.reply(tlang().owner);          
-      let jids = await parsedJid(text);
-      var group1, group2;
-      if(jids.length > 1){
-        group1 = jids[0].includes("@g.us") ? jids[0] : citel.chat
-        group2 = jids[1].includes("@g.us") ? jids[1] : citel.chat
-      }else if(jids.length == 1){
-        group1 = citel.chat;
-        group2 = jids[0].includes("@g.us") ? jids[0] : citel.chat
-      }else return await citel.reply("Uhh Dear, Please Provide a Group Jid")
-      var g1 = await Void.groupMetadata(group1)
-      var g2 = await Void.groupMetadata(group2)
-      var common = g1.participants.filter(({ id: id1 }) => g2.participants.some(({ id: id2 }) => id2 === id1)) || [];
-      if (common.length == 0 ) return await citel.reply("Theres no Common Users in Both Groups")           
-      var heading =`   List Of Common Participants` ;
-      var msg = ` ${heading}  
-❲❒❳ Group1: ${g1.subject}
-❲❒❳ Group2: ${g2.subject}
-❲❒❳ Common Counts: ${common.length}_Members\n\n\n`
-      var commons = [];
-      common.map(async s => {
-      msg += "  ⬡ @" + s.id.split("@")[0]+ "\n"
-      commons.push(s.id.split("@")[0]+"@s.whatsapp.net")
-      })    
-      await Void.sendMessage(citel.chat,{text:msg+`\n\n\n©${Config.caption}`, mentions:commons })
-     
+  if(!citel.isGroup) return citel.reply(tlang().group);
+  
+  const groupAdmins = await getAdmin(Void, citel);
+  
+  const botNumber = await Void.decodeJid(Void.user.id);
+  
+  const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
+  
+  const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
+
+  if(!isAdmins && !isCreator) return citel.reply(tlang().admin);
+
+  let checkInfo = await sck.findOne({id: citel.chat}) || await new sck({id: citel.chat}).save();
+  
+  let textSplit = text ? text.toLowerCase().trim() : false;
+  
+  let cmdName = textSplit ? textSplit.split(' ')[0] : '';
+
+  if(!cmdName) return citel.reply(`Provide cmd name to disable in group\nEx ${prefix}disable tag (to disabled 'tag' cmd)`);
+
+  else {
+
+    if(cmdName.startsWith('enable') || cmdName.startsWith('admin')) {
+      return citel.send(checkInfo.disablecmds === "false" ? `_Uhh Dear, Theres no cmd disabled in current group_` : `_Disable cmds :_ \`\`\`${checkInfo.disablecmds.replace('false,','')}\`\`\``);
+    } 
+    
+    else {
+
+      if(cmdName.startsWith('disable') || cmdName.startsWith('list')) {
+        return citel.reply(`_Uhh Dear, Provided cmd already in disable cmds_`);
+      } 
+      
+      else {
+      
+        if(cmdName) {
+        
+          const cmds = sɪɢᴍᴀ_ᴍᴅ.commands.filter(c => c.pattern === cmdName) || sɪɢᴍᴀ_ᴍᴅ.commands.filter(c => c.alias && c.alias.includes(cmdName));
+
+          if(cmds) {
+          
+            let newCmd = cmds.pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            let regex = new RegExp('\\b'+newCmd+'\\b');
+
+            if(regex.test(checkInfo.disablecmds)) return citel.reply(`_Uhh Dear, I can't disable that cmd_`);
+
+            let newDisableCmd = checkInfo.disablecmds + ',' + cmds.pattern;
+            
+            await sck.updateOne({id: citel.chat}, {disablecmds: newDisableCmd});
+            
+            let lists = newDisableCmd.replace('false','');
+            
+            return citel.reply(`_"${cmdName}" Succesfully added in disable cmds_${lists === '' ? '' : '\n*Disable cmds :*\n```' + lists + '```'}`);
+            
+          } else return citel.reply(`_*'${cmdName}' is not a bot cmd, Provide valid cmd_*`);
+          
+        }
+
+      }
+
+    }
+
+  }
+
 })
 //-------------------------------------------------------------------------------
 cmd({
