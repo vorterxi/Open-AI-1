@@ -8,19 +8,13 @@
  * @author : 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕ <https://github.com/Mehar-Zubair>
  * @description : ᴏᴘᴇɴ ᴀⁱ� ♕,A Multi-functional whatsapp bot.
  * @version 1.0.3 
- **/
+
 
  const { sck,sck1,cmd, getBuffer, tlang, prefix } = require('../lib')
  const Config = require('../config')
  const eco = require('discord-mongoose-economy')
  const ty = eco.connect(mongodb);
- /*
-  cmd({
-         pattern: "economy",
-         desc: "daily gold.",
-         category: "economy",
-     },
-     */
+
      //---------------------------------------------------------------------------
  cmd({
          pattern: "daily",
@@ -642,3 +636,4 @@ return await citel.reply(str+` ${deduff}.`)
 }
 }
 ) 
+**/
