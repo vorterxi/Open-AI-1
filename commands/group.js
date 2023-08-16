@@ -269,7 +269,99 @@ async(Void, citel, text,{ isCreator }) => {
         return await citel.reply("*Anti_Demote Disable Succesfully!*")
       }
       else return await citel.reply(`*Uhh Dear, Please Toggle between "On" And "Off".* \n*_To Enable & Disable Stop Demoting Peoples!_*`)
+})
+//-----------------------------------------------------------------------------------
+cmd({
+        pattern: "antipromote",
+        desc: "Detects Promote and Automaticaly demote promoted person.", 
+        category: "group",
+        filename: __filename,
+    },
+    async(Void, citel, text,{ isCreator }) => {
+        if (!citel.isGroup) return citel.reply(tlang().group);
+        const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
+        const participants = citel.isGroup ? await groupMetadata.participants : "";
+        const groupAdmins = await getAdmin(Void, citel)
+        const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
+        if (!isAdmins && !isCreator) return citel.reply(tlang().admin);
+            
+      let checkinfo = await sck.findOne({ id : citel.chat })  || await new sck({ id: citel.chat}).save();
+      if (text.toLowerCase().startsWith("on") || text.toLowerCase().startsWith("act") || text.toLowerCase().startsWith("enable") ) {
+        if (checkinfo.antipromote == 'true') return await citel.reply("*Anti_Promote Already Enabled In Current Chat!*")
+        await sck.updateOne({ id: citel.chat }, { antipromote : 'true' });
+        return await citel.reply("*Anti_Promote Enable Succesfully! _No One Promote Here Now_.*")
+      }else if (text.toLowerCase().startsWith("off") || text.toLowerCase().startsWith("deact") || text.toLowerCase().startsWith("disable") ) {
+        if (checkinfo.antipromote == 'false') return await citel.reply("*Anti_Promote Already Disabled In Current Chat!*")
+        await sck.updateOne({ id: citel.chat }, { antipromote : 'false' });
+        return await citel.reply("*Anti_Promote Disable Succesfully!*")
+      }
+      else return await citel.reply(`*Uhh Dear, Please Toggle between "On" And "Off".* \n*_To Stop Promoting Peoples in Chat_*`)
 });
+//-----------------------------------------------------------------------------------
+cmd({
+        pattern: "kik",
+        desc: "Kick all numbers from a certain country",
+        category: "group",
+        filename: __filename,
+    },
+    async(Void, citel, text,{ isCreator }) => 
+    {	
+        if (!citel.isGroup) return citel.reply(tlang().group);
+	if(!text) return await citel.reply("*Provide Me Country Code. Example: .kik 91*")
+        const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
+	const groupAdmins = await getAdmin(Void, citel)
+        let isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) :  false  ;
+        if (!isAdmins)
+	{
+		if(isCreator) citel.reply("*Hey Owner, You Are not Admin Here*")
+		else return citel.reply(tlang().admin);
+	}
+	let find = text.split(" ")[0].replace('+' , '');
+	let error = '*These Users Not Kicked* \n\t' ;
+	let users = await groupMetadata.participants
+	let hmanykik = 0;
+	let iskikstart = false ;
+	const botNumber = await Void.decodeJid(Void.user.id)
+	for (let i of users) { 
+		let isuseradmin  =  groupAdmins.includes(i.id) || false 
+		if(i.id.startsWith(find) && !isuseradmin)
+		{ 
+			if(!iskikstart)
+			{
+				iskikstart = true ;
+				await citel.reply(`*_Kicking ALL the Users With ${find} Country Code_*`)
+			}
+			try { await Void.groupParticipantsUpdate(citel.chat, [i.id], "remove"); hmanykik++ ;  }
+			catch (e) { console.log("Error While Kicking : " , e) } 	
+		}
+	}
+	if(hmanykik == 0) return await citel.reply(`*_Ahh, There Is No User Found With ${find} Country Code_*`)
+        else return await citel.reply(`*_Hurray, ${hmanykik.toString()} Users With ${find} Country Code kicked_*`)
+})
+//-----------------------------------------------------------------------------------
+cmd({
+        pattern: "num",
+        desc: "get all numbers from a certain country",
+        category: "group",
+        filename: __filename,
+    },
+    async(Void, citel, text,{ isCreator }) => 
+    {	
+        if (!citel.isGroup) return citel.reply(tlang().group);
+	if(!text) return await citel.reply("*Provide Me Country Code. Example: .num 91*")
+        const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
+	const groupAdmins = await getAdmin(Void, citel)
+        const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) :  false  ;
+        if (!isAdmins && !isCreator ) return citel.reply(tlang().admin);
+	let find = text.split(" ")[0];
+	let users = await groupMetadata.participants
+	let nums = `*List Of Users With ${find} Country Code*\n`
+	let num = '';
+	for (let i of users) {  if(i.id.startsWith(find)) num += i.id.split("@")[0] +"\n";   }
+	if(!num) {nums =`*There Is No Users With ${find} Country Code*` }
+	else { nums += num+Config.caption }
+	await citel.reply(nums)		
+})
 //-----------------------------------------------------------------------------------
 cmd({
     pattern: "antibot",
@@ -456,13 +548,12 @@ cmd({
 
         },
         async(Void, citel, text,{ isCreator }) => {
-	   
-    
-            if (!citel.quoted) return citel.reply("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴀ ᴜsᴇʀ");
             if (!isCreator) citel.reply(tlang().owner);
-            let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
+            let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid[0] ? citel.mentionedJid[0] : false ;
+            if(!users)  return await citel.reply("*Uhh dear, reply/mention an User*")
+	    let num = users.replace("@s.whatsapp.net","")
             await Void.updateBlockStatus(users, "unblock")
-                .then((res) => console.log(jsonformat(res)))
+                .then((res) => citel.send(`*@${num} Unblocked Succesfully..!*`,{mentions : [ users , ]}))
                 .catch((err) => console.log(jsonformat(err)));
         }
     )
@@ -563,7 +654,7 @@ cmd({
             use: '<reply to a viewonce message.>',
         },
         async(Void, citel, text) => {
-            if (!citel.quoted) return reply("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ!");
+            if (!citel.quoted) return citel.reply("ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ ɪᴍᴀɢᴇ ᴏʀ ᴠɪᴅᴇᴏ!");
             let mime = citel.quoted.mtype
             if (/viewOnce/.test(mime)) {
                 const mtype = Object.keys(quoted.message)[0];
@@ -1206,24 +1297,24 @@ cmd({
 
     )
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "block",
-            desc: "blocks that person",
-            fromMe: true,
-            category: "owner",
-            filename: __filename,
-            use: '<quote/reply user.>',
-        },
-        async(Void, citel, text, {isCreator}) => {
-            if (!citel.quoted) return citel.reply("Please reply to a user");
-            if (!isCreator) citel.reply(tlang().owner);
-            let users = citel.mentionedJid[0] ? citel.mentionedJid[0] : citel.quoted ? citel.quoted.sender : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
-            await Void.updateBlockStatus(users, "block")
-                .then((res) => console.log(jsonformat(res)))
-                .catch((err) => console.log(jsonformat(err)));
+    cmd({
+        pattern: "block",
+        desc: "blocks that person",
+        fromMe: true,
+        category: "owner",
+        filename: __filename,
+        use: '<quote/reply user.>'
+    },
+    async(Void, citel, text,{isCreator}) => {
+        if (!isCreator) citel.reply(tlang().owner);
+        let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid[0] ? citel.mentionedJid[0] : "";
+        if(!users)  return await citel.reply("*Uhh dear, reply/mention an User*")
+        await Void.updateBlockStatus(users, "block")
+            .then((res) => { return Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});    })		    //console.log(jsonformat(res))
+            .catch((err) => console.log(jsonformat(err)));
 
-        }
-    )
+    }
+)
     //---------------------------------------------------------------------------
 cmd({
         pattern: "broadcast",
