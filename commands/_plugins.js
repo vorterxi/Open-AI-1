@@ -53,17 +53,54 @@ cmd({
 
 //---------------------------------------------------------------------------
 cmd({
-        pattern: "install",
-        category: "owner",
-        desc: "Installs external modules..",
-        filename: __filename
-    },
-    async(Void, citel, text, {isCreator}) => {
+  pattern: "install",
+  category: "owner",
+  desc: "Installs external modules..",
+  filename: __filename
+},
+async(Void, citel, text, {isCreator}) => {
 
-if(!isCreator) return citel.reply(tlang().owner);
+  if (!isCreator) return citel.reply(tlang().owner)
+  
+  if(!text){   
+    return await citel.reply("*_Uhh Please, Provide Me Plugin Name_*");  
+  }
 
-let trl=text?text:citel.quoted&&citel.quoted.text?citel.quoted.text:citel.reply_message;for(let Url of isUrl(trl)){try{var url=new URL(Url);}catch{citel.reply('Invalid url_');}let fs=require('fs'),{data}=await axios.get(url.href);let lp=/pattern: ["'](.*)["'],/g.exec(data);let lj=lp[1].split(' ')[0]||Math.random().toString(36).slice(-5);l=lj.replace(/[^A-Za-z]/g,'');await fs.writeFileSync(__dirname+'/'+l+'.js',data,'utf8');try{require(__dirname+'/'+l+'.js');}catch(err){return fs.unlinkSync(__dirname+'/'+l+'.js'),citel.reply('Invalid Plugin\n'+err+'```');}const {plugindb}=require('../lib');let plugin={};plugin['id']=l;plugin['url']=url;await new plugindb(plugin).save();citel.reply('Installed '+l+('.js saved in '+__dirname+' )');
+  if(!isCreator) return citel.reply(tlang().owner);
+  
+  let trl = text ? text : citel.quoted && citel.quoted.text ? citel.quoted.text : citel.reply_message;
+  
+  for(let Url of isUrl(trl)){
 
-}
+    try {
+      var url = new URL(Url);
+    } catch {
+      citel.reply('Invalid url_');
+    }
+    
+    let fs = require('fs'), {data} = await axios.get(url.href);
+
+    let lp = /pattern: ["'](.*)["'],/g.exec(data);
+    let lj = lp[1].split(' ')[0] || Math.random().toString(36).slice(-5);
+    l = lj.replace(/[^A-Za-z]/g,'');
+
+    await fs.writeFileSync(__dirname + '/' + l + '.js', data, 'utf8');
+
+    try {
+      require(__dirname + '/' + l + '.js');
+    } catch(err) {
+      return fs.unlinkSync(__dirname + '/' + l + '.js'), citel.reply('Invalid Plugin\n' + err + '```');
+    }
+
+    const {plugindb} = require('../lib');
+    let plugin = {};
+
+    plugin['id'] = l;
+    plugin['url'] = url;
+
+    await new plugindb(plugin).save();
+    citel.reply('Installed ' + l + ('.js saved in ' + `__dirname` + ' ' ));
+
+  }
 
 })
