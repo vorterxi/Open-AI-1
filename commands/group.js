@@ -194,7 +194,7 @@ async (Void, citel, text, {isCreator}) => {
 //-------------------------------------------------------------------------------
 cmd({
     pattern: "gdesc",
-    alias : ['setgdesc','gdesc'],
+    alias : ['setgdesc'],
     desc: "Set Description of Group",
     category: "group",
     filename: __filename,
@@ -218,6 +218,59 @@ async(Void, citel, text,{ isCreator }) => {
 }
 )
 //----------------------------------------------------------------------------------
+cmd({
+    pattern: "gname",
+    alias : ['setgname','gname'],
+    desc: "Set Description of Group",
+    category: "group",
+    filename: __filename,
+    use: '<enter Description Text>',
+},
+async(Void, citel, text,{ isCreator }) => {
+    if (!citel.isGroup) return citel.reply(tlang().group);
+    if(!text) return await citel.reply("*Uhh Dear, Give text to Update This Group Name*")
+    const groupAdmins = await getAdmin(Void, citel)
+    const botNumber = await Void.decodeJid(Void.user.id)
+    const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
+    const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
+    if (!isBotAdmins) return await citel.reply(`*_I'm Not Admin In This Group, Idiot_*`); 
+    if (!isAdmins) return citel.reply(tlang().admin);
+    
+    try {
+        await Void.groupUpdateSubject(citel.chat, text)
+        citel.reply('*_✅Group Name Updated Successfuly.!_*') 
+        return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
+    } catch(e) { return await Void.sendMessage(users , {text :"_Error While Updating Group Name_\nReason : " + e, } ,{quoted : citel})   }
+}
+)
+//-----------------------------------------------------------------------------------
+    cmd({
+        pattern: "antidemote",
+        desc: "Detects Promote and Automaticaly demote promoted person.", 
+        category: "group",
+        filename: __filename,
+    },
+    async(Void, citel, text,{ isCreator }) => {
+        if (!citel.isGroup) return citel.reply(tlang().group);
+        const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
+        const participants = citel.isGroup ? await groupMetadata.participants : "";
+        const groupAdmins = await getAdmin(Void, citel)
+        const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
+        if (!isAdmins && !isCreator) return citel.reply(tlang().admin);
+            
+      let checkinfo = await sck.findOne({ id : citel.chat })  || await new sck({ id: citel.chat}).save();
+      if (text.toLowerCase().startsWith("on") || text.toLowerCase().startsWith("act") || text.toLowerCase().startsWith("enable") ) {
+        if (checkinfo.antidemote == 'true') return await citel.send("*Anti_Demote Already Enabled In Current Chat!*")
+        await sck.updateOne({ id: citel.chat }, { antidemote : 'true' });
+        return await citel.send("*Anti_Demote Enable Succesfully! _No One Demote Here Now_.*")
+      }else if (text.toLowerCase().startsWith("off") || text.toLowerCase().startsWith("deact") || text.toLowerCase().startsWith("disable") ) {
+        if (checkinfo.antidemote == 'false') return await citel.send("*Anti_Demote Already Disabled In Current Chat!*")
+        await sck.updateOne({ id: citel.chat }, { antidemote : 'false' });
+        return await citel.send("*Anti_Demote Disable Succesfully!*")
+      }
+      else return await citel.reply(`*Uhh Dear, Please Toggle between "On" And "Off".* \n*_To Enable & Disable Stop Demoting Peoples!_*`)
+});
+//-----------------------------------------------------------------------------------
 cmd({
     pattern: "antibot",
     desc: "kick Bot Users from Group.!",
