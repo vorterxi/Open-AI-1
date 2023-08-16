@@ -425,7 +425,7 @@ cmd({
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
             if (fileSizeInMegabytes <= dlsize) {
                 let buttonMessage = {
-                    audio: fs.readFileSync(`./${randomName}`),
+                    document: fs.readFileSync(`./${randomName}`),
                     mimetype: 'audio/mpeg',
                     caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 sɪɢᴍᴀ ᴹᴰ`,
                     fileName: titleYt + ".mp3",
