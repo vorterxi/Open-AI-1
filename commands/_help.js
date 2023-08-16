@@ -57,6 +57,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                 let str = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
 ┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
 ┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${tlang().title}
+┃✗ •ᴘʀᴇғɪx• ${prefix}
 ┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
 ┃✗ •ᴍᴏᴅᴇ• ${Config.WORKTYPE}
 ┃✗ •ᴛɪᴍᴇ• ${time}
@@ -103,19 +104,34 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
               pattern: "list",
               desc: "list menu",
               category: "general",
-              react: "🥀"
+              react: "👑"
            },
           async(Void, citel) => {
               const { commands } = require('../lib');
-              let str = `
-  ╭━━〘 *${Config.botname}* 〙────⊷     
-  ┃ ✭ Theme: ${tlang().title}
-  ┃ ✭ Prefix: ${prefix}
-  ┃ ✭ Owner: ${Config.ownername}
-  ┃ ✭ Commands: ${commands.length}
-  ┃ ✭ Uptime: ${runtime(process.uptime())}
-  ┃ ✭ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-  ╰━━━━━━━━━━━━━━⊷\n`
+              timestampe = speed();
+              latensie = speed() - timestampe;
+              let [date, time] = new Date()
+        .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
+        .split(",");
+              let str = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
+┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
+┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${tlang().title}
+┃✗ •ᴘʀᴇғɪx• ${prefix}
+┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
+┃✗ •ᴍᴏᴅᴇ• ${Config.WORKTYPE}
+┃✗ •ᴛɪᴍᴇ• ${time}
+┃✗ •ᴅᴀᴛᴇ• ${date}
+┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+┃✗ •ᴜᴘᴛɪᴍᴇ• ${runtime(process.uptime())}
+┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
+┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs
+┃✗ •ᴘʟᴀᴛꜰᴏʀᴍ• ᴍᴀᴄ-ᴏs
+┃✗ •ᴜsᴇʀs• ${total}
+┃✗ •ᴠᴇʀsɪᴏɴ• sɪɢᴍᴀ
+┃✗ •ʙʀᴀɴᴄʜ• ${Config.BRANCH}
+┃✗ •ᴀᴜᴛʜᴏʀ• 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕
+┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ ♕
+┗━━━━━━━━━━━⦿\n`
   
               for (let i = 0; i < commands.length; i++) 
               {
