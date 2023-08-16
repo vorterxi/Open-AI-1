@@ -89,7 +89,7 @@ cmd({
       var g1 = await Void.groupMetadata(group1)
       var g2 = await Void.groupMetadata(group2)
       var common = g1.participants.filter(({ id: id1 }) => g2.participants.some(({ id: id2 }) => id2 === id1)) || [];
-      if (common.length == 0 ) return await citel.send("Theres no Common Users in Both Groups")           
+      if (common.length == 0 ) return await citel.reply("Theres no Common Users in Both Groups")           
       var heading =`   List Of Common Participants` ;
       var msg = ` ${heading}  
 ❲❒❳ Group1: ${g1.subject}
