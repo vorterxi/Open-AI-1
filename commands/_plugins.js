@@ -52,7 +52,7 @@ cmd({
         let kill = await remove(text.split(" ")[0])
         delete require.cache[require.resolve(__dirname+"/" + text + ".js")];
         fs.unlinkSync(__dirname + "/" + text+ ".js");
-        await citel.reply(`*_${kill}_* \n*ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ sɪɢᴍᴀ ᴹᴰ ʀᴇsᴛᴀʀᴛɪɴɢ*`)
+        await citel.reply(`*ᴘʟᴜɢɪɴ ʀᴇᴍᴏᴠᴇᴅ* \n*ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ sɪɢᴍᴀ ᴹᴰ ʀᴇsᴛᴀʀᴛɪɴɢ*`)
         const { exec } = require("child_process")
         exec('pm2 restart all')  
  }
