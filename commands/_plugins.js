@@ -11,7 +11,7 @@
 
 const axios = require('axios');
 const fs = require('fs-extra')
-const { plugins,plugindb, remove, isUrl,cmd } = require('../lib')
+const { plugins,plugindb, remove, isUrl,cmd , tlang  , Config} = require('../lib')
 //---------------------------------------------------------------------------
 cmd({
         pattern: "plugins",
@@ -33,24 +33,31 @@ cmd({
 //---------------------------------------------------------------------------
 cmd({
         pattern: "remove",
-        alias :['uninstall','rmv'],
+        alias :['uninstall'],
         category: "owner",
-        desc: "removes external plugins.",
+        desc: "removes external modules.",
         filename: __filename
     },
     async(Void, citel, text,{ isCreator}) => {
         if (!isCreator) return citel.reply(tlang().owner)
-        if(text==='all') {
-         await plugindb.collection.drop()
-         return citel.reply('ᴅᴇʟᴇᴛᴇᴅ ᴀʟʟ ᴘʟᴜɢɪɴs ғʀᴏᴍ sɪɢᴍᴀ ᴹᴰ.')
+        if(!text) return await citel.reply("*ᴘʟᴇᴀsᴇ, ɢɪᴠᴇ ᴍᴇ ᴘʟᴜɢɪɴ ɴᴀᴍᴇ*")
+ 
+        if(text==='alls') 
+        { 
+         await plugindb.collection.drop() ; 
+         return citel.reply('ᴅᴇʟᴇᴛᴇᴅ ᴀʟʟ ᴘʟᴜɢɪɴs ғʀᴏᴍ sɪɢᴍᴀ ᴹᴰ') ;  
         }
+ try 
+ {
         let kill = await remove(text.split(" ")[0])
         delete require.cache[require.resolve(__dirname+"/" + text + ".js")];
         fs.unlinkSync(__dirname + "/" + text+ ".js");
-        return citel.reply(kill)
-    }
-)
-
+        await citel.reply(`*_${kill}_* \n*ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ sɪɢᴍᴀ ᴹᴰ ʀᴇsᴛᴀʀᴛɪɴɢ*`)
+        const { exec } = require("child_process")
+        exec('pm2 restart all')  
+ }
+ catch (e) {return await citel.reply("*ᴘʟᴜɢɪɴ ɴᴏᴛ ғᴏᴜɴᴅ ɪɴ ᴍᴏɴɢᴏᴅʙ sᴇʀᴠᴇʀ*")}
+ })
 //---------------------------------------------------------------------------
 cmd({
   pattern: "install",
