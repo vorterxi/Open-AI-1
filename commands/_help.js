@@ -17,10 +17,10 @@ let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1 } = require
 const long = String.fromCharCode(8206)
 const readmore = long.repeat(4001)
 const speed = require('performance-now')
-const Secktor = require('../lib/commands')
+const Zubair = require('../lib/commands')
 
     //---------------------------------------------------------------------------
-Secktor.cmd({
+Zubair.cmd({
             pattern: "help",
             alias: ["menu"],
             desc: "Help list",
@@ -99,7 +99,7 @@ Secktor.cmd({
     )
 
     //---------------------------------------------------------------------------
-Secktor.cmd({
+Zubair.cmd({
             pattern: "list",
             desc: "list menu",
             category: "general"
@@ -131,7 +131,7 @@ for (let i = 0; i < commands.length; i++)
         }
     )
     //---------------------------------------------------------------------------
-Secktor.cmd({
+Zubair.cmd({
         pattern: "owner",
         alias:["mz"],
         desc: "To find owner number",
@@ -158,7 +158,7 @@ Secktor.cmd({
                     thumbnail: log0,
                     mediaType: 2,
                     mediaUrl: '',
-                    sourceUrl: `https://wa.me/+` + owner[0] + '?text=Hii bro,I am ' + citel.pushName,
+                    sourceUrl: `https://wa.me/+` + owner[0] + '?text=ʜɪ ʙʀᴏ, ɪ ᴀᴍ ' + citel.pushName,
                 },
             },
         };
@@ -169,7 +169,7 @@ Secktor.cmd({
     }
 )
 
-Secktor.cmd({
+Zubair.cmd({
     pattern: "file",
     desc: "to get extact name where that command is in repo.\nSo user can edit that.",
     category: "general",
@@ -177,8 +177,29 @@ Secktor.cmd({
     filename: __filename
 },
  async(Void, citel, text ,{isCreator }) => {
-  const _0x2cef43=_0x2b70;(function(_0x2abcff,_0x113526){const _0x5c2db2=_0x2b70,_0x201fdf=_0x2abcff();while(!![]){try{const _0x5944e5=-parseInt(_0x5c2db2(0x123))/0x1*(parseInt(_0x5c2db2(0x121))/0x2)+-parseInt(_0x5c2db2(0x131))/0x3*(parseInt(_0x5c2db2(0x12d))/0x4)+parseInt(_0x5c2db2(0x12b))/0x5*(parseInt(_0x5c2db2(0x137))/0x6)+-parseInt(_0x5c2db2(0x12a))/0x7*(parseInt(_0x5c2db2(0x126))/0x8)+parseInt(_0x5c2db2(0x139))/0x9*(parseInt(_0x5c2db2(0x135))/0xa)+-parseInt(_0x5c2db2(0x12f))/0xb+-parseInt(_0x5c2db2(0x12c))/0xc*(-parseInt(_0x5c2db2(0x138))/0xd);if(_0x5944e5===_0x113526)break;else _0x201fdf['push'](_0x201fdf['shift']());}catch(_0x2df79b){_0x201fdf['push'](_0x201fdf['shift']());}}}(_0x414d,0x6dbec));function _0x414d(){const _0xcb737f=['../lib','toString','filename','197194VvgHcT','*PLease,\x20Provide\x20A\x20Command/Directory*','7hyRCyg','*Sorry,\x20Only\x20Owner\x20Can\x20Use\x20This\x20Command*','find','93672XSoDgN','*-------------\x20FILE\x20MANAGER\x20-------------*\x0a','startsWith','toLowerCase','455GSenTu','1135XWBUIS','636XNfWpu','4WcSvJh','reply','8922947lcEVWC','pattern','2246253BqYWwf','push','┃✗\x20•Type•\x20','join','10jQzKaU','*❌No\x20Such\x20commands.*','6954ECuGAc','763321Zzeied','770526isKHgC','┏━━⟪⟪\x20🅼♥︎❚❚♥︎🆉\x20⟫━⦿\x0a┃✗\x20•Command•\x20','category'];_0x414d=function(){return _0xcb737f;};return _0x414d();}if(!isCreator)return citel[_0x2cef43(0x12e)](_0x2cef43(0x124));if(!text)return citel[_0x2cef43(0x12e)](_0x2cef43(0x122));if(text[_0x2cef43(0x128)]('.')){let res=_0x2cef43(0x127);try{const files=await readDirectory(text);files['forEach'](_0x9df3e4=>{res+=_0x9df3e4+'\x0a';}),await citel[_0x2cef43(0x12e)](res[_0x2cef43(0x11f)]());}catch(_0x230af6){citel[_0x2cef43(0x12e)](_0x230af6);}return;}const {commands}=require(_0x2cef43(0x11e));function _0x2b70(_0x35ffce,_0x37c91a){const _0x414db4=_0x414d();return _0x2b70=function(_0x2b7002,_0x511356){_0x2b7002=_0x2b7002-0x11d;let _0x2d4cac=_0x414db4[_0x2b7002];return _0x2d4cac;},_0x2b70(_0x35ffce,_0x37c91a);}let arr=[];const cmd=commands[_0x2cef43(0x125)](_0x2037e1=>_0x2037e1[_0x2cef43(0x130)]===text['split']('\x20')[0x0][_0x2cef43(0x129)]());if(!cmd)return await citel['reply'](_0x2cef43(0x136));else arr[_0x2cef43(0x132)](_0x2cef43(0x13a)+cmd['pattern']);if(cmd[_0x2cef43(0x11d)])arr['push'](_0x2cef43(0x133)+cmd[_0x2cef43(0x11d)]);if(cmd[_0x2cef43(0x120)])arr[_0x2cef43(0x132)]('┃✗\x20•FileName•\x20'+cmd['filename']+'\x0a┗━━━━━━━━━━⦿');return await citel['reply'](arr[_0x2cef43(0x134)]('\x0a'));
+   if(!isCreator) return citel.reply("ᴏɴʟʏ ᴏᴡɴᴇʀ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ")
+   if(!text) return citel.reply("ᴘʟᴇᴀsᴇ, ᴘʀᴏᴠɪᴅᴇ ᴍᴇ ᴀ ᴄᴏᴍᴍᴀɴᴅ/ᴅɪʀᴇᴄᴛᴏʀʏ")
+   if(text.startsWith("."))
+   {
+      let res="------------- FILE MANAGER -------------\n"
+      try {
+            const files = await readDirectory(text);
+            files.forEach(file => { res += file + '\n'; });
+            await citel.reply(res.toString());
+      } catch (error) {  citel.reply(error); }
+        return;
+   }
+   
+   
+   const { commands } = require('../lib');
+   
+   let arr = [];
+          const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
+          if (!cmd) return await citel.reply("ɴᴏ sᴜᴄʜ ᴄᴏᴍᴍᴀɴᴅs");
+          else arr.push(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.pattern}`);
+          if (cmd.category) arr.push(`┃✗ •ᴛʏᴘᴇ• ${cmd.category}`);
+          if(cmd.filename) arr.push(`┃✗ •ғɪʟᴇɴᴀᴍᴇ• ${cmd.filename}\n┗━━━━━━━━━━⦿`)
+          return await citel.reply(arr.join('\n'));
   
   
   })
-  
