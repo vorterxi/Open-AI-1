@@ -982,7 +982,7 @@ cmd({
                 let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid[0] ? citel.mentionedJid[0] : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
                 if (!users) return await citel.send("*_Uhh Dear, Reply/Mention to an User_*");
                 await Void.groupParticipantsUpdate(citel.chat, [users], "promote");
-                await citel.send(`*User promoted Succesfully!*`)
+                await citel.reply(`*User promoted Succesfully!*`)
                 return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
             } catch(e) {
                 console.log("Promote error : " , e )
@@ -1013,11 +1013,11 @@ cmd({
                 let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid[0] ? citel.mentionedJid[0] : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
                 if (!users) return citel.send("*_Uhh Dear, Reply/Mention to an User_*");
                 await Void.groupParticipantsUpdate(citel.chat, [users], "remove");
-                await citel.send(`*Hurray, User Kicked Succesfully!*`)
+                await citel.reply(`*Hurray, User Kicked Succesfully!*`)
                 return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
             } catch(e) {
                 console.log("Kick error : " , e )
-                await Void.sendMessage(citel.chat, { react: { text: '❌', key: citel.key }});
+                await Void.sendMessage(citel.chat, { react: { text: '👑', key: citel.key }});
                 return await citel.reply(tlang().botAdmin);
 
             }
@@ -1212,7 +1212,7 @@ async(Void, citel, text,{ isCreator }) => {
         let users = citel.quoted ? citel.quoted.sender : citel.mentionedJid[0] ? citel.mentionedJid[0] : text.replace(/[^0-9]/g, "") + "@s.whatsapp.net";
         if (!users) return await citel.send("*_Uhh Dear, Reply/Mention to an User_*");
         await Void.groupParticipantsUpdate(citel.chat, [users], "demote");
-        await citel.send(`*User demoted Succesfully!*`)
+        await citel.reply(`*User demoted Succesfully!*`)
         return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
     } catch(e) {
         console.log("Demote error : " , e )
