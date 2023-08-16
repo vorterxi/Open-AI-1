@@ -57,7 +57,7 @@ Secktor.cmd({
                 let str = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
 ┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
 ┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${tlang().title}
-┃✗ •ᴛʜᴇᴍᴇ• ${tlang().LANG}
+┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
 ┃✗ •ᴍᴏᴅᴇ• ${Config.WORKTYPE}
 ┃✗ •ᴛɪᴍᴇ• ${time}
 ┃✗ •ᴅᴀᴛᴇ• ${date}
