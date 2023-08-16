@@ -68,7 +68,7 @@ return citel.reply("*ɢʀᴏᴜᴘ ʟɪɴᴋ ʀᴇᴠᴏᴋᴇᴅ sᴜᴄᴄᴇs
     }
 	)
 //---------------------------------------------------------------------------
-cmd({
+/*cmd({
   pattern: "disable",
   desc: "disable cmds in Group.!",
   category: "group",
@@ -139,9 +139,9 @@ async(Void, citel, text, {isCreator}) => {
 
   }
 
-})
+})*/
 //-------------------------------------------------------------------------------
-cmd({
+/*cmd({
   pattern: "enable",
   desc: "enable a cmd in Group.!",
   category: "group",  
@@ -190,7 +190,7 @@ async (Void, citel, text, {isCreator}) => {
     }
   }
 
-});
+});*/
 //-------------------------------------------------------------------------------
 cmd({
     pattern: "gdesc",
@@ -396,6 +396,7 @@ async(Void, citel, text , { isCreator}) => {
   }else return await citel.reply(`*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴠᴀʟɪᴅ ɪɴsᴛʀᴜᴄᴛɪᴏɴ*\n*ᴇɢ: ${prefix}ᴀɴᴛɪʙᴏᴛ ᴏɴ/ᴏғғ*`) 
 })
 //---------------------------------------------------------------------------
+
     //---------------------------------------------------------------------------
 cmd({
             pattern: "sticker",
@@ -648,7 +649,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+/*cmd({
             pattern: "retrive",
             desc: "Copies and Forwords viewonce message.",
             category: "group",
@@ -670,7 +671,7 @@ cmd({
                 await citel.reply("ᴘʟᴇᴀsᴇ, ʀᴇᴘʟʏ ᴛᴏ ᴠɪᴇᴡ ᴏɴᴄᴇ ᴍᴇssᴀɢᴇ");
             }
         }
-    )
+    )*/ 
     //---------------------------------------------------------------------------
 cmd({
             pattern: "rwarn",
@@ -882,10 +883,10 @@ cmd({
                         quoted: citel,
                     });
         }
-    )
-*/
+    )*/ 
+
     //---------------------------------------------------------------------------
-cmd({
+/*cmd({
             pattern: "leaderboard",
             alias: ["deck"],
             desc: "To check leaderboard",
@@ -959,7 +960,7 @@ cmd({
             }
             return citel.reply(leadtext)
         }
-    )
+    )*/
     //---------------------------------------------------------------------------
 
 cmd({
@@ -1059,28 +1060,68 @@ cmd({
             category: "group",
             filename: __filename,
         },
-        async(Void, citel, text, {isCreator}) => {
-	    if (!isCreator) return citel.reply(tlang().owner)
-            if (!citel.isGroup) return citel.reply(tlang().group);
+        async(Void, citel, text) => {
+            //if (!citel.isGroup) return citel.reply(tlang().group);
             const groupAdmins = await getAdmin(Void, citel)
             const botNumber = await Void.decodeJid(Void.user.id)
             const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
             const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-            if (!citel.isGroup) return citel.reply(tlang().group);
+            //if (!citel.isGroup) return citel.reply(tlang().group);
             if (!isBotAdmins) return citel.reply(tlang().botAdmin);
             if (!isAdmins) return citel.reply(tlang().admin);
-            if (text.split(" ")[0] === "close") {
-                await Void.groupSettingUpdate(citel.chat, "ᴀɴɴᴏᴜɴᴄᴇᴍᴇɴᴛ")
-                    .then((res) => reply(`Group Chat Muted :)`))
-                    .catch((err) => console.log(err));
-            } else if (text.split(" ")[0] === "open") {
-                await Void.groupSettingUpdate(citel.chat, "ɴᴏᴛ_ᴀɴɴᴏᴜɴᴄᴇᴍᴇɴᴛ")
-                    .then((res) => reply(`Group Chat Unmuted :)`))
-                    .catch((err) => console.log(err));
-            } else {
+	        let Group = await sck.findOne({ id: citel.chat });
+            if (text.split(" ")[0] == "close" || text.split(" ")[0] == "mute" ) {
+                await Void.groupSettingUpdate(citel.chat, "announcement")
+                    .then((res) => citel.reply(`Group Chat Muted`))
+                    .catch((err) => citel.reply("Error :" +err));
+            } else if (text.split(" ")[0] === "open"||text.split(" ")[0] === "unmute") {
+                await Void.groupSettingUpdate(citel.chat, "not_announcement")
+                    .then((res) => citel.reply(`Group Chat Unmuted`))
+                    .catch((err) => citel.reply("Error : " +err));
+            } 
+else if(text=="Detail" || text=="Info" || text=="info" || text=="details" ) 
+{
+    const pp = await Void.profilePictureUrl(citel.chat, 'image').catch(_ => null) || ''
+    const groupAdmins = participants.filter(p => p.admin)
+    const listAdmin = groupAdmins.map((v, i) => `  ${i + 1}. wa.me/${v.id.split('@')[0]}`).join('\n')
+    const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || citel.chat.split`-`[0] + '@s.whatsapp.net'
 
-                return citel.reply(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ɢʀᴏᴜᴘ ᴍᴏᴅᴇ•\n┃✗ ${prefix}ɢʀᴏᴜᴘ ᴏᴘᴇɴ ᴛᴏ ᴏᴘᴇɴ\n┃✗ ${prefix}ɢʀᴏᴜᴘ ᴄʟᴏsᴇ ᴛᴏ ᴄʟᴏsᴇ\n┗━━━━━━━━━━⦿`);
-            }
+    let ginfos = `
+      *「 INFO GROUP 」*
+*▢ ID :*
+   • ${groupMetadata.id}
+*▢ NAME :* 
+   • ${groupMetadata.subject}
+*▢ Members :*
+   • ${participants.length}
+*▢ Group Owner :*
+   • wa.me/${owner.split('@')[0]}
+*▢ Admins :*
+${listAdmin}
+*▢ Description :*
+   • ${groupMetadata.desc?.toString() || 'unknown'}
+*▢ 🪢 Extra Group Configuration :*";
+  • Group Nsfw :    ${Group.nsfw=='true'? '✅' : '❎'} 
+  • Antilink        :    ${Group.antilink=='true'? '✅' : '❎'}
+  • Economy      :    ${Group.economy=='true'? '✅' : '❎'}
+  • Events         :     ${Group.events=='true'? '✅' : '❎'}
+`.trim()
+    if(Group.events=='true'){
+        ginfos +="\n*▢ Wellcome Message :* \n  • "+Group.welcome;
+        ginfos +="\n\n*▢ Goodbye Message :* \n  • "+Group.goodbye; 
+    }
+return await Void.sendMessage(citel.chat,{image:{url : pp} , caption: ginfos } , {quoted:citel })
+}
+else
+{ 
+    return await citel.reply(`*_Uhh Dear Give me Query From Bellow Options_*
+_1:- .group Mute_
+_2:- .group Unmute_
+_3:- .group Info_
+`)
+    //  let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,},{buttonId: `${prefix}group close`,buttonText: {displayText: "📍Mute",},type: 1, },];     await Void.sendButtonText(citel.chat,buttons,`Group Mode`, Void.user.name, citel);
+           
+}
         }
     )
     //---------------------------------------------------------------------------
