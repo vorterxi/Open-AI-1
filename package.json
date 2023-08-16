@@ -1,13 +1,13 @@
 {
-               "name": "secktor-md",
-               "version": "0.0.7",
+               "name": "sɪɢᴍᴀ-ᴍᴅ",
+               "version": "sɪɢᴍᴀ",
                "description": "Multi device whatsapp bot by SamPandey001.",
                "main": "lib/client.js",
                "type": "commonjs",
                "license": "GPL-3.0",
    "scripts": {
-                "start": "pm2 start lib/client.js --deep-monitoring --attach --name secktor",
-                "stop": "pm2 stop secktor"
+                "start": "pm2 start lib/client.js --deep-monitoring --attach --name sɪɢᴍᴀ-ᴍᴅ",
+                "stop": "pm2 stop sɪɢᴍᴀ-ᴍᴅ"
                 },
                "author": "SamPandey001",
               "dependencies": {
