@@ -1,15 +1,15 @@
 {
-               "name": "sɪɢᴍᴀ-ᴍᴅ",
-               "version": "sɪɢᴍᴀ",
-               "description": "Multi device whatsapp bot by SamPandey001.",
+               "name": "Sigma-MD",
+               "version": "Sigma",
+               "description": "Multi device whatsapp bot by Maher Zubair",
                "main": "lib/client.js",
                "type": "commonjs",
                "license": "GPL-3.0",
    "scripts": {
-                "start": "pm2 start lib/client.js --deep-monitoring --attach --name sɪɢᴍᴀ-ᴍᴅ",
-                "stop": "pm2 stop sɪɢᴍᴀ-ᴍᴅ"
+                "start": "pm2 start lib/client.js --deep-monitoring --attach --name Sigma-MD",
+                "stop": "pm2 stop Sigma-MD"
                 },
-               "author": "ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ",
+               "author": "Maher Zubair",
               "dependencies": {
                        "@sampandey001/baileys": "latest", 
                        "@adiwajshing/keyed-db": "^0.2.4",
