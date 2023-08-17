@@ -702,7 +702,7 @@ async(Void, citel, text , {isCreator}) => {
     const participants = citel.isGroup ? await groupMetadata.participants : "";
     const groupAdmins = participants.filter(p => p.admin)
     const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-    if (!isAdmins ) return citel.reply(tlang().admin);
+    
     
     const listAdmin = groupAdmins.map((v, i) => ` |  @${v.id.split('@')[0]}`).join('\n')
 
