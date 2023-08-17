@@ -984,7 +984,7 @@ cmd({
                 if (!users) return await citel.send("*ʀᴇᴘʟʏ/ᴍᴇɴᴛɪᴏɴ ᴀɴʏ ᴜsᴇʀ*");
                 await Void.groupParticipantsUpdate(citel.chat, [users], "promote");
                 await citel.reply(`*ᴜsᴇʀ ᴘʀᴏᴍᴏᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ*`)
-                return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
+                return await Void.sendMessage(citel.chat, { react: { text: '👑', key: citel.key }});
             } catch(e) {
                 console.log("ᴘʀᴏᴍᴏᴛᴇ ᴇʀʀᴏʀ : " , e )
                 await Void.sendMessage(citel.chat, { react: { text: '👑', key: citel.key }});
