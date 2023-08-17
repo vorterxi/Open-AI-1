@@ -47,7 +47,7 @@ cmd(
                   } catch { console.log('heroku remote adding error'); }	
                   await git.push('heroku', 'main');	
       
-                  return '*ʙᴏᴛ ᴜᴘᴅᴀᴛᴇᴅ...*\nRestarting.'	
+                  return '*ʙᴏᴛ ᴜᴘᴅᴀᴛᴇᴅ...*\nʀᴇsᴛᴀʀᴛɪɴɢ'	
       
       
               }	
