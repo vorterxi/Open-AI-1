@@ -68,48 +68,6 @@ return citel.reply("*ɢʀᴏᴜᴘ ʟɪɴᴋ ʀᴇᴠᴏᴋᴇᴅ sᴜᴄᴄᴇs
     }
 	)
 //---------------------------------------------------------------------------
-cmd({
-            pattern: "devwarn",
-            desc: "send a warning from developer",
-            category: "user",
-            use: '<reply to any person>',
-            filename: __filename
-        },
-async(Void, citel, text) => {
-            if (!citel.quoted) return citel.reply(`Please Reply To A Person`);
-            var bio = await Void.fetchStatus(citel.quoted.sender);
-            var bioo = bio.status;
-            var setAt = bio.setAt.toString();
-            
-            var words = setAt.split(" ");
-            if(words.length > 3){ setAt= words.slice(0, 5).join(' ') ; }
-             
-            var num = citel.quoted.sender.split('@')[0];
-            let pfp;
-            try  {  pfp = await Void.profilePictureUrl(citel.quoted.sender, "image"); } 
-            catch (e) { pfp = await Void.profilePictureUrl(citel.sender, "image") ||  'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ; }    //|| 'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ;  }
-            
-            let username = await sck1.findOne({ id: citel.quoted.sender });
-            var tname = username.name;
-
-            
-         return await Void.sendMessage(citel.chat, {
-                image: {   url: pfp  },
-                caption: `
-╔════◇
-║ *『Person's  Information』*
-║ 
-║ *🍫Name :* ${tname}
-║ *👤Num :* ${num}
-║ *🎐Bio    :*  ${bioo}
-║ *🌟SetAt :* ${setAt}
-║    *Keep Calm Dude🥳*    ◇
-╚════════════════╝
-`,
-            },{quoted:citel});
-
-        }
-    )
 //---------------------------------------------------------------------------
 /*cmd({
   pattern: "disable",
