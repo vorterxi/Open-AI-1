@@ -696,7 +696,7 @@ cmd({
     filename: __filename,
     use: '<text>',
 },
-async(Void, citel, text , {isCreator}) => {
+async(Void, citel, text ) => {
     if (!citel.isGroup) return citel.reply(tlang().group);
     const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
     const participants = citel.isGroup ? await groupMetadata.participants : "";
@@ -707,13 +707,13 @@ async(Void, citel, text , {isCreator}) => {
     const listAdmin = groupAdmins.map((v, i) => ` |  @${v.id.split('@')[0]}`).join('\n')
 
 
-let tag = `
-Tag by : @${citel.sender.split("@")[0]}
+let tag = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n
+┃✗ *•ᴛᴀɢɢᴇᴅ ʙʏ•* @${citel.sender.split("@")[0]}
 ${text ? "≡ Message :" + text : ""}
 
-┌─⊷ ADMINS
+┏━━ *•ᴀᴅᴍɪɴs•* ━⦿
 ${listAdmin}
-└───────────
+┗━━━━━━━━━━⦿\n┗━━━━━━━━━━⦿\n*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ
 `.trim()
 return await Void.sendMessage(citel.chat,{text : tag ,mentions: [citel.sender, ...groupAdmins.map(v => v.id) ,]} ,)
 
