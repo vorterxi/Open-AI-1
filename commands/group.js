@@ -690,6 +690,39 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
+    pattern: "tagadmin",
+    desc: "Tags only Admin numbers",
+    category: "group",
+    filename: __filename,
+    use: '<text>',
+},
+async(Void, citel, text , {isCreator}) => {
+    if (!citel.isGroup) return citel.reply(tlang().group);
+    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
+    const participants = citel.isGroup ? await groupMetadata.participants : "";
+    const groupAdmins = participants.filter(p => p.admin)
+    const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
+    if (!isAdmins ) return citel.reply(tlang().admin);
+    if (!isAdmins && !isCreator) return citel.reply(tlang().admin);
+    const listAdmin = groupAdmins.map((v, i) => ` |  @${v.id.split('@')[0]}`).join('\n')
+
+
+let tag = `
+Tag by : @${citel.sender.split("@")[0]}
+${text ? "≡ Message :" + text : ""}
+
+┌─⊷ ADMINS
+${listAdmin}
+└───────────
+`.trim()
+return await Void.sendMessage(citel.chat,{text : tag ,mentions: [citel.sender, ...groupAdmins.map(v => v.id) ,]} ,)
+
+
+
+}
+)
+//------------------------------------------------------------------------------------------
+cmd({
             pattern: "poll",
             desc: "Makes poll in group.",
             category: "group",
