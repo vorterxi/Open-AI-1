@@ -104,12 +104,15 @@ async(Void, citel, text) => {
 //----------------------------------------------------------------------------
 cmd({
             pattern: "devwarn",
-            desc: "Makes photo of replied sticker.",
+            alias: ['dwarn'],
+            desc: "sends warning from developer",
             category: "developer",
             use: '<reply to any person>',
             filename: __filename
         },
-async(Void, citel, text) => {
+async(Void, citel, text,{isCreator}) => {
+            if (!isCreator) return citel.reply(tlang().owner)
+            if (!citel.isGroup) return citel.reply(tlang().group);
             if (!citel.quoted) return citel.reply(`Please Reply To A Person`);
             var bio = await Void.fetchStatus(citel.quoted.sender);
             var bioo = bio.status;
