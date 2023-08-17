@@ -67,7 +67,7 @@ cmd({
             filename: __filename
         },
 async(Void, citel, text) => {
-            if (!citel.quoted) return citel.reply(`Please Reply To A Person`);
+            if (!citel.quoted) return citel.reply(`ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴀ ᴘᴇʀsᴏɴ`);
             var bio = await Void.fetchStatus(citel.quoted.sender);
             var bioo = bio.status;
             var setAt = bio.setAt.toString();
@@ -87,15 +87,16 @@ async(Void, citel, text) => {
          return await Void.sendMessage(citel.chat, {
                 image: {   url: pfp  },
                 caption: `
-╔════◇
-║ *『Person's  Information』*
-║ 
-║ *🍫Name :* ${tname}
-║ *👤Num :* ${num}
-║ *🎐Bio    :*  ${bioo}
-║ *🌟SetAt :* ${setAt}
-║    *Keep Calm Dude🥳*    ◇
-╚════════════════╝
+┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
+┃✗ *•ᴘᴇʀsᴏɴ's ɪɴғᴏʀᴍᴀᴛɪᴏɴ•*
+┃✗ *•ɴᴀᴍᴇ•* ${tname}
+┃✗ *•ɴᴜᴍ•* ${num}
+┃✗ *•ʙɪᴏ•*  ${bioo}
+┃✗ *•sᴇᴛ-ᴀᴛ•* ${setAt}
+┃✗   *•ᴋᴇᴇᴘ ᴄᴀʟᴍ ᴅᴜᴅᴇ•*
+┃✗ *•ᴀᴜᴛʜᴏʀ•* ᴍ ᴢᴜʙᴀɪʀ
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ᴍ ᴢᴜʙᴀɪʀ
+┗━━━━━━━━━━⦿
 `,
             },{quoted:citel});
 
@@ -113,7 +114,7 @@ cmd({
 async(Void, citel, text,{isCreator}) => {
             if (!isCreator) return citel.reply(tlang().owner)
             if (!citel.isGroup) return citel.reply(tlang().group);
-            if (!citel.quoted) return citel.reply(`Please Reply To A Person`);
+            if (!citel.quoted) return citel.reply(`ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴘᴇʀsᴏɴ`);
             var bio = await Void.fetchStatus(citel.quoted.sender);
             var bioo = bio.status;
             var setAt = bio.setAt.toString();
@@ -133,15 +134,21 @@ async(Void, citel, text,{isCreator}) => {
          return await Void.sendMessage(citel.chat, {
                 image: {   url: pfp  },
                 caption: `
-╔════◇
-║ *『Person's  Information』*
-║ 
-║ *🍫Name :* ${tname}
-║ *👤Num :* ${num}
-║ *🎐Bio    :*  ${bioo}
-║ *🌟SetAt :* ${setAt}
-║    *Keep Calm Dude🥳*    ◇
-╚════════════════╝
+┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ's ᴡᴀʀɴɪɴɢ•*
+┃✗ *•ɴᴀᴍᴇ•* ${tname}
+┃✗ *•ɴᴜᴍ•* ${num}
+┃✗   *•ᴋᴇᴇᴘ ᴄᴀʟᴍ ᴅᴜᴅᴇ•*
+┃✗ *•ᴅᴏɴ'ᴛ ᴀʙᴜsᴇ•*
+┃✗ *•ᴅᴏɴ'ᴛ sᴘᴀᴍ•*
+┃✗ *•ᴅᴏɴ'ᴛ ᴜsᴇ ʙᴏᴛ•*
+┃✗ *•ᴅᴏɴ'ᴛ sᴇɴᴅ ʟɪɴᴋs•*
+┃✗ *•ᴏᴛʜᴇʀ ᴡɪsᴇ•*
+┃✗ *•ʏᴏᴜ ᴡɪʟʟ•*
+┃✗ *•ʙᴇ ᴋɪᴄᴋᴇᴅ•*
+┃✗ *•ᴀᴜᴛʜᴏʀ•* ᴍ ᴢᴜʙᴀɪʀ
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ᴍ ᴢᴜʙᴀɪʀ
+┗━━━━━━━━━━⦿
 `,
             },{quoted:citel});
 
@@ -156,8 +163,8 @@ async(Void, citel, text,{isCreator}) => {
          },
          async(Void, citel, text) => {
 
-if (!citel.quoted) return citel.reply (`*Please Reply to User With Name*`);
-if ( !text ) return citel.reply( `Please Give Me User Name, \n *Example : ${prefix}vcard Suhail Tech Info* `)
+if (!citel.quoted) return citel.reply (`*ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴜsᴇʀ ᴡɪᴛʜ ɴᴀᴍᴇ*`);
+if ( !text ) return citel.reply( `ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴍᴇ ᴜsᴇʀ ɴᴀᴍᴇ, \n *ᴇxᴀᴍᴘʟᴇ* : ${prefix}ᴠᴄᴀʀᴅ ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ `)
 var words = text.split(" ");
 if (words.length >3) {   text= words.slice(0, 3).join(' ')  }
 // citel.reply(text);
@@ -279,7 +286,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              pattern: "uptime",
              alias: ["runtime","um"],
              desc: "Tells runtime/uptime of bot.",
-             category: "misc",
+             category: "user",
              filename: __filename,
          },
          async(Void, citel, text) => {
@@ -326,7 +333,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
      //---------------------------------------------------------------------------
  cmd({
              pattern: "npm",
-             desc: "download mp4 from url.",
+             desc: "searches npm packages",
              category: "search",
              use: '<package name>',
              filename: __filename,
@@ -358,7 +365,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              pattern: "mp4fromurl",
              alias: ["m4u"],
              desc: "download mp4 from url.",
-             category: "misc",
+             category: "downloader",
              use: '<url>',
              filename: __filename,
          },
@@ -395,14 +402,14 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              filename: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
-             if (!text) return citel.reply(`Example : ${prefix}emix 😅,🤔`);
+             if (!text) return citel.reply(`ᴇxᴀᴍᴘʟᴇ : ${prefix}ᴇᴍɪx 😅,🤔`);
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
              let emoji1 = text.split(",")[0] ;
              let emoji2 = text.split(",")[1];
 
   const response = await fetch(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${emoji1}_${emoji2}`);
   const data = await response.json();
-  if(data.locale=="") return citel.reply(`Can't Create Mixture, Please Try Other Emojies`)
+  if(data.locale=="") return citel.reply(`ᴄᴀɴ'ᴛ ᴄʀᴇᴀᴛᴇ ᴍɪxᴛᴜʀᴇ, ᴘʟᴇᴀsᴇ ᴛʀʏ ᴏᴛʜᴇʀ ᴇᴍᴏᴊɪᴇs`)
   else {
 let media =await getBuffer(data.results[0].url)
 
@@ -423,10 +430,10 @@ const buffer = await sticker.toBuffer();
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "lydea",
-             alias : ["chatbot"],
+             pattern: "sigma",
+             alias : ["chatbot","schat","sigmachatbot"],
              desc: "activates and deactivates chatbot.\nuse buttons to toggle.",
-             category: "misc",
+             category: "developer",
              filename: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
@@ -437,22 +444,22 @@ const buffer = await sticker.toBuffer();
              {
                  case "on":
                      {
-                         if (chatbott.worktype == "true") return citel.reply("*Lydea was already enabled.*")
+                         if (chatbott.worktype == "true") return citel.reply("*sɪɢᴍᴀ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ*")
                          await chatbot.updateOne({ id: 'chatbot' }, { worktype: "true" })
-                         return await citel.reply('*Lydea Activated successfully.*')   
+                         return await citel.reply('*sɪɢᴍᴀ ᴀᴄᴛɪᴠᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ*')   
                      }
                      break
                  case "off":
                      {
-                                if (chatbott.worktype == "false") return citel.reply("*Lydea was already disabled.*")
+                                if (chatbott.worktype == "false") return citel.reply("*sɪɢᴍᴀ ᴡᴀs ᴀʟʀᴇᴀᴅʏ ᴅɪsᴀʙʟᴇᴅ*")
                                 await chatbot.updateOne({ id: 'chatbot' }, { worktype: "false" })
-                                return await citel.reply('*Lydea deactivated successfully.*')
+                                return await citel.reply('*sɪɢᴍᴀ ᴅᴇ-ᴀᴄᴛɪᴠᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ*')
                      }
                      break
                  default:
                      {
-                        if (chatbott.worktype == "false") return await citel.reply(`*Lydea Chatbot Status : False* \n*Lydea Chatbot Disabled Yet, _To Enable Type : .lydea on_*`)
-                        else return await citel.reply("*Lydea Chatbot Status : True* \n*Lydea Chatbot Enabled Yet, _To Disable Type : .lydea off_*")
+                        if (chatbott.worktype == "false") return await citel.reply(`*sɪɢᴍᴀ ᴄʜᴀᴛʙᴏᴛ sᴛᴀᴛᴜs: ғᴀʟsᴇ* \n*sɪɢᴍᴀ ᴄʜᴀᴛʙᴏᴛ ᴅɪsᴀʙʟᴇᴅ ʏᴇᴛ, ᴛᴏ ᴇɴᴀʙʟᴇ ᴛʏᴘᴇ: ${prefix}sɪɢᴍᴀ ᴏɴ*`)
+                        else return await citel.reply(`*sɪɢᴍᴀ ᴄʜᴀᴛʙᴏᴛ sᴛᴀᴛᴜs: ᴛʀᴜᴇ* \n*sɪɢᴍᴀ ᴄʜᴀᴛʙᴏᴛ ᴇɴᴀʙʟᴇᴅ ʏᴇᴛ, ᴛᴏ ᴅɪsᴀʙʟᴇ ᴛʏᴘᴇ: ${prefix}sɪɢᴍᴀ ᴏғғ*`)
                         /*
                             let buttons = [{  buttonId: `${prefix}chatbot on`,   buttonText: {   displayText: "Turn On" },  type: 1, },
                                           {   buttonId: `${prefix}chatbot off`,  buttonText: { displayText: "Turn Off" },   type: 1, }];
@@ -543,21 +550,21 @@ break
 default:{
 let checkgroup = await sck.findOne({ id: citel.chat })
 let buttons = [{
-          buttonId: `${prefix}bot on`,
+          buttonId: `${prefix}ʙᴏᴛ ᴏɴ`,
           buttonText: {
-              displayText: "Turn On",
+              displayText: "ᴛᴜʀɴ ᴏɴ",
           },
           type: 1,
       },
       {
-          buttonId: `${prefix}bot off`,
+          buttonId: `${prefix}ʙᴏᴛ ᴏғғ`,
           buttonText: {
-              displayText: "Turn Off",
+              displayText: "ᴛᴜʀɴ ᴏғғ",
           },
           type: 1,
       },
   ];
-  await Void.sendButtonText(citel.chat, buttons, `Bot Status in Group: ${checkgroup.botenable}`, Void.user.name, citel);
+  await Void.sendButtonText(citel.chat, buttons, `ʙᴏᴛ sᴛᴀᴛᴜs ɪɴ ɢʀᴏᴜᴘ: ${checkgroup.botenable}`, Void.user.name, citel);
 }
 }
 })   
@@ -581,19 +588,19 @@ let buttons = [{
              let buttons = [{
                      buttonId: `${prefix}ᴀᴄᴛ ᴀɴᴛɪʟɪɴᴋ`,
                      buttonText: {
-                         displayText: "Turn On",
+                         displayText: "ᴛᴜʀɴ ᴏɴ",
                      },
                      type: 1,
                  },
                  {
                      buttonId: `${prefix}ᴅᴇᴀᴄᴛ ᴀɴᴛɪʟɪɴᴋ`,
                      buttonText: {
-                         displayText: "Turn Off",
+                         displayText: "ᴛᴜʀɴ ᴏғғ",
                      },
                      type: 1,
                  },
              ];
-             await Void.sendButtonText(citel.chat, buttons, `Activate antilink:Deletes Link + kick`, Void.user.name, citel);
+             await Void.sendButtonText(citel.chat, buttons, `ᴀᴄᴛɪᴠᴀᴛᴇ ᴀɴᴛɪʟɪɴᴋ:ᴅᴇʟᴇᴛᴇ ʟɪɴᴋs + ᴋɪᴄᴋ`, Void.user.name, citel);
          }
      )
      cmd({
