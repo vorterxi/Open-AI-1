@@ -64,7 +64,7 @@ cmd({
             pattern: "qr",
             category: "owner",
             filename: __filename,
-            desc: "Sends CitelsVoid Qr code to scan and get your session id."
+            desc: "Qr code to scan and get your session id."
         },
         async(Void, citel, text, {isCreator}) => {
             if (!isCreator) return citel.reply(tlang().owner)
@@ -102,6 +102,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
+if(Config.WORKTYPE != 'private')
 cmd({
             pattern: "unban",
             category: "misc",
@@ -237,6 +238,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
+if(Config.WORKTYPE != 'private')
 cmd({
             pattern: "ban",
             category: "owner",
