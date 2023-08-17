@@ -153,7 +153,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
          }
      )
      //---------------------------------------------------------------------------
- cmd({
+/* cmd({
              pattern: "exec",
              desc: "Evaluates quoted code with given language.",
              category: "misc",
@@ -180,7 +180,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
                  console.log(error);
              }
          }
-     )
+     )*/
      //---------------------------------------------------------------------------
  cmd({
              pattern: "readmore",
@@ -377,17 +377,47 @@ const buffer = await sticker.toBuffer();
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "chatbot",
+             pattern: "lydea",
+             alias : ["chatbot"],
              desc: "activates and deactivates chatbot.\nuse buttons to toggle.",
              category: "misc",
              filename: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
-             const _0x56c1f2=_0x49dc;(function(_0x1e4f1e,_0x44f363){const _0x2f1db9=_0x49dc,_0x1305c9=_0x1e4f1e();while(!![]){try{const _0x6012c6=-parseInt(_0x2f1db9(0x19b))/0x1+parseInt(_0x2f1db9(0x1b0))/0x2*(-parseInt(_0x2f1db9(0x1aa))/0x3)+parseInt(_0x2f1db9(0x1a0))/0x4+-parseInt(_0x2f1db9(0x19d))/0x5+parseInt(_0x2f1db9(0x1b8))/0x6+-parseInt(_0x2f1db9(0x1a4))/0x7*(-parseInt(_0x2f1db9(0x1a6))/0x8)+parseInt(_0x2f1db9(0x197))/0x9*(-parseInt(_0x2f1db9(0x19f))/0xa);if(_0x6012c6===_0x44f363)break;else _0x1305c9['push'](_0x1305c9['shift']());}catch(_0x37d2af){_0x1305c9['push'](_0x1305c9['shift']());}}}(_0x26d2,0xe7419));function _0x26d2(){const _0x3f0ac2=['7DtnkDC','chatbot','9997912EYRuWE','ᴄʜᴀᴛʙᴏᴛ\x20ᴏɴ','Chatbot\x20Status:\x20','Turn\x20On','2421339fClDJx','off','save','../lib/','ᴄʜᴀᴛʙᴏᴛ\x20ᴀᴄᴛɪᴠᴀᴛᴇᴅ\x20sᴜᴄᴄᴇssғᴜʟʟʏ.','ᴄʜᴀᴛʙᴏᴛ\x20ᴏғғ','2yEWhAz','┏━━⟪⟪\x20🅼♥︎❚❚♥︎🆉\x20⟫━⦿\x0a┃✗\x20•ᴄʜᴀᴛʙᴏᴛ\x20sᴛᴀᴛᴜs•\x20','ᴄʜᴀᴛʙᴏᴛ\x20ᴡᴀs\x20ᴀʟʀᴇᴀᴅʏ\x20ᴇɴᴀʙʟᴇᴅ.','reply','\x20\x0a┃✗\x20•ᴜsᴇ•\x0a┃✗\x20','ᴄʜᴀᴛʙᴏᴛ\x20ᴏғғ\x0a┗━━━━━━━━━━⦿','chat','ᴄʜᴀᴛʙᴏᴛ\x20ᴅᴇᴀᴄᴛɪᴠᴀᴛᴇᴅ\x20sᴜᴄᴄᴇssғᴜʟʟʏ.','5873406GOtvte','updateOne','2817WmDKhb','true','worktype','ᴄʜᴀᴛʙᴏᴛ\x20ᴡᴀs\x20ᴀʟʀᴇᴀᴅʏ\x20ᴅɪsᴀʙʟᴇᴅ.','221118qswnHF','split','6644550WYyXpR','Secktor-Md','20530inJdLN','6873260KRZuFw','ᴄʜᴀᴛʙᴏᴛ\x20ᴏɴ\x0a┃✗\x20','findOne','false'];_0x26d2=function(){return _0x3f0ac2;};return _0x26d2();}function _0x49dc(_0x401851,_0x7c94dc){const _0x26d27c=_0x26d2();return _0x49dc=function(_0x49dc57,_0x1fe80c){_0x49dc57=_0x49dc57-0x196;let _0x2dbe0e=_0x26d27c[_0x49dc57];return _0x2dbe0e;},_0x49dc(_0x401851,_0x7c94dc);}if(!isCreator)return citel[_0x56c1f2(0x1b3)](tlang()['owner']);const {chatbot}=require(_0x56c1f2(0x1ad));switch(text[_0x56c1f2(0x19c)]('\x20')[0x0]){case'on':{let chatbott=await chatbot[_0x56c1f2(0x1a2)]({'id':'chatbot'});if(!chatbott)return await new chatbot({'id':_0x56c1f2(0x1a5),'worktype':_0x56c1f2(0x198)})[_0x56c1f2(0x1ac)](),citel[_0x56c1f2(0x1b3)](_0x56c1f2(0x1ae));else{if(chatbott[_0x56c1f2(0x199)]==_0x56c1f2(0x198))return citel['reply'](_0x56c1f2(0x1b2));await chatbot['updateOne']({'id':_0x56c1f2(0x1a5)},{'worktype':_0x56c1f2(0x198)}),citel[_0x56c1f2(0x1b3)]('ᴇɴᴀʙʟᴇᴅ\x20ᴄʜᴀᴛʙᴏᴛ\x20sᴜᴄᴄᴇssғᴜʟʟʏ.');return;}}break;case _0x56c1f2(0x1ab):{let chatbott=await chatbot[_0x56c1f2(0x1a2)]({'id':_0x56c1f2(0x1a5)});if(!chatbott)return await new chatbot({'id':_0x56c1f2(0x1a5),'worktype':_0x56c1f2(0x1a3)})[_0x56c1f2(0x1ac)](),citel['reply'](_0x56c1f2(0x1b7));else{if(chatbott['worktype']==_0x56c1f2(0x1a3))return citel[_0x56c1f2(0x1b3)](_0x56c1f2(0x19a));await chatbot[_0x56c1f2(0x196)]({'id':_0x56c1f2(0x1a5)},{'worktype':'false'}),citel[_0x56c1f2(0x1b3)]('ᴄʜᴀᴛʙᴏᴛ\x20ᴅɪsᴀʙʟᴇᴅ\x20sᴜᴄᴄᴇssғᴜʟʟʏ');return;}}break;default:{let buttons=[{'buttonId':prefix+_0x56c1f2(0x1a7),'buttonText':{'displayText':_0x56c1f2(0x1a9)},'type':0x1},{'buttonId':prefix+_0x56c1f2(0x1af),'buttonText':{'displayText':'Turn\x20Off'},'type':0x1}],chatbott=await chatbot[_0x56c1f2(0x1a2)]({'id':_0x56c1f2(0x1a5)});await Void['sendButtonText'](citel[_0x56c1f2(0x1b6)],buttons,_0x56c1f2(0x1a8)+chatbott['worktype']+'\x20',_0x56c1f2(0x19e),citel),citel['reply'](_0x56c1f2(0x1b1)+chatbott[_0x56c1f2(0x199)]+_0x56c1f2(0x1b4)+prefix+_0x56c1f2(0x1a1)+prefix+_0x56c1f2(0x1b5));}}
+             if (!isCreator) return citel.reply(tlang().owner)
+             const { chatbot } = require('../lib/');
+             let chatbott= await chatbot.findOne({ id: 'chatbot' }) ||  await new chatbot({ id: 'chatbot', worktype: "true" }).save()
+             switch (text.split(" ")[0])
+             {
+                 case "on":
+                     {
+                         if (chatbott.worktype == "true") return citel.reply("*Lydea was already enabled.*")
+                         await chatbot.updateOne({ id: 'chatbot' }, { worktype: "true" })
+                         return await citel.reply('*Lydea Activated successfully.*')   
+                     }
+                     break
+                 case "off":
+                     {
+                                if (chatbott.worktype == "false") return citel.reply("*Lydea was already disabled.*")
+                                await chatbot.updateOne({ id: 'chatbot' }, { worktype: "false" })
+                                return await citel.reply('*Lydea deactivated successfully.*')
+                     }
+                     break
+                 default:
+                     {
+                        if (chatbott.worktype == "false") return await citel.reply(`*Lydea Chatbot Status : False* \n*Lydea Chatbot Disabled Yet, _To Enable Type : .lydea on_*`)
+                        else return await citel.reply("*Lydea Chatbot Status : True* \n*Lydea Chatbot Enabled Yet, _To Disable Type : .lydea off_*")
+                        /*
+                            let buttons = [{  buttonId: `${prefix}chatbot on`,   buttonText: {   displayText: "Turn On" },  type: 1, },
+                                          {   buttonId: `${prefix}chatbot off`,  buttonText: { displayText: "Turn Off" },   type: 1, }];
+                                           
+                            await Void.sendButtonText(citel.chat, buttons, `Lydea Status: ${chatbott.worktype} `, Config.botname, citel);
+                        */
+                     }
+             }
  
  
-         }
-     )
+      })
      //---------------------------------------------------------------------------
  cmd({
              pattern: "ebinary",
