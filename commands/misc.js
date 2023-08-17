@@ -10,11 +10,12 @@
  **/
 
 
- const { tlang, getAdmin, prefix, Config, sck, fetchJson, runtime,cmd,getBuffer } = require('../lib')
+ const { tlang, getAdmin, prefix, Config, sck, sck1, fetchJson, runtime,cmd,getBuffer } = require('../lib')
  let { dBinary, eBinary } = require("../lib/binary");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
  const fs = require('fs')
  const axios = require('axios')
+ const fetch = require("node-fetch");
 
 
 
@@ -58,6 +59,77 @@ async(Void, citel, text,{ isCreator }) => {
 }
 )
  //---------------------------------------------------------------------------
+cmd({
+            pattern: "whois",
+            desc: "Makes photo of replied sticker.",
+            category: "user",
+            use: '<reply to any person>',
+            filename: __filename
+        },
+async(Void, citel, text) => {
+            if (!citel.quoted) return citel.reply(`Please Reply To A Person`);
+            var bio = await Void.fetchStatus(citel.quoted.sender);
+            var bioo = bio.status;
+            var setAt = bio.setAt.toString();
+            
+            var words = setAt.split(" ");
+            if(words.length > 3){ setAt= words.slice(0, 5).join(' ') ; }
+             
+            var num = citel.quoted.sender.split('@')[0];
+            let pfp;
+            try  {  pfp = await Void.profilePictureUrl(citel.quoted.sender, "image"); } 
+            catch (e) { pfp = await Void.profilePictureUrl(citel.sender, "image") ||  'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ; }    //|| 'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ;  }
+            
+            let username = await sck1.findOne({ id: citel.quoted.sender });
+            var tname = username.name;
+
+            
+         return await Void.sendMessage(citel.chat, {
+                image: {   url: pfp  },
+                caption: `
+╔════◇
+║ *『Person's  Information』*
+║ 
+║ *🍫Name :* ${tname}
+║ *👤Num :* ${num}
+║ *🎐Bio    :*  ${bioo}
+║ *🌟SetAt :* ${setAt}
+║    *Keep Calm Dude🥳*    ◇
+╚════════════════╝
+`,
+            },{quoted:citel});
+
+        }
+    )
+//----------------------------------------------------------------------------
+ cmd({
+             pattern: "vcard",
+             desc: "Create Contact by given name.",
+             category: "user",
+             filename: __filename
+         },
+         async(Void, citel, text) => {
+
+if (!citel.quoted) return citel.reply (`*Please Reply to User With Name*`);
+if ( !text ) return citel.reply( `Please Give Me User Name, \n *Example : ${prefix}vcard Suhail Tech Info* `)
+var words = text.split(" ");
+if (words.length >3) {   text= words.slice(0, 3).join(' ')  }
+// citel.reply(text);
+
+const vcard = 'BEGIN:VCARD\n' +
+            'VERSION:3.0\n' +
+            'FN:' + text + '\n' +
+            'ORG:;\n' +
+            'TEL;type=CELL;type=VOICE;waid=' + citel.quoted.sender.split('@')[0] + ':+' + owner[0] + '\n' +
+            'END:VCARD'
+        let buttonMessaged = {
+            contacts: { displayName: text, contacts: [{ vcard }] },
+            
+        };
+        return await Void.sendMessage(citel.chat, buttonMessaged, { quoted: citel });
+ 
+})
+//---------------------------------------------------------------------------
  cmd({
              pattern: "attp",
              desc: "Makes glowing sticker of text.",
@@ -272,22 +344,35 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
  cmd({
              pattern: "emix",
              desc: "Mixes two emojies.",
-             category: "misc",
+             category: "sticker",
              use: '<query>',
-             filename: __filename,
+             filename: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
-             if (!text) return citel.reply(`ᴇxᴀᴍᴘʟᴇ : ${prefix}ᴇᴍɪx 😅,🤔`);
-             let [emoji1, emoji2] = text.split `,`;
-             let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1 )}_${encodeURIComponent(emoji2)}`);
-             for (let res of anu.results) {
-                 let encmedia = await Void.sendImageAsSticker(citel.chat, res.url, citel, {
-                     packname: global.packname,
-                     author: global.author,
-                     categories: res.tags,
-                 });
-                 await fs.unlinkSync(encmedia);
-             }
+             if (!text) return citel.reply(`Example : ${prefix}emix 😅,🤔`);
+const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
+             let emoji1 = text.split(",")[0] ;
+             let emoji2 = text.split(",")[1];
+
+  const response = await fetch(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${emoji1}_${emoji2}`);
+  const data = await response.json();
+  if(data.locale=="") return citel.reply(`Can't Create Mixture, Please Try Other Emojies`)
+  else {
+let media =await getBuffer(data.results[0].url)
+
+let sticker = new Sticker(media, {
+                    pack: Config.packname, 
+                    author: Config.author, 
+                    type: StickerTypes.FULL ,
+                    categories: ["🤩", "🎉"], 
+                    id: "12345", 
+                    quality: 100,
+                });
+const buffer = await sticker.toBuffer();
+ return Void.sendMessage(citel.chat, {sticker: buffer}, {quoted: citel });
+}
+   
+  
          }
      )
      //---------------------------------------------------------------------------
