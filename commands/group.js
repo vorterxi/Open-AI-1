@@ -704,13 +704,13 @@ async(Void, citel, text ) => {
     const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
     
     
-    const listAdmin = groupAdmins.map((v, i) => ` |  @${v.id.split('@')[0]}`).join('\n')
+    const listAdmin = groupAdmins.map((v, i) => `┃✗ @${v.id.split('@')[0]}`).join('\n')
 
 
 let tag = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ᴛᴀɢɢᴇᴅ ʙʏ•* @${citel.sender.split("@")[0]}
 ${text ? "≡ Message :" + text : ""}
 ┏━━ *•ᴀᴅᴍɪɴs•* ━⦿
-┃✗${listAdmin}
+${listAdmin}
 ┗━━━━━━━━━━⦿\n*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ
 `.trim()
 return await Void.sendMessage(citel.chat,{text : tag ,mentions: [citel.sender, ...groupAdmins.map(v => v.id) ,]} ,)
