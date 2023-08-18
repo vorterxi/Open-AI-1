@@ -67,7 +67,31 @@ cmd({
             filename: __filename,
         },
         async(Void, citel, text) => {
-            const _0x5e17c2=_0xb21d;function _0x3387(){const _0x140497=['414189IrywGA','description','humidity','7672445ogzatl','country','lon','6BmUcfk','temp','┃✗\x20*•Humidity•*\x20','get','2572946jroKDx','┃✗\x20*•Feels\x20Like•*\x20','reply','https://api.openweathermap.org/data/2.5/weather?q=','┏━━⟪⟪\x20🅼♥︎❚❚♥︎🆉\x20⟫━⦿\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20*Weather\x20of\x20\x20','┃✗\x20*•Latitude•*\x20','main','4041852eroUJq','sys','sendMessage','pressure','weather','ɢɪᴠᴇ\x20ᴍᴇ\x20ʟᴏᴄᴀᴛɪᴏɴ.!!','&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en','speed','┃✗\x20*•Weather•*\x20','chat','data','┃✗\x20*•Longitude•*\x20','37934028npglMb','1218427pYlcDS','\x0a┗━━━━━━━━━━⦿\x0a╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳\x20𝙱𝚈\x20sɪɢᴍᴀ\x20ᴹᴰ','┃✗\x20*•Pressure•*\x20','56fMtsHw','1001020lAneKJ'];_0x3387=function(){return _0x140497;};return _0x3387();}(function(_0x56670a,_0x3e48fe){const _0x18f71b=_0xb21d,_0x21b7b5=_0x56670a();while(!![]){try{const _0x2af800=-parseInt(_0x18f71b(0x1ab))/0x1+parseInt(_0x18f71b(0x1b6))/0x2+parseInt(_0x18f71b(0x1ac))/0x3+-parseInt(_0x18f71b(0x1bd))/0x4+parseInt(_0x18f71b(0x1af))/0x5*(-parseInt(_0x18f71b(0x1b2))/0x6)+-parseInt(_0x18f71b(0x1ca))/0x7*(parseInt(_0x18f71b(0x1aa))/0x8)+parseInt(_0x18f71b(0x1c9))/0x9;if(_0x2af800===_0x3e48fe)break;else _0x21b7b5['push'](_0x21b7b5['shift']());}catch(_0x3e33f2){_0x21b7b5['push'](_0x21b7b5['shift']());}}}(_0x3387,0xd5a15));if(!text)return citel[_0x5e17c2(0x1b8)](_0x5e17c2(0x1c2));function _0xb21d(_0x214d4b,_0x356f30){const _0x3387b1=_0x3387();return _0xb21d=function(_0xb21d76,_0x2a9a43){_0xb21d76=_0xb21d76-0x1a8;let _0xfd9cf0=_0x3387b1[_0xb21d76];return _0xfd9cf0;},_0xb21d(_0x214d4b,_0x356f30);}let wdata=await axios[_0x5e17c2(0x1b5)](_0x5e17c2(0x1b9)+text+_0x5e17c2(0x1c3)),textw='';textw+=_0x5e17c2(0x1ba)+text+'*\x0a',textw+=_0x5e17c2(0x1c5)+wdata['data']['weather'][0x0][_0x5e17c2(0x1bc)]+'\x0a',textw+='┃✗\x20*•Description•*\x20'+wdata[_0x5e17c2(0x1c7)][_0x5e17c2(0x1c1)][0x0][_0x5e17c2(0x1ad)]+'\x0a',textw+='┃✗\x20*•Avg\x20Temp•*\x20'+wdata[_0x5e17c2(0x1c7)]['main'][_0x5e17c2(0x1b3)]+'\x0a',textw+=_0x5e17c2(0x1b7)+wdata[_0x5e17c2(0x1c7)][_0x5e17c2(0x1bc)]['feels_like']+'\x0a',textw+=_0x5e17c2(0x1a9)+wdata[_0x5e17c2(0x1c7)][_0x5e17c2(0x1bc)][_0x5e17c2(0x1c0)]+'\x0a',textw+=_0x5e17c2(0x1b4)+wdata[_0x5e17c2(0x1c7)][_0x5e17c2(0x1bc)][_0x5e17c2(0x1ae)]+'\x0a',textw+=_0x5e17c2(0x1b4)+wdata[_0x5e17c2(0x1c7)]['wind'][_0x5e17c2(0x1c4)]+'\x0a',textw+=_0x5e17c2(0x1bb)+wdata[_0x5e17c2(0x1c7)]['coord']['lat']+'\x0a',textw+=_0x5e17c2(0x1c8)+wdata['data']['coord'][_0x5e17c2(0x1b1)]+'\x0a',textw+='┃✗\x20*•Country•*\x20'+wdata[_0x5e17c2(0x1c7)][_0x5e17c2(0x1be)][_0x5e17c2(0x1b0)]+_0x5e17c2(0x1a8),Void[_0x5e17c2(0x1bf)](citel[_0x5e17c2(0x1c6)],{'text':textw},{'quoted':citel});
+            if (!text) return citel.reply("ɢɪᴠᴇ ᴍᴇ ʟᴏᴄᴀᴛɪᴏɴ.!!");
+            let wdata = await axios.get(
+                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
+            );
+            let textw = "";
+            textw += `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n         *Weather of  ${text}*\n`;
+            textw += `┃✗ *•Weather•* ${wdata.data.weather[0].main}\n`;
+            textw += `┃✗ *•Description•* ${wdata.data.weather[0].description}\n`;
+            textw += `┃✗ *•Avg Temp•* ${wdata.data.main.temp}\n`;
+            textw += `┃✗ *•Feels Like•* ${wdata.data.main.feels_like}\n`;
+            textw += `┃✗ *•Pressure•* ${wdata.data.main.pressure}\n`;
+            textw += `┃✗ *•Humidity•* ${wdata.data.main.humidity}\n`;
+            textw += `┃✗ *•Humidity•* ${wdata.data.wind.speed}\n`;
+            textw += `┃✗ *•Latitude•* ${wdata.data.coord.lat}\n`;
+            textw += `┃✗ *•Longitude•* ${wdata.data.coord.lon}\n`;
+            textw += `┃✗ *•Country•* ${wdata.data.sys.country}\n┗━━━━━━━━━━⦿\n**╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`;
+
+            Void.sendMessage(
+                citel.chat, {
+                    text: textw,
+                }, {
+                    quoted: citel,
+                }
+            )
+         .catch(error => {   return citel.reply(`*ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴠᴀʟɪᴅ ʀᴇᴍᴏᴠᴇʙɢ ᴋᴇʏ*\n\n Gᴇᴛ ʀᴇᴍᴏᴠᴇʙɢ ᴀᴘɪ ᴋᴇʏ ғʀᴏᴍ ʀᴇᴍᴏᴠᴇ.ʙɢ\n ᴛʜᴇɴ ᴘᴜᴛ ɪᴛ ɪɴ ᴠᴀʀ "REMOVE_BG_KEY"`);  });
 
         }
     )
@@ -144,7 +168,7 @@ cmd({
             if (!text) return citel.reply("ɢɪᴠᴇ ᴍᴇ ᴀ ᴛᴇxᴛ ᴛᴏ sᴇᴀʀᴄʜ ɪᴍᴀɢᴇ")
             if (!text) return reply("ʜᴇʏ ᴘʟᴇᴀsᴇ ᴛᴇʟʟ ᴍᴇ ғᴏʀ ᴡʜɪᴄʜ ᴘɪᴄ ʏᴏᴜ'ʀᴇ ʟᴏᴏᴋɪɴɢ");
             let name1 = text.split("|")[0]
-            let name2 = text.split("|")[1] || `1`
+            let name2 = text.split("|")[5] || `5`
             citel.reply(`sᴇɴᴅɪɴɢ ${name2} ɪᴍᴀɢᴇ(s) ᴏғ ${name1} ɪɴ ᴄʜᴀᴛ`)
             let nn = name2
             for (let i = 0; i < nn; i++) {
@@ -155,7 +179,7 @@ cmd({
                         image: {
                             url: images,
                         },
-                        caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 sɪɢᴍᴀ ᴹᴰ`,
+                        caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
                         headerType: 4,
                     };
                     Void.sendMessage(citel.chat, buttonMessage, {
@@ -174,8 +198,8 @@ cmd({
         async(Void, citel, text) => {
             let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
             let random = anu[Math.floor(Math.random() * anu.length)]
-            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 sɪɢᴍᴀ ᴹᴰ` }, { quoted: citel })
-            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 sɪɢᴍᴀ ᴹᴰ` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.male }, caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*` }, { quoted: citel })
+            Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*` }, { quoted: citel })
         }
     )
     //---------------------------------------------------------------------------
