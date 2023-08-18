@@ -144,7 +144,7 @@ cmd({
             if (!text) return citel.reply("ɢɪᴠᴇ ᴍᴇ ᴀ ᴛᴇxᴛ ᴛᴏ sᴇᴀʀᴄʜ ɪᴍᴀɢᴇ")
             if (!text) return reply("ʜᴇʏ ᴘʟᴇᴀsᴇ ᴛᴇʟʟ ᴍᴇ ғᴏʀ ᴡʜɪᴄʜ ᴘɪᴄ ʏᴏᴜ'ʀᴇ ʟᴏᴏᴋɪɴɢ");
             let name1 = text.split("|")[0]
-            let name2 = text.split("|")[5] || `5`
+            let name2 = text.split("|")[5] || `1`
             citel.reply(`sᴇɴᴅɪɴɢ ${name2} ɪᴍᴀɢᴇ(s) ᴏғ ${name1} ɪɴ ᴄʜᴀᴛ`)
             let nn = name2
             for (let i = 0; i < nn; i++) {
