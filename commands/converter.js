@@ -171,7 +171,7 @@ cmd({
                 let text = tiny(
                     "ғᴀɴᴄʏ ᴛᴇxᴛ ɢᴇɴᴇʀᴀᴛᴏʀ\n\nᴇxᴀᴍᴘʟᴇ: .ғᴀɴᴄʏ 56 sɪɢᴍᴀ ᴍᴀʟᴇ \n\n"
                 );
-                listall("Open Ai").forEach((txt, num) => {
+                listall("SIGMA MALE").forEach((txt, num) => {
                     text += `${(num += 1)} ${txt}\n`;
                 });
                 return await citel.reply(text);
@@ -196,7 +196,7 @@ cmd({
             try {
                 link = text.split(" ")[0];
                 anu = await axios.get(`https://tinyurl.com/api-create.php?url=${link}`);
-                citel.reply(`*ʏᴏᴜʀ sʜᴏʀᴛᴇɴᴇᴅ ᴜʀʟ*\n\n${anu.data}`);
+                citel.reply(`*ʏᴏᴜʀ sʜᴏʀᴛᴇɴᴇᴅ ᴜʀʟ*\n\n${anu.data}\n*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ`);
             } catch (e) {
                 console.log(e);
             }
