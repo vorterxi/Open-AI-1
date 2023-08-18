@@ -13,6 +13,7 @@
 const { dare, truth, random_question } = require('../lib/truth-dare.js')
 const axios = require('axios')
 const { cmd , Config} = require('../lib')
+const fetch = require('node-fetch');
     //---------------------------------------------------------------------------
 cmd({
             pattern: "question",
@@ -48,6 +49,39 @@ function _0x1cde25(_0x4f3acd,_0x525eec,_0x555016,_0x317049,_0xd24647){return _0x
     )
     //---------------------------------------------------------------------------
 cmd({
+            pattern: "joke",
+            desc: "Sends Joke in chat.",
+            category: "fun",
+            filename: __filename,
+        },
+        async(Void, citel, text) => { 
+
+const response =await  fetch('https://official-joke-api.appspot.com/random_joke');
+  const joke= await response.json();
+citel.reply( `Joke: ${joke.setup}\nPunchline :  ${joke.punchline}`);
+
+})
+//-----------------------------------------------------------------------------------------
+cmd({
+            pattern: "joke2",
+            desc: "Sends Joke in chat.",
+            category: "fun",
+            filename: __filename,
+        },
+        async(Void, citel, text) => { 
+ 
+         fetch('https://v2.jokeapi.dev/joke/Any?type=single')
+         .then(response => response.json())
+         .then(data => {
+         citel.reply(`*joke :* ${data.joke}`); 
+  })
+  .catch(error => {
+     return citel.reply ('Error fetching joke:' + error);
+  });
+        }
+    )
+//--------------------------------------------------------------------------------
+cmd({
         pattern: "fact",
         desc: "Sends fact in chat.",
         category: "fun",
@@ -59,7 +93,7 @@ function _0x22bd78(_0x326df4,_0xc5fe2,_0x467d96,_0x5324a2,_0x34ef37){return _0x3
 
 )
     //---------------------------------------------------------------------------
- cmd({
+    cmd({
         pattern: "quotes",
         desc: "Sends quotes in chat.",
         category: "fun",
@@ -68,13 +102,14 @@ function _0x22bd78(_0x326df4,_0xc5fe2,_0x467d96,_0x5324a2,_0x34ef37){return _0x3
     async(Void, citel, text) => {
         var quoo = await axios.get(`https://favqs.com/api/qotd`)
         const replyf = `
-┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
-┃✗ *•ᴄᴏɴᴛᴇɴᴛ•* ${quoo.data.quote.body}
-┃✗ *•ᴀᴜᴛʜᴏʀ•* ${quoo.data.quote.author}  
-┗━━━━━━━━━━⦿ `
+╔════◇
+║ *🎗️Content:* ${quoo.data.quote.body}
+║ *👤Author:* ${quoo.data.quote.author}
+║  
+╚════════════╝ `
 return citel.reply(replyf)
     }
-
+ 
 )
     //---------------------------------------------------------------------------
     cmd({
