@@ -118,35 +118,7 @@ axios.get(url, { responseType: 'stream' })
 	fs.unlink(filePath)
     return citel.send('*ᴀᴘᴋ ɴᴏᴛ ғᴏᴜɴᴅ, sᴏʀʀʏ*')//:', error.message);
   });
-	
-	
-	
-	
-	
-	
-	
-	/*
-  if(!text) return citel.reply(`*_Please Give Me App Name_*`);
-let searc = await search(text);
-//console.log(searc);
-let data = await download(searc[0].id);
-//console.log(data);
-
-     let  inf  ="App Name : " +data.name;
-         inf +="\n*App id        :* " +data.package;
-         inf +="\n*App id        :* " +data.lastup;
-         inf +="\n*App Size     :* " +data.size;
-        // inf +="\n*App Link     :* " +data.dllink;
-         
-                        let buttonMessage = {
-                        document: {url : data.dllink},
-                        mimetype: 'application/vnd.android.package-archive',
-                        fileName: data.name+`.apk`,
-                        caption : inf
-                        
-                    }
-                 Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
-*/}
+	}
 )	
 	
 	
@@ -165,7 +137,33 @@ cmd({
             use: '<faded-Alan walker.>',
         },
         async(Void, citel, text) => {
-function _0x5247(){const _0x2e6d81=['2364avqUDU','name','ago','thumbnail','7831990VxWbVi','views','\x0a┃✗\x20•ᴀᴜᴛʜᴏʀ•\x20','\x0a┃✗\x20•ᴜʀʟ•\x0a','1927293SJGbHc','504170dCDSAQ','24123YEsfzm','\x0a┏━━⟪⟪\x20🅼♥︎❚❚♥︎🆉\x20⟫━⦿\x0a┃✗\x20','timestamp','videos','866485veQqCZ','Eg:-\x20','title','3266936pZgpLC','12HWaHYV','588114eLOELS','7foxiiI','chat','secktor-pack','\x0a┃✗\x20•ᴜᴘʟᴏᴀᴅᴇᴅ•\x20','sendMessage','1Aiodlp','sᴜʀᴀʜ\x20ʀᴇʜᴍᴀɴ','18SpitXp','reply','\x0a┗━━━━━━━━━━⦿\x0a*╰┈➤\x20𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳\x20𝙱𝚈\x20sɪɢᴍᴀ\x20ᴹᴰ*\x0a'];_0x5247=function(){return _0x2e6d81;};return _0x5247();}const _0x1d08e5=_0x4124;(function(_0x540c3b,_0x38e0c3){const _0x40ef80=_0x4124,_0x4ed2ef=_0x540c3b();while(!![]){try{const _0x41a099=-parseInt(_0x40ef80(0x166))/0x1*(parseInt(_0x40ef80(0x174))/0x2)+-parseInt(_0x40ef80(0x173))/0x3+parseInt(_0x40ef80(0x15f))/0x4*(parseInt(_0x40ef80(0x179))/0x5)+-parseInt(_0x40ef80(0x160))/0x6*(parseInt(_0x40ef80(0x161))/0x7)+parseInt(_0x40ef80(0x15e))/0x8*(parseInt(_0x40ef80(0x168))/0x9)+parseInt(_0x40ef80(0x16f))/0xa+-parseInt(_0x40ef80(0x175))/0xb*(parseInt(_0x40ef80(0x16b))/0xc);if(_0x41a099===_0x38e0c3)break;else _0x4ed2ef['push'](_0x4ed2ef['shift']());}catch(_0x96978e){_0x4ed2ef['push'](_0x4ed2ef['shift']());}}}(_0x5247,0xa9be4));if(!text)return citel[_0x1d08e5(0x169)](_0x1d08e5(0x17a)+prefix+_0x1d08e5(0x167));let yts=require(_0x1d08e5(0x163)),search=await yts(text),anu=search[_0x1d08e5(0x178)][0x0],buttonMessage={'image':{'url':anu[_0x1d08e5(0x16e)]},'caption':_0x1d08e5(0x176)+tlang()[_0x1d08e5(0x17b)]+'\x20\x0a┃✗\x20•ʏᴏᴜᴛᴜʙᴇ\x20ᴘʟᴀʏᴇʀ•\x0a┃✗\x20•ᴅᴜʀᴀᴛɪᴏɴ•\x20'+anu[_0x1d08e5(0x177)]+'\x0a┃✗\x20•ᴠɪᴇᴡᴇʀs•\x20'+anu[_0x1d08e5(0x170)]+_0x1d08e5(0x164)+anu[_0x1d08e5(0x16d)]+_0x1d08e5(0x171)+anu['author'][_0x1d08e5(0x16c)]+_0x1d08e5(0x172)+anu['url']+_0x1d08e5(0x16a),'footer':tlang()['footer'],'headerType':0x4};function _0x4124(_0x2b4a0c,_0x1811a2){const _0x524712=_0x5247();return _0x4124=function(_0x4124ec,_0x4e9974){_0x4124ec=_0x4124ec-0x15e;let _0x4d6f87=_0x524712[_0x4124ec];return _0x4d6f87;},_0x4124(_0x2b4a0c,_0x1811a2);}return Void[_0x1d08e5(0x165)](citel[_0x1d08e5(0x162)],buttonMessage,{'quoted':citel});
+            if (!text) return citel.reply(`ᴇɢ:- ${prefix}sᴜʀᴀʜ ʀᴇʜᴍᴀɴ`);
+            let yts = require("secktor-pack");
+            let search = await yts(text);
+            let anu = search.videos[0];
+            let buttonMessage = {
+                image: {
+                    url: anu.thumbnail,
+                },
+                caption: `
+┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
+┃✗ ${Config.botname} 
+┃✗ •ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ•
+┃✗ •ᴅᴜʀᴀᴛɪᴏɴ• ${anu.timestamp}
+┃✗ •ᴠɪᴇᴡᴇʀs• ${anu.views}
+┃✗ •ᴜᴘʟᴏᴀᴅᴇᴅ• ${anu.ago}
+┃✗ •ᴀᴜᴛʜᴏʀr• ${anu.author.name}
+┃✗ •ᴜʀʟ•
+${anu.url}
+┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ ♕
+┗━━━━━━━━━━⦿\n*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 sɪɢᴍᴀ ᴹᴰ*
+`,
+                footer: tlang().footer,
+                headerType: 4,
+            };
+            return Void.sendMessage(citel.chat, buttonMessage, {
+                quoted: citel,
+            });
 
         }
     )
@@ -186,7 +184,7 @@ cmd({
             use: '<Hii,this is Secktor>',
         },
         async(Void, citel, text) => {
-            if (!text) return citel.reply('ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ɪɴᴛᴏ ᴀᴜᴅɪᴏ.')
+            if (!text) return citel.reply(`ᴘʟᴇᴀsᴇ ɢɪᴠᴇ ᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ɪɴᴛᴏ ᴀᴜᴅɪᴏ.\nᴇɢ:- $(prefix)ɪ'ᴍ sɪɢᴍᴀ ᴍᴀʟᴇ`)
             let texttts = text
             const ttsurl = googleTTS.getAudioUrl(texttts, {
                 lang: "en",
