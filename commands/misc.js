@@ -72,6 +72,8 @@ async(Void, citel, text) => {
         }
     )
 //----------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------
 cmd({
             pattern: "devwarn",
             alias: ['dwarn'],
@@ -131,12 +133,13 @@ async(Void, citel, text,{isCreator}) => {
     )
 //--------------------------------------------------------------------------
 cmd({
-        pattern: "link",
-        alias: ["ytube", "yt", "myyt"],
-        desc: "Sends info about My Ytube Channel __CheckOut :_ www.Youtube.com/c/SuhailTechInfo",
-        category: "general",
-        filename: __filename,
-    },
+            pattern: "devwarn",
+            alias: ['dwarn'],
+            desc: "sends warning from developer",
+            category: "developer",
+            use: '<reply to any person>',
+            filename: __filename
+        },
 async(Void, citel, text,{isCreator}) => {
             if (!isCreator) return citel.reply(tlang().owner)
             if (!citel.isGroup) return citel.reply(tlang().group);
@@ -158,7 +161,7 @@ async(Void, citel, text,{isCreator}) => {
             let username = await sck1.findOne({ id: citel.quoted.sender });
             var tname = username.name;
        
-	let cap = `
+	let Maher = `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ's ᴡᴀʀɴɪɴɢ•*
 ┃✗ *•ɴᴀᴍᴇ•* ${tname}
@@ -175,21 +178,21 @@ async(Void, citel, text,{isCreator}) => {
 ┗━━━━━━━━━━⦿`
 	
 	
-        let buttonMessaged = {
+        let Zubair = {
             image: { url: await botpic() },
             caption: cap,
             footer: tlang().footer,
             headerType: 4,
             contextInfo: {
                 externalAdReply: {
-                    title: "Secktor-Repo",
+                    title: "xxxxxxxxx",
                     body: "Easy to Use",
                     thumbnail: log0,
                     mediaType: 4,
                     mediaUrl: '',
                     sourceUrl: ``,}}}
            
-        return await Void.sendMessage(citel.chat, buttonMessaged, {   quoted: citel, });
+        return await Void.sendMessage(citel.chat, Zubair, {   quoted: citel, });
 
     }
 )
@@ -217,8 +220,20 @@ const vcard = 'BEGIN:VCARD\n' +
             'END:VCARD'
         let buttonMessaged = {
             contacts: { displayName: text, contacts: [{ vcard }] },
+		            image: { url: await botpic() },
+            caption: cap,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: "xxxxxxxxx",
+                    body: "Easy to Use",
+                    thumbnail: log0,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: ``,
             
-        };
+        }}};
         return await Void.sendMessage(citel.chat, buttonMessaged, { quoted: citel });
  
 })
