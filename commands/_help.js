@@ -13,7 +13,7 @@ const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
 const sɪɢᴍᴀ_Config = require('../config')
-let { fancytext, tlang, tiny, sɪɢᴍᴀ_runtime, formatp, botpic, prefix, sck1 } = require("../lib");
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1 } = require("../lib");
 const long = String.fromCharCode(8206)
 const sɪɢᴍᴀ_readmore = long.repeat(4001)
 const sɪɢᴍᴀ_speed = require('performance-now')
@@ -63,7 +63,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
 ┃✗ •ᴛɪᴍᴇ• ${sɪɢᴍᴀ_time}
 ┃✗ •ᴅᴀᴛᴇ• ${sɪɢᴍᴀ_date}
 ┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${sɪɢᴍᴀ_runtime(process.uptime())}
+┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${runtime(process.uptime())}
 ┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
 ┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs
 ┃✗ •ᴘʟᴀᴛꜰᴏʀᴍ• ᴍᴀᴄ-ᴏs
@@ -113,7 +113,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
         .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
         .split(",");
               let sɪɢᴍᴀ_total = await sck1.countDocuments()
-              let zubair = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
+              let Zubair = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
 ┃✗ •ᴏᴡɴᴇʀ• ${sɪɢᴍᴀ_Config.ownername}
 ┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${sɪɢᴍᴀ_Config.botname}
 ┃✗ •ᴘʀᴇғɪx• *${prefix}*
@@ -122,7 +122,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
 ┃✗ •ᴛɪᴍᴇ• ${sɪɢᴍᴀ_time}
 ┃✗ •ᴅᴀᴛᴇ• ${sɪɢᴍᴀ_date}
 ┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${sɪɢᴍᴀ_runtime(process.uptime())}
+┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${runtime(process.uptime())}
 ┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
 ┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs
 ┃✗ •ᴘʟᴀᴛꜰᴏʀᴍ• ᴍᴀᴄ-ᴏs
@@ -135,14 +135,14 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
               for (let i = 0; i < commands.length; i++) 
               {
                    if(commands[i].pattern==undefined) continue
-                   zubair +=       `╭ ${i+1} *${fancytext(commands[i].pattern,1)}*\n`                // ${i+1} 
-                   zubair += `╰➛ ${fancytext(commands[i].desc,1)}\n`
+                   Zubair +=       `╭ ${i+1} *${fancytext(commands[i].pattern,1)}*\n`                // ${i+1} 
+                   Zubair += `╰➛ ${fancytext(commands[i].desc,1)}\n`
               }
   
               
    
-   //zubair += `Maher Zubair`
-              return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: zubair + sɪɢᴍᴀ_Config.caption ,footer: tlang().footer, headerType: 4 })
+   //Zubair += `Maher Zubair`
+              return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: Zubair + sɪɢᴍᴀ_Config.caption ,footer: tlang().footer, headerType: 4 })
           }
       )
     //---------------------------------------------------------------------------
