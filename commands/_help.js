@@ -72,12 +72,11 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
 ┃✗ •ʙʀᴀɴᴄʜ• ${Config.BRANCH}
 ┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ ♕
 ┗━━━━━━━━━━━⦿
-${readmore}
 
 ` + ''
                 for (const category in cmds) 
                 {
-                   str += `┌──『 ${tiny(category)} 』──❖\n` ;
+                   str += `┌──『 ${tiny(category)} 』──❖\n`${readmore} ;
                    if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ ${tiny(category)} ❏\n` ;      
                         for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
                         str += `└────────────◉\n`  ;
