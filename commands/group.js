@@ -68,130 +68,7 @@ return citel.reply("*ɢʀᴏᴜᴘ ʟɪɴᴋ ʀᴇᴠᴏᴋᴇᴅ sᴜᴄᴄᴇs
     }
 	)
 //---------------------------------------------------------------------------
-//---------------------------------------------------------------------------
-/*cmd({
-  pattern: "disable",
-  desc: "disable cmds in Group.!",
-  category: "group",
-  filename: __filename
-},
-async(Void, citel, text, {isCreator}) => {
 
-  if(!citel.isGroup) return citel.reply(tlang().group);
-  
-  const groupAdmins = await getAdmin(Void, citel);
-  
-  const botNumber = await Void.decodeJid(Void.user.id);
-  
-  const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-  
-  const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-
-  if(!isAdmins && !isCreator) return citel.reply(tlang().admin);
-
-  let checkInfo = await sck.findOne({id: citel.chat}) || await new sck({id: citel.chat}).save();
-  
-  let textSplit = text ? text.toLowerCase().trim() : false;
-  
-  let cmdName = textSplit ? textSplit.split(' ')[0] : '';
-
-  if(!cmdName) return citel.reply(`Provide cmd name to disable in group\nEx ${prefix}disable tag (to disabled 'tag' cmd)`);
-
-  else {
-
-    if(cmdName.startsWith('enable') || cmdName.startsWith('admin')) {
-      return citel.send(checkInfo.disablecmds === "false" ? `_Uhh Dear, Theres no cmd disabled in current group_` : `_Disable cmds :_ \`\`\`${checkInfo.disablecmds.replace('false,','')}\`\`\``);
-    } 
-    
-    else {
-
-      if(cmdName.startsWith('disable') || cmdName.startsWith('list')) {
-        return citel.reply(`_Uhh Dear, Provided cmd already in disable cmds_`);
-      } 
-      
-      else {
-      
-        if(cmdName) {
-        
-          const cmds = sɪɢᴍᴀ_ᴍᴅ.commands.filter(c => c.pattern === cmdName) || sɪɢᴍᴀ_ᴍᴅ.commands.filter(c => c.alias && c.alias.includes(cmdName));
-
-          if(cmds) {
-          
-            let newCmd = cmds.pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            let regex = new RegExp('\\b'+newCmd+'\\b');
-
-            if(regex.test(checkInfo.disablecmds)) return citel.reply(`_Uhh Dear, I can't disable that cmd_`);
-
-            let newDisableCmd = checkInfo.disablecmds + ',' + cmds.pattern;
-            
-            await sck.updateOne({id: citel.chat}, {disablecmds: newDisableCmd});
-            
-            let lists = newDisableCmd.replace('false','');
-            
-            return citel.reply(`_"${cmdName}" Succesfully added in disable cmds_${lists === '' ? '' : '\n*Disable cmds :*\n```' + lists + '```'}`);
-            
-          } else return citel.reply(`_*'${cmdName}' is not a bot cmd, Provide valid cmd_*`);
-          
-        }
-
-      }
-
-    }
-
-  }
-
-})*/
-//-------------------------------------------------------------------------------
-/*cmd({
-  pattern: "enable",
-  desc: "enable a cmd in Group.!",
-  category: "group",  
-  filename: __filename
-}, 
-
-async (Void, citel, text, {isCreator}) => {
-
-  if(!citel.isGroup) return citel.reply(tlang().admin);
-  
-  const groupAdmins = await getAdmin(Void, citel);
-  const botNumber = await Void.decodeJid(Void.user.id);
-  
-  const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-  const isBotAdmins = citel.isGroup ? groupAdmins.includes(botNumber) : false;
-
-  if(!isAdmins && !isCreator) return citel.reply(tlang().admin);
-
-  let checkinfo = await sck.findOne({'id': citel.chat}) || await new sck({'id': citel.chat}).save();
-  
-  let textt = text ? text.toLowerCase().trim() : false;
-  let cmdName = textt ? ',' + textt.split(' ')[0] : '';
-  let ReplaceCmd = cmdName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  let regex = new RegExp('\\b'+ReplaceCmd+'\\b');
-
-  if(!cmdName || cmdName === '') {
-    return await citel.reply(`*Please provide disabled cmd name to enable it*
-*Ex ${prefix}enable tag(if 'tag' cmd disabled)/all(reset disables)*`);
-  
-  } else {
-
-    if(cmdName.startsWith('all')) {
-      await sck.updateOne({'id': citel.chat}, {'disablecmds': false});
-      return await citel.reply(`*_All disable cmds succesfully enabled_*`);
-    
-    } else {
-    
-      if(regex.test(checkinfo.disablecmds) && checkinfo.disablecmds.includes(cmdName)) {
-        let newCmds = checkinfo.disablecmds.replace(regex, '');
-        await sck.updateOne({'id': citel.chat}, {'disablecmds': newCmds});
-        return await citel.reply(`*_"\x22${cmdName.replace(',','')}\x22 Succesfully removed from disable cmds_*`);
-        
-      } else {
-        return await citel.reply(`*_There's no cmd disabled with *${cmdName.replace(',','')}* name_*`);
-      }
-    }
-  }
-
-});*/
 //-------------------------------------------------------------------------------
 cmd({
     pattern: "gdesc",
@@ -240,12 +117,12 @@ async(Void, citel, text,{ isCreator }) => {
     try {
         await Void.groupUpdateSubject(citel.chat, text)
         citel.reply('*ɢʀᴏᴜᴘ ɴᴀᴍᴇ ᴜᴘᴅᴀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʏ*') 
-        return await Void.sendMessage(citel.chat, { react: { text: '✨', key: citel.key }});
+        return await Void.sendMessage(citel.chat, { react: { text: '👑', key: citel.key }});
     } catch(e) { return await Void.sendMessage(users , {text :"ᴇʀʀᴏʀ ᴡʜɪʟᴇ ᴜᴘᴅᴀᴛɪɴɢ ɢʀᴏᴜᴘ ɴᴀᴍᴇ\nʀᴇᴀsᴏɴ : " + e, } ,{quoted : citel})   }
 }
 )
 //-----------------------------------------------------------------------------------
-    /*cmd({
+    cmd({
         pattern: "antidemote",
         desc: "Detects Promote and Automaticaly demote promoted person.", 
         category: "group",
@@ -270,9 +147,9 @@ async(Void, citel, text,{ isCreator }) => {
         return await citel.reply("*Anti_Demote Disable Succesfully!*")
       }
       else return await citel.reply(`*Uhh Dear, Please Toggle between "On" And "Off".* \n*_To Enable & Disable Stop Demoting Peoples!_*`)
-})*/ 
+})
 //-----------------------------------------------------------------------------------
-/*cmd({
+cmd({
         pattern: "antipromote",
         desc: "Detects Promote and Automaticaly demote promoted person.", 
         category: "group",
@@ -297,7 +174,7 @@ async(Void, citel, text,{ isCreator }) => {
         return await citel.reply("*Anti_Promote Disable Succesfully!*")
       }
       else return await citel.reply(`*Uhh Dear, Please Toggle between "On" And "Off".* \n*_To Stop Promoting Peoples in Chat_*`)
-});*/
+});
 //-----------------------------------------------------------------------------------
 cmd({
         pattern: "kik",
@@ -1109,7 +986,7 @@ else if(text=="Detail" || text=="Info" || text=="info" || text=="details" )
 *▢ NAME :* 
    • ${groupMetadata.subject}
 *▢ Members :*
-   • ${participants.length}
+   • {"@count"}
 *▢ Group Owner :*
    • wa.me/${owner.split('@')[0]}
 *▢ Admins :*
