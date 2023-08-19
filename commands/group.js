@@ -335,7 +335,7 @@ cmd({
             image: log0,
             caption: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ɢʀᴏᴜᴘ ɴᴀᴍᴇ•* \n┃✗ *•xxxx-sᴜᴘᴘᴏʀᴛ•* \n┃✗ *•ɢʀᴏᴜᴘ ʟɪɴᴋ•* https://chat.whatsapp.com/xxxxxxxxxxx\n┃✗ *•ᴀᴜᴛʜᴏʀ•* 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫\n┗━━━━━━━━━━⦿`,
         });
-   let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,}
+   let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,}]
     }
 )
 
