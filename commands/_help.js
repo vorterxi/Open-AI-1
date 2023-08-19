@@ -53,8 +53,8 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                let [date, time] = new Date()
         .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
         .split(",");
-                let zubi_total = await sck1.countDocuments()
-                let Zubair = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
+                let total = await sck1.countDocuments()
+                let zubair = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
 ┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
 ┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${Config.botname}
 ┃✗ •ᴘʀᴇғɪx• *${prefix}*
@@ -77,21 +77,21 @@ ${readmore}
 ` + ''
                 for (const category in cmds) 
                 {
-                   Zubair += `┌──『 ${tiny(category)} 』──❖\n` ;
-                   if(text.toLowerCase() == category.toLowerCase()){ Zubair = `╭─────❏ ${tiny(category)} ❏\n` ;      
-                        for (const plugins of cmds[category]) { Zubair += `│ ${fancytext(plugins,1)}\n` ; }
-                        Zubair += `└────────────◉\n`  ;
+                   zubair += `┌──『 ${tiny(category)} 』──❖\n` ;
+                   if(text.toLowerCase() == category.toLowerCase()){ zubair = `╭─────❏ ${tiny(category)} ❏\n` ;      
+                        for (const plugins of cmds[category]) { zubair += `│ ${fancytext(plugins,1)}\n` ; }
+                        zubair += `└────────────◉\n`  ;
                         break ;
                    }
-                   else { for (const plugins of cmds[category]) { Zubair += `│ ${fancytext(plugins,1)}\n` ; }
-                         Zubair += `└────────────◉\n`  ; 
+                   else { for (const plugins of cmds[category]) { zubair += `│ ${fancytext(plugins,1)}\n` ; }
+                         zubair += `└────────────◉\n`  ; 
                    }
   
                 }
-                Zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇɢ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n          |°؁🅼♥︎❚❚♥︎🆉؁°| `
+                zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇɢ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n          |°؁🅼♥︎❚❚♥︎🆉؁°| `
                 let Maher = {
                     image: { url: await botpic() },
-                    caption: Zubair
+                    caption: zubair
                 };
                 return await Void.sendMessage(citel.chat, Maher);
             }
