@@ -102,11 +102,11 @@ https://github.com/Mehar-Zubi/Open-AI
             headerType: 4,
             contextInfo: {
                 externalAdReply: {
-                    title: "sɪɢᴍᴀ ᴹᴰ-ʀᴇᴘᴏ",
-                    body: "ᴛᴀᴘ ʜᴇʀᴇ ғᴏʀ ʀᴇᴘᴏ",
-                    thumbnail: tlang().logo,
+                    title: "for test",
+                    body: "group chat invite",
+                    thumbnail: log0,
                     mediaType: 4,
-                    mediaUrl: 'https://github.com/Mehar-Zubi/Open-AI',
+                    mediaUrl: 'https://chat.whatsapp.com/Ckwh1CMUjXV1Vq5JCBycCK',
                     sourceUrl: ``,
                 },
             },
