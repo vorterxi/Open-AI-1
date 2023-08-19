@@ -50,24 +50,24 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                 })
             timestampe = speed();
             latensie = speed() - timestampe;
-               let [zubidate, zubitime] = new Date()
+               let [zubi_date, zubi_time] = new Date()
         .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
         .split(",");
-                let total = await sck1.countDocuments()
+                let zubi_total = await sck1.countDocuments()
                 let zubair = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
 ┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
 ┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${Config.botname}
 ┃✗ •ᴘʀᴇғɪx• [ *${prefix}* ]
 ┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
 ┃✗ •ᴍᴏᴅᴇ• ${Config.WORKTYPE}
-┃✗ •ᴛɪᴍᴇ• ${zubitime}
-┃✗ •ᴅᴀᴛᴇ• ${zubidate}
+┃✗ •ᴛɪᴍᴇ• ${zubi_time}
+┃✗ •ᴅᴀᴛᴇ• ${zubi_date}
 ┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 ┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${runtime(process.uptime())}
 ┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
 ┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs
 ┃✗ •ᴘʟᴀᴛꜰᴏʀᴍ• ᴍᴀᴄ-ᴏs
-┃✗ •ᴜsᴇʀs• ${total}
+┃✗ •ᴜsᴇʀs• ${zubi_total}
 ┃✗ •ᴠᴇʀsɪᴏɴ• sɪɢᴍᴀ
 ┃✗ •ʙʀᴀɴᴄʜ• ${Config.BRANCH}
 ┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ ♕
