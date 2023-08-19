@@ -251,7 +251,8 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                     mediaUrl: '',
                     sourceUrl: ``,}}} 
 
-           return await citel.reply(Maher.join('\n'),zubi);
+           return await citel.reply(Maher.join('\n'));
+           return await Void.sendMessage(zubi)
   })
  
 
