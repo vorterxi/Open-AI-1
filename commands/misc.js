@@ -121,7 +121,7 @@ async(Void, citel, text,{isCreator}) => {
           
         
           
-            },{quoted:citel};
+            },{quoted:citel});
 
         }
     )
