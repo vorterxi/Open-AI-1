@@ -986,7 +986,7 @@ else if(text=="Detail" || text=="Info" || text=="info" || text=="details" )
 *▢ NAME :* 
    • ${groupMetadata.subject}
 *▢ Members :*
-   • {"@count"}
+   • 
 *▢ Group Owner :*
    • wa.me/${owner.split('@')[0]}
 *▢ Admins :*
@@ -1012,7 +1012,7 @@ else
 2:- .group Unmute
 3:- .group Info
 `)
-    //  let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,},{buttonId: `${prefix}group close`,buttonText: {displayText: "📍Mute",},type: 1, },];     await Void.sendButtonText(citel.chat,buttons,`Group Mode`, Void.user.name, citel);
+      let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,},{buttonId: `${prefix}group close`,buttonText: {displayText: "📍Mute",},type: 1, },];     await Void.sendButtonText(citel.chat,buttons,`Group Mode`, Void.user.name, citel);
            
 }
         }
