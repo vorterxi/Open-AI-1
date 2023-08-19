@@ -10,7 +10,7 @@
  **/
 
 
- const { tlang, getAdmin, prefix, Config, sck, sck1, fetchJson, runtime,cmd,getBuffer } = require('../lib')
+ const { tlang, getAdmin, prefix, Config, sck, sck1, fetchJson, runtime,cmd,getBuffer,botpic } = require('../lib')
  let { dBinary, eBinary } = require("../lib/binary");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
  const fs = require('fs')
@@ -93,6 +93,15 @@ async(Void, citel, text,{isCreator}) => {
              
             var num = citel.quoted.sender.split('@')[0];
             let pfp;
+            let buttonMessage = {
+             externalAdReply: {
+                    title: "Secktor-Repo",
+                    body: "Easy to Use",
+                    thumbnail: log0,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: ``,}
+            }
             try  {  pfp = await Void.profilePictureUrl(citel.quoted.sender, "image"); } 
             catch (e) { pfp = await Void.profilePictureUrl(citel.sender, "image") ||  'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ; }    //|| 'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ;  }
             
