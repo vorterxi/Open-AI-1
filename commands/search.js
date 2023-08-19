@@ -83,7 +83,7 @@ cmd({
             textw += `┃✗ *•Humidity•* ${wdata.data.wind.speed}\n`;
             textw += `┃✗ *•Latitude•* ${wdata.data.coord.lat}\n`;
             textw += `┃✗ *•Longitude•* ${wdata.data.coord.lon}\n`;
-            textw += `┃✗ *•Country•* ${wdata.data.sys.country}\n┗━━━━━━━━━━⦿\n*╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}`;
+            textw += `┃✗ *•Country•* ${wdata.data.sys.country}\n┗━━━━━━━━━━⦿\n*╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`;
 
             Void.sendMessage(
                 citel.chat, {
