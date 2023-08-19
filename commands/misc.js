@@ -100,7 +100,7 @@ async(Void, citel, text,{isCreator}) => {
             var tname = username.name;
 
             
-         return await Void.sendMessage(citel.chat,buttonMessaged, {
+         return await Void.sendMessage(citel.chat,buttonMessage, {
                 image: {   url: pfp  },
                 caption: `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
@@ -118,7 +118,7 @@ async(Void, citel, text,{isCreator}) => {
 ┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ᴍ ᴢᴜʙᴀɪʀ
 ┗━━━━━━━━━━⦿
 `
-        let buttonMessaged = {
+        let buttonMessage = {
             image: { url: await botpic() },
             caption: cap,
             footer: tlang().footer,
