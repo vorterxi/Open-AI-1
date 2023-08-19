@@ -105,9 +105,9 @@ https://github.com/Mehar-Zubi/Open-AI
                     title: "sɪɢᴍᴀ ᴹᴰ-ʀᴇᴘᴏ",
                     body: "ᴛᴀᴘ ʜᴇʀᴇ ғᴏʀ ʀᴇᴘᴏ",
                     thumbnail: log0,
-                    mediaType: 2,
-                    mediaUrl: '',
-                    sourceUrl: `https://github.com/Mehar-Zubi/Open-AI`,
+                    mediaType: 1,
+                    mediaUrl: 'https://github.com/Mehar-Zubi/Open-AI',
+                    sourceUrl: ``,
                 },
             },
         };
