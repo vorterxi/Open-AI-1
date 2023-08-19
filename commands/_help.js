@@ -97,7 +97,7 @@ ${sɪɢᴍᴀ_readmore}
                     contextInfo: {
                         externalAdReply: {
                         title: `${Gname}`,
-                        body: "Easy to Use",
+                        body: "ɢʀᴏᴜᴘ ᴄʜᴀᴛ ɪɴᴠɪᴛᴇ\ntap to join",
                         thumbnail: log0,
                         mediaType: 4,
                         mediaUrl: '',
