@@ -105,7 +105,7 @@ async(Void, citel, text,{isCreator}) => {
             let username = await sck1.findOne({ id: citel.quoted.sender });
             var tname = username.name;
        
-	let Maher = `
+	let cap = `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ's ᴡᴀʀɴɪɴɢ•*
 ┃✗ *•ɴᴀᴍᴇ•* ${tname}
@@ -122,7 +122,7 @@ async(Void, citel, text,{isCreator}) => {
 ┗━━━━━━━━━━⦿`
 	
 	
-        let Zubair = {
+        let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
             footer: tlang().footer,
@@ -136,7 +136,7 @@ async(Void, citel, text,{isCreator}) => {
                     mediaUrl: '',
                     sourceUrl: ``,}}}
            
-        return await Void.sendMessage(citel.chat, Zubair, {   quoted: citel, });
+        return await Void.sendMessage(citel.chat, buttonMessaged, {   quoted: citel, });
 
     }
 )
