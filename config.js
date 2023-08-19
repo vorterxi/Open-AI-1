@@ -13,6 +13,7 @@ global.gurl = 'https://instagram.com/' // add your username
 global.sudo = process.env.SUDO || '923'
 global.devs = '923';
 global.waUrl = "https://chat.whatsapp.com/Ckwh1CMUjXV1Vq5JCBycCK",
+global.Gname = "xxx",
 global.website = 'https://github.com' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://i.imgur.com/t6VBCJL.jpg'
 module.exports = {
