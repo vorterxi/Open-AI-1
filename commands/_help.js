@@ -149,11 +149,23 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                    Zubair +=       `╭ ${i+1} *${fancytext(commands[i].pattern,1)}*\n`                // ${i+1} 
                    Zubair += `╰➛ ${fancytext(commands[i].desc,1)}\n`
               }
-  
+                    let Maher = {
+            image: { url: await botpic() },
+            caption: Zubair + sɪɢᴍᴀ_Config.caption,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: `${Gname}`,
+                    body: `Easy to Use`,
+                    thumbnail: log0,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: `${waUrl}`,}}}
               
    
    //Zubair += `Maher Zubair`
-              return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: Zubair + sɪɢᴍᴀ_Config.caption ,footer: tlang().footer, headerType: 4 })
+              return await Void.sendMessage(citel.chat, Maher)
           }
       )
     //---------------------------------------------------------------------------
@@ -226,7 +238,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
           if(cmd.filename) Maher.push(`┃✗ •ғɪʟᴇɴᴀᴍᴇ• ${cmd.filename}\n┗━━━━━━━━━━⦿\n      *•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ`)
           return await citel.reply(Maher.join('\n'));
   
-  
+      
   })
 
 
