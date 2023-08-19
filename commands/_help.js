@@ -13,7 +13,7 @@ const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
 const sɪɢᴍᴀ_Config = require('../config')
-let { fancytext, tlang, tiny, sɪɢᴍᴀ_runtime, formatp, botpic, sɪɢᴍᴀ_prefix, sck1 } = require("../lib");
+let { fancytext, tlang, tiny, sɪɢᴍᴀ_runtime, formatp, botpic, prefix, sck1 } = require("../lib");
 const long = String.fromCharCode(8206)
 const sɪɢᴍᴀ_readmore = long.repeat(4001)
 const sɪɢᴍᴀ_speed = require('performance-now')
@@ -38,7 +38,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                 if (cmd.category) arr.push(`┃✗ •ᴄᴀᴛᴇɢᴏʀʏ• ${cmd.category}`);
                 if (cmd.alias) arr.push(`┃✗ •ᴀʟɪᴀs• ${cmd.alias}`);
                 if (cmd.desc) arr.push(`┃✗ •ᴅᴇsᴄʀɪᴘᴛɪᴏɴ• ${cmd.desc}\n┗━━━━━━━━━━⦿`);
-                if (cmd.use) arr.push(`•ᴜsᴀɢᴇ•\n \`\`\`${sɪɢᴍᴀ_prefix}${cmd.pattern} ${cmd.use}\`\`\``);
+                if (cmd.use) arr.push(`•ᴜsᴀɢᴇ•\n \`\`\`${prefix}${cmd.pattern} ${cmd.use}\`\`\``);
                 return await citel.reply(arr.join('\n'));
             } else {
                 const cmds = {}
@@ -57,7 +57,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                 let zubair = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
 ┃✗ •ᴏᴡɴᴇʀ• ${sɪɢᴍᴀ_Config.ownername}
 ┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${sɪɢᴍᴀ_Config.botname}
-┃✗ •ᴘʀᴇғɪx• [ *${sɪɢᴍᴀ_prefix}* ]
+┃✗ •ᴘʀᴇғɪx• [ *${prefix}* ]
 ┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
 ┃✗ •ᴍᴏᴅᴇ• ${sɪɢᴍᴀ_Config.WORKTYPE}
 ┃✗ •ᴛɪᴍᴇ• ${sɪɢᴍᴀ_time}
@@ -88,7 +88,7 @@ ${sɪɢᴍᴀ_readmore}
                    }
   
                 }
-                zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇɢ•* ${sɪɢᴍᴀ_prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n          |°؁🅼♥︎❚❚♥︎🆉؁°| `
+                zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇɢ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n          |°؁🅼♥︎❚❚♥︎🆉؁°| `
                 let Maher = {
                     image: { url: await botpic() },
                     caption: zubair
@@ -116,7 +116,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
               let zubair = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
 ┃✗ •ᴏᴡɴᴇʀ• ${sɪɢᴍᴀ_Config.ownername}
 ┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${sɪɢᴍᴀ_Config.botname}
-┃✗ •ᴘʀᴇғɪx• *${sɪɢᴍᴀ_prefix}*
+┃✗ •ᴘʀᴇғɪx• *${prefix}*
 ┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
 ┃✗ •ᴍᴏᴅᴇ• ${sɪɢᴍᴀ_Config.WORKTYPE}
 ┃✗ •ᴛɪᴍᴇ• ${sɪɢᴍᴀ_time}
@@ -141,7 +141,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
   
               
    
-   //str += `Maher Zubair`
+   //zubair += `Maher Zubair`
               return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: zubair + sɪɢᴍᴀ_Config.caption ,footer: tlang().footer, headerType: 4 })
           }
       )
