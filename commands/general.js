@@ -106,8 +106,8 @@ https://github.com/Mehar-Zubi/Open-AI
                     body: "group chat invite",
                     thumbnail: log0,
                     mediaType: 4,
-                    mediaUrl: 'https://chat.whatsapp.com/Ckwh1CMUjXV1Vq5JCBycCK',
-                    sourceUrl: ``,
+                    mediaUrl: '',
+                    sourceUrl: `https://chat.whatsapp.com/Ckwh1CMUjXV1Vq5JCBycCK`,
                 },
             },
         };
