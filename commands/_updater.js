@@ -45,8 +45,8 @@ cmd({
                        mediaUrl: '',
                        sourceUrl: `${waUrl}`,}}}
                 
-                return await Void.sendMessage(citel.chat, Maher);
-            }
+                return await Void.sendMessage(citel.chat, Maher);}
+            
 
         }
     )
