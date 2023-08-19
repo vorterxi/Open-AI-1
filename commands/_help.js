@@ -252,7 +252,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                     sourceUrl: ``,}}} 
 
            return await citel.reply(Maher.join('\n'));
-           return await Void.sendMessage(zubi)
+           return await Void.sendMessage(citel.chat, zubi)
   })
  
 
