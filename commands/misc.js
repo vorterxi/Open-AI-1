@@ -117,8 +117,8 @@ async(Void, citel, text,{isCreator}) => {
 ┃✗ *•ʙᴇ ᴋɪᴄᴋᴇᴅ•*
 ┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ᴍ ᴢᴜʙᴀɪʀ
 ┗━━━━━━━━━━⦿
-`,
-          let buttonMessaged = {
+`
+        let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
             footer: tlang().footer,
