@@ -49,7 +49,7 @@ var str1 = await Void.groupInviteCode(citel.chat)
 var str2 ="https://chat.whatsapp.com/"
 var mergedString = `${str2}${str1}`;
 return citel.reply("ɢʀᴏᴜᴘ ɪɴᴠɪᴛᴇ ʟɪɴᴋ ɪs ʜᴇʀᴇ \n*"+mergedString+"*");
-	
+     	
     }
 	)
 //----------------------------------------------------------------------------
@@ -335,7 +335,7 @@ cmd({
             image: log0,
             caption: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ɢʀᴏᴜᴘ ɴᴀᴍᴇ•* \n┃✗ *•xxxx-sᴜᴘᴘᴏʀᴛ•* \n┃✗ *•ɢʀᴏᴜᴘ ʟɪɴᴋ•* https://chat.whatsapp.com/xxxxxxxxxxx\n┃✗ *•ᴀᴜᴛʜᴏʀ•* 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫\n┗━━━━━━━━━━⦿`,
         });
-
+   let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,}
     }
 )
 
@@ -986,7 +986,7 @@ else if(text=="Detail" || text=="Info" || text=="info" || text=="details" )
 *▢ NAME :* 
    • ${groupMetadata.subject}
 *▢ Members :*
-   • 
+   • ${participants.length}
 *▢ Group Owner :*
    • wa.me/${owner.split('@')[0]}
 *▢ Admins :*
@@ -1012,7 +1012,7 @@ else
 2:- .group Unmute
 3:- .group Info
 `)
-      let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,},{buttonId: `${prefix}group close`,buttonText: {displayText: "📍Mute",},type: 1, },];     await Void.sendButtonText(citel.chat,buttons,`Group Mode`, Void.user.name, citel);
+      //let buttons = [{ buttonId: `${prefix}group open`, buttonText: { displayText: "📍Unmute",},type: 1,},{buttonId: `${prefix}group close`,buttonText: {displayText: "📍Mute",},type: 1, },];     await Void.sendButtonText(citel.chat,buttons,`Group Mode`, Void.user.name, citel);
            
 }
         }
