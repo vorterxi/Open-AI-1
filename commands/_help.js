@@ -50,7 +50,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                 })
             timestampe = speed();
             latensie = speed() - timestampe;
-               let [zubi_date, zubi_time] = new Date()
+               let [date, time] = new Date()
         .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
         .split(",");
                 let zubi_total = await sck1.countDocuments()
@@ -60,8 +60,8 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
 ┃✗ •ᴘʀᴇғɪx• *${prefix}*
 ┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
 ┃✗ •ᴍᴏᴅᴇ• ${Config.WORKTYPE}
-┃✗ •ᴛɪᴍᴇ• ${zubi_time}
-┃✗ •ᴅᴀᴛᴇ• ${zubi_date}
+┃✗ •ᴛɪᴍᴇ• ${time}
+┃✗ •ᴅᴀᴛᴇ• ${date}
 ┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 ┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${runtime(process.uptime())}
 ┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
@@ -88,12 +88,12 @@ ${readmore}
                    }
   
                 }
-                Zubair+= `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇɢ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n          |°؁🅼♥︎❚❚♥︎🆉؁°| `
-                let sɪɢᴍᴀ_ᴍᴅ = {
+                Zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇɢ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n          |°؁🅼♥︎❚❚♥︎🆉؁°| `
+                let Maher = {
                     image: { url: await botpic() },
                     caption: Zubair
                 };
-                return await Void.sendMessage(citel.chat, sɪɢᴍᴀ_ᴍᴅ);
+                return await Void.sendMessage(citel.chat, Maher);
             }
         }
     )
