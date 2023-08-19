@@ -74,63 +74,7 @@ async(Void, citel, text) => {
 //----------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------
-cmd({
-            pattern: "devwarn",
-            alias: ['dwarn'],
-            desc: "sends warning from developer",
-            category: "developer",
-            use: '<reply to any person>',
-            filename: __filename
-        },
-async(Void, citel, text,{isCreator}) => {
-            if (!isCreator) return citel.reply(tlang().owner)
-            if (!citel.isGroup) return citel.reply(tlang().group);
-            if (!citel.quoted) return citel.reply(`ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴘᴇʀsᴏɴ`);
-            var bio = await Void.fetchStatus(citel.quoted.sender);
-            var bioo = bio.status;
-            var setAt = bio.setAt.toString();
-            
-            var words = setAt.split(" ");
-            if(words.length > 3){ setAt= words.slice(0, 5).join(' ') ; }
-             
-            var num = citel.quoted.sender.split('@')[0];
-            let pfp;
-             
- 
-            try  {  pfp = await Void.profilePictureUrl(citel.quoted.sender, "image"); } 
-            catch (e) { pfp = await Void.profilePictureUrl(citel.sender, "image") ||  'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ; }    //|| 'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ;  }
-            
-            let username = await sck1.findOne({ id: citel.quoted.sender });
-            var tname = username.name;
 
-            
-         return await Void.sendMessage(citel.chat,buttonMessage, {
-                image: {   url: pfp  },
-                caption: `
-┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
-┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ's ᴡᴀʀɴɪɴɢ•*
-┃✗ *•ɴᴀᴍᴇ•* ${tname}
-┃✗ *•ɴᴜᴍ•* ${num}
-┃✗   *•ᴋᴇᴇᴘ ᴄᴀʟᴍ ᴅᴜᴅᴇ•*
-┃✗ *•ᴅᴏɴ'ᴛ ᴀʙᴜsᴇ•*
-┃✗ *•ᴅᴏɴ'ᴛ sᴘᴀᴍ•*
-┃✗ *•ᴅᴏɴ'ᴛ ᴜsᴇ ʙᴏᴛ•*
-┃✗ *•ᴅᴏɴ'ᴛ sᴇɴᴅ ʟɪɴᴋs•*
-┃✗ *•ᴏᴛʜᴇʀ ᴡɪsᴇ•*
-┃✗ *•ʏᴏᴜ ᴡɪʟʟ•*
-┃✗ *•ʙᴇ ᴋɪᴄᴋᴇᴅ•*
-┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ᴍ ᴢᴜʙᴀɪʀ
-┗━━━━━━━━━━⦿
-              
-
-`
-          
-        
-          
-            },{quoted:citel});
-
-        }
-    )
 //--------------------------------------------------------------------------
 cmd({
             pattern: "devwarn",
@@ -220,7 +164,7 @@ const vcard = 'BEGIN:VCARD\n' +
             'END:VCARD'
         let buttonMessaged = {
             contacts: { displayName: text, contacts: [{ vcard }] },
-		            image: { url: await botpic() },
+	    image: { url: await botpic() },
             caption: cap,
             footer: tlang().footer,
             headerType: 4,
