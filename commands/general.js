@@ -104,7 +104,7 @@ https://github.com/Mehar-Zubi/Open-AI
                 externalAdReply: {
                     title: "sɪɢᴍᴀ ᴹᴰ-ʀᴇᴘᴏ",
                     body: "ᴛᴀᴘ ʜᴇʀᴇ ғᴏʀ ʀᴇᴘᴏ",
-                    thumbnail: log0,
+                    thumbnail: "https://i.ibb.co/yyzfbPb/Whats-App-Image-2023-08-19-at-11-45-44-AM.jpg",
                     mediaType: 1,
                     mediaUrl: 'https://github.com/Mehar-Zubi/Open-AI',
                     sourceUrl: ``,
