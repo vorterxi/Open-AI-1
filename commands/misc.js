@@ -165,7 +165,6 @@ const vcard = 'BEGIN:VCARD\n' +
         let buttonMessaged = {
             contacts: { displayName: text, contacts: [{ vcard }] },
 	    image: { url: await botpic() },
-            caption: cap,
             footer: tlang().footer,
             headerType: 4,
             contextInfo: {
