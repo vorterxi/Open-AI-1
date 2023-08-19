@@ -12,11 +12,11 @@
 const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
-const Config = require('../config')
+const sɪɢᴍᴀ_Config = require('../config')
 let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1 } = require("../lib");
 const long = String.fromCharCode(8206)
-const readmore = long.repeat(4001)
-const speed = require('performance-now')
+const sɪɢᴍᴀ_readmore = long.repeat(4001)
+const sɪɢᴍᴀ_speed = require('performance-now')
 const sɪɢᴍᴀ_ᴍᴅ = require('../lib/commands')
 
     //---------------------------------------------------------------------------
@@ -48,32 +48,32 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                         cmds[command.category].push(command.pattern)
                     }
                 })
-            timestampe = speed();
-            latensie = speed() - timestampe;
-               let [zubi_date, zubi_time] = new Date()
+            timestampe = sɪɢᴍᴀ_speed();
+            latensie = sɪɢᴍᴀ_speed() - timestampe;
+               let [sɪɢᴍᴀ_date, sɪɢᴍᴀ_time] = new Date()
         .toLocaleString("en-pk", { timeZone: "Asia/karachi" })
         .split(",");
-                let zubi_total = await sck1.countDocuments()
+                let sɪɢᴍᴀ_total = await sck1.countDocuments()
                 let zubair = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━━⦿
-┃✗ •ᴏᴡɴᴇʀ• ${Config.ownername}
-┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${Config.botname}
+┃✗ •ᴏᴡɴᴇʀ• ${sɪɢᴍᴀ_Config.ownername}
+┃✗ •ʙᴏᴛ-ɴᴀᴍᴇ• ${sɪɢᴍᴀ_Config.botname}
 ┃✗ •ᴘʀᴇғɪx• [ *${prefix}* ]
 ┃✗ •ᴛʜᴇᴍᴇ• ${tlang().theme}
-┃✗ •ᴍᴏᴅᴇ• ${Config.WORKTYPE}
-┃✗ •ᴛɪᴍᴇ• ${zubi_time}
-┃✗ •ᴅᴀᴛᴇ• ${zubi_date}
+┃✗ •ᴍᴏᴅᴇ• ${sɪɢᴍᴀ_Config.WORKTYPE}
+┃✗ •ᴛɪᴍᴇ• ${sɪɢᴍᴀ_time}
+┃✗ •ᴅᴀᴛᴇ• ${sɪɢᴍᴀ_date}
 ┃✗ •ᴍᴇᴍ• ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 ┃✗ •ʀᴜɴ-ᴛɪᴍᴇ• ${runtime(process.uptime())}
 ┃✗ •ᴘʟᴜɢɪɴs• ${commands.length}
 ┃✗ •sᴘᴇᴇᴅ• ${latensie.toFixed(4)} ᴍs
 ┃✗ •ᴘʟᴀᴛꜰᴏʀᴍ• ᴍᴀᴄ-ᴏs
-┃✗ •ᴜsᴇʀs• ${zubi_total}
+┃✗ •ᴜsᴇʀs• ${sɪɢᴍᴀ_total}
 ┃✗ •ᴠᴇʀsɪᴏɴ• sɪɢᴍᴀ
-┃✗ •ʙʀᴀɴᴄʜ• ${Config.BRANCH}
+┃✗ •ʙʀᴀɴᴄʜ• ${sɪɢᴍᴀ_Config.BRANCH}
 ┃✗ •ᴅᴇᴠᴇʟᴏᴘᴇʀ• ᴍ ᴢᴜʙᴀɪʀ ♕
 ┗━━━━━━━━━━━⦿
 
-${readmore}
+${sɪɢᴍᴀ_readmore}
 ` + ''
                 for (const category in cmds) 
                 {
