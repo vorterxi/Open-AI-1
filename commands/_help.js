@@ -236,9 +236,23 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
           else Maher.push(`┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ •ᴄᴏᴍᴍᴀɴᴅ• ${cmd.pattern}`);
           if (cmd.category) Maher.push(`┃✗ •ᴛʏᴘᴇ• ${cmd.category}`);
           if(cmd.filename) Maher.push(`┃✗ •ғɪʟᴇɴᴀᴍᴇ• ${cmd.filename}\n┗━━━━━━━━━━⦿\n      *•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ`)
-          return await citel.reply(Maher.join('\n'));
+          
   
-      
-  })
+           let zubi = {
+            image: { url: await botpic() },
+            caption: Maher.join('\n'),
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: "Secktor-Repo",
+                    body: "Easy to Use",
+                    thumbnail: log0,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: ``,}}} 
 
+           return await Void.sendMessage(zubi);
+  })
+ 
 
