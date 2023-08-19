@@ -240,7 +240,6 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
   
            let zubi = {
             image: { url: await botpic() },
-            caption: Maher.join('\n'),
             footer: tlang().footer,
             headerType: 4,
             contextInfo: {
@@ -252,7 +251,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                     mediaUrl: '',
                     sourceUrl: ``,}}} 
 
-           return await Void.sendMessage(zubi);
+           return await citel.reply(Maher.join('\n'),zubi);
   })
  
 
