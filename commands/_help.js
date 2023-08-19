@@ -91,8 +91,18 @@ ${sɪɢᴍᴀ_readmore}
                 zubair += `•ᴛʏᴘᴇ• ${prefix}ʜᴇʟᴘ ᴄᴍᴅ ɴᴀᴍᴇ ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ sᴘᴇᴄɪғɪᴄ ᴄᴏᴍᴍᴀɴᴅ.\n*•ᴇɢ•* ${prefix}ʜᴇʟᴘ ʀᴇᴘᴏ\n          |°؁🅼♥︎❚❚♥︎🆉؁°| `
                 let Maher = {
                     image: { url: await botpic() },
-                    caption: zubair
-                };
+                    caption: zubair,
+                    footer: tlang().footer,
+                    headerType: 4,
+                    contextInfo: {
+                        externalAdReply: {
+                        title: `${Gname}`,
+                        body: "Easy to Use",
+                        thumbnail: log0,
+                        mediaType: 4,
+                        mediaUrl: '',
+                        sourceUrl: `${waUrl}`,
+                }}};
                 return await Void.sendMessage(citel.chat, Maher);
             }
         }
@@ -171,7 +181,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
                     renderLargerThumbnail: true,
                     thumbnailUrl: ``,
                     thumbnail: log0,
-                    mediaType: 2,
+                    mediaType: 4,
                     mediaUrl: '',
                     sourceUrl: `https://wa.me/+` + owner[0] + '?text=ʜɪ ʙʀᴏ, ɪ ᴀᴍ ' + citel.pushName,
                 },
