@@ -93,19 +93,6 @@ async(Void, citel, text,{isCreator}) => {
              
             var num = citel.quoted.sender.split('@')[0];
             let pfp;
-            let buttonMessage = {            
-            image: { url: await botpic() },
-            caption: cap,
-            footer: tlang().footer,
-            headerType: 4,
-            contextInfo: {
-                externalAdReply: {
-                    title: "Secktor-Repo",
-                    body: "Easy to Use",
-                    thumbnail: log0,
-                    mediaType: 4,
-                    mediaUrl: '',
-                    sourceUrl: ``,}}}
              
  
             try  {  pfp = await Void.profilePictureUrl(citel.quoted.sender, "image"); } 
@@ -132,6 +119,8 @@ async(Void, citel, text,{isCreator}) => {
 ┃✗ *•ʙᴇ ᴋɪᴄᴋᴇᴅ•*
 ┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ᴍ ᴢᴜʙᴀɪʀ
 ┗━━━━━━━━━━⦿
+              
+
 `
           
         
@@ -141,6 +130,71 @@ async(Void, citel, text,{isCreator}) => {
         }
     )
 //--------------------------------------------------------------------------
+cmd({
+        pattern: "link",
+        alias: ["ytube", "yt", "myyt"],
+        desc: "Sends info about My Ytube Channel __CheckOut :_ www.Youtube.com/c/SuhailTechInfo",
+        category: "general",
+        filename: __filename,
+    },
+async(Void, citel, text,{isCreator}) => {
+            if (!isCreator) return citel.reply(tlang().owner)
+            if (!citel.isGroup) return citel.reply(tlang().group);
+            if (!citel.quoted) return citel.reply(`ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴘᴇʀsᴏɴ`);
+            var bio = await Void.fetchStatus(citel.quoted.sender);
+            var bioo = bio.status;
+            var setAt = bio.setAt.toString();
+            
+            var words = setAt.split(" ");
+            if(words.length > 3){ setAt= words.slice(0, 5).join(' ') ; }
+             
+            var num = citel.quoted.sender.split('@')[0];
+            let pfp;
+             
+ 
+            try  {  pfp = await Void.profilePictureUrl(citel.quoted.sender, "image"); } 
+            catch (e) { pfp = await Void.profilePictureUrl(citel.sender, "image") ||  'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ; }    //|| 'https://telegra.ph/file/29a8c892a1d18fdb26028.jpg' ;  }
+            
+            let username = await sck1.findOne({ id: citel.quoted.sender });
+            var tname = username.name;
+       
+	let cap = `
+┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ's ᴡᴀʀɴɪɴɢ•*
+┃✗ *•ɴᴀᴍᴇ•* ${tname}
+┃✗ *•ɴᴜᴍ•* ${num}
+┃✗   *•ᴋᴇᴇᴘ ᴄᴀʟᴍ ᴅᴜᴅᴇ•*
+┃✗ *•ᴅᴏɴ'ᴛ ᴀʙᴜsᴇ•*
+┃✗ *•ᴅᴏɴ'ᴛ sᴘᴀᴍ•*
+┃✗ *•ᴅᴏɴ'ᴛ ᴜsᴇ ʙᴏᴛ•*
+┃✗ *•ᴅᴏɴ'ᴛ sᴇɴᴅ ʟɪɴᴋs•*
+┃✗ *•ᴏᴛʜᴇʀ ᴡɪsᴇ•*
+┃✗ *•ʏᴏᴜ ᴡɪʟʟ•*
+┃✗ *•ʙᴇ ᴋɪᴄᴋᴇᴅ•*
+┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ•* ᴍ ᴢᴜʙᴀɪʀ
+┗━━━━━━━━━━⦿`
+	
+	
+        let buttonMessaged = {
+            image: { url: await botpic() },
+            caption: cap,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: "Secktor-Repo",
+                    body: "Easy to Use",
+                    thumbnail: log0,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: ``,}}}
+           
+        return await Void.sendMessage(citel.chat, buttonMessaged, {   quoted: citel, });
+
+    }
+)
+
+ //------------------------------------------------------------------
  cmd({
              pattern: "vcard",
              desc: "Create Contact by given name.",
