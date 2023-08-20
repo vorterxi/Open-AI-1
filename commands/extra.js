@@ -28,7 +28,7 @@ cmd({
         
         let Maher = {
             image: { url: await botpic() },
-            text: data,
+            text: '',
             footer: tlang().footer,
             headerType: 4,
             contextInfo: {
@@ -39,6 +39,6 @@ cmd({
                     mediaType: 4,
                     mediaUrl: '',
                     sourceUrl: `${waUrl}`,}}}
-        citel.reply(Maher)
+        citel.reply(`ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʟɪɴᴋ \n${data}\n╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sɪɢᴍᴀ_Config.botname},`,Maher)
     }
 );
