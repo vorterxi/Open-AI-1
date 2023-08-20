@@ -154,7 +154,7 @@ cmd({
                 image: {
                     url: anu.thumbnail,
                 },
-                caption: `
+                text: `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ ${Config.botname} 
 ┃✗ •ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ•
@@ -286,7 +286,7 @@ cmd({
                 let fileSizeInBytes = stats.size;
                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
                 if (fileSizeInMegabytes <= dlsize) {
-                    let buttonMessage = {
+                    let Maher = {
                         video: fs.readFileSync(`./${randomName}`),
                         jpegThumbnail: log0,
                         mimetype: 'video/mp4',
@@ -294,17 +294,17 @@ cmd({
                         headerType: 4,
                         contextInfo: {
                             externalAdReply: {
-                                title: titleYt,
-                                body: `‌${Config.ownername}`,
+                                title: `${Gname}`,
+                                body: `easy to use`,
                                 thumbnail: await getBuffer(search.all[0].thumbnail),
                                 renderLargerThumbnail: true,
-                                mediaType: 2,
-                                mediaUrl: search.all[0].thumbnail,
-                                sourceUrl: search.all[0].thumbnail
+                                mediaType: 4,
+                                mediaUrl: ``,
+                                sourceUrl: `${waUrl}`,
                             }
                         }
                     }
-                 Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                 Void.sendMessage(citel.chat, Maher, { quoted: citel })
                  return fs.unlinkSync(`./${randomName}`);
                 } else {
                     citel.reply(`ғɪʟᴇ sɪᴢᴇ ʙɪɢɢᴇʀ ᴛʜᴇɴ 100ᴍʙ..`);
@@ -347,25 +347,25 @@ cmd({
             try {
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
-                let buttonMessage = {
+                let Maher = {
                     image: {
                         url: result
                     },
-                    caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
+                    text: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
                     footer: tlang().footer,
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: `ʜᴇʀᴇ ɪᴛ ɪs`,
-                            body: `${Config.ownername}`,
+                            title: `${Gname}`,
+                            body: ``,
                             thumbnail: log0,
                             mediaType: 2,
                             mediaUrl: ``,
-                            sourceUrl: ``
+                            sourceUrl: `${waUrl}`
                         }
                     }
                 }
-                return Void.sendMessage(citel.chat, buttonMessage, {
+                return Void.sendMessage(citel.chat, Maher, {
                     quoted: citel
                 })
             } catch (e) {
