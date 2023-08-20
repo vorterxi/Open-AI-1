@@ -472,25 +472,13 @@ async(Void, citel, text ) => {
     const listAdmin = groupAdmins.map((v, i) => `┃✗ @${v.id.split('@')[0]}`).join('\n')
 
 
-let Maher = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ᴛᴀɢɢᴇᴅ ʙʏ•* @${citel.sender.split("@")[0]}
+let tag = `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ᴛᴀɢɢᴇᴅ ʙʏ•* @${citel.sender.split("@")[0]}
 ${text ? "≡ Message :" + text : ""}
 ┏━━ *•ᴀᴅᴍɪɴs•* ━⦿
 ${listAdmin}
 ┗━━━━━━━━━━⦿\n*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ
 `.trim()
-        let sigma = {
-            text: Maher,            
-            headerType: 4,
-            footer: tlang().footer,
-            contextInfo: {
-                externalAdReply: {
-                    title: `${Gname}`,
-                    body: "Easy to Use",
-                    thumbnail: log0,
-                    mediaType: 4,
-                    mediaUrl: '',
-                    sourceUrl: `${waUrl}`,}}}
-return await Void.sendMessage(citel.chat,sigma {mentions:[citel.sender, ...groupAdmins.map(v => v.id) ,]} ,)
+return await Void.sendMessage(citel.chat,{text : tag ,mentions: [citel.sender, ...groupAdmins.map(v => v.id) ,]} ,)
 
 
 
