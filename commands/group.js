@@ -479,17 +479,18 @@ ${listAdmin}
 ┗━━━━━━━━━━⦿\n*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ
 `.trim()
         let sigma = {
-            text: Maher,
-            headerType: 1,
+            
+            headerType: 4,
+            footer: tlang().footer,
             contextInfo: {
                 externalAdReply: {
                     title: `${Gname}`,
                     body: "Easy to Use",
                     thumbnail: log0,
-                    mediaType: 1,
+                    mediaType: 4,
                     mediaUrl: '',
                     sourceUrl: `${waUrl}`,}}}
-return await Void.sendMessage(citel.chat,sigma{,mentions: [citel.sender, ...groupAdmins.map(v => v.id) ,]} ,)
+return await Void.sendMessage(citel.chat,sigma {mentions:[citel.sender, ...groupAdmins.map(v => v.id) ,]} ,)
 
 
 
