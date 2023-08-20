@@ -10,7 +10,7 @@
  **/
 
 
-const { sck, sck1,cmd, jsonformat, botpic, TelegraPh, RandomXP, Config, tlang, warndb, sleep,getAdmin,participants,getBuffer, prefix,parsedJid } = require('../lib')
+const { sck,fancytext, sck1,cmd, jsonformat, botpic, TelegraPh, RandomXP, Config, tlang, warndb, sleep,getAdmin,participants,getBuffer, prefix,parsedJid } = require('../lib')
 const moment = require("moment-timezone");
 const fs = require('fs-extra')
 const Levels = require("discord-xp");
@@ -355,8 +355,8 @@ cmd({
 
         let sigma = `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
-┃✗ •ᴍᴇssᴀɢᴇ• ${text ? text : "blank"}\n\n
-┃✗ •ᴀᴜᴛʜᴏʀ• •𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫• 👑
+┃✗ •ᴍᴇssᴀɢᴇ• ${text ? text : ""}
+┃✗ •${fancytext("tagged by" ,1)}• •𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫• 👑
 ┗━━━━━━━━━━⦿
 `
         for (let mem of participants) {
