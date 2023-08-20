@@ -278,9 +278,8 @@ cmd({
         filename: __filename,
     },
     async(Void, citel, text,) => {
-	if (!citel.isGroup) return citel.reply(tlang().group);
-        citel.reply(`*ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴘᴍ*`);
-        await Void.sendMessage(`${citel.sender}`, {
+
+        await Void.sendMessage(citel.chat, {
             image: log0,
             text: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ɢʀᴏᴜᴘ ɴᴀᴍᴇ•* \n┃✗ *•xxxx-sᴜᴘᴘᴏʀᴛ•* \n┃✗ *•ɢʀᴏᴜᴘ ʟɪɴᴋ•* https://chat.whatsapp.com/xxxxxxxxxxx\n┃✗ *•ᴀᴜᴛʜᴏʀ•* 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫\n┗━━━━━━━━━━⦿`,
 	    contextInfo: {
