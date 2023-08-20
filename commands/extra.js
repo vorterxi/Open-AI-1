@@ -13,7 +13,7 @@
 const {cmd,botpic} = require('../lib')
 const PastebinAPI = require("pastebin-js");
 pastebin = new PastebinAPI("EMWTMkQAVfJa9kM-MRUrxd5Oku1U7pgL");
-const sɪɢᴍᴀ_Config = require('../lib')
+const sɪɢᴍᴀ_Config = require('../config')
 cmd({
         pattern: "pastebin",
         alias: ["pbin"],
