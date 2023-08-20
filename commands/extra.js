@@ -24,7 +24,7 @@ cmd({
     async(Void, citel,text) => {
         if(!citel.quoted) return citel.reply('ᴘʟᴇᴀsᴇ ʀᴇᴘʟʏ ᴀɴʏ ᴛᴇxᴛ ᴛᴏ ɢᴇᴛ ʟɪɴᴋ.')
         let data = await pastebin.createPaste(citel.quoted.text, "sɪɢᴍᴀ ᴹᴰ-Pastebin")
-        citel.reply(`ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʟɪɴᴋ \n${data}\n╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sɪɢᴍᴀ_Config.botname},`)
+        citel.reply(`ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʟɪɴᴋ \n${data}\n*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sɪɢᴍᴀ_Config.botname}*`)
         
 
         
