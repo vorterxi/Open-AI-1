@@ -289,8 +289,9 @@ cmd({
                     let Maher = {
                         video: fs.readFileSync(`./${randomName}`),
                         jpegThumbnail: log0,
+			
                         mimetype: 'video/mp4',
-                        text: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
+                        caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
                         headerType: 4,
                         contextInfo: {
                             externalAdReply: {
@@ -441,7 +442,7 @@ cmd({
                 let Maher = {
                     audio: fs.readFileSync(`./${randomName}`),
                     mimetype: 'audio/mpeg',
-                    caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
+                    text: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
                     fileName: titleYt + ".mp3",
                     headerType: 4,
                     contextInfo: {
