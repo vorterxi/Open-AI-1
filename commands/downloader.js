@@ -297,7 +297,7 @@ cmd({
                             externalAdReply: {
                                 title: `${Gname}`,
                                 body: `easy to use`,
-                                thumbnail: await getBuffer(search.all[0].thumbnail),
+                                thumbnail: log0,
                                 renderLargerThumbnail: true,
                                 mediaType: 4,
                                 mediaUrl: ``,
@@ -442,7 +442,7 @@ cmd({
                 let Maher = {
                     audio: fs.readFileSync(`./${randomName}`),
                     mimetype: 'audio/mpeg',
-                    text: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
+                    caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
                     fileName: titleYt + ".mp3",
                     headerType: 4,
                     contextInfo: {
@@ -453,7 +453,7 @@ cmd({
                             thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
-                            thumbnail: await getBuffer(search.all[0].thumbnail),
+                            thumbnail: log0,
                             sourceUrl: `${waUrl}`,
                             
                         },
