@@ -104,7 +104,7 @@ axios.get(url, { responseType: 'stream' })
                         document: fs.readFileSync(filePath),
                         mimetype: 'application/vnd.android.package-archive',
                         fileName: data.name+`.apk`,
-                        text : Zubair,
+                        caption : Zubair,
                         footer: tlang().footer,
                         headerType: 4,
                         contextInfo: {
