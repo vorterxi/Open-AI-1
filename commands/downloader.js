@@ -297,7 +297,7 @@ cmd({
                             externalAdReply: {
                                 title: `${Gname}`,
                                 body: `easy to use`,
-                                thumbnail: log0,
+                                thumbnail: await getBuffer(search.all[0].thumbnail),
                                 renderLargerThumbnail: true,
                                 mediaType: 4,
                                 mediaUrl: ``,
@@ -453,7 +453,7 @@ cmd({
                             thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
-                            thumbnail: log0,
+                            thumbnail: await getBuffer(search.all[0].thumbnail),
                             sourceUrl: `${waUrl}`,
                             
                         },
@@ -512,14 +512,14 @@ cmd({
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: titleYt,
-                            body: `${Config.ownername}`,
+                            title: `${Gname}`,
+                            body: ``,
                             renderLargerThumbnail: true,
                             thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
                             thumbnail: await getBuffer(search.all[0].thumbnail),
-                            sourceUrl: text,
+                            sourceUrl: `${waUrl}`,
                             
                         },
                     },
@@ -584,13 +584,13 @@ cmd({
                         headerType: 4,
                         contextInfo: {
                             externalAdReply: {
-                                title: titleYt,
-                                body: `${Config.ownername}`,
+                                title: `${Gname}`,
+                                body: ``,
                                 thumbnail: await getBuffer(search.all[0].thumbnail),
                                 renderLargerThumbnail: true,
                                 mediaType: 2,
                                 mediaUrl: search.all[0].thumbnail,
-                                sourceUrl: search.all[0].thumbnail
+                                sourceUrl: `${waUrl}`
                             }
                         }
                     }
@@ -659,14 +659,14 @@ cmd({
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: titleYt,
-                            body: `‌${Config.ownername}`,
+                            title: `${Gname}`,
+                            body: `‌`,
                             renderLargerThumbnail: true,
                             thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
                             thumbnail: await getBuffer(search.all[0].thumbnail),
-                            sourceUrl: text,
+                            sourceUrl: `${waUrl}`,
                         },
                     },
                 }
@@ -738,14 +738,14 @@ cmd({
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: titleYt,
-                            body: `‌${Config.ownername}`,
+                            title: `${Gname}`,
+                            body: `‌`,
                             renderLargerThumbnail: true,
                             thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
                             thumbnail: await getBuffer(search.all[0].thumbnail),
-                            sourceUrl: text,
+                            sourceUrl: `${waUrl}`,
                         },
                     },
                 }
