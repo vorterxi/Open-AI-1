@@ -360,7 +360,7 @@ cmd({
 ┗━━━━━━━━━━⦿
 `
         for (let mem of participants) {
-            textt += `♕ @${mem.id.split("@")[0]}\n
+            sigma += `♕ @${mem.id.split("@")[0]}\n
 `;
         }
         let Maher = {
