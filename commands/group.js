@@ -122,59 +122,7 @@ async(Void, citel, text,{ isCreator }) => {
 }
 )
 //-----------------------------------------------------------------------------------
-    cmd({
-        pattern: "antidemote",
-        desc: "Detects Promote and Automaticaly demote promoted person.", 
-        category: "group",
-        filename: __filename,
-    },
-    async(Void, citel, text,{ isCreator }) => {
-        if (!citel.isGroup) return citel.reply(tlang().group);
-        const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
-        const participants = citel.isGroup ? await groupMetadata.participants : "";
-        const groupAdmins = await getAdmin(Void, citel)
-        const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-        if (!isAdmins && !isCreator) return citel.reply(tlang().admin);
-            
-      let checkinfo = await sck.findOne({ id : citel.chat })  || await new sck({ id: citel.chat}).save();
-      if (text.toLowerCase().startsWith("on") || text.toLowerCase().startsWith("act") || text.toLowerCase().startsWith("enable") ) {
-        if (checkinfo.antidemote == 'true') return await citel.reply("*Anti_Demote Already Enabled In Current Chat!*")
-        await sck.updateOne({ id: citel.chat }, { antidemote : 'true' });
-        return await citel.reply("*Anti_Demote Enable Succesfully! _No One Demote Here Now_.*")
-      }else if (text.toLowerCase().startsWith("off") || text.toLowerCase().startsWith("deact") || text.toLowerCase().startsWith("disable") ) {
-        if (checkinfo.antidemote == 'false') return await citel.reply("*Anti_Demote Already Disabled In Current Chat!*")
-        await sck.updateOne({ id: citel.chat }, { antidemote : 'false' });
-        return await citel.reply("*Anti_Demote Disable Succesfully!*")
-      }
-      else return await citel.reply(`*Uhh Dear, Please Toggle between "On" And "Off".* \n*_To Enable & Disable Stop Demoting Peoples!_*`)
-})
-//-----------------------------------------------------------------------------------
-cmd({
-        pattern: "antipromote",
-        desc: "Detects Promote and Automaticaly demote promoted person.", 
-        category: "group",
-        filename: __filename,
-    },
-    async(Void, citel, text,{ isCreator }) => {
-        if (!citel.isGroup) return citel.reply(tlang().group);
-        const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
-        const participants = citel.isGroup ? await groupMetadata.participants : "";
-        const groupAdmins = await getAdmin(Void, citel)
-        const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
-        if (!isAdmins && !isCreator) return citel.reply(tlang().admin);
-            
-      let checkinfo = await sck.findOne({ id : citel.chat })  || await new sck({ id: citel.chat}).save();
-      if (text.toLowerCase().startsWith("on") || text.toLowerCase().startsWith("act") || text.toLowerCase().startsWith("enable") ) {
-        if (checkinfo.antipromote == 'true') return await citel.reply("*Anti_Promote Already Enabled In Current Chat!*")
-        await sck.updateOne({ id: citel.chat }, { antipromote : 'true' });
-        return await citel.reply("*Anti_Promote Enable Succesfully! _No One Promote Here Now_.*")
-      }else if (text.toLowerCase().startsWith("off") || text.toLowerCase().startsWith("deact") || text.toLowerCase().startsWith("disable") ) {
-        if (checkinfo.antipromote == 'false') return await citel.reply("*Anti_Promote Already Disabled In Current Chat!*")
-        await sck.updateOne({ id: citel.chat }, { antipromote : 'false' });
-        return await citel.reply("*Anti_Promote Disable Succesfully!*")
-      }
-      else return await citel.reply(`*Uhh Dear, Please Toggle between "On" And "Off".* \n*_To Stop Promoting Peoples in Chat_*`)
-});
+
 //-----------------------------------------------------------------------------------
 cmd({
         pattern: "kik",
@@ -334,7 +282,15 @@ cmd({
         citel.reply(`*ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴘᴍ*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ɢʀᴏᴜᴘ ɴᴀᴍᴇ•* \n┃✗ *•xxxx-sᴜᴘᴘᴏʀᴛ•* \n┃✗ *•ɢʀᴏᴜᴘ ʟɪɴᴋ•* https://chat.whatsapp.com/xxxxxxxxxxx\n┃✗ *•ᴀᴜᴛʜᴏʀ•* 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫\n┗━━━━━━━━━━⦿`,
+            text: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ɢʀᴏᴜᴘ ɴᴀᴍᴇ•* \n┃✗ *•xxxx-sᴜᴘᴘᴏʀᴛ•* \n┃✗ *•ɢʀᴏᴜᴘ ʟɪɴᴋ•* https://chat.whatsapp.com/xxxxxxxxxxx\n┃✗ *•ᴀᴜᴛʜᴏʀ•* 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫\n┗━━━━━━━━━━⦿`,
+	    contextInfo: {
+	        externalAdReply: {
+                title: `${Gname}`,
+                body: "Easy to Use",
+                thumbnail: log0,
+                mediaType: 4,
+                mediaUrl: '',
+                sourceUrl: `${waUrl}`,}}
         });
    
     }
