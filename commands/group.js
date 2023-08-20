@@ -356,11 +356,10 @@ cmd({
         let sigma = `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ •ᴍᴇssᴀɢᴇ• ${text ? text : ""}
-┃✗ •${fancytext("tagged by" ,1)}• •𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫• 👑
-┗━━━━━━━━━━⦿
+┃✗ •${fancytext("tagged by" ,1)}• ${fancytext(Config.ownername),1}
 `
         for (let mem of participants) {
-            sigma += `♕ @${mem.id.split("@")[0]}\n
+            sigma += `┃✗ @${mem.id.split("@")[0]}\n┗━━━━━━━━━━⦿
 `;
         }
         let Maher = {
