@@ -479,7 +479,7 @@ ${listAdmin}
 ┗━━━━━━━━━━⦿\n*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ
 `.trim()
         let sigma = {
-            
+            text: Maher,            
             headerType: 4,
             footer: tlang().footer,
             contextInfo: {
