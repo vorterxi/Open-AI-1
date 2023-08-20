@@ -356,14 +356,13 @@ cmd({
         let sigma = `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ •ᴍᴇssᴀɢᴇ• ${text ? text : ""}
-┃✗ •${fancytext("tagged by" ,1)}• ${fancytext(Config.ownername),1}
+┃✗ •${fancytext("tagged by" ,1)}• ${Config.ownername}
 `
         for (let mem of participants) {
             sigma += `┃✗ @${mem.id.split("@")[0]}\n┗━━━━━━━━━━⦿
 `;
         }
         let Maher = {
-            image: { url: await botpic() },
             text: sigma,
             footer: tlang().footer,
             headerType: 4,
