@@ -36,11 +36,11 @@ cmd({
         filename: __filename,
     },
 	 async(Void, citel, text,{ isCreator }) => {
-             if (!isCreator) return citel.reply(tlang().owner)
+             
 	     if (!citel.isGroup) return citel.reply(tlang().group)	
 	    
 	     
-             if (!isAdmins) return citel.reply(tlang().admin);
+             
 var str1 = await Void.groupInviteCode(citel.chat)
 var str2 ="https://chat.whatsapp.com/"
 var mergedString = `${str2}${str1}`;
