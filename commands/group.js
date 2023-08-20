@@ -273,8 +273,8 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "support",
-        desc: "Sends official support group link.",
-        category: "group",
+        desc: "Sends developer's official support group link",
+        category: "developer",
         filename: __filename,
     },
     async(Void, citel, text,) => {
@@ -353,7 +353,7 @@ cmd({
         const isAdmins = citel.isGroup ? groupAdmins.includes(citel.sender) : false;
         if (!isAdmins) return citel.reply(tlang().admin);
 
-        let textt = `
+        let sigma = `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ •ᴍᴇssᴀɢᴇ• ${text ? text : "blank"}\n\n
 ┃✗ •ᴀᴜᴛʜᴏʀ• •𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫• 👑
@@ -363,10 +363,20 @@ cmd({
             textt += `♕ @${mem.id.split("@")[0]}\n
 `;
         }
-        Void.sendMessage(citel.chat, {
-            text: textt,
-            mentions: participants.map((a) => a.id),
-        }, {
+        let Maher = {
+            image: { url: await botpic() },
+            text: sigma,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: `${Gname}`,
+                    body: "Easy to Use",
+                    thumbnail: log0,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: `${waUrl}`,}}};
+        Void.sendMessage(citel.chat, Maher,{mentions: participants.map((a) => a.id), }, {
             quoted: citel,
         });
     }
