@@ -154,7 +154,7 @@ cmd({
                 image: {
                     url: anu.thumbnail,
                 },
-                text: `
+                caption: `
 ┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿
 ┃✗ ${Config.botname} 
 ┃✗ •ʏᴏᴜ-ᴛᴜʙᴇ ᴘʟᴀʏᴇʀ•
@@ -290,7 +290,7 @@ cmd({
                         video: fs.readFileSync(`./${randomName}`),
                         jpegThumbnail: log0,
                         mimetype: 'video/mp4',
-                        caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
+                        text: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
                         headerType: 4,
                         contextInfo: {
                             externalAdReply: {
@@ -351,7 +351,7 @@ cmd({
                     image: {
                         url: result
                     },
-                    text: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
+                    caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
                     footer: tlang().footer,
                     headerType: 4,
                     contextInfo: {
@@ -438,7 +438,7 @@ cmd({
             let fileSizeInBytes = stats.size;
             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
             if (fileSizeInMegabytes <= dlsize) {
-                let buttonMessage = {
+                let Maher = {
                     audio: fs.readFileSync(`./${randomName}`),
                     mimetype: 'audio/mpeg',
                     caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`,
@@ -446,19 +446,19 @@ cmd({
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
-                            title: titleYt,
-                            body: `${Config.ownername}`,
+                            title: `${Gname}`,
+                            body: ``,
                             renderLargerThumbnail: true,
                             thumbnailUrl: search.all[0].thumbnail,
                             mediaUrl: text,
                             mediaType: 1,
                             thumbnail: await getBuffer(search.all[0].thumbnail),
-                            sourceUrl: text,
+                            sourceUrl: `${waUrl}`,
                             
                         },
                     },
                 }
-                await Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                await Void.sendMessage(citel.chat, Maher, { quoted: citel })
                 return fs.unlinkSync(`./${randomName}`);
             } else {
                 citel.reply(`ғɪʟᴇ sɪᴢᴇ ʙɪɢɢᴇʀ ᴛʜᴇɴ 100ᴍʙ.`);
