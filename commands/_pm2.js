@@ -11,8 +11,8 @@
 
 
 //---------------------------------------------------------------------------
-const {cmd,tlang,sleep} = require('../lib')
-cmd({
+const {smd,tlang,sleep} = require('../lib')
+smd({
         pattern: "restart",
         alias: ["res"],
         desc: "To restart bot",
