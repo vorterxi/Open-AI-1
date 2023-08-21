@@ -128,7 +128,7 @@ async(Void, citel, text , { isCreator}) => {
 //---------------------------------------------------------------------------
 
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "sticker",
             alias: ["s"],
             desc: "Makes sticker of replied image/video.",
