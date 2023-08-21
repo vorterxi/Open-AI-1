@@ -221,7 +221,7 @@ ${
   }
 );
 
-cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text,{isCreator}) => {
+smd({ pattern: "ship" , category: "fun" }, async(Void, citel, text,{isCreator}) => {
     const { tlang } = require('../lib')
    if (!citel.isGroup) return citel.reply(tlang().group);
    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
