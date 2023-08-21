@@ -72,10 +72,10 @@ cmd({
             let wdata = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
             );
-            let sigma = "";
+            let sigma = ``;
             sigma += `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n         ${fancytext("*Weather of*"),1} ${text}\n`;
-            sigma += `┃✗ ${fancytext("*•Weather•*"),1} ${wdata.data.weather[0].main}\n`;
-            sigma += `┃✗ ${fancytext("*•Description•*"),1} ${wdata.data.weather[0].description}\n`;
+            sigma += `┃✗ ${fancytext("•Weather•"),1} ${wdata.data.weather[0].main}\n`;
+            sigma += `┃✗ ${fancytext("•Description•"),1} ${wdata.data.weather[0].description}\n`;
             sigma += `┃✗ ${fancytext("*•Avg Temp•*"),1} ${wdata.data.main.temp}\n`;
             sigma += `┃✗ ${fancytext("*•Feels Like•*"),1} ${wdata.data.main.feels_like}\n`;
             sigma += `┃✗ ${fancytext("*•Pressure•*"),1} ${wdata.data.main.pressure}\n`;
