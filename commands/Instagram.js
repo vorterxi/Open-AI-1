@@ -1,5 +1,5 @@
-const { Insta, cmd , Config , prefix } = require('../lib')
-cmd({
+const { Insta, smd , Config , prefix } = require('../lib')
+smd({
         pattern: "insta",
         alais: ["ig"],
         desc: "download instagram post.",
