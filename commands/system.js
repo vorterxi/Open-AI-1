@@ -10,13 +10,13 @@
  **/
 
 
-const { addnote,cmd,smd ,sck1, delnote, allnotes, delallnote, tlang,fetchJson, botpic, runtime, prefix ,alive,Config } = require('../lib')
+const { addnote,cmd,sck1, delnote, allnotes, delallnote, tlang,fetchJson, botpic, runtime, prefix ,alive,Config } = require('../lib')
 const {TelegraPh} = require('../lib/scraper')
 const util = require('util');
 const fs = require('fs-extra');
 const axios = require('axios')
 const fetch = require('node-fetch');
-
+const smd = require('../lib')
 
 
 //--------------------------------------2-------------------------------------
