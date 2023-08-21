@@ -11,13 +11,13 @@
 
 
 const sɪɢᴍᴀ_DB = require('../lib/scraper')
-const { tlang, Config, prefix,cmd , botpic} = require('../lib')
+const { tlang, Config, prefix,smd , botpic} = require('../lib')
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const Heroku = require('heroku-client');
 
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "update",
             alias: ["ud"],
             desc: "Shows repo\'s refreshed commits.",
