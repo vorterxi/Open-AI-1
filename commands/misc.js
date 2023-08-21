@@ -303,8 +303,9 @@ const buffer = await sticker.toBuffer();
      //---------------------------------------------------------------------------
  cmd({
              pattern: "sigmabot",
+             alias: ["sbot","sigmachatbot"],
              desc: "sigma chat bot",
-             category: "misc",
+             category: "developer",
              filename: __filename
          },
          async(Void, citel, text,{ isCreator }) => {
