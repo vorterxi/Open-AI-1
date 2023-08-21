@@ -9,10 +9,10 @@
  * @description : Secktor,A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/
- const { cmd, parseJid,getAdmin,tlang } = require("../lib/");
+ const { smd, parseJid,getAdmin,tlang } = require("../lib/");
  const eco = require('discord-mongoose-economy')
  const ty = eco.connect(mongodb);
-cmd(
+smd(
   {
     pattern: "delttt",
     desc: "deletes TicTacToe running session.",
@@ -41,7 +41,7 @@ cmd(
         }
   })
   
-cmd(
+smd(
   {
     pattern: "ttt",
     desc: "Play TicTacToe",
@@ -113,7 +113,7 @@ ${arr.slice(6).join("  ")}
   }
 );
 
-cmd(
+smd(
   {
     on: "text"
   },
