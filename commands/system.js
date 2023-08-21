@@ -10,7 +10,7 @@
  **/
 
 
-const { addnote,cmd, sck1, delnote, allnotes,sigma, delallnote, tlang,fetchJson, botpic, runtime, prefix ,alive,Config } = require('../lib')
+const { addnote,cmd,smd ,sck1, delnote, allnotes, delallnote, tlang,fetchJson, botpic, runtime, prefix ,alive,Config } = require('../lib')
 const {TelegraPh} = require('../lib/scraper')
 const util = require('util');
 const fs = require('fs-extra');
@@ -32,7 +32,7 @@ async(Void, citel, text) => {
     
 })
 //--------------------------------------1---------------------------------------
-sigma({
+smd({
             pattern: "addnote",
             category: "owner",
             desc: "Adds a note on db.",
