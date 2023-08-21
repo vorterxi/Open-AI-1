@@ -16,11 +16,11 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
  const fs = require('fs')
  const axios = require('axios')
  const fetch = require("node-fetch");
+const {smd} = require('../lib')
 
 
 
-
-cmd({
+smd({
             pattern: "whois",
             desc: "Makes photo of replied sticker.",
             category: "user",
