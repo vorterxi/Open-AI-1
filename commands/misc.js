@@ -317,11 +317,11 @@ const buffer = await sticker.toBuffer();
                       let chatbott= await chatbot.findOne({ id: 'chatbot' })
                      if (!chatbott) {
                          await new chatbot({ id: 'chatbot', worktype: "true" }).save()
-                         return citel.reply(`${fancytext("sigma chatbot activated successfully"),1}`)
+                         return citel.reply(`${fancytext("sigma chatbot activated successfully",1)}`)
                      } else {
-                         if (chatbott.worktype == "true") return citel.reply(`${fancytext("sigma-chatbot was already enabled"),1}`)
+                         if (chatbott.worktype == "true") return citel.reply(`${fancytext("sigma-chatbot was already enabled",1)}`)
                          await chatbot.updateOne({ id: 'chatbot' }, { worktype: "true" })
-                         citel.reply(`${fancytext("enabled sigma-chatbot successfully"),1}`)
+                         citel.reply(`${fancytext("enabled sigma-chatbot successfully",1)}`)
                          return
                      }      
                      }
@@ -331,11 +331,11 @@ const buffer = await sticker.toBuffer();
                       let chatbott= await chatbot.findOne({ id: 'chatbot' })
                      if (!chatbott) {
                          await new chatbot({ id: 'chatbot', worktype: "false" }).save()
-                         return citel.reply(`${fancytext("sigma-chatbot deactivated successfully"),1}`)
+                         return citel.reply(`${fancytext("sigma-chatbot deactivated successfully",1)}`)
                      } else {
-                         if (chatbott.worktype == "false") return citel.reply("Chatbot was already disabled.")
+                         if (chatbott.worktype == "false") return citel.reply(`${fancytext("sigma-chatbot was already disabled",1)}`)
                          await chatbot.updateOne({ id: 'chatbot' }, { worktype: "false" })
-                         citel.reply(`${fancytext("disabled sigma-chatbot successfully"),1}`)
+                         citel.reply(`${fancytext("disabled sigma-chatbot successfully",1)}`)
                          return
                      }
                      }
@@ -343,14 +343,14 @@ const buffer = await sticker.toBuffer();
                  default:
                      {
                          let buttons = [{
-                                 buttonId: `${prefix}${fancytext("sbot on"),1}`,
+                                 buttonId: `${prefix}${fancytext("sbot on",1)}`,
                                  buttonText: {
                                      displayText: "Turn On",
                                  },
                                  type: 1,
                              },
                              {
-                                 buttonId: `${prefix}${fancytext("sbot off"),1}`,
+                                 buttonId: `${prefix}${fancytext("sbot off",1)}`,
                                  buttonText: {
                                      displayText: "Turn Off",
                                  },
@@ -358,8 +358,8 @@ const buffer = await sticker.toBuffer();
                              },
                          ];
                          let chatbott= await chatbot.findOne({ id: 'chatbot' })
-                         await Void.sendButtonText(citel.chat, buttons, `${fancytext("sigma-bot status"),1} ${chatbott.worktype} `, 'sɪɢᴍᴀ-ᴍᴅ ', citel);
-                        citel.reply(`${fancytext("sigma-bot status"),1} ${chatbott.worktype} \n${fancytext("*use*"),1} ${prefix}${fancytext("sbot on"),1}n${prefix}${fancytext("sbot off"),1}`)
+                         await Void.sendButtonText(citel.chat, buttons, `${fancytext("sigma-bot status",1)} ${chatbott.worktype} `, 'sɪɢᴍᴀ-ᴍᴅ ', citel);
+                        citel.reply(`${fancytext("sigma-bot status",1)} ${chatbott.worktype} \n${fancytext("*use*",1)} ${prefix}${fancytext("sbot on",1)}n${prefix}${fancytext("sbot off",1)}`)
                         }
              }
  
