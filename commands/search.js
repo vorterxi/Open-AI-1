@@ -18,7 +18,7 @@ const fetch = require('node-fetch')
 const sigma_config = require('../config') 
 const sigma_cmd = require('../lib')
     //---------------------------------------------------------------------------
-cmd({
+sigma_cmd({
             pattern: "imdb",
             category: "search",
             desc: "Sends image of asked Movie/Series.",
@@ -73,7 +73,7 @@ sigma_cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+sigma_cmd({
             pattern: "horo",
             category: "search",
             desc: "Gives horoscope info of user.",
@@ -110,7 +110,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-    cmd({
+sigma_cmd({
         pattern: "google",
         alias :['search','gsearch'],
         category: "search",
@@ -134,7 +134,7 @@ cmd({
     }
 )
     //---------------------------------------------------------------------------
-cmd({
+sigma_cmd({
             pattern: "image",
             category: "search",
             desc: "Searches Image on Google",
@@ -166,7 +166,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+sigma_cmd({
             pattern: "couplepp",
             category: "search",
             desc: "Sends two couples pics.",
@@ -180,7 +180,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+sigma_cmd({
         pattern: "iswa",
         category: "search",
         desc: "Searches in given rage about given number.",
