@@ -11,7 +11,7 @@
  **/
 
 //---------------------------------------------------------------------------
-const { cmd }   = require('../lib');
+const { smd }   = require('../lib');
 const util = require('util');
 const axios = require('axios');
 cmd({
