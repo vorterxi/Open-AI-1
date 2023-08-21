@@ -1,4 +1,4 @@
-const { tlang, cmd, sleep, getBuffer, prefix, Config } = require('../lib')
+const { tlang, smd, sleep, getBuffer, prefix, Config } = require('../lib')
 const ytdl = require('ytdl-secktor')
 const yts = require('secktor-pack')
 const fs = require('fs')
@@ -6,7 +6,7 @@ var videotime = 60000 // 1000 min
 var dlsize = 250 // 250mb
 
 
-cmd({
+smd({
             pattern: "playlist",
             desc: "Downloads video from playlist.",
             category: "downloader",
