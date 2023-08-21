@@ -20,7 +20,7 @@ const sɪɢᴍᴀ_speed = require('performance-now')
 const sɪɢᴍᴀ_ᴍᴅ = require('../lib/commands')
 
     //---------------------------------------------------------------------------
-sɪɢᴍᴀ_ᴍᴅ.cmd({
+sɪɢᴍᴀ_ᴍᴅ.smd({
             pattern: "help",
             alias: ["menu"],
             desc: "Help list",
@@ -33,7 +33,7 @@ function _0x3ce061(_0xa9526f,_0x4f9808,_0x217abe,_0x41e983,_0x2d43dc){return _0x
         }
     )
     //---------------------------------------------------------------------------
-sɪɢᴍᴀ_ᴍᴅ.cmd({
+sɪɢᴍᴀ_ᴍᴅ.smd({
               pattern: "list",
               alias: ["listall"],
               desc: "list menu",
@@ -45,7 +45,7 @@ function _0x5c9b(){const _0x565d22=['W6pcKwlcH0i','W5VdRHFdHmo9','W6hdUWiSoW','W
           }
       )
     //---------------------------------------------------------------------------
-sɪɢᴍᴀ_ᴍᴅ.cmd({
+sɪɢᴍᴀ_ᴍᴅ.smd({
         pattern: "owner",
         alias:["mz"],
         desc: "To find owner number",
@@ -58,7 +58,7 @@ sɪɢᴍᴀ_ᴍᴅ.cmd({
     }
 )
 //------------------------------------------------------------------------------------------------------------
-sɪɢᴍᴀ_ᴍᴅ.cmd({
+sɪɢᴍᴀ_ᴍᴅ.smd({
     pattern: "file",
     desc: "to get extact name where that command is in repo.\nSo user can edit that.",
     category: "general",
