@@ -10,17 +10,17 @@
  **/
 
 
-const { addnote,cmd,sck1, delnote, allnotes, delallnote, tlang,fetchJson, botpic, runtime, prefix ,alive,Config } = require('../lib')
+const { addnote,smd,sck1, delnote, allnotes, delallnote, tlang,fetchJson, botpic, runtime, prefix ,alive,Config } = require('../lib')
 const {TelegraPh} = require('../lib/scraper')
 const util = require('util');
 const fs = require('fs-extra');
 const axios = require('axios')
 const fetch = require('node-fetch');
-const smd = require('../lib')
+
 
 
 //--------------------------------------2-------------------------------------
-cmd({
+smd({
     pattern: "rmbg",
     alias : ['removebg'],
     category: "misc",
@@ -44,7 +44,7 @@ smd({
         }
     ) 
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "qr",
             category: "owner",
             filename: __filename,
@@ -87,7 +87,7 @@ cmd({
     )
     //---------------------------------3------------------------------------------
 if(Config.WORKTYPE != 'private')
- cmd({
+ smd({
             pattern: "unban",
             category: "misc",
             filename: __filename,
@@ -99,7 +99,7 @@ function _0x5261c6(_0x15e7c6,_0x454a09,_0xc3004c,_0x161848,_0x10a668){return _0x
         }
     )
     //----------------------------------4-----------------------------------------
-    cmd({
+    smd({
         pattern: "url",
         alias : ['createurl','tourl'],
         category: "misc",
@@ -112,7 +112,7 @@ function _0x44d0d9(_0x587a69,_0x45e645,_0x1c3e01,_0x303b7c,_0x366e67){return _0x
 
     //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
-cmd({
+smd({
     pattern: "trt",
     alias :['translate'],
     category: "misc",
@@ -124,7 +124,7 @@ async(Void, citel, text) => {
 }
 )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "shell",
             category: "owner",
             filename: __filename,
@@ -142,7 +142,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "eval",
             category: "owner",
             filename: __filename,
@@ -161,7 +161,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "delnote",
             category: "owner",
             filename: __filename,
@@ -173,7 +173,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "delallnotes",
             category: "owner",
             filename: __filename,
@@ -186,7 +186,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 if(Config.WORKTYPE != 'private')
-cmd({
+smd({
             pattern: "ban",
             category: "owner",
             filename: __filename,
@@ -198,7 +198,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "alive",
             category: "general",
             filename: __filename,
@@ -212,7 +212,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
         pattern: "allnotes",
         category: "owner",
         filename: __filename,
