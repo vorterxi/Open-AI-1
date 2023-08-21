@@ -14,7 +14,7 @@
 const { smd }   = require('../lib');
 const util = require('util');
 const axios = require('axios');
-cmd({
+smd({
         pattern: "paste",
         desc: "create paste of text.",
         category: "extra",
