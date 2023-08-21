@@ -579,7 +579,7 @@ function _0x2432(_0x326cff,_0x980588){const _0x4c1b79=_0x4d05();return _0x2432=f
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "checkwarn",
             desc: "Check warns",
 	    alias: ["cwarn"],
