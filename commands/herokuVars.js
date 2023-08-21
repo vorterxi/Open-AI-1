@@ -1,5 +1,5 @@
 const Config = require('../config')
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,cmd } = require("../lib");
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1,smd } = require("../lib");
 const axios = require('axios');
 const appName = Config.HEROKU_APP_NAME;
 const authToken = Config.HEROKU_API_KEY;
@@ -7,7 +7,7 @@ const fetch = require('node-fetch');
 
 if(Config.HEROKU_APP_NAME && Config.HEROKU_API_KEY ){
         
-         cmd({
+         smd({
              pattern: "setsudo",
              desc: "Makes wa me of quoted or mentioned user.",
              category: "tools",
@@ -39,7 +39,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
          })
 
 //--------------------------------------------------------------------
- cmd({
+ smd({
              pattern: "getsudo",
              desc: "Makes wa me of quoted or mentioned user.",
              category: "tools",
@@ -48,7 +48,7 @@ fetch(`https://api.heroku.com/apps/${appName}/config-vars`,
 async(Void, citel, text) => {  return await  citel.reply(global.sudo);})
 //-------------------------------------------------------------------------
 
- cmd({
+ smd({
              pattern: "delsudo",
              desc: "Makes wa me of quoted or mentioned user.",
              category: "tools",
