@@ -11,14 +11,14 @@
 
 
 const moment = require('moment-timezone')
-const {fetchJson, tlang,fancytext,botpic } = require('../lib')
+const {fetchJson, tlang,fancytext,botpic,cmd } = require('../lib')
 let gis = require("async-g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
 const sigma_config = require('../config') 
-const sigma_cmd = require('../lib')
+
     //---------------------------------------------------------------------------
-sigma_cmd({
+cmd({
             pattern: "imdb",
             category: "search",
             desc: "Sends image of asked Movie/Series.",
@@ -60,7 +60,7 @@ sigma_cmd({
         }
     )
     //---------------------------------------------------------------------------
-sigma_cmd({
+cmd({
             pattern: "weather",
             category: "search",
             desc: "Sends weather info about asked place.",
@@ -73,7 +73,7 @@ sigma_cmd({
         }
     )
     //---------------------------------------------------------------------------
-sigma_cmd({
+cmd({
             pattern: "horo",
             category: "search",
             desc: "Gives horoscope info of user.",
@@ -110,7 +110,7 @@ sigma_cmd({
         }
     )
     //---------------------------------------------------------------------------
-sigma_cmd({
+cmd({
         pattern: "google",
         alias :['search','gsearch'],
         category: "search",
@@ -134,7 +134,7 @@ sigma_cmd({
     }
 )
     //---------------------------------------------------------------------------
-sigma_cmd({
+cmd({
             pattern: "image",
             category: "search",
             desc: "Searches Image on Google",
@@ -166,7 +166,7 @@ sigma_cmd({
         }
     )
     //---------------------------------------------------------------------------
-sigma_cmd({
+cmd({
             pattern: "couplepp",
             category: "search",
             desc: "Sends two couples pics.",
@@ -180,7 +180,7 @@ sigma_cmd({
         }
     )
     //---------------------------------------------------------------------------
-sigma_cmd({
+cmd({
         pattern: "iswa",
         category: "search",
         desc: "Searches in given rage about given number.",
