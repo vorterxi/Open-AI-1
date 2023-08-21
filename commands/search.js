@@ -74,24 +74,35 @@ cmd({
             );
             let sigma = ``;
             sigma += `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n         ${fancytext("*Weather of*",1)} ${text}\n`;
-            sigma += `┃✗ ${fancytext("•Weather•",1)} ${wdata.data.weather[0].main}\n`;
-            sigma += `┃✗ ${fancytext("•Description•",1)} ${wdata.data.weather[0].description}\n`;
-            sigma += `┃✗ ${fancytext("*•Avg Temp•*",1)} ${wdata.data.main.temp}\n`;
-            sigma += `┃✗ ${fancytext("*•Feels Like•*",1)} ${wdata.data.main.feels_like}\n`;
-            sigma += `┃✗ ${fancytext("*•Pressure•*",1)} ${wdata.data.main.pressure}\n`;
-            sigma += `┃✗ ${fancytext("*•Humidity•*",1)} ${wdata.data.main.humidity}\n`;
-            sigma += `┃✗ ${fancytext("*•Humidity•*",1)} ${wdata.data.wind.speed}\n`;
-            sigma += `┃✗ ${fancytext("*•Latitude•*",1)} ${wdata.data.coord.lat}\n`;
-            sigma += `┃✗ ${fancytext("*•Longitude•*",1)} ${wdata.data.coord.lon}\n`;
-            sigma += `┃✗ ${fancytext("*•Country•*",1)} ${wdata.data.sys.country}\n┗━━━━━━━━━━⦿\n*╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`;
+            sigma += `┃✗ ${fancytext("•weather•",1)} ${wdata.data.weather[0].main}\n`;
+            sigma += `┃✗ ${fancytext("•description•",1)} ${wdata.data.weather[0].description}\n`;
+            sigma += `┃✗ ${fancytext("*•avg temp•*",1)} ${wdata.data.main.temp}\n`;
+            sigma += `┃✗ ${fancytext("*•feels like•*",1)} ${wdata.data.main.feels_like}\n`;
+            sigma += `┃✗ ${fancytext("*•pressure•*",1)} ${wdata.data.main.pressure}\n`;
+            sigma += `┃✗ ${fancytext("*•humidity•*",1)} ${wdata.data.main.humidity}\n`;
+            sigma += `┃✗ ${fancytext("*•humidity•*",1)} ${wdata.data.wind.speed}\n`;
+            sigma += `┃✗ ${fancytext("*•latitude•*",1)} ${wdata.data.coord.lat}\n`;
+            sigma += `┃✗ ${fancytext("*•longitude•*",1)} ${wdata.data.coord.lon}\n`;
+            sigma += `┃✗ ${fancytext("*•country•*",1)} ${wdata.data.sys.country}\n┗━━━━━━━━━━⦿\n*╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`;
 
+            let king = {
+                image: { url: await botpic() },
+                text: sigma,
+                footer: tlang().footer,
+                headerType: 4,
+                contextInfo: {
+                    externalAdReply: {
+                    title: `${Gname}`,
+                    body: "Easy to Use",
+                    thumbnail: log0,
+                    mediaType: 4,
+                    mediaUrl: '',
+                    sourceUrl: `${waUrl}`,}}}
             Void.sendMessage(
                 citel.chat, {
-                    text: sigma,
+                    text: king,
                 }, {
-                    quoted: citel,
-                }
-            );
+                    quoted: citel,});
          
          }catch {citel.reply(`${fancytext("invalid location, give me valid location",1)}`)}
 
