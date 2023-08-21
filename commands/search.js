@@ -16,7 +16,7 @@ let gis = require("async-g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
 const sigma_config = require('../config') 
-const sigma_cmd = require('../cmd')
+const sigma_cmd = require('../lib')
     //---------------------------------------------------------------------------
 cmd({
             pattern: "imdb",
