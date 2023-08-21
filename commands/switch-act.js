@@ -10,10 +10,10 @@
  **/
 
 
-const { cmd,sck,sck1, getAdmin, tlang, prefix } = require('../lib')
+const { smd,sck,sck1, getAdmin, tlang, prefix } = require('../lib')
 const Config = require('../config')
     //---------------------------------------------------------------------------
-cmd({
+smd({
         pattern: "act",
         desc: "Switches for varios works.",
         category: "group",
