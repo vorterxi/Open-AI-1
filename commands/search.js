@@ -101,7 +101,7 @@ cmd({
             Void.sendMessage(
                 citel.chat, 
                      king,
-                , {
+                 {
                     quoted: citel,});
          
          }catch {citel.reply(`${fancytext("invalid location, give me valid location",1)}`)}
