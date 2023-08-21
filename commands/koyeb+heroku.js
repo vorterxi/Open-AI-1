@@ -9,13 +9,13 @@
  * @version 1.0.3 
  **/
 const axios = require('axios');
-const { tlang,cmd } = require('../lib')
+const { tlang,smd } = require('../lib')
 const Config = require('../config')
 const { redeploy , getvar , delvar , getallvar , change_env , get_deployments} = require('../lib/koyeb')
 
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------
-cmd(
+smd(
   {
     pattern: "updatenow",
     alias: ["unow"],
