@@ -9,8 +9,8 @@
  * @version 1.0.3 
  **/
 
- const { tlang,sck,prefix,cmd } = require('../lib')
- cmd({
+ const { tlang,sck,prefix,smd } = require('../lib')
+ smd({
      pattern: "amute",
      desc: "sets auto mute time in group.",
      category: "moderation",
@@ -33,7 +33,7 @@
  )
 
  //--------------------------------------------------------------------------------
- cmd({
+ smd({
     pattern: "unmute",
     desc: "sets unmute time in group.",
     category: "moderation",
@@ -56,7 +56,7 @@ async(Void, citel, text,{ isCreator }) => {
 }
 )
  //--------------------------------------------------------------------------------
- cmd({
+ smd({
     pattern: "dunmute",
     desc: "Delete unmute from group.",
     category: "moderation",
@@ -75,7 +75,7 @@ async(Void, citel, text,{ isCreator }) => {
 }
 )
  //--------------------------------------------------------------------------------
- cmd({
+ smd({
     pattern: "dmute",
     desc: "Delete mute from group.",
     category: "moderation",
