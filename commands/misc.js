@@ -10,17 +10,17 @@
  **/
 
 
- const { tlang, getAdmin, prefix, Config, sck, sck1, fetchJson, runtime,cmd,getBuffer,botpic } = require('../lib')
+ const { tlang, getAdmin, prefix, Config, sck,fancytext, sck1, fetchJson, runtime,cmd,getBuffer,botpic } = require('../lib')
  let { dBinary, eBinary } = require("../lib/binary");
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
  const fs = require('fs')
  const axios = require('axios')
  const fetch = require("node-fetch");
-const {smd} = require('../lib')
 
 
 
-smd({
+
+cmd({
             pattern: "whois",
             desc: "Makes photo of replied sticker.",
             category: "user",
@@ -302,8 +302,8 @@ const buffer = await sticker.toBuffer();
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "chatbot",
-             desc: "activates and deactivates chatbot.\nuse buttons to toggle.",
+             pattern: "sigmabot",
+             desc: "sigma chat bot",
              category: "misc",
              filename: __filename
          },
@@ -316,11 +316,11 @@ const buffer = await sticker.toBuffer();
                       let chatbott= await chatbot.findOne({ id: 'chatbot' })
                      if (!chatbott) {
                          await new chatbot({ id: 'chatbot', worktype: "true" }).save()
-                         return citel.reply('Chatbot activated successfully.')
+                         return citel.reply(`${fancytext("sigma chatbot activated successfully"),1}`)
                      } else {
-                         if (chatbott.worktype == "true") return citel.reply("Chatbot was already enabled.")
+                         if (chatbott.worktype == "true") return citel.reply(`${fancytext("sigma-chatbot was already enabled"),1}`)
                          await chatbot.updateOne({ id: 'chatbot' }, { worktype: "true" })
-                         citel.reply('Enabled chatbot successfully.')
+                         citel.reply(`${fancytext("enabled sigma-chatbot successfully"),1}`)
                          return
                      }      
                      }
@@ -330,11 +330,11 @@ const buffer = await sticker.toBuffer();
                       let chatbott= await chatbot.findOne({ id: 'chatbot' })
                      if (!chatbott) {
                          await new chatbot({ id: 'chatbot', worktype: "false" }).save()
-                         return citel.reply('Chatbot deactivated successfully.')
+                         return citel.reply(`${fancytext("sigma-chatbot deactivated successfully"),1}`)
                      } else {
                          if (chatbott.worktype == "false") return citel.reply("Chatbot was already disabled.")
                          await chatbot.updateOne({ id: 'chatbot' }, { worktype: "false" })
-                         citel.reply('Disabled chatbot successfully.')
+                         citel.reply(`${fancytext("disabled sigma-chatbot successfully"),1}`)
                          return
                      }
                      }
@@ -342,14 +342,14 @@ const buffer = await sticker.toBuffer();
                  default:
                      {
                          let buttons = [{
-                                 buttonId: `${prefix}chatbot on`,
+                                 buttonId: `${prefix}${fancytext("sbot on"),1}`,
                                  buttonText: {
                                      displayText: "Turn On",
                                  },
                                  type: 1,
                              },
                              {
-                                 buttonId: `${prefix}chatbot off`,
+                                 buttonId: `${prefix}${fancytext("sbot off"),1}`,
                                  buttonText: {
                                      displayText: "Turn Off",
                                  },
@@ -357,8 +357,8 @@ const buffer = await sticker.toBuffer();
                              },
                          ];
                          let chatbott= await chatbot.findOne({ id: 'chatbot' })
-                         await Void.sendButtonText(citel.chat, buttons, `Chatbot Status: ${chatbott.worktype} `, 'Secktor-Md', citel);
-                        citel.reply(`Chatbot Status: ${chatbott.worktype} \n*Use:* ${prefix}chatbot on\n${prefix}chatbot off`)
+                         await Void.sendButtonText(citel.chat, buttons, `${fancytext("sigma-bot status"),1} ${chatbott.worktype} `, 'sɪɢᴍᴀ-ᴍᴅ ', citel);
+                        citel.reply(`${fancytext("sigma-bot status"),1} ${chatbott.worktype} \n${fancytext("*use*"),1} ${prefix}${fancytext("sbot on"),1}n${prefix}${fancytext("sbot off"),1}`)
                         }
              }
  
