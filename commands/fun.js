@@ -12,10 +12,10 @@
 
 const { dare, truth, random_question } = require('../lib/truth-dare.js')
 const axios = require('axios')
-const { cmd , Config} = require('../lib')
+const { smd , Config} = require('../lib')
 const fetch = require('node-fetch');
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "question",
             desc: "Random Question.",
             category: "fun",
@@ -26,7 +26,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "truth",
             desc: "truth and dare(truth game.).",
             category: "fun",
@@ -37,7 +37,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "dare",
             desc: "truth and dare(dare game.).",
             category: "fun",
@@ -48,7 +48,7 @@ function _0x1cde25(_0x4f3acd,_0x525eec,_0x555016,_0x317049,_0xd24647){return _0x
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "joke",
             desc: "Sends Joke in chat.",
             category: "fun",
@@ -59,7 +59,7 @@ cmd({
 
 })
 //-----------------------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "joke2",
             desc: "Sends Joke in chat.",
             category: "fun",
@@ -70,7 +70,7 @@ cmd({
         }
     )
 //--------------------------------------------------------------------------------
-cmd({
+smd({
         pattern: "fact",
         desc: "Sends fact in chat.",
         category: "fun",
@@ -82,7 +82,7 @@ function _0x22bd78(_0x326df4,_0xc5fe2,_0x467d96,_0x5324a2,_0x34ef37){return _0x3
 
 )
     //---------------------------------------------------------------------------
- cmd({
+ smd({
         pattern: "quotes",
         desc: "Sends quotes in chat.",
         category: "fun",
@@ -94,7 +94,7 @@ function _0x22bd78(_0x326df4,_0xc5fe2,_0x467d96,_0x5324a2,_0x34ef37){return _0x3
 
 )
     //---------------------------------------------------------------------------
-    cmd({
+    smd({
         pattern: "define",
         desc: "urban dictionary.",
         category: "fun",
