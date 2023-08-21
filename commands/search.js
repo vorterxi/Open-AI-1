@@ -99,9 +99,9 @@ cmd({
                     mediaUrl: '',
                     sourceUrl: `${waUrl}`,}}}
             Void.sendMessage(
-                citel.chat, {
-                    text: king,
-                }, {
+                citel.chat, 
+                     king,
+                , {
                     quoted: citel,});
          
          }catch {citel.reply(`${fancytext("invalid location, give me valid location",1)}`)}
