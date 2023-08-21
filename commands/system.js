@@ -16,7 +16,7 @@ const util = require('util');
 const fs = require('fs-extra');
 const axios = require('axios')
 const fetch = require('node-fetch');
-
+const {smd} = require('../lib')
 
 
 //--------------------------------------2-------------------------------------
@@ -32,7 +32,7 @@ async(Void, citel, text) => {
     
 })
 //--------------------------------------1---------------------------------------
-cmd({
+smd({
             pattern: "addnote",
             category: "owner",
             desc: "Adds a note on db.",
