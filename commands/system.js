@@ -32,7 +32,7 @@ async(Void, citel, text) => {
     
 })
 //--------------------------------------1---------------------------------------
-smd({
+cmd({
             pattern: "addnote",
             category: "owner",
             desc: "Adds a note on db.",
