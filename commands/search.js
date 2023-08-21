@@ -11,7 +11,7 @@
 
 
 const moment = require('moment-timezone')
-const {fetchJson,cmd, tlang,Config } = require('../lib')
+const {fetchJson,cmd, tlang,Config,fancytext } = require('../lib')
 let gis = require("async-g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
@@ -72,28 +72,28 @@ cmd({
             let wdata = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
             );
-            let textw = "";
-            textw += `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n         *Weather of  ${text}*\n`;
-            textw += `┃✗ *•Weather•* ${wdata.data.weather[0].main}\n`;
-            textw += `┃✗ *•Description•* ${wdata.data.weather[0].description}\n`;
-            textw += `┃✗ *•Avg Temp•* ${wdata.data.main.temp}\n`;
-            textw += `┃✗ *•Feels Like•* ${wdata.data.main.feels_like}\n`;
-            textw += `┃✗ *•Pressure•* ${wdata.data.main.pressure}\n`;
-            textw += `┃✗ *•Humidity•* ${wdata.data.main.humidity}\n`;
-            textw += `┃✗ *•Humidity•* ${wdata.data.wind.speed}\n`;
-            textw += `┃✗ *•Latitude•* ${wdata.data.coord.lat}\n`;
-            textw += `┃✗ *•Longitude•* ${wdata.data.coord.lon}\n`;
-            textw += `┃✗ *•Country•* ${wdata.data.sys.country}\n┗━━━━━━━━━━⦿\n*╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`;
+            let sigma = "";
+            sigma += `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n         ${fancytext("*Weather of*"),1} ${text}\n`;
+            sigma += `┃✗ ${fancytext("*•Weather•*"),1} ${wdata.data.weather[0].main}\n`;
+            sigma += `┃✗ ${fancytext("*•Description•*"),1} ${wdata.data.weather[0].description}\n`;
+            sigma += `┃✗ ${fancytext("*•Avg Temp•*"),1} ${wdata.data.main.temp}\n`;
+            sigma += `┃✗ ${fancytext("*•Feels Like•*"),1} ${wdata.data.main.feels_like}\n`;
+            sigma += `┃✗ ${fancytext("*•Pressure•*"),1} ${wdata.data.main.pressure}\n`;
+            sigma += `┃✗ ${fancytext("*•Humidity•*"),1} ${wdata.data.main.humidity}\n`;
+            sigma += `┃✗ ${fancytext("*•Humidity•*"),1} ${wdata.data.wind.speed}\n`;
+            sigma += `┃✗ ${fancytext("*•Latitude•*"),1} ${wdata.data.coord.lat}\n`;
+            sigma += `┃✗ ${fancytext("*•Longitude•*"),1} ${wdata.data.coord.lon}\n`;
+            sigma += `┃✗ ${fancytext("*•Country•*"),1} ${wdata.data.sys.country}\n┗━━━━━━━━━━⦿\n*╰┈➤𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`;
 
             Void.sendMessage(
                 citel.chat, {
-                    text: textw,
+                    text: sigma,
                 }, {
                     quoted: citel,
                 }
             );
          
-         }catch {citel.reply("invalid location, give me valid location")}
+         }catch {citel.reply(`${fancytext("invalid location, give me valid location"),1}`)}
 
         }
     )
