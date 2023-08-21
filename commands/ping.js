@@ -11,7 +11,8 @@
 
 //---------------------------------------------------------------------------
 const sɪɢᴍᴀ_ᴍᴅ = require('../lib')
-sɪɢᴍᴀ_ᴍᴅ.cmd({
+const {smd} = require('../lib')
+sɪɢᴍᴀ_ᴍᴅ.smd({
         pattern: "ping",
         desc: "To check ping",
         category: "general",
