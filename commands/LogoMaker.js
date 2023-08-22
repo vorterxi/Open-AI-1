@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------------
-/*const Config = require('../config')
+const Config = require('../config')
 let { tiny,  prefix,  cmd,  getBuffer  } = require("../lib");
 //========================================================================================================
 async function singleText(Void, citel , url = '' , text1 , text2 ){
@@ -226,4 +226,4 @@ cmd({ pattern: "1917", category: "logo", desc: "Some text to image feature with 
 cmd({ pattern: "blackpink", category: "logo", desc: "Some text to image feature with various styles.",filename: __filename, }, async(Void, citel, text) => {
         if (!text) return citel.reply('_Need text._')
         return await singleText(Void, citel , 'create-blackpink-logo-style-online-1001' , text )
-    })*/
+    })
