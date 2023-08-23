@@ -42,13 +42,13 @@ if(quot.message.imageMessage)
 { console.log("Quot Entered") 
    let cap =quot.message.imageMessage.caption;
    let anu = await Void.downloadAndSaveMediaMessage(quot.message.imageMessage)
-   return Void.sendMessage(citel.chat,{image:{url : anu},caption : cap })
+   return Void.sendMessage(`${citel.sender}`,{image:{url : anu},caption : cap })
 }
 if(quot.message.videoMessage) 
 {
    let cap =quot.message.videoMessage.caption;
    let anu = await Void.downloadAndSaveMediaMessage(quot.message.videoMessage)
-   return Void.sendMessage(citel.chat,{video:{url : anu},caption : cap })
+   return Void.sendMessage(`${citel.sender}`,{video:{url : anu},caption : cap })
 }
  
 }
