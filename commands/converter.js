@@ -77,6 +77,7 @@ else if(citel.quoted.message.videoMessage )
 
 }
 else return citel.reply("ᴛʜɪs ɪs ɴᴏᴛ ᴀ ᴠɪᴇᴡ-ᴏɴᴄᴇ ᴍᴇssᴀɢᴇ")
+     })
 
     //---------------------------------------------------------------------------
 smd({
