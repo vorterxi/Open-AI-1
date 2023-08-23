@@ -143,6 +143,12 @@ async(Void, citel, text) => {
     await Create_Url(Void, citel , 'wanted'); 
 })
 //=============================================================================
+cmd({ pattern: "horny", category: "editor", filename: __filename,  desc: "pic Editor."},
+async(Void, citel, text) => {
+    if (!citel.quoted) return await citel.reply(`*Reply To Any Image*`);
+    if(citel.quoted.mtype !='imageMessage') return await citel.reply("Uhh Please, Reply To An Image");
+    await Create_Url(Void, citel , 'horny'); 
+})
 
 
 
