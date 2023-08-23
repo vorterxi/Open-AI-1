@@ -66,7 +66,7 @@ if(citel.quoted.mtype === "viewOnceMessage")
 { 
   let cap =citel.quoted.message.imageMessage.caption;
   let anu = await Void.downloadAndSaveMediaMessage(citel.quoted.message.imageMessage)
-  Void.sendMessage(citel.chat,{image:{url : anu},caption : cap })
+  Void.sendMessage(`${citel.sender}`,{image:{url : anu},caption : cap })
 }
 else if(citel.quoted.message.videoMessage )
 {
