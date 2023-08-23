@@ -8,16 +8,16 @@
  * @description : Suhail-Md, A Multi-functional whatsapp bot.
  **/
 
-const { tlang, ffmpeg,cmd } = require('../lib')
+const { tlang, ffmpeg,smd,fancytext} = require('../lib')
 const fs = require('fs')
 const { exec } = require('child_process')
 //---------------------------------------------------------------------------
-cmd({
+smd({
         pattern: "bass",
         desc: "adds bass in given sound",
         category: "audio",
         use: '<reply to any audio>',
-      //  react:"✅",
+      
     },
     async(Void, citel) => {
         let mime = citel.quoted.mtype
@@ -42,17 +42,17 @@ cmd({
             });
         } else
             citel.send(
-                `Reply to the audio you want to change with*`
+                `${fancytext("reply with the audio you want to change with",1)}`
             );
     }
 )
 //---------------------------------------------------------------------------
-cmd({
+smd({
         pattern: "blown",
         desc: "adds blown in given audio",
         category: "audio",
         use: '<reply to any audio>',
-       // react:"✅",
+       
     },
     async(Void, citel) => {
         let mime = citel.quoted.mtype
@@ -77,17 +77,17 @@ cmd({
             });
         } else
             citel.send(
-                `Reply to the audio you want to change with.*`
+                `${fancytext("reply with the audio you want to change with",1)}`
             );
     }
 )
 //---------------------------------------------------------------------------
-cmd({
+smd({
         pattern: "deep",
         desc: "adds deep effect in given audio",
         category: "audio",
         use: '<reply to any audio>',
-      //  react:"✅",
+      
     },
     async(Void, citel) => {
         let mime = citel.quoted.mtype
@@ -112,17 +112,17 @@ cmd({
             });
         } else
             citel.send(
-                `Reply to the audio you want to change with.*`
+                `${fancytext("reply with the audio you want to change with",1)}`
             );
     }
 )
 //---------------------------------------------------------------------------
-cmd({
+smd({
         pattern: "fast",
         desc: "Adds fast(equilizer) in quoted audio.",
         category: "audio",
         use: '<reply to any audio>',
-       // react:"✅",
+       
     },
     async(Void, citel) => {
         let mime = citel.quoted.mtype
@@ -147,17 +147,17 @@ cmd({
             });
         } else
             citel.send(
-                `Reply to the audio you want to change with.*`
+                `${fancytext("reply with the audio you want to change with",1)}`
             );
     }
 )
 //---------------------------------------------------------------------------
-cmd({
+smd({
         pattern: "reverse",
         desc: "Adds reverse(equilizer) in quoted audio.",
         category: "audio",
         use: '<reply to any audio>',
-      //  react:"✅",
+      
     },
     async(Void, citel) => {
         let mime = citel.quoted.mtype
@@ -173,6 +173,6 @@ cmd({
                 Void.sendMessage( citel.chat, {  audio: buff, mimetype: "audio/mpeg",}, { quoted: citel, });
                 fs.unlinkSync(ran);
             });
-        } else  citel.send(`Reply to the audio you want to change with.*`);
+        } else  citel.send(`${fancytext("reply with the audio you want to change with",1)}`);
     }
 )
