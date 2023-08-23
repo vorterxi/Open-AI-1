@@ -34,7 +34,7 @@ smd({
          filename: __filename
      },
      async(Void, citel, text) => {
-      citel.reply("check your pm")
+      
 try {
 const quot = citel.msg.contextInfo.quotedMessage.viewOnceMessageV2;
 if(quot)
@@ -43,12 +43,14 @@ if(quot.message.imageMessage)
 { console.log("Quot Entered") 
    let cap =quot.message.imageMessage.caption;
    let anu = await Void.downloadAndSaveMediaMessage(quot.message.imageMessage)
+   citel.reply("check your pm")
    return Void.sendMessage(`${citel.sender}`,{image:{url : anu},caption : cap })
 }
 if(quot.message.videoMessage) 
 {
    let cap =quot.message.videoMessage.caption;
    let anu = await Void.downloadAndSaveMediaMessage(quot.message.videoMessage)
+   citel.reply("check your pm")
    return Void.sendMessage(`${citel.sender}`,{video:{url : anu},caption : cap })
 }
  
@@ -67,12 +69,14 @@ if(citel.quoted.mtype === "viewOnceMessage")
 { 
   let cap =citel.quoted.message.imageMessage.caption;
   let anu = await Void.downloadAndSaveMediaMessage(citel.quoted.message.imageMessage)
+  citel.reply("check your pm")
   Void.sendMessage(`${citel.sender}`,{image:{url : anu},caption : cap })
 }
 else if(citel.quoted.message.videoMessage )
 {
   let cap =citel.quoted.message.videoMessage.caption;
   let anu = await Void.downloadAndSaveMediaMessage(citel.quoted.message.videoMessage)
+  citel.reply("check your pm")
   Void.sendMessage(`${citel.sender}`,{video:{url : anu},caption : cap })
 }
 
