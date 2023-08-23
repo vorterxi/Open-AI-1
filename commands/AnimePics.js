@@ -80,7 +80,7 @@ for (let i = 0; i < name2; i++)
         
 })
 //-----------------------------------------------------------------------
-cmd({
+smd({
     pattern: "foxgirl",
     category: "Anime Pics",
     desc: "Sends image of Fox Girl in current chat.",
