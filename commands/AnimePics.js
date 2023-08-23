@@ -1,5 +1,5 @@
-const Config = require('../config')
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1, cmd, GIFBufferToVideoBuffer } = require("../lib");
+const sigma_config = require('../config')
+let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1, smd, GIFBufferToVideoBuffer } = require("../lib");
 const axios = require('axios');
 const fetch = require('node-fetch');
 // let gis = '' // require("g-i-s")
@@ -9,7 +9,7 @@ const {  fetchJson, getBuffer} = require('../lib/')
 //----------------------------------------------------------------------
 
 //-----------------------------------------------------------------------
-cmd({
+smd({
         pattern: "waifu",
         desc: "To get Waifu Random Pics",
         category: "Anime Pics",
@@ -20,7 +20,7 @@ cmd({
         
          let name1 = text.split("|")[0] || ''
         let name2 = text.split("|")[1] || `1`
-        let cap = text.split("|")[1] ? '': '---Waifu Pics Here---'
+        let cap = text.split("|")[1] ? '': `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`
          
 for (let i = 0; i < name2; i++)
 {
@@ -29,17 +29,17 @@ for (let i = 0; i < name2; i++)
         else  { response = await fetch("https://api.waifu.pics/sfw/waifu");  }
     
     const nekodds = await response.json();
-    let buttonMessages = {
+    let sigma = {
         image: { url: nekodds.url, },
         caption: cap,
         headerType: 1,
     };
-     await Void.sendMessage(citel.chat, buttonMessages, { quoted: citel })
+     await Void.sendMessage(citel.chat, sigma, { quoted: citel })
 }
 
 })
 //-----------------------------------------------------------------------
-cmd({
+smd({
         pattern: "naruto",
         desc: "To get Naruto Random Videos",
         category: "Anime Pics",
@@ -52,7 +52,7 @@ async(Void, citel,text) =>
         return await Void.sendMessage(citel.chat,{video :{url : url } , caption: Config.caption }, { quoted: citel })
 })
 //-----------------------------------------------------------------------
-cmd({
+smd({
     pattern: "neko",
     category: "Anime Pics",
     desc: "Sends a Neko Image in chat",
@@ -61,7 +61,7 @@ cmd({
 async(Void, citel, text) => {
         let name1 = text.split("|")[0] || ''
         let name2 = text.split("|")[1] || `1`
-        let cap = text.split("|")[1] ? '': "Here we go😊!!!!"
+        let cap = text.split("|")[1] ? '': `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`
          
 for (let i = 0; i < name2; i++)
 {
@@ -70,12 +70,12 @@ for (let i = 0; i < name2; i++)
         else  { response = await fetch("https://waifu.pics/api/sfw/neko");  }
     
     const nekodds = await response.json();
-    let buttonMessages = {
+    let sigma = {
         image: { url: nekodds.url, },
         caption: cap,
         headerType: 1,
     };
-     await Void.sendMessage(citel.chat, buttonMessages, { quoted: citel })
+     await Void.sendMessage(citel.chat, sigma, { quoted: citel })
 }
         
 })
@@ -92,7 +92,7 @@ async(Void, citel, text) =>
     await Void.sendMessage(citel.chat, {image: { url: waifuddfg.data.url } }, { quoted: citel })
 })
 //-----------------------------------------------------------------------
-cmd({
+smd({
         pattern: "animenews",
        category: "Anime Pics" ,
         desc: "Sends Anime News in chat",
@@ -120,7 +120,7 @@ cmd({
             Void.sendMessage(
                 citel.chat, {
                     image: { url: r.urlToImage },
-                    caption: `*Title🔰:* ${r.title}\n\n*Content🧩:* ${r.content}\n*Author📌:* ${r.author}\n*Source♦️:* ${r.source.name}\n*Created On☘️:* ${r.publishedAt}\n*More on✨:* ${r.url}\n\n*Powered by ${tlang().title}*`,
+                    caption: `*Title:* ${r.title}\n\n*Content:* ${r.content}\n*Author:* ${r.author}\n*Source:* ${r.source.name}\n*Created On:* ${r.publishedAt}\n*More on:* ${r.url}\n\n*•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ`,
                 }, {
                     quoted: citel,
                 }
@@ -132,7 +132,7 @@ cmd({
     }
 )
 //-----------------------------------------------------------------------
-cmd({
+smd({
     pattern: "loli",
     category: "Anime Pics",
         filename: __filename,
@@ -150,8 +150,8 @@ async(Void, citel, text) => {
 }
 )
 //-----------------------------------------------------------------------
-/*
-cmd({
+
+smd({
     pattern: "pokepic",
     category: "Anime Pics",
         filename: __filename,
@@ -159,7 +159,7 @@ cmd({
 },
 async(Void, citel, text) => {
     const gis = require('g-i-s')
-        var pictured = "Pokemon Pics only HD ";
+        var pictured = `${fancytext("pokemon hd pics",1)}`;
         gis(text + pictured, async(error, result) => {
             n = result;
             images = n[Math.floor(Math.random() * n.length)].url;
@@ -167,12 +167,12 @@ async(Void, citel, text) => {
                 image: {
                     url: images,
                 },
-                caption: `*---「 Poke Pic 」---*`,
+                caption: `${fancytext("*---「 pokemon pic 」---*",1)}`,
                 footer: Void.user.name,
                 headerType: 4,
                 contextInfo: {
                     externalAdReply: {
-                        title: tlang().title,
+                        title: `${sigma_config.botname}`,
                         body: text,
                         thumbnail: log0,
                         mediaType: 2,
@@ -188,122 +188,11 @@ async(Void, citel, text) => {
 
 }
 )
-*/
-//---------------------------------------------------------------------------
-cmd({
-    pattern: "pokemon",
-    category: "Anime Pics",
-         filename: __filename,
-    desc: "Sends info of pokemon in current chat."
-},
-async(Void, citel, text) => {
-        if(!text) return citel.reply("```Uhh Please Give Me Poki Name```")
-    try {
-        let { data: data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${text}`)
-        if (!data.name) return citel.reply(`❌ Could not found any pokemon with that name`)
-        let poinfo = `*•Name: ${data.name}*\n*•Pokedex ID: ${data.id}*\n*•Height: ${data.height}*\n*•Weight: ${data.weight}*\n*•Abilities: ${data.abilities[0].ability.name}, ${data.abilities[1].ability.name}*\n*•Base Experience: ${data.base_experience}*\n*•Type: ${data.types[0].type.name}*\n*•Base Stat: ${data.stats[0].base_stat}*\n*•Attack: ${data.stats[1].base_stat}*\n*•Defense: ${data.stats[2].base_stat}*\n*•Special Attack: ${data.stats[3].base_stat}*\n*•Special Defense:${data.stats[4].base_stat}*\n*•Speed: ${data.stats[5].base_stat}*\n`
-        Void.sendMessage(citel.chat, { image: { url: data.sprites.front_default }, caption: poinfo }, { quoted: citel })
-    } catch (err) {
-        citel.reply("Ahh,Couldn't found any pokemon.")
-        //console.log(err)
-    }
-
-}
-)
-//---------------------------------------------------------------------------
-/*
 
 
-cmd({
-        pattern: "animepic",
-        category: "Anime Pics",
-        desc: "Anime image"
-    },
-    async(Void, citel, text) => {
-        
-        if(!text) return citel.reply(`give me Anime Name \n _Example: ${prefix}animepic luffy_`);
-        var pictured = "Anime Pics HD ";
-        gis(text  + pictured, async(error, result) => {
-            n = result;
-            images = n[Math.floor(Math.random() * n.length)].url;
-            let buttonMessage = {
-                image: {
-                    url: images,
-                },
-                caption: `*-----「 Anime Image 」-----*`,
-                footer: Void.user.name,
-                headerType: 4,
-                contextInfo: {
-                    externalAdReply: {
-                        title: tlang().title,
-                        body: `Anime Pics`,
-                        thumbnail: log0,
-                        mediaType: 2,
-                        renderLargerThumbnail: true,
-                        mediaUrl: gurl,
-                        sourceUrl: ``,
-                    },
-                },
-            };
-            Void.sendMessage(citel.chat, buttonMessage, {
-                quoted: citel,
-            });
-        });
 
-    }
-)
-*/
 //-----------------------------------------------------------------------
-
-/*
-cmd({
-        pattern: "animewall",
-        category: "Anime Pics",
-        desc: "Anime Wallpaper Random",
-         filename: __filename
-    },
-    async(Void, citel, text) => {
-        try {
-
-            var ecchid = "anime wallpaper for desktop full hd";
-            let gis = require("g-i-s");
-            gis(ecchid, async(error, result) => {
-                n = result;
-                images = n[Math.floor(Math.random() * n.length)].url;
-                let buttonMessage = {
-                    image: {
-                        url: images,
-                    },
-                    caption: `*--- Anime Wallpaper---*`,
-                    footer: Void.user.name,
-                    headerType: 4,
-                    contextInfo: {
-                        externalAdReply: {
-                            title: tlang().title,
-                            body: `Anime-Wallpaper`,
-                            jpegThumbnail: log0,
-                            thumbnail: log0,
-                            mediaType: 2,
-                            mediaUrl: ``,
-                            sourceUrl: ``,
-                        },
-                    },
-                };
-                Void.sendMessage(citel.chat, buttonMessage, {
-                    quoted: citel,
-                });
-            })
-        } catch (e) {
-                       citel.reply("```Error While Downloading Animy Wallpaper```") ;
-                       
-                      
-                   
-        }
-    }
-)
-*/
-//-----------------------------------------------------------------------
-cmd({
+smd({
     pattern: "manga",
      category: "Anime Pics",
         filename: __filename,
@@ -312,7 +201,7 @@ cmd({
 async(Void, citel, text) => {
     const { Manga } = require("@shineiichijo/marika");
     const manga = new Manga();
-    if (!text) return citel.reply(`Which Manga do you want to Search? \n _Please give me a name._`);
+    if (!text) return citel.reply(`Which Manga do you want to Search? \n Please give me a name`);
     let srh = await manga.searchManga(text);
     let mang = `*🎀Title: ${srh.data[0].title}*\n`;
     mang += `*📈Status: ${srh.data[0].status}*\n`;
@@ -322,23 +211,23 @@ async(Void, citel, text) => {
     for (let i = 0; i < srh.data[0].genres.length; i++) {
         mang += `\t\t\t\t\t\t\t\t*${srh.data[0].genres[i].name}*\n`;
     }
-    mang += `*✨Published on: ${srh.data[0].published.from}*\n`;
-    mang += `*🌟Score: ${srh.data[0].scored}*\n`;
-    mang += `*🎐Popularity: ${srh.data[0].popularity}*\n`;
-    mang += `*🎏Favorites: ${srh.data[0].favorites}*\n`;
-    mang += `*✍Authors:*\n`;
+    mang += `*Published on: ${srh.data[0].published.from}*\n`;
+    mang += `*Score: ${srh.data[0].scored}*\n`;
+    mang += `*Popularity: ${srh.data[0].popularity}*\n`;
+    mang += `*Favorites: ${srh.data[0].favorites}*\n`;
+    mang += `*Authors:*\n`;
     for (let i = 0; i < srh.data[0].authors.length; i++) {
         mang += `\t\t\t\t\t\t\t\t\t*${srh.data[0].authors[i].name}* *(${srh.data[0].authors[0].type})*\n`;
     }
     mang += `\n*🌐URL: ${srh.data[0].url}*\n\n`;
-    if (srh.data[0].background !== null) mang += `*🎆Background:* ${srh.data[0].background}`;
+    if (srh.data[0].background !== null) mang += `*Background:* ${srh.data[0].background}`;
     mang += `*❄️Description:* ${srh.data[0].synopsis}`;
     Void.sendMessage(citel.chat, {  image: {  url: srh.data[0].images.jpg.large_image_url,  }, caption: mang, }, {  quoted: citel,  });
 
 }
 )
 //----------------------------------------------------------------------------
-cmd({
+smd({
     pattern: "anime",
     category: "Anime Pics",
     desc: "Searches Info about Anime and Provides result."
@@ -387,7 +276,7 @@ async(Void, citel, text) => {
    )
 //---------------------------------------------------------------------------
 
-cmd({
+smd({
         pattern: "wallpaper",
         desc: "To get Random Pics",
        category: "Anime Pics",
@@ -404,7 +293,7 @@ const data = await response.json();
 
                 let buttonMessaged = {
                     image: { url: url },
-                    caption: '*---Random Wallpapers Here---*',
+                    caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${sigma_config.botname}*`,
                     footer: tlang().footer,
                     headerType: 4,
                    
