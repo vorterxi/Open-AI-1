@@ -15,6 +15,7 @@ global.devs = '923';
 global.waUrl = "https://chat.whatsapp.com/Ckwh1CMUjXV1Vq5JCBycCK",
 global.Gname = "xxx",
 global.mztit = "🅼♥︎❚❚♥︎🆉",
+global.devp = "https://telegra.ph/file/6c13f9ddbc934d603c4f9.jpg", // Don't change this
 global.website = 'https://github.com' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://i.imgur.com/t6VBCJL.jpg'
 module.exports = {
