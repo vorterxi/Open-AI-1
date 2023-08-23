@@ -8,7 +8,7 @@
  * @description : Suhail-Md, A Multi-functional whatsapp bot.
  **/
 
-const { tlang, ffmpeg,smd,fancytext} = require('../lib')
+/*const { tlang, ffmpeg,smd,fancytext} = require('../lib')
 const fs = require('fs')
 const { exec } = require('child_process')
 //---------------------------------------------------------------------------
@@ -176,3 +176,4 @@ smd({
         } else  citel.send(`ʀᴇᴘʟʏ ᴡɪᴛʜ ᴛʜᴇ ᴀᴜᴅɪᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ᴡɪᴛʜ`);
     }
 )
+*/
