@@ -9,13 +9,13 @@ smd({
     async(Void, citel, text,) => {
 
         await Void.sendMessage(citel.chat, {
-            image: textt,
+           // image: textt,
             text: `┏━━⟪⟪ 🅼♥︎❚❚♥︎🆉 ⟫━⦿\n┃✗ *•ᴅᴇᴠᴇʟᴏᴘᴇʀ ɴᴀᴍᴇ•* \n┃✗ *•ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ•* \n┃✗ *•ɴᴜᴍʙᴇʀ•* https://wa.me/923466319114\n┗━━━━━━━━━━⦿\n            *•ᴘᴏᴡᴇʀᴇᴅ ʙʏ•* sɪɢᴍᴀ ᴹᴰ`,
 	    contextInfo: {
 	        externalAdReply: {
                 title: `ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ`,
                 body: "ᴛᴀᴘ ʜᴇʀᴇ ᴛᴏ ᴍᴇssᴀɢᴇ ᴍᴇ",
-                thumbnail: textt,
+               // thumbnail: textt,
                 mediaType: 4,
                 mediaUrl: '',
                 sourceUrl: `https://wa.me/923466319114`,}}
