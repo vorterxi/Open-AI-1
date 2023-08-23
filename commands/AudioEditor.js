@@ -42,7 +42,7 @@ smd({
             });
         } else
             citel.send(
-                `${fancytext("reply with the audio you want to change with",1)}`
+                `ʀᴇᴘʟʏ ᴡɪᴛʜ ᴛʜᴇ ᴀᴜᴅɪᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ᴡɪᴛʜ`
             );
     }
 )
@@ -77,7 +77,7 @@ smd({
             });
         } else
             citel.send(
-                `${fancytext("reply with the audio you want to change with",1)}`
+                `ʀᴇᴘʟʏ ᴡɪᴛʜ ᴛʜᴇ ᴀᴜᴅɪᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ᴡɪᴛʜ`
             );
     }
 )
@@ -112,7 +112,7 @@ smd({
             });
         } else
             citel.send(
-                `${fancytext("reply with the audio you want to change with",1)}`
+                `ʀᴇᴘʟʏ ᴡɪᴛʜ ᴛʜᴇ ᴀᴜᴅɪᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ᴡɪᴛʜ`
             );
     }
 )
@@ -147,7 +147,7 @@ smd({
             });
         } else
             citel.send(
-                `${fancytext("reply with the audio you want to change with",1)}`
+                `ʀᴇᴘʟʏ ᴡɪᴛʜ ᴛʜᴇ ᴀᴜᴅɪᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ᴡɪᴛʜ`
             );
     }
 )
@@ -173,6 +173,6 @@ smd({
                 Void.sendMessage( citel.chat, {  audio: buff, mimetype: "audio/mpeg",}, { quoted: citel, });
                 fs.unlinkSync(ran);
             });
-        } else  citel.send(`${fancytext("reply with the audio you want to change with",1)}`);
+        } else  citel.send(`ʀᴇᴘʟʏ ᴡɪᴛʜ ᴛʜᴇ ᴀᴜᴅɪᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ᴡɪᴛʜ`);
     }
 )
