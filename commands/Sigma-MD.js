@@ -23,6 +23,6 @@ const {key} = await citel.reply("look🧸")
 teddy = teddy.replace("🤍", emoji)
   s = s + teddy;
     
-   await Void.sendMessage(citel.chat, {text: s, edit: key})
+   await Void.sendMessage(citel.chat, s, quoted: key})
   }
 })
