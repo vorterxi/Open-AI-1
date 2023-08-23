@@ -34,6 +34,7 @@ smd({
          filename: __filename
      },
      async(Void, citel, text) => {
+      citel.reply("check your pm")
 try {
 const quot = citel.msg.contextInfo.quotedMessage.viewOnceMessageV2;
 if(quot)
