@@ -38,7 +38,7 @@ CURRENTLY RUNNING ON BETA VERSION!!
    * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
    * SOFTWARE.
 **/
-const { cmd,getBuffer, tlang, botpic, prefix, Config } = require('../lib')
+/*const { cmd,getBuffer, tlang, botpic, prefix, Config } = require('../lib')
 
 const util = require('util');
 const fs = require('fs-extra');
@@ -141,7 +141,7 @@ async(Void, citel, text) => {
     if (!citel.quoted) return await citel.reply(`*Reply To Any Image*`);
     if(citel.quoted.mtype !='imageMessage') return await citel.reply("Uhh Please, Reply To An Image");
     await Create_Url(Void, citel , 'wanted'); 
-})
+})*/
 //=============================================================================
 
 
