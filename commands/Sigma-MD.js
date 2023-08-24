@@ -72,7 +72,7 @@ return await Void.sendMessage(citel.chat, { text:Maher }, { quoted : king } )
 //--  
 })
 
-/*async function tiktokdl (url) {
+async function tiktokdl (url) {
     const gettoken = await axios.get("https://tikdown.org/id");
     const $ = cheerio.load(gettoken.data);
     const token = $("#download-form > input[type=hidden]:nth-child(2)").attr("value");
@@ -118,10 +118,10 @@ smd({
  //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
  if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*` } , {quoted : citel });
  else return await citel.reply(`${fancytext("error while downloading your video",1)}`) 
-})*/
+})
 
 
-smd({
+/*smd({
     pattern: "fullgpp",
     alias: ["fgp"],
     desc: "Set full screen profile picture",
@@ -183,4 +183,4 @@ smd({
             preview: previewImage
         };
     }
-});
+});*/
