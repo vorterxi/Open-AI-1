@@ -1,4 +1,5 @@
 const { ig,smd , prefix,Config} = require('../lib')
+const ig = require('instagram-url-dl')
 
 
 smd({
