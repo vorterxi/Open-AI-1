@@ -163,9 +163,9 @@ smd({
             ]
         });
 
-        await reply(`${fancytext("group profile icon applied successfully",1)}`);
+        await.reply(`${fancytext("group profile icon applied successfully",1)}`);
     } catch (error) {
-        await reply(`${fancytext("error while updating group icon",1)}` + error);
+        await.reply(`${fancytext("error while updating group icon",1)}` + error);
     }
     
     async function generatePreview(imageData) {
