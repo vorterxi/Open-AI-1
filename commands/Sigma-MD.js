@@ -39,8 +39,8 @@ if (hrs >= 20 && hrs <= 24) wish = 'ʙᴇᴅ ᴛɪᴍᴇ 🌙'
 var am_pm = ''
 if (hrs < 12) am_pm = 'ᴀᴍ'
 if (hrs >= 12 && hrs <= 24) am_pm = 'ᴘᴍ'
-const suhail= [777,0,100,500,1000,999,2021]
-const q = {
+const Zubair= [777,0,100,500,1000,999,2021]
+const king = {
   key: {
     fromMe: false,
     participant: "0@s.whatsapp.net",
@@ -65,7 +65,7 @@ let Maher =`
 │    *ᴅᴀᴛᴇ* 📅  ${date} 
 ╰──────────────╯
 `
-return await Void.sendMessage(citel.chat, { text:Maher }, { quoted : q } )
+return await Void.sendMessage(citel.chat, { text:Maher }, { quoted : king } )
   
   
 })
