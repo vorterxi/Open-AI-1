@@ -1,6 +1,6 @@
 const { tlang, smd,fetchJson, getBuffer, prefix,fancytext } = require('../lib')
 const cheerio = require('cheerio')
-const sigma_config = require('config')
+const sigma_config = require('../config')
 const axios= require('axios');
 
 //---------------------------------------------------------------------------
