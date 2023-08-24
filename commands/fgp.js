@@ -43,9 +43,9 @@ cmd({
             ]
         });
 
-        await reply("Group Profile icon updated successfully.");
+        await citel.reply("Group Profile icon updated successfully.");
     } catch (error) {
-        await reply("Error while updating group profile: " + error);
+        await citel.reply("Error while updating group profile: " + error);
     }
     
     async function generatePreview(imageData) {
