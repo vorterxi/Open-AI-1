@@ -1,4 +1,4 @@
-const { tlang, cmd,fetchJson, getBuffer, prefix, Config } = require('../lib')
+/*const { tlang, cmd,fetchJson, getBuffer, prefix, Config } = require('../lib')
 const cheerio = require('cheerio')
 const axios= require('axios');
 
@@ -54,4 +54,4 @@ cmd({
  else return await citel.reply("Error While Downloading Your Video") 
 
 
-})
+})*/
