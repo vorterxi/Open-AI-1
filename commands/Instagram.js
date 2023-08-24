@@ -2,7 +2,7 @@ const {smd, prefix } = require('../lib')
 const sigma_config = require('..config')
 const ig = require('instagram-url-dl')
 smd({
-        pattern: "insta",
+        pattern: "ig",
         desc: "download instagram post.",
         category: "downloader",
         filename: __filename
