@@ -48,7 +48,7 @@ const king = {
   },
   message: {
         "orderMessage": {
-           "itemCount" : Zuabir[Math.floor(8*Math.random())],
+           "itemCount" : Zubair[Math.floor(8*Math.random())],
            "status": 1,
            "surface" : 1,
            "message": `❏ ${Config.botname}\nᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ ʙʏ ᴍᴀʜᴇʀ ᴢᴜʙᴀɪʀ`,
