@@ -1,4 +1,4 @@
-const { sck,fancytext, sck1,smd, jsonformat, botpic, TelegraPh, RandomXP, Config, tlang, warndb, sleep,getAdmin,participants,getBuffer, prefix,parsedJid } = require('../lib')
+const { sck,fancytext, sck1,smd, jsonformat, botpic, TelegraPh,fetchJson, RandomXP, Config, tlang, warndb, sleep,getAdmin,participants,getBuffer, prefix,parsedJid } = require('../lib')
 const moment = require("moment-timezone");
 const fs = require('fs-extra')
 const Levels = require("discord-xp");
@@ -7,6 +7,8 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
 const sɪɢᴍᴀ_ᴍᴅ  = require('../lib/commands')
 const hrs = new Date().getHours({ timeZone: 'Asia/Karachi' })
 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const cheerio = require('cheerio')
+const axios= require('axios');
 smd({
         pattern: "devnum",
 	alias: ["dnum"],
@@ -29,13 +31,13 @@ smd({
             use: '<group link.>',
         },
         async(Void, citel, text) => {
-var time = new Date().toLocaleString('HI', { timeZone: 'Asia/Karachi' }).split(' ')[1]
-var date = new Date().toLocaleDateString(get_localized_date)
-var wish = ''
+var sigma_time = new Date().toLocaleString('HI', { timeZone: 'Asia/Karachi' }).split(' ')[1]
+var sigma_date = new Date().toLocaleDateString(get_localized_date)
+var sigma_wish = ''
 if (hrs < 12) wish = 'ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ⛅'
-if (hrs >= 12 && hrs <= 16) wish = 'ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌞'
-if (hrs >= 16 && hrs <= 20) wish = 'ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌥'
-if (hrs >= 20 && hrs <= 24) wish = 'ʙᴇᴅ ᴛɪᴍᴇ 🌙'
+if (hrs >= 12 && hrs <= 16) sigma_wish = 'ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌞'
+if (hrs >= 16 && hrs <= 20) sigma_wish = 'ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌥'
+if (hrs >= 20 && hrs <= 24) sigma_wish = 'ʙᴇᴅ ᴛɪᴍᴇ 🌙'
 var am_pm = ''
 if (hrs < 12) am_pm = 'ᴀᴍ'
 if (hrs >= 12 && hrs <= 24) am_pm = 'ᴘᴍ'
@@ -61,11 +63,124 @@ const king = {
 let Maher =`
 ╭────────────╮
 │    *${wish}* 
-│    *ᴛɪᴍᴇ* ⌚ ${time} ${am_pm}
-│    *ᴅᴀᴛᴇ* 📅📆  ${date} 
+│    *ᴛɪᴍᴇ* ⌚ ${sigma_time} ${am_pm}
+│    *ᴅᴀᴛᴇ* 🗓️  ${sigma_date} 
 ╰────────────╯
 `
 return await Void.sendMessage(citel.chat, { text:Maher }, { quoted : king } )
   
-  
+//--  
 })
+
+async function tiktokdl (url) {
+    const gettoken = await axios.get("https://tikdown.org/id");
+    const $ = cheerio.load(gettoken.data);
+    const token = $("#download-form > input[type=hidden]:nth-child(2)").attr("value");
+    const param = {
+        url: url,
+        _token: token,
+    };
+    const { data } = await axios.request("https://tikdown.org/getAjax?", {
+        method: "post",
+        data: new URLSearchParams(Object.entries(param)),
+        headers: {
+            "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "user-agent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36",
+        },
+    });
+    var getdata = cheerio.load(data.html);
+    if (data.status) {
+        return {
+            status: true,
+            thumbnail: getdata("img").attr("src"),
+            video: getdata("div.download-links > div:nth-child(1) > a").attr("href"),
+            audio: getdata("div.download-links > div:nth-child(2) > a").attr("href"),
+        };
+    } else return { status: false };
+};
+
+//---------------------------------------------------------------------------
+
+smd({
+            pattern: "tiktok",
+	    alias :  ['tt','ttdl'],
+            desc: "Downloads Tiktok Videos Via Url.",
+            category: "downloader",
+            filename: __filename,
+            use: '<add tiktok url.>'
+        },
+
+        async(Void, citel, text) => {
+ if(!text) return await citel.reply(`${fancytext("please give me tiktok video link",1)}`);
+ let txt = text ? text.split(" ")[0]:'';
+ if (!/tiktok/.test(txt)) return await citel.reply(`${fancytext("please, give me valid tikotk video link!",1)}`);
+ const { status ,thumbnail, video, audio } = await tiktokdl(txt)
+ //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio )
+ if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*` } , {quoted : citel });
+ else return await citel.reply(`${fancytext("error while downloading your video",1)}`) 
+})
+
+//
+smd({
+    pattern: "fullgpp",
+    alias: ["fgp"],
+    desc: "Set full screen profile picture",
+    category: "group",
+}, async (message, match, reply, {isCreator} ) => {
+    const isGroup = message.isGroup;
+    if (!isGroup) return await.reply(tlang()["chat"]);
+    if(!isCreator) return citel.reply(tlang().owner);
+
+    const quoted = message.quoted;
+    if (!quoted || quoted.mtype !== "image") return await reply(`${fancytext("reply to an image",1)}`);
+
+    const groupAdmins = await getAdmin(message, quoted);
+    const isAdminInGroup = groupAdmins.includes(message.sender) || false;
+
+    if (!isAdminInGroup) return await.reply(tlang()["admin"]);
+
+    const imageBuffer = await quoted.downloadMedia();
+    
+    try {
+        const { query } = message;
+        const { preview } = await generatePreview(imageBuffer);
+
+        await query({
+            tag: "iq",
+            attrs: {
+                to: message.chatId,
+                type: "set",
+                xmlns: "w:profile:picture"
+            },
+            content: [
+                {
+                    tag: "picture",
+                    attrs: {
+                        type: "image/jpeg"
+                    },
+                    content: preview
+                }
+            ]
+        });
+
+        await reply(`${fancytext("group profile icon applied successfully",1)}`);
+    } catch (error) {
+        await reply(`${fancytext("error while updating group icon",1)}` + error);
+    }
+    
+    async function generatePreview(imageData) {
+        const image = await Jimp.read(imageData);
+        const width = image.getWidth();
+        const height = image.getHeight();
+
+        const croppedImage = image.crop(0, 0, width, height);
+        const scaledImage = await croppedImage.scaleToFit(320, 720).getBufferAsync(Jimp.MIME_JPEG);
+
+        const previewImage = await croppedImage.normalize().getBufferAsync(Jimp.MIME_JPEG);
+
+        return {
+            img: scaledImage,
+            preview: previewImage
+        };
+    }
+});
