@@ -1,6 +1,6 @@
-const {smd, prefix } = require('../lib')
+const {smd, prefix,ig} = require('../lib')
 const sigma_config = require('..config')
-const ig = require('instagram-url-dl')
+
 smd({
         pattern: "ig",
         desc: "download instagram post.",
