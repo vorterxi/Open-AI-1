@@ -1,24 +1,9 @@
-/**
- Copyright (C) 2023.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : ᴏᴘᴇɴ ᴀⁱ ♕
- * @author : 𝐌𝐚𝐡𝐞𝐫 𝐙𝐮𝐛𝐚𝐢𝐫 ♕ <https://github.com/Mehar-Zubair>
- * @description : ᴏᴘᴇɴ ᴀⁱ ♕,A Multi-functional whatsapp bot.
- * @version 1.0.3
- 
-  cmd({
-            pattern: "reaction-pack",
-            category: "reaction",
-            use: '<quote|reply|tag>',
-        },
- **/
+
 
 const axios = require('axios')
-const { fetchJson,cmd, GIFBufferToVideoBuffer} = require('../lib')
+const { fetchJson,smd, GIFBufferToVideoBuffer} = require('../lib')
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "bite",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -32,16 +17,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} bitten to @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ʙɪᴛᴛᴇɴ ᴛᴏ  @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} bitten to everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ʙɪᴛᴛᴇɴ ᴛᴏ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "blush",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -56,16 +41,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} blushed to @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ʙʟᴜsʜᴇᴅ ᴛᴏ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} blushed to everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ʙʟᴜsʜᴇᴅ ᴛᴏ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "punch",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -80,16 +65,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} punched to @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ᴘᴜɴᴄʜᴇᴅ ᴛᴏ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} punched everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ᴘᴜɴᴄʜᴇᴅ ᴛᴏ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "pat",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -104,16 +89,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} patted with @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ᴘᴀᴛᴛᴇᴅ ᴡɪᴛʜ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} patted with everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ᴘᴀᴛᴛᴇᴅ ᴡɪᴛʜ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "kiss",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -128,16 +113,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} kissed to @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ᴋɪssᴇᴅ ᴛᴏ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} kissed with everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ᴋɪssᴇᴅ ᴛᴏ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "kill",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -151,16 +136,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} killed @${users.split("@")[0]}. `;
+                let cap = `@${citel.sender.split("@")[0]} ᴋɪʟʟᴇᴅ @${users.split("@")[0]}. `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} killed everyone over here. `;
+                let cap = `@${citel.sender.split("@")[0]} ᴋɪʟʟᴇᴅ ᴛᴏ ᴇᴠᴇʀʏᴏɴᴇ ᴏᴠᴇʀ ʜᴇʀᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "happy",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -174,16 +159,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} felt happy with @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ғᴇʟᴛ ʜᴀᴘᴘʏ ᴡɪᴛʜ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} felt happy with everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ғᴇʟᴛ ʜᴀᴘᴘʏ ᴡɪᴛʜ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "dance",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -198,16 +183,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} danced with @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ᴅᴀɴᴄᴇᴅ ᴡɪᴛʜ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} danced with everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ᴅᴀɴᴄᴇᴅ ᴡɪᴛʜ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "yeet",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -222,16 +207,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} yeeted to @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ʏᴇᴇᴛᴇᴅ ᴛᴏ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} yeeted with everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ʏᴇᴇᴛᴇᴅ ᴡɪᴛʜ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "wink",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -246,16 +231,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} winked with @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ᴡɪɴᴋᴇᴅ ᴡɪᴛʜ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} winked with everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ᴡɪɴᴋᴇᴅ ᴡɪᴛʜ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "slap",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -270,16 +255,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} slapped @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} sʟᴀᴘᴘᴇᴅ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} slapped to everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} sʟᴀᴘᴘᴇᴅ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "bonk",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -293,16 +278,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} bonked to @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ʙᴏɴᴋᴇᴅ ᴛᴏ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} bonked to everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ʙᴏɴᴋᴇᴅ ᴛᴏ ᴇᴠᴇʀʏᴏɴᴇ. `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "bully",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -317,16 +302,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} bullied to @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ʙᴜʟʟɪᴇᴅ ᴛᴏ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} bullied to everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ʙᴜʟʟɪᴇᴅ ᴛᴏ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
             pattern: "cringe",
             category: "reaction",
             use: '<quote|reply|tag>',
@@ -341,16 +326,16 @@ cmd({
             let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
             let gif = await GIFBufferToVideoBuffer(buffer);
             if (users) {
-                let cap = `@${citel.sender.split("@")[0]} cringed at @${users.split("@")[0]} `;
+                let cap = `@${citel.sender.split("@")[0]} ᴄʀɪɴɢᴇᴅ ᴀᴛ @${users.split("@")[0]} `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
             } else {
-                let cap = `@${citel.sender.split("@")[0]} cringed with everyone. `;
+                let cap = `@${citel.sender.split("@")[0]} ᴄʀɪɴɢᴇᴅ ᴡɪᴛʜ ᴇᴠᴇʀʏᴏɴᴇ `;
                 Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
             }
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+smd({
         pattern: "cuddle",
         category: "reaction",
         use: '<quote|reply|tag>',
@@ -365,10 +350,10 @@ cmd({
         let users = citel.mentionedJid ? citel.mentionedJid[0] : citel.msg.contextInfo.participant || false;
         let gif = await GIFBufferToVideoBuffer(buffer);
         if (users) {
-            let cap = `@${citel.sender.split("@")[0]} cuddled with @${users.split("@")[0]} `;
+            let cap = `@${citel.sender.split("@")[0]} ᴄᴜᴅᴅʟᴇ ᴡɪᴛʜ @${users.split("@")[0]} `;
             Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [users, citel.sender], caption: cap }, { quoted: citel });
         } else {
-            let cap = `@${citel.sender.split("@")[0]} cuddled with everyone. `;
+            let cap = `@${citel.sender.split("@")[0]} ᴄᴜᴅᴅʟᴇ ᴡɪᴛʜ ᴇᴠᴇʀʏᴏɴᴇ `;
             Void.sendMessage(citel.chat, { video: gif, gifPlayback: true, mentions: [citel.sender], caption: cap }, { quoted: citel });
         }
     }
