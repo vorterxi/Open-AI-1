@@ -1,7 +1,8 @@
 const { tlang } = require('../lib')
-const Secktor = require('../lib/commands')
-Secktor.cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
+const Sigma_MD = require('../lib/commands')
+Sigma_MD.smd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
    if (!citel.isGroup) return citel.reply(tlang().group);
+   if (!text) return citel.reply("ᴍᴇɴᴛɪᴏɴ ᴀ ᴜsᴇʀ")
    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
 	 const participants = citel.isGroup ? await groupMetadata.participants : "";
    let members = participants.map(u => u.id)
@@ -9,15 +10,15 @@ Secktor.cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
     async function couple(percent) {
          var text;
         if (percent < 25) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\tThere's still time to reconsider your choices`
+            text = `\t\t\t\t\t*sʜɪᴘᴄᴇɴᴛ : ${percentage}%* \n\t\tᴛʜᴇʀᴇ's ɴᴇᴇᴅ ᴛɪᴍᴇ ᴛᴏ ʀᴇᴄᴏɴsɪᴅᴇʀ ʏᴏᴜʀ ᴄʜᴏɪᴄᴇs`
         } else if (percent < 50) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t Good enough, I guess! 💫`
+            text = `\t\t\t\t\t*sʜɪᴘᴄᴇɴᴛ : ${percentage}%* \n\t\t ɢᴏᴏᴅ ᴇɴᴏᴜɢʜ, ɪ ɢᴜᴇss!`
         } else if (percent < 75) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\t\t\tStay together and you'll find a way ⭐️`
+            text = `\t\t\t\t\t*sʜɪᴘᴄᴇɴᴛ : ${percentage}%* \n\t\t\tsᴛᴀʏ ᴛᴏɢᴇᴛʜᴇʀ ᴀɴᴅ ʏᴏᴜ'ʟʟ ғɪɴᴅ ᴀ ᴡᴀʏ`
         } else if (percent < 90) {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tAmazing! You two will be a good couple 💖 `
+            text = `\t\t\t\t\t*sʜɪᴘᴄᴇɴᴛ : ${percentage}%* \n\tᴀᴍᴀᴢɪɴɢ! ʏᴏᴜ ᴀɴᴅ ᴍᴇ ᴡɪʟʟ ʙᴇ ᴀ ɢᴏᴏᴅ ᴄᴏᴜᴘʟᴇ`
         } else {
-            text = `\t\t\t\t\t*ShipCent : ${percentage}%* \n\tYou two are fated to be together 💙`
+            text = `\t\t\t\t\t*sʜɪᴘᴄᴇɴᴛ : ${percentage}%* \n\tᴡᴇ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴛᴏɢᴇᴛʜᴇʀ`
         }
         return text
         }
@@ -28,12 +29,12 @@ Secktor.cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
        } else {
        shiper = members[Math.floor(Math.random() * members.length)]
        }
-       let caption = `\t❣️ *Matchmaking...* ❣️ \n`
+       let caption = `\t    ❣️ *ᴍᴀᴛᴄʜ-ᴍᴀᴋɪɴɢ...* ❣️ \n`
         caption += `\t\t✯────────────────────✯\n`
         caption += `@${citel.sender.split('@')[0]}  x  @${shiper.split('@')[0]}\n`
         caption += `\t\t✯────────────────────✯\n`
         caption += await couple(percentage)
-        if(citel.sender.split('@')[0]===shiper.split('@')[0]) return citel.reply('```'+'Wait... What!!!,You wanna do matchmaking with yourself'+'```')
+        if(citel.sender.split('@')[0]===shiper.split('@')[0]) return citel.reply('```'+'ᴡᴀɪᴛ... ᴡʜᴀᴛ!!!,ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴏ ᴍᴀᴛᴄʜᴍᴀᴋɪɴɢ ᴡɪᴛʜ ʏᴏᴜʀsᴇʟғ'+'```')
         await Void.sendMessage(citel.chat,{text: caption,mentions: [citel.sender,shiper]},{quoted:citel})
    }
 )
