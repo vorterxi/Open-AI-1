@@ -1,8 +1,8 @@
 const { tlang } = require('../lib')
 const Sigma_MD = require('../lib/commands')
-Sigma_MD.smd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
+Sigma_MD.cmd({ pattern: "ship" , category: "fun" }, async(Void, citel, text) => {
    if (!citel.isGroup) return citel.reply(tlang().group);
-   if (!text) return citel.reply("ᴍᴇɴᴛɪᴏɴ ᴀ ᴜsᴇʀ")
+   
    const groupMetadata = citel.isGroup ? await Void.groupMetadata(citel.chat).catch((e) => {}) : "";
 	 const participants = citel.isGroup ? await groupMetadata.participants : "";
    let members = participants.map(u => u.id)
