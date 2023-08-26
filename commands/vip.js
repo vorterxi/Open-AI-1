@@ -4,7 +4,7 @@
 
 const { smd, getBuffer} = require("../lib");
 const bocil = require('@bochilteam/scraper');
-smd ({
+smd{
        pattern: "facebook",
        alias: ["fb"],
        category: "downloader",
@@ -17,7 +17,6 @@ smd ({
             if (!text) 
                        return citel.reply(`Please Provide a Valid Facebook Video Link`);
             } else {
-                await toReact("📺");
                 bocil.facebookdlv2(`${text}`).then(async (data) => {
 
                     let aztec = `F A C E B - D O W N\n  
