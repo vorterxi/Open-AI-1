@@ -18,7 +18,7 @@ smd({
                 //thumbnail: `${devp}`,
                 mediaType: 4,
                 mediaUrl: '',
-                sourceUrl: `https://wa.me/15014998877`,}})
+                sourceUrl: `https://wa.me/15014998877`,}}})
         });
 
 smd({
