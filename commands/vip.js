@@ -11,8 +11,7 @@ smd({
        filename: __filename,
        use: '<add fb url.>'
     },
-    async(Void, citel, text) => {
-    { 
+    async(Void, citel, text)) => {
         try {
             if (!text) 
                        return citel.reply(`Please Provide a Valid Facebook Video Link`);
@@ -31,5 +30,4 @@ Title: FACBOOK\n\n`;
                 })}
         } catch (error) {
             Void.sendMessage(citel.chat, {
-                text: "Error occurred while processing"})
-        });
+                text: "Error occurred while processing"});
