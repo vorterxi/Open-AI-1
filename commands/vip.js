@@ -1,16 +1,15 @@
 //-----------[F B D L D O W N]----
-
+const {}
 const bocil = require('@bochilteam/scraper');
-const {
-    fetchBuffer
-} = require("../lib/module/function.js");
-module.exports = {
-    name: "fb",
-    description: "To download Facebook",
-    category: "Download",
-    start: async(vorterx, m, {
-        prefix, toReact, text, args
-    }) => {
+smd ({
+       pattern: "facebook",
+       alias: ["fb"],
+       category: "downloader",
+       filename: __filename,
+       use: '<add fb url.>'
+    },
+    async(Void, citel, text) => {
+    { 
         try {
             if (!text) {
                 await toReact("⛔");
