@@ -2,7 +2,7 @@
 //Copright: @aztec-md
 //github: https://github.com/Vorterx
 
-const { smd, getBuffer} = require("./lib");
+const { smd, getBuffer} = require("../lib");
 const bocil = require('@bochilteam/scraper');
 smd ({
        pattern: "facebook",
