@@ -4,7 +4,7 @@
 
 const { smd, getBuffer} = require("../lib");
 const bocil = require('@bochilteam/scraper');
-smd{
+smd({
        pattern: "facebook",
        alias: ["fb"],
        category: "downloader",
@@ -32,4 +32,4 @@ Title: FACBOOK\n\n`;
         } catch (error) {
             Void.sendMessage(citel.chat, {
                 text: "Error occurred while processing"})
-        };
+        });
